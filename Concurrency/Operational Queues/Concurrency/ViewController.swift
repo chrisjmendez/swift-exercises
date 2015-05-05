@@ -87,7 +87,7 @@ class ViewController: UIViewController {
         let customerName:String = customers[currentIdx]
         
         //1. Create an Operation from NSOperation
-        var buyTicket:NSBlockOperation = NSBlockOperation.init({
+        var buyTicket:NSBlockOperation = NSBlockOperation.init(block: {
             //Run simulator to resemble an HTTP request
             let num:Double = Simulator.sharedInstance.runSimulatorWithMinTime(2, maxTime: 5)
             //You cannot update the UIX from a background thread so you call this data back up the main UIX.
@@ -107,7 +107,7 @@ class ViewController: UIViewController {
             println("nsBlockOperation.completionBlock completed for \(customerName)")
         }
         
-        var payTicket:NSBlockOperation = NSBlockOperation.init({
+        var payTicket:NSBlockOperation = NSBlockOperation.init(block: {
             //Run simulator to resemble an HTTP request
             let num:Double = Simulator.sharedInstance.runSimulatorWithMinTime(2, maxTime: 5)
             //You cannot update the UIX from a background thread so you call this data back up the main UIX.

@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>95702AA6-DA8C-4CE7-B2E1-7A807E2C5A44</string>
+	<string>DF18D96D-633B-4641-86F0-5D2AE39C6846</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Concurrency</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>006B37BF97C3D58A257D513F9D95439435D5FA8F</key>
 		<string>https://github.com/chrisjmendez/swift-exercises.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Examples of Concurrency/Non Concurrent Operations/Non Concurrent Operations.xcodeproj/project.xcworkspace</string>
+	<string>Concurrency/Operational Queues/Concurrency.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>006B37BF97C3D58A257D513F9D95439435D5FA8F</key>

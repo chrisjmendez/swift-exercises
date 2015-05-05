@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E10932521AE381AF0014AD04 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10932511AE381AF0014AD04 /* ButtonView.swift */; };
 		E18675761AD95D1B0090F828 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18675751AD95D1B0090F828 /* AppDelegate.swift */; };
 		E18675781AD95D1B0090F828 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18675771AD95D1B0090F828 /* ViewController.swift */; };
 		E186757B1AD95D1B0090F828 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E18675791AD95D1B0090F828 /* Main.storyboard */; };
@@ -15,8 +14,6 @@
 		E18675801AD95D1B0090F828 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E186757E1AD95D1B0090F828 /* LaunchScreen.xib */; };
 		E186758C1AD95D1B0090F828 /* ConcurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E186758B1AD95D1B0090F828 /* ConcurrencyTests.swift */; };
 		E18675961AD963550090F828 /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18675951AD963550090F828 /* Simulator.swift */; };
-		E1D053AE1AE575900090AA5B /* BuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D053AD1AE575900090AA5B /* BuyView.swift */; };
-		E1D053B21AE5766E0090AA5B /* MyStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D053B11AE5766E0090AA5B /* MyStyleKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +27,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E10932511AE381AF0014AD04 /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonView.swift; path = Resources/GUI/ButtonView.swift; sourceTree = SOURCE_ROOT; };
 		E18675701AD95D1B0090F828 /* Concurrency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Concurrency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E18675741AD95D1B0090F828 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E18675751AD95D1B0090F828 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,8 +38,6 @@
 		E186758A1AD95D1B0090F828 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E186758B1AD95D1B0090F828 /* ConcurrencyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrencyTests.swift; sourceTree = "<group>"; };
 		E18675951AD963550090F828 /* Simulator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Simulator.swift; sourceTree = "<group>"; };
-		E1D053AD1AE575900090AA5B /* BuyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BuyView.swift; path = Images.xcassets/BuyView.swift; sourceTree = "<group>"; };
-		E1D053B11AE5766E0090AA5B /* MyStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStyleKit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,16 +58,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E118BFB31AEFF22100481BC8 /* GUI */ = {
-			isa = PBXGroup;
-			children = (
-				E1D053B11AE5766E0090AA5B /* MyStyleKit.swift */,
-				E1D053AD1AE575900090AA5B /* BuyView.swift */,
-				E10932511AE381AF0014AD04 /* ButtonView.swift */,
-			);
-			name = GUI;
-			sourceTree = "<group>";
-		};
 		E18675671AD95D1B0090F828 = {
 			isa = PBXGroup;
 			children = (
@@ -98,7 +82,6 @@
 				E18675751AD95D1B0090F828 /* AppDelegate.swift */,
 				E18675771AD95D1B0090F828 /* ViewController.swift */,
 				E18675791AD95D1B0090F828 /* Main.storyboard */,
-				E118BFB31AEFF22100481BC8 /* GUI */,
 				E186757C1AD95D1B0090F828 /* Images.xcassets */,
 				E186757E1AD95D1B0090F828 /* LaunchScreen.xib */,
 				E18675731AD95D1B0090F828 /* Supporting Files */,
@@ -233,10 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E18675781AD95D1B0090F828 /* ViewController.swift in Sources */,
-				E1D053AE1AE575900090AA5B /* BuyView.swift in Sources */,
-				E1D053B21AE5766E0090AA5B /* MyStyleKit.swift in Sources */,
 				E18675761AD95D1B0090F828 /* AppDelegate.swift in Sources */,
-				E10932521AE381AF0014AD04 /* ButtonView.swift in Sources */,
 				E18675961AD963550090F828 /* Simulator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
