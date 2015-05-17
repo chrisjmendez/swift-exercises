@@ -1,0 +1,13 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': '/Users/ttrojan/Documents/WORK/swift-exercises/Basic/HTTPRequests/build/Debug-iphonesimulator/Pods-HTTPRequests/SwiftHTTP.framework/Modules'
+    'contents': [{
+      'type': 'file',
+      'name': 'module.modulemap',
+      'external-contents': '/Users/ttrojan/Documents/WORK/swift-exercises/Basic/HTTPRequests/build/Pods.build/Debug-iphonesimulator/Pods-HTTPRequests-SwiftHTTP.build/unextended-module.modulemap',
+    }]
+  }]
+}
