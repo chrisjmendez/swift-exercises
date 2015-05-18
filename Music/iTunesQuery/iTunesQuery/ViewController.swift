@@ -23,7 +23,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         //
-        iTunesSearch("Angry Birds");
+        iTunesSearch("stereolab");
 
         appsTableView?.delegate = self
         appsTableView?.dataSource = self
@@ -34,7 +34,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // replace spaces with + symbol.
         var escapedTerm = (term as String).stringByReplacingSpaceWithPlusEncodingForQueryValue()!
         
-        var myPath = "https://itunes.apple.com/search?term=\(escapedTerm)&media=software"
+        var myPath = "https://itunes.apple.com/search?term=\(escapedTerm)&media=all"
         
         var url:NSURL = NSURL(string: myPath)!
         println("URL for searching iTunes API \(url)")
@@ -68,8 +68,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell.imageView!.image = UIImage(data: iData)
         
         // obtain the formatted price string to be displayed on the subtitle
-        var fPrice: NSString = rData["formattedPrice"] as! NSString
+        var obj:Double = rData["trackPrice"]! as! Double
+        
+        if !isnan(obj) {
+            var fPrice:String = "$ \(obj.toStringWithDecimalPlaces(2))"
             cell.detailTextLabel!.text = fPrice as String
+        }
         
         return cell
     }
@@ -114,5 +118,11 @@ extension String {
         // Anything which is not URL-friendly is escaped
         var escapedTerm = term.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
         return escapedTerm
+    }
+}
+
+extension Double {
+    func toStringWithDecimalPlaces(numberOfDecimalPlaces:Int) -> String {
+        return String(format:"%."+numberOfDecimalPlaces.description+"f", self)
     }
 }
