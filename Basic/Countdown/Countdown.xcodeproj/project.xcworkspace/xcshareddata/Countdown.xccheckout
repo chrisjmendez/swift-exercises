@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>5CB3E8BB-054E-4D2F-AAEE-E4C6521AC209</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Countdown</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>006B37BF97C3D58A257D513F9D95439435D5FA8F</key>
 		<string>https://github.com/chrisjmendez/swift-exercises.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Basic/Countdown/Countdown.xcodeproj/project.xcworkspace</string>
+	<string>Basic/Countdown/Countdown.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>006B37BF97C3D58A257D513F9D95439435D5FA8F</key>
