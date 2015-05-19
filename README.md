@@ -54,4 +54,3 @@ My first music app was developed in 2010 so it's safe to say I'm a music tech pr
 What makes the Internet better than print or broadcast is that there's a two-way interaction. OK, fine, reality-tv sort of captured the essence of "average people entertaining other average people" but Social Media is a better extension. Some call it peer-to-peer, others call it "platform" but all these exercices attempt to do is help devs learn how to authenticate their apps using oAuth2. 
 - [Facebook Integration}(https://github.com/chrisjmendez/swift-exercises/tree/master/Social/Facebook): Coming soon
 - Twitter Integration: Coming soon
-- 
