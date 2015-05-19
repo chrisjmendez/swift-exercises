@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Flurry" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ylp-sT-iVF">
+                                <rect key="frame" x="74" y="154" width="59" height="30"/>
+                                <state key="normal" title="Button 1">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="button1Clicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="LPE-Jq-2N3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRb-Q0-qp0">
+                                <rect key="frame" x="74" y="221" width="59" height="30"/>
+                                <state key="normal" title="Button 2">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="button2Clicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="5Zf-gY-ZWI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCg-mA-jir">
+                                <rect key="frame" x="74" y="285" width="59" height="30"/>
+                                <state key="normal" title="Button 3">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="button3Clicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="z75-f7-Yu3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EeE-WL-Yqc">
+                                <rect key="frame" x="74" y="355" width="59" height="30"/>
+                                <state key="normal" title="Button 4">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="button4Clicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="GFA-1t-kRd"/>
+                                </connections>
+                            </button>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nl6-SN-QXj">
+                                <rect key="frame" x="0.0" y="551" width="600" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem title="Favorites" id="FJO-lO-33S"/>
+                                    <tabBarItem title="Messages" id="kDR-2E-fEr"/>
+                                    <tabBarItem title="My Account" id="QaY-VV-xf9"/>
+                                    <tabBarItem title="More" id="Rj3-Fr-Oax"/>
+                                </items>
+                            </tabBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="nl6-SN-QXj" secondAttribute="trailing" id="44E-Uw-cP4"/>
+                            <constraint firstItem="nl6-SN-QXj" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="9Qd-F6-aQ4"/>
+                            <constraint firstItem="NRb-Q0-qp0" firstAttribute="leading" secondItem="Ylp-sT-iVF" secondAttribute="leading" id="Bhc-jD-DD9"/>
+                            <constraint firstItem="EeE-WL-Yqc" firstAttribute="leading" secondItem="lCg-mA-jir" secondAttribute="leading" id="CZh-wX-HXa"/>
+                            <constraint firstItem="EeE-WL-Yqc" firstAttribute="top" secondItem="lCg-mA-jir" secondAttribute="bottom" constant="40" id="EtE-nT-G6e"/>
+                            <constraint firstItem="lCg-mA-jir" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="Kx8-WW-Waf"/>
+                            <constraint firstItem="Ylp-sT-iVF" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="58" id="aQs-2o-e1W"/>
+                            <constraint firstItem="NRb-Q0-qp0" firstAttribute="top" secondItem="Ylp-sT-iVF" secondAttribute="bottom" constant="37" id="gpl-d7-qR1"/>
+                            <constraint firstItem="lCg-mA-jir" firstAttribute="top" secondItem="NRb-Q0-qp0" secondAttribute="bottom" constant="34" id="hKD-2w-HSc"/>
+                            <constraint firstItem="lCg-mA-jir" firstAttribute="leading" secondItem="NRb-Q0-qp0" secondAttribute="leading" id="oqT-Io-MQT"/>
+                            <constraint firstItem="nl6-SN-QXj" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="xtA-XM-G5x"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tabBar" destination="nl6-SN-QXj" id="0Ij-Gd-qsp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
