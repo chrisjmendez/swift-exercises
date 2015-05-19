@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E16077491B083972004C4DEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16077481B083972004C4DEA /* AppDelegate.swift */; };
+		E160774B1B083972004C4DEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E160774A1B083972004C4DEA /* ViewController.swift */; };
+		E160774E1B083972004C4DEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E160774C1B083972004C4DEA /* Main.storyboard */; };
+		E16077501B083972004C4DEA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E160774F1B083972004C4DEA /* Images.xcassets */; };
+		E16077531B083972004C4DEA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E16077511B083972004C4DEA /* LaunchScreen.xib */; };
+		E160775F1B083972004C4DEA /* HeyzapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E160775E1B083972004C4DEA /* HeyzapTests.swift */; };
+		E1614C6D1B086D8E00F75F22 /* HeyzapAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1614C6C1B086D8E00F75F22 /* HeyzapAds.framework */; };
+		E1E49AEB1B0B0AF9000F4699 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E49AEA1B0B0AF9000F4699 /* GoogleMobileAds.framework */; };
+		E1E49B001B0B0B21000F4699 /* libAppLovinSdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E49AFF1B0B0B21000F4699 /* libAppLovinSdk.a */; };
+		E1E49B041B0B0BDA000F4699 /* HZAdMobBannerSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E49B031B0B0BDA000F4699 /* HZAdMobBannerSupport.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E16077591B083972004C4DEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E160773B1B083972004C4DEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E16077421B083972004C4DEA;
+			remoteInfo = Heyzap;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E16077431B083972004C4DEA /* Heyzap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Heyzap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E16077471B083972004C4DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E16077481B083972004C4DEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E160774A1B083972004C4DEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E160774D1B083972004C4DEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E160774F1B083972004C4DEA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E16077521B083972004C4DEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		E16077581B083972004C4DEA /* HeyzapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeyzapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E160775D1B083972004C4DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E160775E1B083972004C4DEA /* HeyzapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeyzapTests.swift; sourceTree = "<group>"; };
+		E16077681B083980004C4DEA /* Heyzap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Heyzap-Bridging-Header.h"; sourceTree = "<group>"; };
+		E1614C6C1B086D8E00F75F22 /* HeyzapAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HeyzapAds.framework; sourceTree = "<group>"; };
+		E1E49AEA1B0B0AF9000F4699 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		E1E49AEE1B0B0B21000F4699 /* ALAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAd.h; sourceTree = "<group>"; };
+		E1E49AEF1B0B0B21000F4699 /* ALAdDisplayDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAdDisplayDelegate.h; sourceTree = "<group>"; };
+		E1E49AF01B0B0B21000F4699 /* ALAdLoadDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAdLoadDelegate.h; sourceTree = "<group>"; };
+		E1E49AF11B0B0B21000F4699 /* ALAdRewardDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAdRewardDelegate.h; sourceTree = "<group>"; };
+		E1E49AF21B0B0B21000F4699 /* ALAdService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAdService.h; sourceTree = "<group>"; };
+		E1E49AF31B0B0B21000F4699 /* ALAdSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAdSize.h; sourceTree = "<group>"; };
+		E1E49AF41B0B0B21000F4699 /* ALAdType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAdType.h; sourceTree = "<group>"; };
+		E1E49AF51B0B0B21000F4699 /* ALAdUpdateDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAdUpdateDelegate.h; sourceTree = "<group>"; };
+		E1E49AF61B0B0B21000F4699 /* ALAdVideoPlaybackDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAdVideoPlaybackDelegate.h; sourceTree = "<group>"; };
+		E1E49AF71B0B0B21000F4699 /* ALAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAdView.h; sourceTree = "<group>"; };
+		E1E49AF81B0B0B21000F4699 /* ALErrorCodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALErrorCodes.h; sourceTree = "<group>"; };
+		E1E49AF91B0B0B21000F4699 /* ALIncentivizedInterstitialAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALIncentivizedInterstitialAd.h; sourceTree = "<group>"; };
+		E1E49AFA1B0B0B21000F4699 /* ALInterstitialAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALInterstitialAd.h; sourceTree = "<group>"; };
+		E1E49AFB1B0B0B21000F4699 /* ALSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALSdk.h; sourceTree = "<group>"; };
+		E1E49AFC1B0B0B21000F4699 /* ALSdkSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALSdkSettings.h; sourceTree = "<group>"; };
+		E1E49AFD1B0B0B21000F4699 /* ALSwiftHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALSwiftHeaders.h; sourceTree = "<group>"; };
+		E1E49AFE1B0B0B21000F4699 /* ALTargetingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALTargetingData.h; sourceTree = "<group>"; };
+		E1E49AFF1B0B0B21000F4699 /* libAppLovinSdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAppLovinSdk.a; sourceTree = "<group>"; };
+		E1E49B021B0B0BDA000F4699 /* HZAdMobBannerSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZAdMobBannerSupport.h; sourceTree = "<group>"; };
+		E1E49B031B0B0BDA000F4699 /* HZAdMobBannerSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZAdMobBannerSupport.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E16077401B083972004C4DEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1E49B001B0B0B21000F4699 /* libAppLovinSdk.a in Frameworks */,
+				E1E49AEB1B0B0AF9000F4699 /* GoogleMobileAds.framework in Frameworks */,
+				E1614C6D1B086D8E00F75F22 /* HeyzapAds.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E16077551B083972004C4DEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E160773A1B083972004C4DEA = {
+			isa = PBXGroup;
+			children = (
+				E16077451B083972004C4DEA /* Heyzap */,
+				E160775B1B083972004C4DEA /* HeyzapTests */,
+				E16077441B083972004C4DEA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E16077441B083972004C4DEA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E16077431B083972004C4DEA /* Heyzap.app */,
+				E16077581B083972004C4DEA /* HeyzapTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E16077451B083972004C4DEA /* Heyzap */ = {
+			isa = PBXGroup;
+			children = (
+				E1614C6B1B086D5800F75F22 /* Frameworks */,
+				E16077481B083972004C4DEA /* AppDelegate.swift */,
+				E160774A1B083972004C4DEA /* ViewController.swift */,
+				E160774C1B083972004C4DEA /* Main.storyboard */,
+				E160774F1B083972004C4DEA /* Images.xcassets */,
+				E16077511B083972004C4DEA /* LaunchScreen.xib */,
+				E16077461B083972004C4DEA /* Supporting Files */,
+				E16077681B083980004C4DEA /* Heyzap-Bridging-Header.h */,
+			);
+			path = Heyzap;
+			sourceTree = "<group>";
+		};
+		E16077461B083972004C4DEA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E16077471B083972004C4DEA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E160775B1B083972004C4DEA /* HeyzapTests */ = {
+			isa = PBXGroup;
+			children = (
+				E160775E1B083972004C4DEA /* HeyzapTests.swift */,
+				E160775C1B083972004C4DEA /* Supporting Files */,
+			);
+			path = HeyzapTests;
+			sourceTree = "<group>";
+		};
+		E160775C1B083972004C4DEA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E160775D1B083972004C4DEA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E1614C6B1B086D5800F75F22 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1E49AEC1B0B0B21000F4699 /* applovin-ios-sdk-2.5.4 */,
+				E1E49AEA1B0B0AF9000F4699 /* GoogleMobileAds.framework */,
+				E1614C6C1B086D8E00F75F22 /* HeyzapAds.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E1E49AEC1B0B0B21000F4699 /* applovin-ios-sdk-2.5.4 */ = {
+			isa = PBXGroup;
+			children = (
+				E1E49B011B0B0BDA000F4699 /* MediationExtras */,
+				E1E49AED1B0B0B21000F4699 /* headers */,
+				E1E49AFF1B0B0B21000F4699 /* libAppLovinSdk.a */,
+			);
+			path = "applovin-ios-sdk-2.5.4";
+			sourceTree = "<group>";
+		};
+		E1E49AED1B0B0B21000F4699 /* headers */ = {
+			isa = PBXGroup;
+			children = (
+				E1E49AEE1B0B0B21000F4699 /* ALAd.h */,
+				E1E49AEF1B0B0B21000F4699 /* ALAdDisplayDelegate.h */,
+				E1E49AF01B0B0B21000F4699 /* ALAdLoadDelegate.h */,
+				E1E49AF11B0B0B21000F4699 /* ALAdRewardDelegate.h */,
+				E1E49AF21B0B0B21000F4699 /* ALAdService.h */,
+				E1E49AF31B0B0B21000F4699 /* ALAdSize.h */,
+				E1E49AF41B0B0B21000F4699 /* ALAdType.h */,
+				E1E49AF51B0B0B21000F4699 /* ALAdUpdateDelegate.h */,
+				E1E49AF61B0B0B21000F4699 /* ALAdVideoPlaybackDelegate.h */,
+				E1E49AF71B0B0B21000F4699 /* ALAdView.h */,
+				E1E49AF81B0B0B21000F4699 /* ALErrorCodes.h */,
+				E1E49AF91B0B0B21000F4699 /* ALIncentivizedInterstitialAd.h */,
+				E1E49AFA1B0B0B21000F4699 /* ALInterstitialAd.h */,
+				E1E49AFB1B0B0B21000F4699 /* ALSdk.h */,
+				E1E49AFC1B0B0B21000F4699 /* ALSdkSettings.h */,
+				E1E49AFD1B0B0B21000F4699 /* ALSwiftHeaders.h */,
+				E1E49AFE1B0B0B21000F4699 /* ALTargetingData.h */,
+			);
+			path = headers;
+			sourceTree = "<group>";
+		};
+		E1E49B011B0B0BDA000F4699 /* MediationExtras */ = {
+			isa = PBXGroup;
+			children = (
+				E1E49B021B0B0BDA000F4699 /* HZAdMobBannerSupport.h */,
+				E1E49B031B0B0BDA000F4699 /* HZAdMobBannerSupport.m */,
+			);
+			path = MediationExtras;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E16077421B083972004C4DEA /* Heyzap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E16077621B083972004C4DEA /* Build configuration list for PBXNativeTarget "Heyzap" */;
+			buildPhases = (
+				E160773F1B083972004C4DEA /* Sources */,
+				E16077401B083972004C4DEA /* Frameworks */,
+				E16077411B083972004C4DEA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Heyzap;
+			productName = Heyzap;
+			productReference = E16077431B083972004C4DEA /* Heyzap.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E16077571B083972004C4DEA /* HeyzapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E16077651B083972004C4DEA /* Build configuration list for PBXNativeTarget "HeyzapTests" */;
+			buildPhases = (
+				E16077541B083972004C4DEA /* Sources */,
+				E16077551B083972004C4DEA /* Frameworks */,
+				E16077561B083972004C4DEA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E160775A1B083972004C4DEA /* PBXTargetDependency */,
+			);
+			name = HeyzapTests;
+			productName = HeyzapTests;
+			productReference = E16077581B083972004C4DEA /* HeyzapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E160773B1B083972004C4DEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Chris Mendez";
+				TargetAttributes = {
+					E16077421B083972004C4DEA = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					E16077571B083972004C4DEA = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = E16077421B083972004C4DEA;
+					};
+				};
+			};
+			buildConfigurationList = E160773E1B083972004C4DEA /* Build configuration list for PBXProject "Heyzap" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E160773A1B083972004C4DEA;
+			productRefGroup = E16077441B083972004C4DEA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E16077421B083972004C4DEA /* Heyzap */,
+				E16077571B083972004C4DEA /* HeyzapTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E16077411B083972004C4DEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E160774E1B083972004C4DEA /* Main.storyboard in Resources */,
+				E16077531B083972004C4DEA /* LaunchScreen.xib in Resources */,
+				E16077501B083972004C4DEA /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E16077561B083972004C4DEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E160773F1B083972004C4DEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E160774B1B083972004C4DEA /* ViewController.swift in Sources */,
+				E16077491B083972004C4DEA /* AppDelegate.swift in Sources */,
+				E1E49B041B0B0BDA000F4699 /* HZAdMobBannerSupport.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E16077541B083972004C4DEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E160775F1B083972004C4DEA /* HeyzapTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E160775A1B083972004C4DEA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E16077421B083972004C4DEA /* Heyzap */;
+			targetProxy = E16077591B083972004C4DEA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E160774C1B083972004C4DEA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E160774D1B083972004C4DEA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E16077511B083972004C4DEA /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E16077521B083972004C4DEA /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E16077601B083972004C4DEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E16077611B083972004C4DEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E16077631B083972004C4DEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Heyzap",
+				);
+				INFOPLIST_FILE = Heyzap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Heyzap/applovin-ios-sdk-2.5.4",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Heyzap/Heyzap-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E16077641B083972004C4DEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Heyzap",
+				);
+				INFOPLIST_FILE = Heyzap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Heyzap/applovin-ios-sdk-2.5.4",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Heyzap/Heyzap-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		E16077661B083972004C4DEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(PROJECT_DIR)/Heyzap",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HeyzapTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Heyzap.app/Heyzap";
+			};
+			name = Debug;
+		};
+		E16077671B083972004C4DEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(PROJECT_DIR)/Heyzap",
+				);
+				INFOPLIST_FILE = HeyzapTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Heyzap.app/Heyzap";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E160773E1B083972004C4DEA /* Build configuration list for PBXProject "Heyzap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E16077601B083972004C4DEA /* Debug */,
+				E16077611B083972004C4DEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E16077621B083972004C4DEA /* Build configuration list for PBXNativeTarget "Heyzap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E16077631B083972004C4DEA /* Debug */,
+				E16077641B083972004C4DEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E16077651B083972004C4DEA /* Build configuration list for PBXNativeTarget "HeyzapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E16077661B083972004C4DEA /* Debug */,
+				E16077671B083972004C4DEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E160773B1B083972004C4DEA /* Project object */;
+}
