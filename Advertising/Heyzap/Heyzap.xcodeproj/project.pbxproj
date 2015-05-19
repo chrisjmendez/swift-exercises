@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E13D5BCA1B0BD49600FE8E9A /* HeyzapAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E13D5BC91B0BD49600FE8E9A /* HeyzapAds.framework */; };
+		E13D5BE21B0BD49C00FE8E9A /* libAppLovinSdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E13D5BDE1B0BD49C00FE8E9A /* libAppLovinSdk.a */; };
+		E13D5BE31B0BD49C00FE8E9A /* HZAdMobBannerSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E13D5BE11B0BD49C00FE8E9A /* HZAdMobBannerSupport.m */; };
+		E13D5BE51B0BD4A000FE8E9A /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E13D5BE41B0BD4A000FE8E9A /* GoogleMobileAds.framework */; };
 		E16077491B083972004C4DEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16077481B083972004C4DEA /* AppDelegate.swift */; };
 		E160774B1B083972004C4DEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E160774A1B083972004C4DEA /* ViewController.swift */; };
 		E160774E1B083972004C4DEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E160774C1B083972004C4DEA /* Main.storyboard */; };
 		E16077501B083972004C4DEA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E160774F1B083972004C4DEA /* Images.xcassets */; };
 		E16077531B083972004C4DEA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E16077511B083972004C4DEA /* LaunchScreen.xib */; };
 		E160775F1B083972004C4DEA /* HeyzapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E160775E1B083972004C4DEA /* HeyzapTests.swift */; };
-		E1614C6D1B086D8E00F75F22 /* HeyzapAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1614C6C1B086D8E00F75F22 /* HeyzapAds.framework */; };
-		E1E49AEB1B0B0AF9000F4699 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E49AEA1B0B0AF9000F4699 /* GoogleMobileAds.framework */; };
-		E1E49B001B0B0B21000F4699 /* libAppLovinSdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E49AFF1B0B0B21000F4699 /* libAppLovinSdk.a */; };
-		E1E49B041B0B0BDA000F4699 /* HZAdMobBannerSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E49B031B0B0BDA000F4699 /* HZAdMobBannerSupport.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +30,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E13D5BC91B0BD49600FE8E9A /* HeyzapAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HeyzapAds.framework; sourceTree = "<group>"; };
+		E13D5BCD1B0BD49C00FE8E9A /* ALAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAd.h; sourceTree = "<group>"; };
+		E13D5BCE1B0BD49C00FE8E9A /* ALAdDisplayDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAdDisplayDelegate.h; sourceTree = "<group>"; };
+		E13D5BCF1B0BD49C00FE8E9A /* ALAdLoadDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAdLoadDelegate.h; sourceTree = "<group>"; };
+		E13D5BD01B0BD49C00FE8E9A /* ALAdRewardDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAdRewardDelegate.h; sourceTree = "<group>"; };
+		E13D5BD11B0BD49C00FE8E9A /* ALAdService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAdService.h; sourceTree = "<group>"; };
+		E13D5BD21B0BD49C00FE8E9A /* ALAdSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAdSize.h; sourceTree = "<group>"; };
+		E13D5BD31B0BD49C00FE8E9A /* ALAdType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAdType.h; sourceTree = "<group>"; };
+		E13D5BD41B0BD49C00FE8E9A /* ALAdUpdateDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAdUpdateDelegate.h; sourceTree = "<group>"; };
+		E13D5BD51B0BD49C00FE8E9A /* ALAdVideoPlaybackDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAdVideoPlaybackDelegate.h; sourceTree = "<group>"; };
+		E13D5BD61B0BD49C00FE8E9A /* ALAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAdView.h; sourceTree = "<group>"; };
+		E13D5BD71B0BD49C00FE8E9A /* ALErrorCodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALErrorCodes.h; sourceTree = "<group>"; };
+		E13D5BD81B0BD49C00FE8E9A /* ALIncentivizedInterstitialAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALIncentivizedInterstitialAd.h; sourceTree = "<group>"; };
+		E13D5BD91B0BD49C00FE8E9A /* ALInterstitialAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALInterstitialAd.h; sourceTree = "<group>"; };
+		E13D5BDA1B0BD49C00FE8E9A /* ALSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALSdk.h; sourceTree = "<group>"; };
+		E13D5BDB1B0BD49C00FE8E9A /* ALSdkSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALSdkSettings.h; sourceTree = "<group>"; };
+		E13D5BDC1B0BD49C00FE8E9A /* ALSwiftHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALSwiftHeaders.h; sourceTree = "<group>"; };
+		E13D5BDD1B0BD49C00FE8E9A /* ALTargetingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALTargetingData.h; sourceTree = "<group>"; };
+		E13D5BDE1B0BD49C00FE8E9A /* libAppLovinSdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAppLovinSdk.a; sourceTree = "<group>"; };
+		E13D5BE01B0BD49C00FE8E9A /* HZAdMobBannerSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZAdMobBannerSupport.h; sourceTree = "<group>"; };
+		E13D5BE11B0BD49C00FE8E9A /* HZAdMobBannerSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZAdMobBannerSupport.m; sourceTree = "<group>"; };
+		E13D5BE41B0BD4A000FE8E9A /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		E16077431B083972004C4DEA /* Heyzap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Heyzap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E16077471B083972004C4DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E16077481B083972004C4DEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,28 +63,6 @@
 		E160775D1B083972004C4DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E160775E1B083972004C4DEA /* HeyzapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeyzapTests.swift; sourceTree = "<group>"; };
 		E16077681B083980004C4DEA /* Heyzap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Heyzap-Bridging-Header.h"; sourceTree = "<group>"; };
-		E1614C6C1B086D8E00F75F22 /* HeyzapAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HeyzapAds.framework; sourceTree = "<group>"; };
-		E1E49AEA1B0B0AF9000F4699 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
-		E1E49AEE1B0B0B21000F4699 /* ALAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAd.h; sourceTree = "<group>"; };
-		E1E49AEF1B0B0B21000F4699 /* ALAdDisplayDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAdDisplayDelegate.h; sourceTree = "<group>"; };
-		E1E49AF01B0B0B21000F4699 /* ALAdLoadDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAdLoadDelegate.h; sourceTree = "<group>"; };
-		E1E49AF11B0B0B21000F4699 /* ALAdRewardDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAdRewardDelegate.h; sourceTree = "<group>"; };
-		E1E49AF21B0B0B21000F4699 /* ALAdService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAdService.h; sourceTree = "<group>"; };
-		E1E49AF31B0B0B21000F4699 /* ALAdSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAdSize.h; sourceTree = "<group>"; };
-		E1E49AF41B0B0B21000F4699 /* ALAdType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAdType.h; sourceTree = "<group>"; };
-		E1E49AF51B0B0B21000F4699 /* ALAdUpdateDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAdUpdateDelegate.h; sourceTree = "<group>"; };
-		E1E49AF61B0B0B21000F4699 /* ALAdVideoPlaybackDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAdVideoPlaybackDelegate.h; sourceTree = "<group>"; };
-		E1E49AF71B0B0B21000F4699 /* ALAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAdView.h; sourceTree = "<group>"; };
-		E1E49AF81B0B0B21000F4699 /* ALErrorCodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALErrorCodes.h; sourceTree = "<group>"; };
-		E1E49AF91B0B0B21000F4699 /* ALIncentivizedInterstitialAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALIncentivizedInterstitialAd.h; sourceTree = "<group>"; };
-		E1E49AFA1B0B0B21000F4699 /* ALInterstitialAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALInterstitialAd.h; sourceTree = "<group>"; };
-		E1E49AFB1B0B0B21000F4699 /* ALSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALSdk.h; sourceTree = "<group>"; };
-		E1E49AFC1B0B0B21000F4699 /* ALSdkSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALSdkSettings.h; sourceTree = "<group>"; };
-		E1E49AFD1B0B0B21000F4699 /* ALSwiftHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALSwiftHeaders.h; sourceTree = "<group>"; };
-		E1E49AFE1B0B0B21000F4699 /* ALTargetingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALTargetingData.h; sourceTree = "<group>"; };
-		E1E49AFF1B0B0B21000F4699 /* libAppLovinSdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAppLovinSdk.a; sourceTree = "<group>"; };
-		E1E49B021B0B0BDA000F4699 /* HZAdMobBannerSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZAdMobBannerSupport.h; sourceTree = "<group>"; };
-		E1E49B031B0B0BDA000F4699 /* HZAdMobBannerSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZAdMobBannerSupport.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,9 +70,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1E49B001B0B0B21000F4699 /* libAppLovinSdk.a in Frameworks */,
-				E1E49AEB1B0B0AF9000F4699 /* GoogleMobileAds.framework in Frameworks */,
-				E1614C6D1B086D8E00F75F22 /* HeyzapAds.framework in Frameworks */,
+				E13D5BE51B0BD4A000FE8E9A /* GoogleMobileAds.framework in Frameworks */,
+				E13D5BCA1B0BD49600FE8E9A /* HeyzapAds.framework in Frameworks */,
+				E13D5BE21B0BD49C00FE8E9A /* libAppLovinSdk.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +86,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E13D5BC81B0BD47600FE8E9A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E13D5BE41B0BD4A000FE8E9A /* GoogleMobileAds.framework */,
+				E13D5BCB1B0BD49C00FE8E9A /* applovin-ios-sdk-2.5.4 */,
+				E13D5BC91B0BD49600FE8E9A /* HeyzapAds.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		E13D5BCB1B0BD49C00FE8E9A /* applovin-ios-sdk-2.5.4 */ = {
+			isa = PBXGroup;
+			children = (
+				E13D5BCC1B0BD49C00FE8E9A /* headers */,
+				E13D5BDE1B0BD49C00FE8E9A /* libAppLovinSdk.a */,
+				E13D5BDF1B0BD49C00FE8E9A /* MediationExtras */,
+			);
+			path = "applovin-ios-sdk-2.5.4";
+			sourceTree = "<group>";
+		};
+		E13D5BCC1B0BD49C00FE8E9A /* headers */ = {
+			isa = PBXGroup;
+			children = (
+				E13D5BCD1B0BD49C00FE8E9A /* ALAd.h */,
+				E13D5BCE1B0BD49C00FE8E9A /* ALAdDisplayDelegate.h */,
+				E13D5BCF1B0BD49C00FE8E9A /* ALAdLoadDelegate.h */,
+				E13D5BD01B0BD49C00FE8E9A /* ALAdRewardDelegate.h */,
+				E13D5BD11B0BD49C00FE8E9A /* ALAdService.h */,
+				E13D5BD21B0BD49C00FE8E9A /* ALAdSize.h */,
+				E13D5BD31B0BD49C00FE8E9A /* ALAdType.h */,
+				E13D5BD41B0BD49C00FE8E9A /* ALAdUpdateDelegate.h */,
+				E13D5BD51B0BD49C00FE8E9A /* ALAdVideoPlaybackDelegate.h */,
+				E13D5BD61B0BD49C00FE8E9A /* ALAdView.h */,
+				E13D5BD71B0BD49C00FE8E9A /* ALErrorCodes.h */,
+				E13D5BD81B0BD49C00FE8E9A /* ALIncentivizedInterstitialAd.h */,
+				E13D5BD91B0BD49C00FE8E9A /* ALInterstitialAd.h */,
+				E13D5BDA1B0BD49C00FE8E9A /* ALSdk.h */,
+				E13D5BDB1B0BD49C00FE8E9A /* ALSdkSettings.h */,
+				E13D5BDC1B0BD49C00FE8E9A /* ALSwiftHeaders.h */,
+				E13D5BDD1B0BD49C00FE8E9A /* ALTargetingData.h */,
+			);
+			path = headers;
+			sourceTree = "<group>";
+		};
+		E13D5BDF1B0BD49C00FE8E9A /* MediationExtras */ = {
+			isa = PBXGroup;
+			children = (
+				E13D5BE01B0BD49C00FE8E9A /* HZAdMobBannerSupport.h */,
+				E13D5BE11B0BD49C00FE8E9A /* HZAdMobBannerSupport.m */,
+			);
+			path = MediationExtras;
+			sourceTree = "<group>";
+		};
 		E160773A1B083972004C4DEA = {
 			isa = PBXGroup;
 			children = (
@@ -107,7 +160,7 @@
 		E16077451B083972004C4DEA /* Heyzap */ = {
 			isa = PBXGroup;
 			children = (
-				E1614C6B1B086D5800F75F22 /* Frameworks */,
+				E13D5BC81B0BD47600FE8E9A /* Frameworks */,
 				E16077481B083972004C4DEA /* AppDelegate.swift */,
 				E160774A1B083972004C4DEA /* ViewController.swift */,
 				E160774C1B083972004C4DEA /* Main.storyboard */,
@@ -142,59 +195,6 @@
 				E160775D1B083972004C4DEA /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E1614C6B1B086D5800F75F22 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E1E49AEC1B0B0B21000F4699 /* applovin-ios-sdk-2.5.4 */,
-				E1E49AEA1B0B0AF9000F4699 /* GoogleMobileAds.framework */,
-				E1614C6C1B086D8E00F75F22 /* HeyzapAds.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E1E49AEC1B0B0B21000F4699 /* applovin-ios-sdk-2.5.4 */ = {
-			isa = PBXGroup;
-			children = (
-				E1E49B011B0B0BDA000F4699 /* MediationExtras */,
-				E1E49AED1B0B0B21000F4699 /* headers */,
-				E1E49AFF1B0B0B21000F4699 /* libAppLovinSdk.a */,
-			);
-			path = "applovin-ios-sdk-2.5.4";
-			sourceTree = "<group>";
-		};
-		E1E49AED1B0B0B21000F4699 /* headers */ = {
-			isa = PBXGroup;
-			children = (
-				E1E49AEE1B0B0B21000F4699 /* ALAd.h */,
-				E1E49AEF1B0B0B21000F4699 /* ALAdDisplayDelegate.h */,
-				E1E49AF01B0B0B21000F4699 /* ALAdLoadDelegate.h */,
-				E1E49AF11B0B0B21000F4699 /* ALAdRewardDelegate.h */,
-				E1E49AF21B0B0B21000F4699 /* ALAdService.h */,
-				E1E49AF31B0B0B21000F4699 /* ALAdSize.h */,
-				E1E49AF41B0B0B21000F4699 /* ALAdType.h */,
-				E1E49AF51B0B0B21000F4699 /* ALAdUpdateDelegate.h */,
-				E1E49AF61B0B0B21000F4699 /* ALAdVideoPlaybackDelegate.h */,
-				E1E49AF71B0B0B21000F4699 /* ALAdView.h */,
-				E1E49AF81B0B0B21000F4699 /* ALErrorCodes.h */,
-				E1E49AF91B0B0B21000F4699 /* ALIncentivizedInterstitialAd.h */,
-				E1E49AFA1B0B0B21000F4699 /* ALInterstitialAd.h */,
-				E1E49AFB1B0B0B21000F4699 /* ALSdk.h */,
-				E1E49AFC1B0B0B21000F4699 /* ALSdkSettings.h */,
-				E1E49AFD1B0B0B21000F4699 /* ALSwiftHeaders.h */,
-				E1E49AFE1B0B0B21000F4699 /* ALTargetingData.h */,
-			);
-			path = headers;
-			sourceTree = "<group>";
-		};
-		E1E49B011B0B0BDA000F4699 /* MediationExtras */ = {
-			isa = PBXGroup;
-			children = (
-				E1E49B021B0B0BDA000F4699 /* HZAdMobBannerSupport.h */,
-				E1E49B031B0B0BDA000F4699 /* HZAdMobBannerSupport.m */,
-			);
-			path = MediationExtras;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,7 +299,7 @@
 			files = (
 				E160774B1B083972004C4DEA /* ViewController.swift in Sources */,
 				E16077491B083972004C4DEA /* AppDelegate.swift in Sources */,
-				E1E49B041B0B0BDA000F4699 /* HZAdMobBannerSupport.m in Sources */,
+				E13D5BE31B0BD49C00FE8E9A /* HZAdMobBannerSupport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,12 +430,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Heyzap",
+					"$(PROJECT_DIR)/Heyzap/Frameworks",
 				);
 				INFOPLIST_FILE = Heyzap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Heyzap/applovin-ios-sdk-2.5.4",
+					"$(PROJECT_DIR)/Heyzap/Frameworks/applovin-ios-sdk-2.5.4",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -452,12 +454,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Heyzap",
+					"$(PROJECT_DIR)/Heyzap/Frameworks",
 				);
 				INFOPLIST_FILE = Heyzap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Heyzap/applovin-ios-sdk-2.5.4",
+					"$(PROJECT_DIR)/Heyzap/Frameworks/applovin-ios-sdk-2.5.4",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
