@@ -1,7 +1,7 @@
 SWIFT Exercises
 ===
 
-Like strumming a guitar or painting on Adobe Illustrator, I always learn more through exercises. This collection is organized by theme and aims to explore how to to port Objective-C solutions for SWIFT. 
+Like strumming a guitar or painting on Adobe Illustrator, I always learn more through exercises. This collection is organized by theme and aims to explore how to to port Objective-C solutions for SWIFT. As a mobile app producer, I find that any app I build requires me to think about: money, measurement, product design + performance, and marketing. I've opted to organize my exercices using this lose structure. 
 
 ###Advertising
 Although there are dozens of ways to make money ([Jude Gomila's list](http://blog.judegomila.com/post/49038646693/101-business-models), [Crowdsourced List](https://hackpad.com/Web-and-Mobile-Revenue-Models-Ch2paBpUyIU)), advertising –or underwriting for you not-for-profit friends– is still a sucessful model ([Flappy Success](http://www.businessinsider.com/flappy-bird-is-doing-50000-in-revenue-per-day-2014-2), [Quora Ad mathematics](http://www.quora.com/How-is-it-even-possible-for-Flappy-Bird-to-be-making-50K-day))
