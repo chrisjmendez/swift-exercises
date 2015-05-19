@@ -3,7 +3,7 @@ SWIFT Exercises
 
 Like strumming a guitar or painting on Adobe Illustrator, I always learn more through exercises. This collection is organized by theme and aims to explore how to to port Objective-C solutions for SWIFT. As a mobile app producer, I find that any app I build requires me to think about: users, money, marketing, measurement, product design + performance, and customer support. I've opted to organize my exercices using this lose structure. 
 
-###Users registration and authentication
+###User registration and authentication
 As a mobile producer, if you want provide your users with a customizable, personalized experience, you'll need a Back-end as a Service of soem sort)
 - Parse: Coming Soon
 - Firebase: Coming Soon
