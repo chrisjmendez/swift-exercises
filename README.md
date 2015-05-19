@@ -1,7 +1,7 @@
 SWIFT Exercises
 ===
 
-Like learning how to play guitar or design in Photoshop, I always do better learning through exercises. This collection is organized by topic and aims to explain how to solve Objective C problems in SWIFT. 
+Like strumming on a guitar or painting on Adobe Illustrator, I always do better learning through exercises. This collection is organized by theme and aims to explain how to to port Objective-C solutions for SWIFT. 
 
 ###Advertising
 Although there are dozens of ways to make money ([Jude Gomila's list](http://blog.judegomila.com/post/49038646693/101-business-models), [Crowdsourced List](https://hackpad.com/Web-and-Mobile-Revenue-Models-Ch2paBpUyIU)), advertising –or underwriting for you not-for-profit friends– is still a sucessful model ([Flappy Success](http://www.businessinsider.com/flappy-bird-is-doing-50000-in-revenue-per-day-2014-2), [Quora Ad mathematics](http://www.quora.com/How-is-it-even-possible-for-Flappy-Bird-to-be-making-50K-day))
