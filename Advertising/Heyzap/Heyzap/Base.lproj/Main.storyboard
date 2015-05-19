@@ -15,8 +15,38 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGp-R3-Mhz">
+                                <rect key="frame" x="195" y="263" width="211" height="126"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="211" id="y8L-MS-Yvt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next AD will be appearing in:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAi-hq-9yJ">
+                                <rect key="frame" x="189" y="200" width="222" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="gWX-Oq-rN4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="aGp-R3-Mhz" secondAttribute="bottom" constant="211" id="NfJ-mu-hBI"/>
+                            <constraint firstItem="aGp-R3-Mhz" firstAttribute="centerX" secondItem="aAi-hq-9yJ" secondAttribute="centerX" id="aCd-DB-usM"/>
+                            <constraint firstItem="aGp-R3-Mhz" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="h4e-bv-wap"/>
+                            <constraint firstItem="aGp-R3-Mhz" firstAttribute="top" secondItem="aAi-hq-9yJ" secondAttribute="bottom" constant="42" id="rov-9E-pKc"/>
+                            <constraint firstItem="aAi-hq-9yJ" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="180" id="z4d-mn-T3K"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="countdownTxt" destination="aGp-R3-Mhz" id="4O7-OZ-q2f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
