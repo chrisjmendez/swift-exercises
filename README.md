@@ -5,12 +5,12 @@ Like strumming on a guitar or painting on Adobe Illustrator, I always do better 
 
 ###Advertising
 Although there are dozens of ways to make money ([Jude Gomila's list](http://blog.judegomila.com/post/49038646693/101-business-models), [Crowdsourced List](https://hackpad.com/Web-and-Mobile-Revenue-Models-Ch2paBpUyIU)), advertising –or underwriting for you not-for-profit friends– is still a sucessful model ([Flappy Success](http://www.businessinsider.com/flappy-bird-is-doing-50000-in-revenue-per-day-2014-2), [Quora Ad mathematics](http://www.quora.com/How-is-it-even-possible-for-Flappy-Bird-to-be-making-50K-day))
-- Heyzap: Heyzap is great because it allows me to use Admob, Applovin, Facebook Ad Network and iAds through a single SDK.
+- [Heyzap](https://github.com/chrisjmendez/swift-exercises/tree/master/Advertising/Heyzap): Heyzap is great because it allows me to use Admob, Applovin, Facebook Ad Network and iAds through a single SDK.
 - AdMob: Coming Soon
 
 ###Analytics
 Measuring your app is any developer's first key step towards Management.
-- Flurry: Yahoo's Flurry analytics is very good at logging events. 
+- [Flurry](https://github.com/chrisjmendez/swift-exercises/tree/master/Analytics/Flurry): Yahoo's Flurry analytics is very good at logging events. 
 - Google Analytics: Coming Soon. 
 
 ###User registration and authentication
@@ -20,20 +20,20 @@ As a mobile producer, if you want provide your users with a customizable, person
 
 ###Basic
 As a new student of SWIFT, I found these simple examples were successful in helping me quickly learn XCode and SWIFT. 
-- HTTPRequests: This is a cleaner, more organized approach to GET, POST, and Download requests.
-- ActionSheet: A simple ActionSheet example.
-- AlertView: Basic AlertView example
-- Countdown: Basic 30 second countdown example.
-- POSTRequest: Plan, vanilla POST requests.
+- [HTTPRequests](https://github.com/chrisjmendez/swift-exercises/tree/master/Basic/HTTPRequests): This is a cleaner, more organized approach to GET, POST, and Download requests.
+- [ActionSheet](https://github.com/chrisjmendez/swift-exercises/tree/master/Basic/ActionSheet): A simple ActionSheet example.
+- [AlertView](https://github.com/chrisjmendez/swift-exercises/tree/master/Basic/AlertView): Basic AlertView example
+- [Countdown](https://github.com/chrisjmendez/swift-exercises/tree/master/Basic/Countdown): Basic 30 second countdown example.
+- [POSTRequest](https://github.com/chrisjmendez/swift-exercises/tree/master/Basic/POSTRequest): Plan, vanilla POST requests.
 - ProteinTracker: Example of a calculator
 
 ###Concurrency
 Any mobile producer will tell you that performance is a big deal when it comes to creating a successful user experience. Concurrency is a big topic so I gave it its own /folder.
-- Simple Dispatch Queues
+- [Simple Dispatch Queues](https://github.com/chrisjmendez/swift-exercises/tree/master/Concurrency/Dispatch%20Queues)
  - Advantages:
  - Disadvantages 
 
-- Operational Queues
+- [Operational Queues](https://github.com/chrisjmendez/swift-exercises/tree/master/Concurrency/Operational%20Queues)
  - Advantages:
  - Disadvantages 
 - Non-concurrent operations
@@ -43,15 +43,15 @@ Any mobile producer will tell you that performance is a big deal when it comes t
 
 ###GUI
 User experience is the holy grail for digital progress.  The only way we, as a humanity, will move beyond the Windoew's era is to invest all the computational power (new devices are promising) back into user interface and design. 
-- UIX: Throttle-like GUI.
+- [UIX](https://github.com/chrisjmendez/swift-exercises/tree/master/GUI/UIX): Throttle-like GUI.
 
 ###Music
 My first music app was developed in 2010 so it's safe to say I'm a music tech producer. The collection of exercices here are simply aimed at getting me to script-bridge my brain to SWIFT.
-- AudioPlayer: Vanilla MP3 player.
-- iTunesQuery: Search for something through iTunes API and package the results.
+- [AudioPlayer](https://github.com/chrisjmendez/swift-exercises/tree/master/Music/AudioPlayer): Vanilla MP3 player.
+- [iTunesQuery](https://github.com/chrisjmendez/swift-exercises/tree/master/Music/iTunesQuery): Search for something through iTunes API and package the results.
 
 ###Social
 What makes the Internet better than print or broadcast is that there's a two-way interaction. OK, fine, reality-tv sort of captured the essence of "average people entertaining other average people" but Social Media is a better extension. Some call it peer-to-peer, others call it "platform" but all these exercices attempt to do is help devs learn how to authenticate their apps using oAuth2. 
-- Facebook Integration: Coming soon
+- [Facebook Integration}(https://github.com/chrisjmendez/swift-exercises/tree/master/Social/Facebook): Coming soon
 - Twitter Integration: Coming soon
 - 
