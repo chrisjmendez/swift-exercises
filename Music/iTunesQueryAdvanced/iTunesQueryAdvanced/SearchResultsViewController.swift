@@ -7,64 +7,79 @@
 //
 
 /** ** ** ** ** ** ** ** ** **
-Inspired by: http://technotif.com/connect-your-apps-to-itunes-search-api/
-http://www.codingexplorer.com/getting-started-uitableview-swift/
+Inspired by: 
+* http://technotif.com/connect-your-apps-to-itunes-search-api/
+* http://www.codingexplorer.com/getting-started-uitableview-swift/
+*
+* Notes:
+* In iOS we always want to use dequeueReusableCellWithIdentifier 
+*   in order to get a cell out of memory if one is available, rather 
+*   than creating a new one every time a cell is rendered.
+* 
+*
 ** ** ** ** ** ** ** ** ** ** **/
 
 import UIKit
 
 class SearchResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    var tableData = []
     let api = APIController()
+    let kCellIdentifier: String = "SearchResultCell"
+    @IBOutlet weak var appsTableView: UITableView!
     
-    var data: NSMutableData = NSMutableData()
-    var tableData:NSArray = NSArray()
-    
-    @IBOutlet var appsTableView : UITableView?
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Make an iTunes Query
-        api.searchItunesFor("Angry Birds")
-        //Set the delegate of the API controller
         api.delegate = self
-
-        appsTableView?.delegate = self
-        appsTableView?.dataSource = self
-        
+        api.searchItunesFor("stereolab", searchCategory: "music")
     }
-    /** ** ** ** ** ** ** ** ** ** ** **
-    Receive the iTunes API Response
-    ** ** ** ** ** ** ** ** ** ** ** **/
-    //a cell function for creation and modification of cells for each row and a count function whose purpose is to count the number of rows
-    func tableView(tView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.tableData.count
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
-    func tableView(tView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell for Testing")
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tableData.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as! UITableViewCell
         
-        var rData: NSDictionary = self.tableData[indexPath.row] as! NSDictionary
-        cell.textLabel!.text = rData["trackName"] as? String
-        
-        // Grabbing the artworkUrl60 key for getting image URL for the thumbnail of the app
-        var uString: NSString = rData["artworkUrl60"] as! NSString
-        var iURL: NSURL = NSURL(string: uString as String)!
-        
-        // Download representation of the image as NSData at the URL
-        var iData: NSData = NSData(contentsOfURL: iURL)!
-        cell.imageView!.image = UIImage(data: iData)
-        
-        // obtain the formatted price string to be displayed on the subtitle
-        var obj:Double = rData["price"]! as! Double
-        
-        if !isnan(obj) {
-            var fPrice:String = "$ \(obj.toStringWithDecimalPlaces(2))"
-            cell.detailTextLabel!.text = fPrice as String
+        if let rowData: NSDictionary = self.tableData[indexPath.row] as? NSDictionary,
+            // Grab the artworkUrl60 key to get an image URL for the app's thumbnail
+            urlString = rowData["artworkUrl60"] as? String,
+            imgURL = NSURL(string: urlString),
+            // Get the formatted price string for display in the subtitle
+            formattedPrice = rowData["trackPrice"] as? Double,
+            // Download an NSData representation of the image at the URL
+            imgData = NSData(contentsOfURL: imgURL),
+            // Get the track name
+            trackName = rowData["trackName"] as? String {
+                // Get the formatted price string for display in the subtitle
+                cell.detailTextLabel?.text = formattedPrice.toStringWithDecimalPlaces(2)
+                // Update the imageView cell to use the downloaded image data
+                cell.imageView?.image = UIImage(data: imgData)
+                // Update the textLabel text to use the trackName from the API
+                cell.textLabel?.text = trackName
         }
-        
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        // Get the row data for the selected row
+        if let rowData = self.tableData[indexPath.row] as? NSDictionary,
+            // Get the name of the track for this row
+            name = rowData["trackName"] as? String,
+            // Get the price of the track on this row
+            formattedPrice = rowData["trackPrice"] as? Double {
+                println("formattedPrice:", formattedPrice)
+                let alert = UIAlertController(title: name, message: formattedPrice.toStringWithDecimalPlaces(2), preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
 }
 
@@ -77,38 +92,8 @@ extension SearchResultsViewController: APIControllerProtocol{
     }
 }
 
-extension SearchResultsViewController: NSURLConnectionDelegate, NSURLConnectionDataDelegate{
-    /** ** ** ** ** ** ** ** ** ** ** **
-    Receive the iTunes API Response
-    ** ** ** ** ** ** ** ** ** ** ** **/
-    //NSURLconnection receives the response, and then it will call the receivedResponse method.
-    func connection(connection: NSURLConnection, didReceiveResponse response: NSURLResponse) {
-        // clear out the data object if a new request was received.
-        self.data = NSMutableData()
-    }
-    
-    //Once the connection is established, data will be received through the method receivedData().
-    func connection(connection: NSURLConnection, didReceiveData data: NSData) {
-        // add the received data to the data object
-        self.data.appendData(data)
-    }
-    
-    func connectionDidFinishLoading(connection: NSURLConnection) {
-        // self.d should hold the resulting info, request is complete
-        // received data is converted into an object through JSON deserialization
-        var err: NSError
-        
-        var jResult: NSDictionary = NSJSONSerialization.JSONObjectWithData(self.data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary
-        
-        if jResult.count > 0 && jResult["results"]!.count > 0 {
-            self.tableData = (jResult["results"] as! NSArray)
-            self.appsTableView!.reloadData()
-        }
-    }
-}
-
 extension Double {
     func toStringWithDecimalPlaces(numberOfDecimalPlaces:Int) -> String {
-        return String(format:"%."+numberOfDecimalPlaces.description+"f", self)
+        return String(format:"$%."+numberOfDecimalPlaces.description+"f", self)
     }
 }

@@ -79,13 +79,13 @@
 		E1B2502B1B0D5E3200CB1479 /* iTunesQueryAdvanced */ = {
 			isa = PBXGroup;
 			children = (
+				E19D42AE1B0D9D6E009B7C41 /* APIController.swift */,
 				E1B2502E1B0D5E3200CB1479 /* AppDelegate.swift */,
 				E1B250301B0D5E3200CB1479 /* SearchResultsViewController.swift */,
 				E1B250321B0D5E3200CB1479 /* Main.storyboard */,
 				E1B250351B0D5E3200CB1479 /* Images.xcassets */,
 				E1B250371B0D5E3200CB1479 /* LaunchScreen.xib */,
 				E1B2502C1B0D5E3200CB1479 /* Supporting Files */,
-				E19D42AE1B0D9D6E009B7C41 /* APIController.swift */,
 			);
 			path = iTunesQueryAdvanced;
 			sourceTree = "<group>";

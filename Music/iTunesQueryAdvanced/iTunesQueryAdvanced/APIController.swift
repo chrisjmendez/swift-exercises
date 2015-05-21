@@ -16,17 +16,17 @@ class APIController{
     
     var delegate: APIControllerProtocol?
     
-    func searchItunesFor(searchTerm: String) {
+    func searchItunesFor(searchTerm: String, searchCategory: String) {
         // The iTunes API wants multiple terms separated by + symbols, so replace spaces with + signs
         let itunesSearchTerm = searchTerm.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
         
         // Now escape anything else that isn't URL-friendly
         if let escapedSearchTerm = itunesSearchTerm.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding) {
-            let urlPath = "http://itunes.apple.com/search?term=\(escapedSearchTerm)&media=software"
+            let urlPath = "http://itunes.apple.com/search?term=\(escapedSearchTerm)&media=\(searchCategory)"
             let url = NSURL(string: urlPath)
             let session = NSURLSession.sharedSession()
             let task = session.dataTaskWithURL(url!, completionHandler: {data, response, error -> Void in
-                println("Task completed")
+                println("\(escapedSearchTerm) query complete.")
                 if(error != nil) {
                     // If there is an error in the web request, print it to the console
                     println(error.localizedDescription)
