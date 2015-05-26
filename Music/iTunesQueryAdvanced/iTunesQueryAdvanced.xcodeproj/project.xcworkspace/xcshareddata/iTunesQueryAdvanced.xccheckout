@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>FBDFA74B-4148-4335-98E0-81C4C55671C9</string>
 	<key>IDESourceControlProjectName</key>
-	<string>iTunesQueryAdvanced</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>006B37BF97C3D58A257D513F9D95439435D5FA8F</key>
 		<string>https://github.com/chrisjmendez/swift-exercises.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Music/iTunesQueryAdvanced/iTunesQueryAdvanced.xcodeproj</string>
+	<string>Music/iTunesQueryAdvanced/iTunesQueryAdvanced.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>006B37BF97C3D58A257D513F9D95439435D5FA8F</key>
