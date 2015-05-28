@@ -4,6 +4,8 @@
 <dict>
 	<key>apiKey</key>
 	<string>2WZ22NRSX8W52VKZBX9G</string>
+	<key>myApiKey</key>
+	<string></string>
 	<key>adSpace</key>
 	<string>InStream</string>
 </dict>

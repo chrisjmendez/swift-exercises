@@ -61,6 +61,8 @@ class ViewController: UIViewController, FlurryAdBannerDelegate, FlurryAdIntersti
         flurryBannerAdSpaces = NSArray(contentsOfFile: bannerAdPlist!)
         //C. Pick a random number
         randomIdx = Int.random(0...(flurryBannerAdSpaces!.count-1))
+        //C.1. Look at BannderAdSpace
+        randomIdx = 2
         //D. Pick a random ad from within B.
         bannerAdSpaceName = flurryBannerAdSpaces?.objectAtIndex(randomIdx!) as? String
       
@@ -70,8 +72,8 @@ class ViewController: UIViewController, FlurryAdBannerDelegate, FlurryAdIntersti
         flurryInterstitialAdSpaces = NSArray(contentsOfFile: interstitialAdPlist!)
         //C. Randomize
         randomIdx = Int.random(0...(flurryInterstitialAdSpaces!.count-1))
-        //C.1. Overwrite it for testing purposes. Refer to: InterstitialAdSpaceList.plist
-        randomIdx = 1
+        //C.1. Look at InterstitialAdSpaceList.plist
+        randomIdx = 7
         //D. Pick an ad
         interstitialAdSpaceName = flurryInterstitialAdSpaces?.objectAtIndex(randomIdx!) as? String
         //E. Fetch the ad and cache it
