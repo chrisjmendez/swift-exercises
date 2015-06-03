@@ -16,6 +16,7 @@ https://dev.flurry.com/appSpotSignup.do
 Once you're done with that, then you can offer an Interstitial AD
 */
 
+import Foundation
 import UIKit
 import SystemConfiguration
 
@@ -30,6 +31,9 @@ class ViewController: UIViewController, FlurryAdBannerDelegate, FlurryAdIntersti
     var flurryInterstitialAdSpaces:NSArray?
     var interstitialAdSpaceName:String?
     var adInterstitial:FlurryAdInterstitial?
+    
+    //        let plistFile:String = NSBundle.mainBundle().pathForResource("StreamAdSpaceList", ofType: "plist")!
+
     
     var adTargeting:FlurryAdTargeting?
 
@@ -62,7 +66,6 @@ class ViewController: UIViewController, FlurryAdBannerDelegate, FlurryAdIntersti
         //C. Pick a random number
         randomIdx = Int.random(0...(flurryBannerAdSpaces!.count-1))
         //C.1. Look at BannderAdSpace
-        randomIdx = 2
         //D. Pick a random ad from within B.
         bannerAdSpaceName = flurryBannerAdSpaces?.objectAtIndex(randomIdx!) as? String
       
@@ -73,11 +76,12 @@ class ViewController: UIViewController, FlurryAdBannerDelegate, FlurryAdIntersti
         //C. Randomize
         randomIdx = Int.random(0...(flurryInterstitialAdSpaces!.count-1))
         //C.1. Look at InterstitialAdSpaceList.plist
-        randomIdx = 7
+//        randomIdx = 7
         //D. Pick an ad
         interstitialAdSpaceName = flurryInterstitialAdSpaces?.objectAtIndex(randomIdx!) as? String
         //E. Fetch the ad and cache it
         fetchAndDisplayInterstitialAd(interstitialAdSpaceName!)
+        
     }
 
     func fetchandDisplayBannerAd(name:String){

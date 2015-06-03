@@ -14,7 +14,6 @@
 		E1EAB9B41B16579200B890AB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1EAB9B21B16579200B890AB /* LaunchScreen.xib */; };
 		E1EAB9C01B16579200B890AB /* FlurryAdBannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EAB9BF1B16579200B890AB /* FlurryAdBannerTests.swift */; };
 		E1EAB9D11B16580C00B890AB /* libFlurry_6.5.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1EAB9D01B16580C00B890AB /* libFlurry_6.5.0.a */; };
-		E1EAB9E51B16585B00B890AB /* libFlurryAds_6.5.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1EAB9DE1B16585B00B890AB /* libFlurryAds_6.5.0.a */; };
 		E1EAB9E71B1658B100B890AB /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1EAB9E61B1658B100B890AB /* AdSupport.framework */; };
 		E1EAB9E91B1658B900B890AB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E1EAB9E81B1658B900B890AB /* libz.dylib */; };
 		E1EAB9EB1B1658C100B890AB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1EAB9EA1B1658C100B890AB /* CoreGraphics.framework */; };
@@ -22,7 +21,6 @@
 		E1EAB9EF1B1658D900B890AB /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1EAB9EE1B1658D900B890AB /* MediaPlayer.framework */; };
 		E1EAB9F11B1658E000B890AB /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1EAB9F01B1658E000B890AB /* StoreKit.framework */; };
 		E1EAB9F31B1658E800B890AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1EAB9F21B1658E800B890AB /* UIKit.framework */; };
-		E1EBB0621B16EB3300A03E42 /* libFlurry_6.5.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1EBB04E1B16EB3300A03E42 /* libFlurry_6.5.0.a */; };
 		E1EBB0631B16EB3300A03E42 /* libFlurryAds_6.5.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1EBB05B1B16EB3300A03E42 /* libFlurryAds_6.5.0.a */; };
 		E1EBB0651B16F00F00A03E42 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1EBB0641B16F00F00A03E42 /* SystemConfiguration.framework */; };
 		E1EBB0671B17742200A03E42 /* BannerAdSpaceList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1EBB0661B17742200A03E42 /* BannerAdSpaceList.plist */; };
@@ -111,8 +109,6 @@
 				E1EAB9E91B1658B900B890AB /* libz.dylib in Frameworks */,
 				E1EBB0631B16EB3300A03E42 /* libFlurryAds_6.5.0.a in Frameworks */,
 				E1EAB9E71B1658B100B890AB /* AdSupport.framework in Frameworks */,
-				E1EBB0621B16EB3300A03E42 /* libFlurry_6.5.0.a in Frameworks */,
-				E1EAB9E51B16585B00B890AB /* libFlurryAds_6.5.0.a in Frameworks */,
 				E1EAB9D11B16580C00B890AB /* libFlurry_6.5.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
