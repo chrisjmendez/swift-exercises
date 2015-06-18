@@ -33,11 +33,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         case bird       = 3
         case score      = 4
         case gameOver   = 5
+        case lightbox   = 6
     }
     //Store all the objects within here so that you can start/stop things at once
     var movingGameObjects = SKNode()
     
     var bg = SKSpriteNode()
+    var lightbox = SKSpriteNode()
     
     //Objects
     var bird = SKSpriteNode()
@@ -45,6 +47,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var pipeSpeed:NSTimeInterval = 7
     var pipesSpawned:Int = 0
+    
     //Keep track if the game is over
     var gameOver:Bool = false
 
@@ -76,7 +79,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 y: CGRectGetMidY(self.frame)
             )
             bg.size.height = self.frame.height
-            bg.zPosition = objectsZPositions.background.rawValue
+            bg.zPosition = -1//objectsZPositions.background.rawValue
             //Run the background loop forver
             bg.runAction(loopBG)
             //Keep all the objects contained within a single location
@@ -142,7 +145,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             pipeSpeed -= 0.5
         }
         //B. Measure the distance of the bird and give it some margin
-        let margin:CGFloat = 3.0
+        let margin:CGFloat = 3.5
         let gap:CGFloat = bird.size.height * margin
         //C. Create a random Y for the pipe positions
         let randomY:CGFloat = CGFloat(arc4random_uniform(UInt32(self.frame.height * 0.7)))
@@ -229,12 +232,46 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(scoreLabelNode)
     }
     
+    func kill(){
+        //Remove bird
+        bird.removeActionForKey("birdFly")
+        self.removeActionForKey("flash")
+
+        //Spin bird out of control
+        var radians = CGFloat(M_PI) * bird.position.y * 0.01
+        var duration = NSTimeInterval(bird.position.y * 0.003)
+        var action  = SKAction.rotateByAngle(radians, duration: duration)
+        bird.runAction(action, completion: { () -> Void in
+            self.bird.speed = 0
+        })
+        
+        
+        //Flash the background Red
+        let showFire = SKAction.runBlock({ self.lightbox.color = SKColor.redColor() })
+        let showSky  = SKAction.runBlock({ self.lightbox.color = SKColor(red: 113.0/255.0, green: 197.0/255.0, blue: 207.0/255.0, alpha: 1.0) })
+        let wait     = SKAction.waitForDuration(0.05)
+        let sequence = SKAction.sequence([showFire, wait, showSky, wait])
+        
+        
+        lightbox.actionForKey("flash")
+        lightbox.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
+        lightbox.size.width = self.frame.width
+        lightbox.size.height = self.frame.height
+        lightbox.zPosition = objectsZPositions.lightbox.rawValue
+        lightbox.alpha = 0.6
+        lightbox.runAction(SKAction.repeatAction(sequence, count: 4), completion: { () -> Void in
+                self.lightbox.removeFromParent()
+        })
+        self.addChild(lightbox)
+    }
+    
     func stopGame(){
         //Stop the Game
         self.physicsWorld.contactDelegate = nil
+        
         movingGameObjects.speed = 0
+        
         gameOver = true
-        bird.removeActionForKey("birdFly")
     }
     
     func addPoint(){
@@ -242,38 +279,43 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreLabelNode.text = "\(score)"
     }
     
-    func announcement(status:String){
+    func announcements(status:String){
         switch(status){
-            case "gameOver":
+            case "quit":
                 //Accounce "Game Over"
-                gameOverLabelNode = SKLabelNode(fontNamed: "Copperplate-Bold")
-                gameOverLabelNode.fontSize = 50
+                gameOverLabelNode           = SKLabelNode(fontNamed: "Copperplate-Bold")
+                gameOverLabelNode.fontSize  = 50
                 gameOverLabelNode.fontColor = SKColor.whiteColor()
                 gameOverLabelNode.zPosition = objectsZPositions.gameOver.rawValue
-                gameOverLabelNode.text = "Game Over"
-                gameOverLabelNode.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
+                gameOverLabelNode.text      = "Game Over"
+                gameOverLabelNode.position  = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
                 self.addChild(gameOverLabelNode)
                 
-                let scaleUp = SKAction.scaleTo(1.5, duration: 2)
-                let scale = SKAction.scaleTo(1, duration: 0.25)
+                //Animate
+                let scaleUp       = SKAction.scaleTo(1.5, duration: 2)
+                let scale         = SKAction.scaleTo(1, duration: 0.25)
                 let scaleSequence = SKAction.sequence([scaleUp, scale])
                 
                 //Announce "Tap to Restart"
                 gameOverLabelNode.runAction(scaleSequence, completion: { () -> Void in
-                    self.gameOverStatusNode = SKLabelNode(fontNamed: "Copperplate")
-                    self.gameOverStatusNode.fontSize = 0
+                    self.gameOverStatusNode           = SKLabelNode(fontNamed: "Copperplate")
+                    self.gameOverStatusNode.fontSize  = 30
                     self.gameOverStatusNode.fontColor = SKColor.whiteColor()
                     self.gameOverStatusNode.zPosition = objectsZPositions.gameOver.rawValue
-                    self.gameOverStatusNode.text = "Tap to restart"
-                    self.gameOverStatusNode.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) - self.gameOverStatusNode.frame.height - 20)
+                    self.gameOverStatusNode.text      = "Tap to restart"
+                    self.gameOverStatusNode.position  = CGPoint(
+                        x: CGRectGetMidX(self.frame),
+                        y: CGRectGetMidY(self.frame) - self.gameOverStatusNode.frame.height - 20
+                    )
+                    
                     self.addChild(self.gameOverStatusNode)
-                    
-                    let scaleUp = SKAction.scaleTo(1.25, duration: 0.5)
+                    //Animate
+                    let scaleUp   = SKAction.scaleTo(1.25, duration: 0.5)
                     let scaleBack = SKAction.scaleTo(1, duration: 0.25)
-                    let wait = SKAction.waitForDuration(1.0)
-                    let sequence = SKAction.sequence([wait, scaleUp, scaleBack, wait])
+                    let wait      = SKAction.waitForDuration(1.0)
+                    let sequence  = SKAction.sequence([wait, scaleUp, scaleBack, wait])
+                    let repeat    = SKAction.repeatActionForever(sequence)
                     
-                    let repeat = SKAction.repeatActionForever(sequence)
                     self.gameOverStatusNode.runAction(repeat)
                 })
                 break
@@ -322,8 +364,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if contact.bodyA.categoryBitMask == openingGroup || contact.bodyB.categoryBitMask == openingGroup{
             addPoint()
         } else if contact.bodyA.categoryBitMask == enemyObjectsGroup || contact.bodyB.categoryBitMask == enemyObjectsGroup{
+            kill()
             stopGame()
-            announcement("gameOver")
+            announcements("quit")
         }
     }
     
