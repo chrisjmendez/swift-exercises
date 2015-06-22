@@ -14,11 +14,11 @@
 		<string>https://github.com/chrisjmendez/swift-exercises.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Basic/HTTPRequests/HTTPRequests.xcodeproj</string>
+	<string>Basic/REST/HTTPRequests/HTTPRequests.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>006B37BF97C3D58A257D513F9D95439435D5FA8F</key>
-		<string>../../../..</string>
+		<string>../../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/chrisjmendez/swift-exercises.git</string>
