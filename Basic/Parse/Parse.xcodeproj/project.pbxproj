@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E12E9FFC1B385FAC00B42144 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12E9FFB1B385FAC00B42144 /* Accounts.framework */; };
 		E17107EC1B3376AA003CD508 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17107EB1B3376AA003CD508 /* AppDelegate.swift */; };
 		E17107EE1B3376AA003CD508 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17107ED1B3376AA003CD508 /* ViewController.swift */; };
 		E17107F11B3376AA003CD508 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E17107EF1B3376AA003CD508 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E12E9FFB1B385FAC00B42144 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		E17107E61B3376AA003CD508 /* Parse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E17107EA1B3376AA003CD508 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E17107EB1B3376AA003CD508 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E12E9FFC1B385FAC00B42144 /* Accounts.framework in Frameworks */,
 				E1E6A7391B34751D00541F34 /* libsqlite3.dylib in Frameworks */,
 				E1E6A72C1B34729600541F34 /* AudioToolbox.framework in Frameworks */,
 				E1E6A7381B3474EE00541F34 /* Bolts.framework in Frameworks */,
@@ -114,6 +117,7 @@
 		E17107DD1B3376AA003CD508 = {
 			isa = PBXGroup;
 			children = (
+				E12E9FFB1B385FAC00B42144 /* Accounts.framework */,
 				E17107E81B3376AA003CD508 /* Parse */,
 				E17107FE1B3376AA003CD508 /* ParseTests */,
 				E17107E71B3376AA003CD508 /* Products */,

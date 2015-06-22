@@ -9,37 +9,36 @@
 import UIKit
 import Parse
 
-class AppUser{
-    var user: String!
-    var pass: String!
-    var email: String!
-    var phone: String?
-    
-    init(user:String, pass:String, email:String, phone:String){
-        self.user = user
-        self.pass = pass
-        self.email = email
-        self.phone = phone
-    }
-}
-
-
 class ViewController: UIViewController {
 
     @IBOutlet weak var messageTxt: UILabel!
-    
     @IBOutlet weak var usernameTxt: UITextField!
-    
     @IBOutlet weak var passwordTxt: UITextField!
-    
     @IBOutlet weak var emailTxt: UITextField!
-    
+    @IBOutlet weak var phoneTxt: UITextField!
     @IBOutlet weak var registerBtn: UIButton!
     
-    @IBOutlet weak var phoneTxt: UITextField!
-    
     @IBAction func onLoginVerify(sender: AnyObject) {
-        
+        validateLogin()
+    }
+
+    /* ** ** ** ** ** ** ** ** ** ** ** ** ** **
+    
+    * ** ** ** ** ** ** ** ** ** ** ** ** ** **/
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+}
+
+extension ViewController: PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
+
+    func validateLogin(){
         var user  = usernameTxt.text
         var pass  = passwordTxt.text
         var email = emailTxt.text
@@ -53,15 +52,13 @@ class ViewController: UIViewController {
             messageTxt.text = "Please Fill Out All Fields"
         }
     }
-
+    
     func userSignup( obj:AppUser ){
         
-        println("userSignup")
-        
         var user:PFUser = PFUser()
-        user.username = obj.user
-        user.password = obj.pass
-        user.email    = obj.email
+        user.username   = obj.user
+        user.password   = obj.pass
+        user.email      = obj.email
         
         user.signUpInBackgroundWithBlock({ (succeeded, error) -> Void in
             if !(error != nil) {
@@ -76,9 +73,7 @@ class ViewController: UIViewController {
         })
     }
     
-    
     func userLogin(){
-        
         PFUser.logInWithUsernameInBackground("user001", password: "password", block: { (user, error) -> Void in
             if user != nil {
                 dispatch_async(dispatch_get_main_queue()) {
@@ -100,19 +95,18 @@ class ViewController: UIViewController {
         object.addObject("reebok", forKey: "shoes")
         object.saveInBackground()
     }
+}
+
+class AppUser{
+    var user: String!
+    var pass: String!
+    var email: String!
+    var phone: String?
     
-    /* ** ** ** ** ** ** ** ** ** ** ** ** ** **
-    
-    * ** ** ** ** ** ** ** ** ** ** ** ** ** **/
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    init(user:String, pass:String, email:String, phone:String){
+        self.user = user
+        self.pass = pass
+        self.email = email
+        self.phone  = phone
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
