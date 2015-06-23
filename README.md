@@ -6,7 +6,7 @@ Like strumming a guitar or painting on Adobe Illustrator, I always learn more th
 
 ###User registration and authentication
 As a mobile producer, if you want provide your users with a customizable, personalized experience, you'll need a Back-end as a Service of soem sort)
-- [Parse](https://github.com/chrisjmendez/swift-exercises/tree/master/Basic/Parse): Basic Parse examples of Register, Log in, Log out
+- [Parse](https://github.com/chrisjmendez/swift-exercises/tree/master/Authentication/Parse): Basic Parse examples of Register, Log in, Log out
 - Firebase: Coming Soon
 
 

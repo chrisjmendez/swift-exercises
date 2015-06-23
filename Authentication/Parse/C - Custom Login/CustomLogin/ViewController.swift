@@ -12,26 +12,8 @@ import Parse
 class ViewController: UIViewController {
     
     @IBOutlet weak var statusLbl: UILabel!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-}
 
-extension ViewController: PFSignUpViewControllerDelegate {
-    override func viewDidAppear(animated: Bool) {
-        loadBoilerplate()
-    }
-    
-    func loadBoilerplate(){
-        
+    func initViewControllers(){
         let currentUser = PFUser.currentUser()
         
         if currentUser == nil {
@@ -40,7 +22,7 @@ extension ViewController: PFSignUpViewControllerDelegate {
             signupViewController.delegate = self
             
             //Create Log In View Controller
-            var loginViewController = PFLogInViewController()
+            var loginViewController = AppLogInViewController()
             loginViewController.delegate = self
             
             //The Sign Up Controller will be displayed in the Log in View Controller
@@ -52,7 +34,27 @@ extension ViewController: PFSignUpViewControllerDelegate {
             statusLbl.text = "Welcome \(PFUser.currentUser()?.username)"
         }
     }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
     
+    override func viewDidAppear(animated: Bool) {
+        initViewControllers()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+}
+
+/* ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+Sign Up
+* ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **/
+extension ViewController: PFSignUpViewControllerDelegate {
+
     func signUpViewController(signUpController: PFSignUpViewController, shouldBeginSignUp info: [NSObject : AnyObject]) -> Bool {
         var informationComplete = true
         
@@ -83,6 +85,9 @@ extension ViewController: PFSignUpViewControllerDelegate {
     }
 }
 
+/* ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+Log In
+* ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **/
 extension ViewController: PFLogInViewControllerDelegate{
     
     func logInViewController(logInController: PFLogInViewController, shouldBeginLogInWithUsername username: String, password: String) -> Bool {
