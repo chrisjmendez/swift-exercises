@@ -36,10 +36,14 @@
 		E1DA0F021B39A7EC008BBE5B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1DA0EF31B39A7EC008BBE5B /* UIKit.framework */; };
 		E1DA0F111B39B022008BBE5B /* AppLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DA0F101B39B022008BBE5B /* AppLogInViewController.swift */; };
 		E1DA0F1C1B39D14B008BBE5B /* logo_1500x1500.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E1DA0F161B39D14B008BBE5B /* logo_1500x1500.jpg */; };
-		E1DA0F1D1B39D14B008BBE5B /* btn_email.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DA0F181B39D14B008BBE5B /* btn_email.png */; };
 		E1DA0F1E1B39D14B008BBE5B /* btn_login.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DA0F191B39D14B008BBE5B /* btn_login.png */; };
-		E1DA0F1F1B39D14B008BBE5B /* btn_password.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DA0F1A1B39D14B008BBE5B /* btn_password.png */; };
 		E1DA0F201B39D14B008BBE5B /* btn_signup.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DA0F1B1B39D14B008BBE5B /* btn_signup.png */; };
+		E1DA0F221B39D9E5008BBE5B /* logo_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DA0F211B39D9E5008BBE5B /* logo_256x256.png */; };
+		E1DA0F241B39DB64008BBE5B /* logo_76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DA0F231B39DB64008BBE5B /* logo_76x76.png */; };
+		E1DA0F261B39DD7D008BBE5B /* btn_login_highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DA0F251B39DD7D008BBE5B /* btn_login_highlight.png */; };
+		E1DA0F281B39E294008BBE5B /* bg_password.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DA0F271B39E294008BBE5B /* bg_password.png */; };
+		E1DA0F2A1B39E297008BBE5B /* bg_email.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DA0F291B39E297008BBE5B /* bg_email.png */; };
+		E1DA0F2C1B39F160008BBE5B /* AppSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DA0F2B1B39F160008BBE5B /* AppSignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,10 +91,14 @@
 		E1DA0F031B39A93B008BBE5B /* CustomLogin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CustomLogin-Bridging-Header.h"; sourceTree = "<group>"; };
 		E1DA0F101B39B022008BBE5B /* AppLogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLogInViewController.swift; sourceTree = "<group>"; };
 		E1DA0F161B39D14B008BBE5B /* logo_1500x1500.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo_1500x1500.jpg; sourceTree = "<group>"; };
-		E1DA0F181B39D14B008BBE5B /* btn_email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_email.png; sourceTree = "<group>"; };
 		E1DA0F191B39D14B008BBE5B /* btn_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_login.png; sourceTree = "<group>"; };
-		E1DA0F1A1B39D14B008BBE5B /* btn_password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_password.png; sourceTree = "<group>"; };
 		E1DA0F1B1B39D14B008BBE5B /* btn_signup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_signup.png; sourceTree = "<group>"; };
+		E1DA0F211B39D9E5008BBE5B /* logo_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_256x256.png; sourceTree = "<group>"; };
+		E1DA0F231B39DB64008BBE5B /* logo_76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_76x76.png; sourceTree = "<group>"; };
+		E1DA0F251B39DD7D008BBE5B /* btn_login_highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_login_highlight.png; sourceTree = "<group>"; };
+		E1DA0F271B39E294008BBE5B /* bg_password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_password.png; sourceTree = "<group>"; };
+		E1DA0F291B39E297008BBE5B /* bg_email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_email.png; sourceTree = "<group>"; };
+		E1DA0F2B1B39F160008BBE5B /* AppSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				E1DA0F101B39B022008BBE5B /* AppLogInViewController.swift */,
+				E1DA0F2B1B39F160008BBE5B /* AppSignUpViewController.swift */,
 			);
 			path = auth;
 			sourceTree = "<group>";
@@ -249,6 +258,8 @@
 		E1DA0F151B39D14B008BBE5B /* brand */ = {
 			isa = PBXGroup;
 			children = (
+				E1DA0F231B39DB64008BBE5B /* logo_76x76.png */,
+				E1DA0F211B39D9E5008BBE5B /* logo_256x256.png */,
 				E1DA0F161B39D14B008BBE5B /* logo_1500x1500.jpg */,
 			);
 			path = brand;
@@ -257,9 +268,10 @@
 		E1DA0F171B39D14B008BBE5B /* gui */ = {
 			isa = PBXGroup;
 			children = (
-				E1DA0F181B39D14B008BBE5B /* btn_email.png */,
 				E1DA0F191B39D14B008BBE5B /* btn_login.png */,
-				E1DA0F1A1B39D14B008BBE5B /* btn_password.png */,
+				E1DA0F291B39E297008BBE5B /* bg_email.png */,
+				E1DA0F271B39E294008BBE5B /* bg_password.png */,
+				E1DA0F251B39DD7D008BBE5B /* btn_login_highlight.png */,
 				E1DA0F1B1B39D14B008BBE5B /* btn_signup.png */,
 			);
 			path = gui;
@@ -347,10 +359,13 @@
 			files = (
 				E1DA0F1E1B39D14B008BBE5B /* btn_login.png in Resources */,
 				E1DA0EBD1B39A6E4008BBE5B /* Main.storyboard in Resources */,
+				E1DA0F221B39D9E5008BBE5B /* logo_256x256.png in Resources */,
 				E1DA0F201B39D14B008BBE5B /* btn_signup.png in Resources */,
+				E1DA0F261B39DD7D008BBE5B /* btn_login_highlight.png in Resources */,
+				E1DA0F281B39E294008BBE5B /* bg_password.png in Resources */,
 				E1DA0F1C1B39D14B008BBE5B /* logo_1500x1500.jpg in Resources */,
-				E1DA0F1F1B39D14B008BBE5B /* btn_password.png in Resources */,
-				E1DA0F1D1B39D14B008BBE5B /* btn_email.png in Resources */,
+				E1DA0F241B39DB64008BBE5B /* logo_76x76.png in Resources */,
+				E1DA0F2A1B39E297008BBE5B /* bg_email.png in Resources */,
 				E1DA0EC21B39A6E4008BBE5B /* LaunchScreen.xib in Resources */,
 				E1DA0EBF1B39A6E4008BBE5B /* Images.xcassets in Resources */,
 			);
@@ -372,6 +387,7 @@
 			files = (
 				E1DA0F111B39B022008BBE5B /* AppLogInViewController.swift in Sources */,
 				E1DA0EBA1B39A6E4008BBE5B /* ViewController.swift in Sources */,
+				E1DA0F2C1B39F160008BBE5B /* AppSignUpViewController.swift in Sources */,
 				E1DA0EB81B39A6E4008BBE5B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,6 +519,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/CustomLogin/Frameworks/parse-library-1.7.4",
+					"$(PROJECT_DIR)/CustomLogin/Frameworks/FacebookSDK",
 				);
 				INFOPLIST_FILE = CustomLogin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -520,6 +537,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/CustomLogin/Frameworks/parse-library-1.7.4",
+					"$(PROJECT_DIR)/CustomLogin/Frameworks/FacebookSDK",
 				);
 				INFOPLIST_FILE = CustomLogin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

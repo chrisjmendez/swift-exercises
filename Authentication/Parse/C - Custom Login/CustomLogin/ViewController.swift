@@ -18,12 +18,15 @@ class ViewController: UIViewController {
         
         if currentUser == nil {
             //Create Sign Up View Controller
-            var signupViewController = PFSignUpViewController()
+            var signupViewController = AppSignUpViewController()
             signupViewController.delegate = self
+            signupViewController.fields = PFSignUpFields.UsernameAndPassword|PFSignUpFields.SignUpButton|PFSignUpFields.Email|PFSignUpFields.Additional|PFSignUpFields.DismissButton
             
             //Create Log In View Controller
-            var loginViewController = AppLogInViewController()
+            var loginViewController = PFLogInViewController()
             loginViewController.delegate = self
+            
+            loginViewController.fields = PFLogInFields.UsernameAndPassword|PFLogInFields.SignUpButton|PFLogInFields.PasswordForgotten|PFLogInFields.LogInButton|PFLogInFields.DismissButton|PFLogInFields.Facebook
             
             //The Sign Up Controller will be displayed in the Log in View Controller
             loginViewController.signUpController = signupViewController
@@ -54,21 +57,36 @@ class ViewController: UIViewController {
 Sign Up
 * ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **/
 extension ViewController: PFSignUpViewControllerDelegate {
-
+    
     func signUpViewController(signUpController: PFSignUpViewController, shouldBeginSignUp info: [NSObject : AnyObject]) -> Bool {
+        
         var informationComplete = true
         
-        println(info)
-        /*
-        for key in info {
-        var field:NSString = info[key]
-        if( !field || !field.length){
-        informationComplete = false
-        break
+        if let p1:String = info["password"] as? String{
+           println(p1)
         }
+        if let p2:String = info["additional"] as? String{
+            println(p2)
         }
-        */
+        
         return true
+        
+        for value in info{
+            var field: AnyObject? = value.1 as AnyObject
+            
+            if (field == nil || field?.length == 0) {
+                informationComplete = false
+                break
+            }
+        }
+        
+        if(!informationComplete){
+            print("Information is missing")
+        }else{
+//            info.updateValue("", forKey: "additional")
+        }
+        
+        return informationComplete
     }
     
     
