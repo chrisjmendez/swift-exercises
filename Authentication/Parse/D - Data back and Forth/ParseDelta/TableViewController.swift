@@ -69,4 +69,9 @@ class TableViewController: PFQueryTableViewController {
             nextScene.currentObj = (objects?[row] as! PFObject)
         }
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        //Reload the data every time it appeared.
+        tableView.reloadData()
+    }
 }

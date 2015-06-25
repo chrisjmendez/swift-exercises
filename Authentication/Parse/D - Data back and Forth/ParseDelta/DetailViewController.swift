@@ -14,10 +14,11 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var nameLocal: UITextField!
     @IBOutlet weak var capital: UITextField!
     @IBOutlet weak var currencyCode: UITextField!
-    
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+
     //The Parse Object sent from TableView
     var currentObj:PFObject?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,15 +36,18 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func save(sender: AnyObject) {
+        if let object = currentObj {
+            object["nameEnglish"]  = name.text
+            object["nameLocal"]    = nameLocal.text
+            object["capital"]      = capital.text
+            object["currencyCode"] = currencyCode.text
+            
+            object.saveEventually(nil)
+        }
+        
+        //Return to Table View
+        self.navigationController?.popViewControllerAnimated(true)
     }
-    */
-
 }
+
