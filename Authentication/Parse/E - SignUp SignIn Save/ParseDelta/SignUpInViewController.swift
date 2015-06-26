@@ -27,15 +27,22 @@ class SignUpInViewController: UIViewController {
     }
     
     @IBAction func logIn(sender: AnyObject) {
+        showActivityMonitor()
         
-    }
-    
-    func processSignUp(){
         var userEmail = self.userEmail.text
         var userPass  = self.userPassword.text
             userPass = userPass.lowercaseString
         
+        loginUser(userEmail, userPass: userPass)
+    }
+    
+    func processSignUp(){
         showActivityMonitor()
+        
+        var userEmail = self.userEmail.text
+        var userPass  = self.userPassword.text
+            userPass = userPass.lowercaseString
+        
 
         createUser(userEmail, userPass: userPass)
     }
@@ -48,6 +55,23 @@ class SignUpInViewController: UIViewController {
     func showActivityMonitor(){
         activityMonitor.hidden = false
         activityMonitor.startAnimating()
+    }
+
+    func loginUser(userEmail:String, userPass:String){
+        PFUser.logInWithUsernameInBackground(userEmail, password: userPass){
+            (user:PFUser?, error:NSError?) -> Void in
+            if user != nil{
+                dispatch_async(dispatch_get_main_queue()){
+                    self.performSegueWithIdentifier("signInToNavigation", sender: self)
+                }
+            }else{
+                self.hideActivityMonitor()
+                
+                if let message:AnyObject = error!.userInfo!["error"]{
+                    self.message.text = "\(message)"
+                }
+            }
+        }
     }
     
     func createUser(userEmail:String, userPass:String){

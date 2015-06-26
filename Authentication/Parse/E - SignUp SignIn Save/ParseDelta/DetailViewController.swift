@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class DetailViewController: UIViewController {
 
@@ -14,11 +15,10 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var nameLocal: UITextField!
     @IBOutlet weak var capital: UITextField!
     @IBOutlet weak var currencyCode: UITextField!
-    @IBOutlet weak var saveButton: UIBarButtonItem!
 
     //The Parse Object sent from TableView
     var currentObj:PFObject?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,15 +37,30 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func save(sender: AnyObject) {
-        if let object = currentObj {
-            object["nameEnglish"]  = name.text
-            object["nameLocal"]    = nameLocal.text
-            object["capital"]      = capital.text
-            object["currencyCode"] = currencyCode.text
-            
-            object.saveEventually(nil)
-        }
         
+        //If an object already exists, use it
+        if let updateObject = currentObj as PFObject?{
+            updateObject["nameEnglish"]  = name.text
+            updateObject["nameLocal"]    = nameLocal.text
+            updateObject["capital"]      = capital.text
+            updateObject["currencyCode"] = currencyCode.text
+            
+            updateObject.saveEventually()
+            
+        }
+        //Create a new Parse object
+        else{
+            var updateObject = PFObject(className: "Countries")
+
+            updateObject["nameEnglish"]  = name.text
+            updateObject["nameLocal"]    = nameLocal.text
+            updateObject["capital"]      = capital.text
+            updateObject["currencyCode"] = currencyCode.text
+            //only the current user can view and edit this record
+            updateObject.ACL = PFACL(user: PFUser.currentUser()!)
+            
+            updateObject.saveEventually()
+        }
         //Return to Table View
         self.navigationController?.popViewControllerAnimated(true)
     }

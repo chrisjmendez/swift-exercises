@@ -34,7 +34,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="hmt-bl-MGq" kind="show" id="qpt-Dz-X9n"/>
+                                    <segue destination="hmt-bl-MGq" kind="show" identifier="TableViewToDetailView" id="qpt-Dz-X9n"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -43,11 +43,22 @@
                             <outlet property="delegate" destination="o9a-si-XfB" id="tVf-eL-Vq0"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="0ud-19-e7Q"/>
+                    <navigationItem key="navigationItem" id="0ud-19-e7Q">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="e4L-IR-DTP">
+                            <connections>
+                                <action selector="signOut:" destination="o9a-si-XfB" id="k36-iA-ldF"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="P5b-NX-e7H">
+                            <connections>
+                                <action selector="addItem:" destination="o9a-si-XfB" id="X0Z-S5-NtK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tIU-8m-MoH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-316" y="-283"/>
+            <point key="canvasLocation" x="-272" y="-288"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="G4J-2f-E5X">

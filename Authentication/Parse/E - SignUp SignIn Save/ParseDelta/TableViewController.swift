@@ -32,10 +32,32 @@ class TableViewController: PFQueryTableViewController {
         self.paginationEnabled    = false
         self.objectsPerPage       = rowsPerPage
     }
+    
+    /** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+    Event Handlers
+    ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **/
+    @IBAction func signOut(sender: AnyObject) {
+        //Kill Parse
+        PFUser.logOut()
+        //Bring back SignInView
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("SignUpInViewController") as! UIViewController
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
    
+    //Load a blank form
+    @IBAction func addItem(sender: AnyObject) {
+        dispatch_async(dispatch_get_main_queue(), {
+            self.performSegueWithIdentifier("TableViewToDetailView", sender: self)
+        })
+    }
+    
+    /** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** 
+    Parse
+    ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **/
     //Query Parse
     override func queryForTable() -> PFQuery {
-        var query = PFQuery(className: className)
+        var query = PFQuery(className: "Countries")
             query.orderByAscending(colName.0)
             query.whereKey(condition.key, containsString: condition.value)
         
@@ -58,6 +80,9 @@ class TableViewController: PFQueryTableViewController {
         return cell
     }
     
+    /** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+    Views
+    ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **/
     //Find the next view, pass new data to that view
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         //Identify the next view controller
