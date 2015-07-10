@@ -63,3 +63,37 @@ What makes the Internet better than print or broadcast is that there's a two-way
 
 ###Internationalization
 - [Convert Local Calendar](https://github.com/chrisjmendez/swift-exercises/tree/master/Basic/Convert%20Local%20Calendar): Calculate calendar times for different countries.
+
+###TODO
+```
+OpenGL
+Sprite Kit
+Scene Kit
+Accelerate
+Game Kit
+Advertising
+Newsstand
+Printing
+Security
+Accessibility
+Telephone
+Pass Kit
+Health Kit
+External Accessories
+Handoff
+Core Data
+REST / HTTP Network
+
+Files
+Networking
+Threading 
+Undo
+Views
+View Controllers
+Sound
+Video
+Users libraries 
+Mail
+Maps
+Device sensors
+```
