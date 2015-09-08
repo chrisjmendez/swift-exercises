@@ -14,6 +14,7 @@
 		E13892AC1B55AD4C003FF1B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E13892AB1B55AD4C003FF1B1 /* Images.xcassets */; };
 		E13892AF1B55AD4C003FF1B1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E13892AD1B55AD4C003FF1B1 /* LaunchScreen.xib */; };
 		E13892BB1B55AD4C003FF1B1 /* DataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13892BA1B55AD4C003FF1B1 /* DataManagerTests.swift */; };
+		E13892C51B55ADB4003FF1B1 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13892C41B55ADB4003FF1B1 /* Manager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		E13892B41B55AD4C003FF1B1 /* DataManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E13892B91B55AD4C003FF1B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E13892BA1B55AD4C003FF1B1 /* DataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerTests.swift; sourceTree = "<group>"; };
+		E13892C41B55ADB4003FF1B1 /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				E13892AB1B55AD4C003FF1B1 /* Images.xcassets */,
 				E13892AD1B55AD4C003FF1B1 /* LaunchScreen.xib */,
 				E13892A01B55AD4C003FF1B1 /* Supporting Files */,
+				E13892C41B55ADB4003FF1B1 /* Manager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				E13892A71B55AD4C003FF1B1 /* DetailViewController.swift in Sources */,
 				E13892A51B55AD4C003FF1B1 /* MasterViewController.swift in Sources */,
 				E13892A31B55AD4C003FF1B1 /* AppDelegate.swift in Sources */,
+				E13892C51B55ADB4003FF1B1 /* Manager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
