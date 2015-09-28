@@ -105,7 +105,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GaM-Sn-lzq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1662" y="382"/>
+            <point key="canvasLocation" x="1661" y="382"/>
         </scene>
         <!--New Post-->
         <scene sceneID="dsd-9z-brh">
@@ -155,7 +155,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Vf-Gj-rDp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2150" y="360"/>
+            <point key="canvasLocation" x="2090" y="382"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="f9H-ho-Hox">
@@ -192,7 +192,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hek-D6-cTI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1255" y="394"/>
+            <point key="canvasLocation" x="1192" y="377"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
