@@ -16,14 +16,14 @@ public class Item{
     var title: String? = nil
     var url: NSURL?    = nil
     var text: String?  = nil
-    var score: Int32
-    
-    init(dictionary: [String: AnyObject]){
-        //Assign NSNumber to Int
-        self.identifier = Int(dictionary["id"] as! NSNumber)
-        self.score = 0
-        self.update(dictionary)
-    }
+var score: Int32
+
+init(dictionary: [String: AnyObject]){
+    //Assign NSNumber to Int
+    self.identifier = Int(dictionary["id"] as! NSNumber)
+    self.score = 0
+    self.update(dictionary)
+}
     
     public func update(dictionary: [String: AnyObject]){
 
