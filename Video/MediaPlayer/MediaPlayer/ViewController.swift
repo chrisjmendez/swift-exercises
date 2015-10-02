@@ -13,14 +13,14 @@ import AVKit
 
 class ViewController: UIViewController {
 
-    let videoFile = ["file": "videos/fire_848x480", "type": "mp4"]
+    let videoFile = ["path": "videos/fire_848x480", "type": "mp4"]
     var player:AVPlayer?
     
     func loadVideo() {
         //Since we're using concurrency, we'll be using 'self' a lot
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
             
-            let path = NSBundle.mainBundle().pathForResource( self.videoFile["file"], ofType: self.videoFile["type"] )!
+            let path = NSBundle.mainBundle().pathForResource( self.videoFile["path"], ofType: self.videoFile["type"] )!
             
             let playerURL = NSURL(fileURLWithPath: path)
             
