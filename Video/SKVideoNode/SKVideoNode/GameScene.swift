@@ -9,6 +9,7 @@
 import SpriteKit
 import AVFoundation
 import AVKit
+import Device
 
 class GameScene: SKScene {
     
@@ -24,7 +25,6 @@ class GameScene: SKScene {
             ),
             dispatch_get_main_queue(), closure)
     }
-    
     
     func loadVideo(FileToPlay:String)
     {
@@ -55,6 +55,7 @@ class GameScene: SKScene {
             let node = self.nodeAtPoint(location)
 
             print(node.name)
+            
             /*
             if (node.name == "videoSprite")
             {

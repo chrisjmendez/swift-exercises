@@ -11,6 +11,8 @@ import SpriteKit
 
 class GameViewController: UIViewController {
 
+    var textView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,6 +29,24 @@ class GameViewController: UIViewController {
             scene.scaleMode = .AspectFill
             
             skView.presentScene(scene)
+        }
+        
+        checkDevice()
+    }
+    
+    func message(){
+        textView = UITextView(frame: self.view.frame)
+        textView.font = UIFont(name: "Arial", size: 40)
+        textView.center = CGPointMake(CGRectGetMidX(self.view.frame), CGRectGetMidY(self.view.frame))
+        textView.textAlignment = NSTextAlignment.Center
+        textView.text = "Video will not appear while in Simulator mode. Please use an actual device"
+        self.view.addSubview(textView)
+    }
+    
+    func checkDevice(){
+        let deviceType = UIDevice.currentDevice().deviceType
+        if( String(deviceType) == "Simulator" ){
+            message()
         }
     }
 
