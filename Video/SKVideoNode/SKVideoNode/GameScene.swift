@@ -42,7 +42,7 @@ class GameScene: SKScene {
     
     override func didMoveToView(view: SKView) {
         loadVideo(videoFile["path"]!)
-        //videoSprite!.pause()
+        videoSprite!.pause()
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -56,7 +56,6 @@ class GameScene: SKScene {
 
             print(node.name)
             
-            /*
             if (node.name == "videoSprite")
             {
                 /// load another video ontop
@@ -68,7 +67,6 @@ class GameScene: SKScene {
                     self.videoSprite!.removeFromParent()// then remove
                 }
             }
-            */
         }
     }
    
