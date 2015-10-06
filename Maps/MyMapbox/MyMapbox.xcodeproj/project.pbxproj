@@ -1,0 +1,389 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B5CB161A0BC8B0A0E0A6F5AE /* Pods_MyMapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 157A6C7CB06C8760C9C1DAEF /* Pods_MyMapbox.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		E1272FCC1BC37F32000AE778 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1272FCB1BC37F32000AE778 /* AppDelegate.swift */; };
+		E1272FCE1BC37F32000AE778 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1272FCD1BC37F32000AE778 /* ViewController.swift */; };
+		E1272FD11BC37F32000AE778 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1272FCF1BC37F32000AE778 /* Main.storyboard */; };
+		E1272FD31BC37F32000AE778 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1272FD21BC37F32000AE778 /* Assets.xcassets */; };
+		E1272FD61BC37F32000AE778 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1272FD41BC37F32000AE778 /* LaunchScreen.storyboard */; };
+		E1272FDE1BC38044000AE778 /* libs in Resources */ = {isa = PBXBuildFile; fileRef = E1272FDD1BC38044000AE778 /* libs */; settings = {ASSET_TAGS = (); }; };
+		E15E47DF1BC3835E000974B1 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E15E47DE1BC3835E000974B1 /* Settings.bundle */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		157A6C7CB06C8760C9C1DAEF /* Pods_MyMapbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyMapbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		21D41D5A79B5467990530662 /* Pods-MyMapbox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMapbox.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyMapbox/Pods-MyMapbox.release.xcconfig"; sourceTree = "<group>"; };
+		E004B7D049556A895AF4CF38 /* Pods-MyMapbox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMapbox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyMapbox/Pods-MyMapbox.debug.xcconfig"; sourceTree = "<group>"; };
+		E1272FC81BC37F32000AE778 /* MyMapbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMapbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1272FCB1BC37F32000AE778 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E1272FCD1BC37F32000AE778 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E1272FD01BC37F32000AE778 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E1272FD21BC37F32000AE778 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E1272FD51BC37F32000AE778 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E1272FD71BC37F32000AE778 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1272FDD1BC38044000AE778 /* libs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = libs; sourceTree = "<group>"; };
+		E1272FDF1BC38131000AE778 /* MyMapbox-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyMapbox-Bridging-Header.h"; sourceTree = "<group>"; };
+		E15E47DE1BC3835E000974B1 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E1272FC51BC37F32000AE778 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5CB161A0BC8B0A0E0A6F5AE /* Pods_MyMapbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		665BD5C509E53EFE238BEEB7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				157A6C7CB06C8760C9C1DAEF /* Pods_MyMapbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E1272FBF1BC37F32000AE778 = {
+			isa = PBXGroup;
+			children = (
+				E1272FCA1BC37F32000AE778 /* MyMapbox */,
+				E1272FC91BC37F32000AE778 /* Products */,
+				EA54494EB7B7E9588A5E311E /* Pods */,
+				665BD5C509E53EFE238BEEB7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E1272FC91BC37F32000AE778 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E1272FC81BC37F32000AE778 /* MyMapbox.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E1272FCA1BC37F32000AE778 /* MyMapbox */ = {
+			isa = PBXGroup;
+			children = (
+				E15E47DE1BC3835E000974B1 /* Settings.bundle */,
+				E1272FDD1BC38044000AE778 /* libs */,
+				E1272FCB1BC37F32000AE778 /* AppDelegate.swift */,
+				E1272FCD1BC37F32000AE778 /* ViewController.swift */,
+				E1272FCF1BC37F32000AE778 /* Main.storyboard */,
+				E1272FD21BC37F32000AE778 /* Assets.xcassets */,
+				E1272FD41BC37F32000AE778 /* LaunchScreen.storyboard */,
+				E1272FD71BC37F32000AE778 /* Info.plist */,
+				E1272FDF1BC38131000AE778 /* MyMapbox-Bridging-Header.h */,
+			);
+			path = MyMapbox;
+			sourceTree = "<group>";
+		};
+		EA54494EB7B7E9588A5E311E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E004B7D049556A895AF4CF38 /* Pods-MyMapbox.debug.xcconfig */,
+				21D41D5A79B5467990530662 /* Pods-MyMapbox.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E1272FC71BC37F32000AE778 /* MyMapbox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1272FDA1BC37F32000AE778 /* Build configuration list for PBXNativeTarget "MyMapbox" */;
+			buildPhases = (
+				E280B9DD27C6071AC8FDB7A0 /* Check Pods Manifest.lock */,
+				E1272FC41BC37F32000AE778 /* Sources */,
+				E1272FC51BC37F32000AE778 /* Frameworks */,
+				E1272FC61BC37F32000AE778 /* Resources */,
+				9A8D443149DEDF34A6F10FBB /* Embed Pods Frameworks */,
+				60E762759999BC07A9EB49E6 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyMapbox;
+			productName = MyMapbox;
+			productReference = E1272FC81BC37F32000AE778 /* MyMapbox.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E1272FC01BC37F32000AE778 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Chris Mendez";
+				TargetAttributes = {
+					E1272FC71BC37F32000AE778 = {
+						CreatedOnToolsVersion = 7.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = E1272FC31BC37F32000AE778 /* Build configuration list for PBXProject "MyMapbox" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E1272FBF1BC37F32000AE778;
+			productRefGroup = E1272FC91BC37F32000AE778 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E1272FC71BC37F32000AE778 /* MyMapbox */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E1272FC61BC37F32000AE778 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1272FD61BC37F32000AE778 /* LaunchScreen.storyboard in Resources */,
+				E1272FD31BC37F32000AE778 /* Assets.xcassets in Resources */,
+				E15E47DF1BC3835E000974B1 /* Settings.bundle in Resources */,
+				E1272FDE1BC38044000AE778 /* libs in Resources */,
+				E1272FD11BC37F32000AE778 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		60E762759999BC07A9EB49E6 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyMapbox/Pods-MyMapbox-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A8D443149DEDF34A6F10FBB /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyMapbox/Pods-MyMapbox-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E280B9DD27C6071AC8FDB7A0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E1272FC41BC37F32000AE778 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1272FCE1BC37F32000AE778 /* ViewController.swift in Sources */,
+				E1272FCC1BC37F32000AE778 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E1272FCF1BC37F32000AE778 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1272FD01BC37F32000AE778 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E1272FD41BC37F32000AE778 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1272FD51BC37F32000AE778 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E1272FD81BC37F32000AE778 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E1272FD91BC37F32000AE778 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E1272FDB1BC37F32000AE778 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E004B7D049556A895AF4CF38 /* Pods-MyMapbox.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = MyMapbox/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chrisjmendez.MyMapbox;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyMapbox/MyMapbox-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E1272FDC1BC37F32000AE778 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21D41D5A79B5467990530662 /* Pods-MyMapbox.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = MyMapbox/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chrisjmendez.MyMapbox;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyMapbox/MyMapbox-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E1272FC31BC37F32000AE778 /* Build configuration list for PBXProject "MyMapbox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1272FD81BC37F32000AE778 /* Debug */,
+				E1272FD91BC37F32000AE778 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1272FDA1BC37F32000AE778 /* Build configuration list for PBXNativeTarget "MyMapbox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1272FDB1BC37F32000AE778 /* Debug */,
+				E1272FDC1BC37F32000AE778 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E1272FC01BC37F32000AE778 /* Project object */;
+}
