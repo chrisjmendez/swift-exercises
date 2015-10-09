@@ -69,11 +69,12 @@ class GameScene: SKScene {
         spriteNode.yScale = scaleFactor * spriteNode.size.height
         */
 
-        let backgroundSpeed:Double = 20
+        let backgroundSpeed:Double = 40
         //B. The action that will move the background from point A to B
         let moveBG     = SKAction.moveByX( -background.size.width, y: 0, duration: backgroundSpeed )
         //C. The action that will plop a new background instance at point A
         let replaceBG  = SKAction.moveByX( background.size.width, y: 0, duration: 0 )
+        
         //D. Assign the two actions to an array
         let actions    = [moveBG, replaceBG]
         //E. Create a sequence of the items within the array
