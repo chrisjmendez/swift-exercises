@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>ALInterstitialAd Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">AppLovin iOS SDK 3.1.5 </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">AppLovin</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/adDisplayDelegate">adDisplayDelegate</option>
+		
+		<option value="//api/name/adLoadDelegate">adLoadDelegate</option>
+		
+		<option value="//api/name/adVideoPlaybackDelegate">adVideoPlaybackDelegate</option>
+		
+		<option value="//api/name/frame">frame</option>
+		
+		<option value="//api/name/hidden">hidden</option>
+		
+		<option value="//api/name/readyForDisplay">readyForDisplay</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/isReadyForDisplay">+ isReadyForDisplay</option>
+		
+		<option value="//api/name/shared">+ shared</option>
+		
+		<option value="//api/name/show">+ show</option>
+		
+		<option value="//api/name/showOver:">+ showOver:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/dismiss">- dismiss</option>
+		
+		<option value="//api/name/initWithFrame:sdk:">- initWithFrame:sdk:</option>
+		
+		<option value="//api/name/initWithSdk:">- initWithSdk:</option>
+		
+		<option value="//api/name/show">- show</option>
+		
+		<option value="//api/name/showOver:">- showOver:</option>
+		
+		<option value="//api/name/showOver:andRender:">- showOver:andRender:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">ALInterstitialAd Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>ALInterstitialAd.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This class is used to display full-screen ads to the user.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						<a title="Ad Delegates" name="task_Ad Delegates"></a>
+						<h2 class="task-title">Ad Delegates</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/adLoadDelegate" title="adLoadDelegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/adLoadDelegate">&nbsp;&nbsp;adLoadDelegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>An object conforming to the <a href="../Protocols/ALAdLoadDelegate.html">ALAdLoadDelegate</a> protocol, which, if set, will be notified of ad load events.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (strong, atomic) id&lt;ALAdLoadDelegate&gt; __alnullable adLoadDelegate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>An object conforming to the <a href="../Protocols/ALAdLoadDelegate.html">ALAdLoadDelegate</a> protocol, which, if set, will be notified of ad load events.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALInterstitialAd.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/adDisplayDelegate" title="adDisplayDelegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/adDisplayDelegate">&nbsp;&nbsp;adDisplayDelegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>An object conforming to the <a href="../Protocols/ALAdDisplayDelegate.html">ALAdDisplayDelegate</a> protocol, which, if set, will be notified of ad show/hide events.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (strong, atomic) id&lt;ALAdDisplayDelegate&gt; __alnullable adDisplayDelegate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>An object conforming to the <a href="../Protocols/ALAdDisplayDelegate.html">ALAdDisplayDelegate</a> protocol, which, if set, will be notified of ad show/hide events.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALInterstitialAd.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/adVideoPlaybackDelegate" title="adVideoPlaybackDelegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/adVideoPlaybackDelegate">&nbsp;&nbsp;adVideoPlaybackDelegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>An object conforming to the <a href="../Protocols/ALAdVideoPlaybackDelegate.html">ALAdVideoPlaybackDelegate</a> protocol, which, if set, will be notified of video start/finish events.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (strong, atomic) id&lt;ALAdVideoPlaybackDelegate&gt; __alnullable adVideoPlaybackDelegate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>An object conforming to the <a href="../Protocols/ALAdVideoPlaybackDelegate.html">ALAdVideoPlaybackDelegate</a> protocol, which, if set, will be notified of video start/finish events.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALInterstitialAd.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Loading and Showing Ads, Class Methods" name="task_Loading and Showing Ads, Class Methods"></a>
+						<h2 class="task-title">Loading and Showing Ads, Class Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/show" title="show"></a>
+	<h3 class="method-title"><code><a href="#//api/name/show">+&nbsp;show</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Show an interstitial over the application&rsquo;s key window.
+This will load the next interstitial and display it.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (alnonnull ALInterstitialAd *)show</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Show an interstitial over the application&rsquo;s key window.
+This will load the next interstitial and display it.</p>
+
+<p>Note that this method is functionally equivalent to calling
+showOver: and passing [[UIApplication sharedApplication] keyWindow].</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALInterstitialAd.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/showOver:" title="showOver:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/showOver:">+&nbsp;showOver:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Show a new interstitial ad. This method will display an interstitial*
+over the given UIWindow.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (alnonnull ALInterstitialAd *)showOver:(alnonnull UIWindow *)<em>window</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>window</code></th>
+						<td><p>A window to <a href="#//api/name/show">show</a> the interstitial over</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Show a new interstitial ad. This method will display an interstitial*
+over the given UIWindow.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALInterstitialAd.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isReadyForDisplay" title="isReadyForDisplay"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isReadyForDisplay">+&nbsp;isReadyForDisplay</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Check if an ad is currently ready to display.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)isReadyForDisplay</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if a subsequent call to a <a href="#//api/name/show">show</a> method will result in an immediate display. NO if a call to a <a href="#//api/name/show">show</a> method will require network activity first.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Check if an ad is currently ready to display.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALInterstitialAd.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/shared" title="shared"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shared">+&nbsp;shared</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get a reference to the shared singleton instance.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (alnonnull ALInterstitialAd *)shared</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Get a reference to the shared singleton instance.</p>
+
+<p>This method calls <a href="../Classes/ALSdk.html#//api/name/shared">[ALSdk shared]</a> which requires you to have an SDK key defined in <code>Info.plist</code>.
+If you use <code>[<a href="../Classes/ALSdk.html">ALSdk</a> sharedWithKey: &hellip;]</code> then you will need to use the instance methods instead.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALInterstitialAd.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Loading and Showing Ads, Instance Methods" name="task_Loading and Showing Ads, Instance Methods"></a>
+						<h2 class="task-title">Loading and Showing Ads, Instance Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/show" title="show"></a>
+	<h3 class="method-title"><code><a href="#//api/name/show">&ndash;&nbsp;show</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Show an interstitial over the application&rsquo;s key window.
+This will load the next interstitial and display it.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)show</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Show an interstitial over the application&rsquo;s key window.
+This will load the next interstitial and display it.</p>
+
+<p>Note that this method is functionally equivalent to calling
+showOver: and passing [[UIApplication sharedApplication] keyWindow].</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALInterstitialAd.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/showOver:" title="showOver:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/showOver:">&ndash;&nbsp;showOver:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Show an interstitial over a given window.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)showOver:(alnonnull UIWindow *)<em>window</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>window</code></th>
+						<td><p>An instance of window to <a href="#//api/name/show">show</a> the interstitial over.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Show an interstitial over a given window.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALInterstitialAd.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/showOver:andRender:" title="showOver:andRender:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/showOver:andRender:">&ndash;&nbsp;showOver:andRender:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Show current interstitial over a given window and render a specified ad loaded by <a href="../Classes/ALAdService.html">ALAdService</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)showOver:(alnonnull UIWindow *)<em>window</em> andRender:(alnonnull ALAd *)<em>ad</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>window</code></th>
+						<td><p>An instance of window to <a href="#//api/name/show">show</a> the interstitial over.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>ad</code></th>
+						<td><p>The ad to render into this interstitial.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Show current interstitial over a given window and render a specified ad loaded by <a href="../Classes/ALAdService.html">ALAdService</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALInterstitialAd.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/readyForDisplay" title="readyForDisplay"></a>
+	<h3 class="method-title"><code><a href="#//api/name/readyForDisplay">&nbsp;&nbsp;readyForDisplay</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Check if an ad is currently ready to display.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, atomic, getter=isReadyForDisplay) BOOL readyForDisplay</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if a subsequent call to a <a href="#//api/name/show">show</a> method will result in an immediate display. NO if a call to a <a href="#//api/name/show">show</a> method will require network activity first.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Check if an ad is currently ready to display.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALInterstitialAd.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Dismissing Interstitials Expliticly" name="task_Dismissing Interstitials Expliticly"></a>
+						<h2 class="task-title">Dismissing Interstitials Expliticly</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/dismiss" title="dismiss"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dismiss">&ndash;&nbsp;dismiss</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Dismiss this interstitial.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)dismiss</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Dismiss this interstitial.</p>
+
+<p>In general, this is not recommended as it negatively impacts click through rate.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALInterstitialAd.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Initialization" name="task_Initialization"></a>
+						<h2 class="task-title">Initialization</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithSdk:" title="initWithSdk:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithSdk:">&ndash;&nbsp;initWithSdk:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Init this interstitial ad with a custom SDK instance.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (alnonnull instancetype)initWithSdk:(alnonnull ALSdk *)<em>anSdk</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>anSdk</code></th>
+						<td><p>Instance of AppLovin SDK to use.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Init this interstitial ad with a custom SDK instance.</p>
+
+<p>To simply display an interstitial, use [ALInterstitialAd showOver:window]</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALInterstitialAd.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithFrame:sdk:" title="initWithFrame:sdk:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithFrame:sdk:">&ndash;&nbsp;initWithFrame:sdk:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Init this interstitial ad with a custom SDK instance and <a href="#//api/name/frame">frame</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (alnonnull id)initWithFrame:(CGRect)<em>aFrame</em> sdk:(alnonnull ALSdk *)<em>anSdk</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>aFrame</code></th>
+						<td><p>Frame to use with the new interstitial.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>anSdk</code></th>
+						<td><p>Instance of AppLovin SDK to use.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Init this interstitial ad with a custom SDK instance and frame.</p>
+
+<p>To simply display an interstitial, use [ALInterstitialAd showOver:window].
+In general, setting a custom <a href="#//api/name/frame">frame</a> is not recommended, unless absolutely necessary.
+Interstitial ads are intended to be full-screen and may not look right if sized otherwise.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALInterstitialAd.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Advanced Configuration" name="task_Advanced Configuration"></a>
+						<h2 class="task-title">Advanced Configuration</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/frame" title="frame"></a>
+	<h3 class="method-title"><code><a href="#//api/name/frame">&nbsp;&nbsp;frame</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Frame to be passed through to the descendent UIView containing this interstitial.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (assign, nonatomic) CGRect frame</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Frame to be passed through to the descendent UIView containing this interstitial.</p>
+
+<p>Note that this has no effect on video ads, as they are presented in their own view controller.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALInterstitialAd.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hidden" title="hidden"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hidden">&nbsp;&nbsp;hidden</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Hidden setting to be passed through to the descendent UIView containing this interstitial.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (assign, nonatomic) BOOL hidden</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Hidden setting to be passed through to the descendent UIView containing this interstitial.</p>
+
+<p>Note that this has no effect on video ads, as they are presented in their own view controller.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ALInterstitialAd.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2015 AppLovin. All rights reserved. Updated: 2015-10-05</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

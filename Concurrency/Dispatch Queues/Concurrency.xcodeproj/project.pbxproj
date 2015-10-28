@@ -159,6 +159,7 @@
 		E18675681AD95D1B0090F828 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Skyground Media Inc.";
 				TargetAttributes = {
