@@ -16,8 +16,8 @@
 		0991F47DEC80BCBBD692D7E77474547F /* Pods-BasicBannerAd-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BasicBannerAd-umbrella.h"; sourceTree = "<group>"; };
 		27AC10D80B468A112291F6FF011D80A6 /* Pods-BasicBannerAd-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BasicBannerAd-acknowledgements.markdown"; sourceTree = "<group>"; };
 		400340BA9972197D9E71F11638A77535 /* Pods-BasicBannerAd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BasicBannerAd.debug.xcconfig"; sourceTree = "<group>"; };
+		4296E1927745FAB4C351CDF2563BA988 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "GoogleMobileAdsSdkiOS-7.5.2/GoogleMobileAds.framework"; sourceTree = "<group>"; };
 		456A79932E45AA48ED066F6F561527CC /* Pods-BasicBannerAd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BasicBannerAd.release.xcconfig"; sourceTree = "<group>"; };
-		4F420EC153DB1BC952495664044413E1 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "GoogleMobileAdsSdkiOS-7.5.1/GoogleMobileAds.framework"; sourceTree = "<group>"; };
 		814300CC5039BA5028545E12C85B8B07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		92026F8D679CD6D54FB6250B0E616C6A /* Pods-BasicBannerAd-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BasicBannerAd-frameworks.sh"; sourceTree = "<group>"; };
 		A0DC8D4377AEB6377A67E981381F921A /* Pods-BasicBannerAd-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BasicBannerAd-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -41,14 +41,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3775CE35867B2FA666E661184C66F15D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4F420EC153DB1BC952495664044413E1 /* GoogleMobileAds.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		50811703BB22FD2738471A6195BD1156 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,9 +113,17 @@
 		E91D6015731707498AAA5817D350B87B /* Google-Mobile-Ads-SDK */ = {
 			isa = PBXGroup;
 			children = (
-				3775CE35867B2FA666E661184C66F15D /* Frameworks */,
+				F834B2ECD8B35EE9975B91E6483225F6 /* Frameworks */,
 			);
 			path = "Google-Mobile-Ads-SDK";
+			sourceTree = "<group>";
+		};
+		F834B2ECD8B35EE9975B91E6483225F6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4296E1927745FAB4C351CDF2563BA988 /* GoogleMobileAds.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

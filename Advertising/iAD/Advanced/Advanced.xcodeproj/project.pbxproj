@@ -156,6 +156,7 @@
 		E1051F301B260F35000922EE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Chris Mendez";
 				TargetAttributes = {
@@ -409,6 +410,7 @@
 				E1051F591B260F35000922EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E1051F5A1B260F35000922EE /* Build configuration list for PBXNativeTarget "AdvancedTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +419,7 @@
 				E1051F5C1B260F35000922EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

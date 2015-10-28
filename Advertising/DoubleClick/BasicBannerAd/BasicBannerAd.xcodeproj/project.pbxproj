@@ -13,6 +13,19 @@
 		E1587CDD1BC43A030020A2CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1587CDB1BC43A030020A2CD /* Main.storyboard */; };
 		E1587CDF1BC43A030020A2CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1587CDE1BC43A030020A2CD /* Assets.xcassets */; };
 		E1587CE21BC43A030020A2CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1587CE01BC43A030020A2CD /* LaunchScreen.storyboard */; };
+		E1A0251B1BE0540C00F7561D /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A0251A1BE0540C00F7561D /* AdSupport.framework */; };
+		E1A025261BE0543700F7561D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A0251C1BE0543700F7561D /* AudioToolbox.framework */; };
+		E1A025271BE0543700F7561D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A0251D1BE0543700F7561D /* AVFoundation.framework */; };
+		E1A025281BE0543700F7561D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A0251E1BE0543700F7561D /* CoreGraphics.framework */; };
+		E1A025291BE0543700F7561D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A0251F1BE0543700F7561D /* CoreMedia.framework */; };
+		E1A0252A1BE0543700F7561D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A025201BE0543700F7561D /* CoreTelephony.framework */; };
+		E1A0252B1BE0543700F7561D /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A025211BE0543700F7561D /* EventKit.framework */; };
+		E1A0252C1BE0543700F7561D /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A025221BE0543700F7561D /* EventKitUI.framework */; };
+		E1A0252D1BE0543700F7561D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A025231BE0543700F7561D /* MessageUI.framework */; };
+		E1A0252E1BE0543700F7561D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A025241BE0543700F7561D /* StoreKit.framework */; };
+		E1A0252F1BE0543700F7561D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A025251BE0543700F7561D /* SystemConfiguration.framework */; };
+		E1A025311BE0556700F7561D /* Frameworks in Resources */ = {isa = PBXBuildFile; fileRef = E1A025301BE0556700F7561D /* Frameworks */; };
+		E1A025331BE0558900F7561D /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A025321BE0558900F7561D /* GoogleMobileAds.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +39,20 @@
 		E1587CDE1BC43A030020A2CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1587CE11BC43A030020A2CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1587CE31BC43A030020A2CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1A0251A1BE0540C00F7561D /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		E1A0251C1BE0543700F7561D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		E1A0251D1BE0543700F7561D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		E1A0251E1BE0543700F7561D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E1A0251F1BE0543700F7561D /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		E1A025201BE0543700F7561D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		E1A025211BE0543700F7561D /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		E1A025221BE0543700F7561D /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		E1A025231BE0543700F7561D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		E1A025241BE0543700F7561D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		E1A025251BE0543700F7561D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E1A025301BE0556700F7561D /* Frameworks */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Frameworks; sourceTree = "<group>"; };
+		E1A025321BE0558900F7561D /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = BasicBannerAd/Frameworks/GoogleMobileAds.framework; sourceTree = "<group>"; };
+		E1A025341BE055E700F7561D /* BasicBannerAd-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BasicBannerAd-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +60,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1A0251B1BE0540C00F7561D /* AdSupport.framework in Frameworks */,
+				E1A025261BE0543700F7561D /* AudioToolbox.framework in Frameworks */,
+				E1A025271BE0543700F7561D /* AVFoundation.framework in Frameworks */,
+				E1A025281BE0543700F7561D /* CoreGraphics.framework in Frameworks */,
+				E1A025331BE0558900F7561D /* GoogleMobileAds.framework in Frameworks */,
+				E1A025291BE0543700F7561D /* CoreMedia.framework in Frameworks */,
+				E1A0252A1BE0543700F7561D /* CoreTelephony.framework in Frameworks */,
+				E1A0252B1BE0543700F7561D /* EventKit.framework in Frameworks */,
+				E1A0252C1BE0543700F7561D /* EventKitUI.framework in Frameworks */,
+				E1A0252D1BE0543700F7561D /* MessageUI.framework in Frameworks */,
+				E1A0252E1BE0543700F7561D /* StoreKit.framework in Frameworks */,
+				E1A0252F1BE0543700F7561D /* SystemConfiguration.framework in Frameworks */,
 				CB5FE2D1EE62C4B3C1C27E93 /* Pods_BasicBannerAd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,6 +82,18 @@
 		46B1AF1424CF3F56AAE25103 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E1A025321BE0558900F7561D /* GoogleMobileAds.framework */,
+				E1A0251C1BE0543700F7561D /* AudioToolbox.framework */,
+				E1A0251D1BE0543700F7561D /* AVFoundation.framework */,
+				E1A0251E1BE0543700F7561D /* CoreGraphics.framework */,
+				E1A0251F1BE0543700F7561D /* CoreMedia.framework */,
+				E1A025201BE0543700F7561D /* CoreTelephony.framework */,
+				E1A025211BE0543700F7561D /* EventKit.framework */,
+				E1A025221BE0543700F7561D /* EventKitUI.framework */,
+				E1A025231BE0543700F7561D /* MessageUI.framework */,
+				E1A025241BE0543700F7561D /* StoreKit.framework */,
+				E1A025251BE0543700F7561D /* SystemConfiguration.framework */,
+				E1A0251A1BE0540C00F7561D /* AdSupport.framework */,
 				C21CAF55850F35433F57185B /* Pods_BasicBannerAd.framework */,
 			);
 			name = Frameworks;
@@ -79,11 +130,13 @@
 			isa = PBXGroup;
 			children = (
 				E1587CD71BC43A030020A2CD /* AppDelegate.swift */,
+				E1A025301BE0556700F7561D /* Frameworks */,
 				E1587CD91BC43A030020A2CD /* ViewController.swift */,
 				E1587CDB1BC43A030020A2CD /* Main.storyboard */,
 				E1587CDE1BC43A030020A2CD /* Assets.xcassets */,
 				E1587CE01BC43A030020A2CD /* LaunchScreen.storyboard */,
 				E1587CE31BC43A030020A2CD /* Info.plist */,
+				E1A025341BE055E700F7561D /* BasicBannerAd-Bridging-Header.h */,
 			);
 			path = BasicBannerAd;
 			sourceTree = "<group>";
@@ -117,6 +170,7 @@
 		E1587CCC1BC43A030020A2CD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Chris Mendez";
 				TargetAttributes = {
@@ -151,6 +205,7 @@
 				E1587CE21BC43A030020A2CD /* LaunchScreen.storyboard in Resources */,
 				E1587CDF1BC43A030020A2CD /* Assets.xcassets in Resources */,
 				E1587CDD1BC43A030020A2CD /* Main.storyboard in Resources */,
+				E1A025311BE0556700F7561D /* Frameworks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,10 +377,17 @@
 			baseConfigurationReference = 43C65DB6C0E50CFC369CC154 /* Pods-BasicBannerAd.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BasicBannerAd/Frameworks",
+				);
 				INFOPLIST_FILE = BasicBannerAd/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chrisjmendez.BasicBannerAd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BasicBannerAd/BasicBannerAd-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -334,10 +396,16 @@
 			baseConfigurationReference = A1022B501970E7ECAE7DC850 /* Pods-BasicBannerAd.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BasicBannerAd/Frameworks",
+				);
 				INFOPLIST_FILE = BasicBannerAd/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chrisjmendez.BasicBannerAd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BasicBannerAd/BasicBannerAd-Bridging-Header.h";
 			};
 			name = Release;
 		};

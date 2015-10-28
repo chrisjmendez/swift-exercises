@@ -13,7 +13,6 @@
 		E16077501B083972004C4DEA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E160774F1B083972004C4DEA /* Images.xcassets */; };
 		E16077531B083972004C4DEA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E16077511B083972004C4DEA /* LaunchScreen.xib */; };
 		E160775F1B083972004C4DEA /* HeyzapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E160775E1B083972004C4DEA /* HeyzapTests.swift */; };
-		E1A024ED1BE04BAF00F7561D /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A024EC1BE04BAF00F7561D /* GoogleMobileAds.framework */; };
 		E1A024EF1BE04BBC00F7561D /* applovin-ios-sdk-3.1.5 in Resources */ = {isa = PBXBuildFile; fileRef = E1A024EE1BE04BBC00F7561D /* applovin-ios-sdk-3.1.5 */; };
 		E1A024F11BE04BC700F7561D /* HeyzapAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A024F01BE04BC700F7561D /* HeyzapAds.framework */; };
 		E1A024F31BE04BD000F7561D /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A024F21BE04BD000F7561D /* Chartboost.framework */; };
@@ -34,6 +33,7 @@
 		E1A025131BE04CD200F7561D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A025121BE04CD200F7561D /* libsqlite3.tbd */; };
 		E1A025151BE04CD800F7561D /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A025141BE04CD800F7561D /* libxml2.tbd */; };
 		E1A025171BE04DEE00F7561D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A025161BE04DEE00F7561D /* MessageUI.framework */; };
+		E1A025191BE0512400F7561D /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A025181BE0512400F7561D /* GoogleMobileAds.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +58,6 @@
 		E160775D1B083972004C4DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E160775E1B083972004C4DEA /* HeyzapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeyzapTests.swift; sourceTree = "<group>"; };
 		E16077681B083980004C4DEA /* Heyzap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Heyzap-Bridging-Header.h"; sourceTree = "<group>"; };
-		E1A024EC1BE04BAF00F7561D /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		E1A024EE1BE04BBC00F7561D /* applovin-ios-sdk-3.1.5 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "applovin-ios-sdk-3.1.5"; sourceTree = "<group>"; };
 		E1A024F01BE04BC700F7561D /* HeyzapAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HeyzapAds.framework; sourceTree = "<group>"; };
 		E1A024F21BE04BD000F7561D /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Chartboost.framework; sourceTree = "<group>"; };
@@ -79,6 +78,7 @@
 		E1A025121BE04CD200F7561D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		E1A025141BE04CD800F7561D /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		E1A025161BE04DEE00F7561D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		E1A025181BE0512400F7561D /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +88,7 @@
 			files = (
 				E1A025171BE04DEE00F7561D /* MessageUI.framework in Frameworks */,
 				E1A025151BE04CD800F7561D /* libxml2.tbd in Frameworks */,
+				E1A025191BE0512400F7561D /* GoogleMobileAds.framework in Frameworks */,
 				E1A025131BE04CD200F7561D /* libsqlite3.tbd in Frameworks */,
 				E1A0250F1BE04C9F00F7561D /* iAd.framework in Frameworks */,
 				E1A0250D1BE04C9A00F7561D /* SystemConfiguration.framework in Frameworks */,
@@ -105,7 +106,6 @@
 				E1A024F51BE04C4300F7561D /* AVFoundation.framework in Frameworks */,
 				E1A024F31BE04BD000F7561D /* Chartboost.framework in Frameworks */,
 				E1A024F11BE04BC700F7561D /* HeyzapAds.framework in Frameworks */,
-				E1A024ED1BE04BAF00F7561D /* GoogleMobileAds.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,10 +122,10 @@
 		E13D5BC81B0BD47600FE8E9A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E1A025181BE0512400F7561D /* GoogleMobileAds.framework */,
 				E1A024F21BE04BD000F7561D /* Chartboost.framework */,
 				E1A024F01BE04BC700F7561D /* HeyzapAds.framework */,
 				E1A024EE1BE04BBC00F7561D /* applovin-ios-sdk-3.1.5 */,
-				E1A024EC1BE04BAF00F7561D /* GoogleMobileAds.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";

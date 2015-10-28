@@ -48,18 +48,24 @@ class ViewController: UIViewController {
         case 0:
             print("banner ad")
             let options = HZBannerAdOptions()
-            HZBannerAd.placeBannerInView(self.view, position: HZBannerPosition.Bottom, options:options, success: {(banner) in
-                }, failure: {(error) in
-                    print("Error is \(error)")
-            })
+            HZBannerAd.placeBannerInView(self.view, position: HZBannerPosition.Bottom, options:options, success: {
+                (banner) in
+                }, failure: {
+                    (error) in print("Error is \(error)")
+                }
+            )
             break
         case 1:
             print("interstitial ad")
-            HZInterstitialAd.fetch()
+            
+            HZInterstitialAd.show()
             break
         case 2:
             print("rewarded video ad")
+            // As early as possible, and after showing a rewarded video, call fetch
             HZIncentivizedAd.fetch();
+            // Later, such as after a level is completed
+            HZIncentivizedAd.show()
             break
         default:
             break
