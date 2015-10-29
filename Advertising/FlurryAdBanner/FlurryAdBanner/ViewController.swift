@@ -20,7 +20,7 @@ import Foundation
 import UIKit
 import SystemConfiguration
 
-class ViewController: UIViewController, FlurryAdBannerDelegate, FlurryAdInterstitialDelegate {
+class ViewController: UIViewController {
 
     var bannerAdPlist:String?
     var flurryBannerAdSpaces:NSArray?
@@ -40,12 +40,12 @@ class ViewController: UIViewController, FlurryAdBannerDelegate, FlurryAdIntersti
     var randomIdx:Int?
     
     @IBAction func showBanner(sender: AnyObject) {
-        println("showBanner + \(bannerAdSpaceName!)")
+        print("showBanner + \(bannerAdSpaceName!)")
         fetchandDisplayBannerAd(bannerAdSpaceName!)
     }
     
     @IBAction func showInterstitial(sender: AnyObject) {
-        println("showInterstitial + \(interstitialAdSpaceName!)")
+        print("showInterstitial + \(interstitialAdSpaceName!)")
         //If the adInterstitial has been invocated and qeued up, show it!
         if adInterstitial!.ready{
             adInterstitial?.presentWithViewController(self)
@@ -102,7 +102,7 @@ class ViewController: UIViewController, FlurryAdBannerDelegate, FlurryAdIntersti
         adInterstitial?.fetchAd()
         
         //!!! Turn this off for development
-        testMode(bool: true)
+        testMode(true)
     }
     
     func testMode(bool:Bool=false){
@@ -112,7 +112,7 @@ class ViewController: UIViewController, FlurryAdBannerDelegate, FlurryAdIntersti
     }
     
     override func viewDidAppear(animated: Bool) {
-        println("viewDidAppear:")
+        print("viewDidAppear:")
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -130,60 +130,60 @@ extension ViewController: FlurryAdBannerDelegate {
     //Invoked when an ad is received for the specified bannerAd object.
     func adBannerDidFetchAd(bannerAd: FlurryAdBanner!) {
 
-        println("Banner AD: \(bannerAd.space) did fetch AD")
+        print("Banner AD: \(bannerAd.space) did fetch AD")
         
         bannerAd.displayAdInView(self.view, viewControllerForPresentation: self)
     }
     
     //Invoked when the banner ad is rendered.
     func adBannerDidRender(bannerAd: FlurryAdBanner!) {
-        println("Banner AD: \(bannerAd.space) rendered and is ready for display")
+        print("Banner AD: \(bannerAd.space) rendered and is ready for display")
     }
     
     //Informational callback invoked when an ad is clicked for the specified @c bannerAd object.
     func adBannerDidReceiveClick(bannerAd: FlurryAdBanner!) {
-        println("Banner AD: \(bannerAd.space) did receive click")
+        print("Banner AD: \(bannerAd.space) did receive click")
     }
 
     //Informational callback invoked when there is an ad error
     func adBanner(bannerAd: FlurryAdBanner!, adError: FlurryAdError, errorDescription: NSError!) {
-        println("Banner AD: \(bannerAd.space) received an ad error \(adError), \(errorDescription.description)")
+        print("Banner AD: \(bannerAd.space) received an ad error \(adError), \(errorDescription.description)")
     }
 }
 
 extension ViewController: FlurryAdInterstitialDelegate{
     func adInterstitialDidFetchAd(interstitialAd: FlurryAdInterstitial!) {
-        println("Ad Space: \(interstitialAd.space) received and is available")
+        print("Ad Space: \(interstitialAd.space) received and is available")
     }
     
     func adInterstitialDidRender(interstitialAd: FlurryAdInterstitial!) {
-        println("Ad Space: \(interstitialAd.space) is rendered and ready for display")
+        print("Ad Space: \(interstitialAd.space) is rendered and ready for display")
     }
     
     func adInterstitialWillPresent(interstitialAd: FlurryAdInterstitial!) {
         //Pause app stere here
-        println("Ad Space: \(interstitialAd.space) will present.")
+        print("Ad Space: \(interstitialAd.space) will present.")
     }
     
     func adInterstitialWillDismiss(interstitialAd: FlurryAdInterstitial!) {
         //Resume app state here
-        println("Ad Space: \(interstitialAd.space) will dismiss for interstitial")
+        print("Ad Space: \(interstitialAd.space) will dismiss for interstitial")
     }
     
     func adInterstitialVideoDidFinish(interstitialAd: FlurryAdInterstitial!) {
-        println("Video \(interstitialAd.space) Finished Playing")
+        print("Video \(interstitialAd.space) Finished Playing")
     }
     
     func adInterstitialDidReceiveClick(interstitialAd: FlurryAdInterstitial!) {
-        println("Ad Space: \(interstitialAd.space) Did Receive Click")
+        print("Ad Space: \(interstitialAd.space) Did Receive Click")
     }
     
     func adInterstitialWillLeaveApplication(interstitialAd: FlurryAdInterstitial!) {
-        println("Ad Space: \(interstitialAd) Will leave application")
+        print("Ad Space: \(interstitialAd) Will leave application")
     }
     
     func adInterstitial(interstitialAd: FlurryAdInterstitial!, adError: FlurryAdError, errorDescription: NSError!) {
-        println("Ad Space: \(interstitialAd.space) failed and received an Ad with error \(adError), \(errorDescription.description)")
+        print("Ad Space: \(interstitialAd.space) failed and received an Ad with error \(adError), \(errorDescription.description)")
     }
 }
 

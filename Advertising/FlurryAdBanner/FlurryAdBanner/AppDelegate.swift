@@ -17,11 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let plistFile:String = NSBundle.mainBundle().pathForResource("StreamAdSpaceList", ofType: "plist")!
-        var plistData = NSMutableDictionary(contentsOfFile: plistFile)
-        var apiKey = plistData?.objectForKey("apiKey")! as! String
+        let plistData = NSMutableDictionary(contentsOfFile: plistFile)
         var myApiKey = plistData?.objectForKey("myApiKey")! as! String
         
-        Flurry.startSession( apiKey )
+        Flurry.startSession( "DJZYYM4VMH7T7PN83SJ2" )
         Flurry.setCrashReportingEnabled(true)  // records app crashing in Flurry
         Flurry.logEvent("Start Application")   // Example of even logging
         

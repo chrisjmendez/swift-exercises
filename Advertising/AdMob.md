@@ -5,6 +5,8 @@ What
 -
 Google ADMob is a platform where digital revenue managers can sell inventory to AD networks. Examples of inventory include: a *sponsorship*, a *targeted campaign*, a *standard advertisement*, *overstocked inventory* (as surplus, bulk, or low cost) or *HouseAds*. 
 
+- !!! [Difference between ADMob and Double Click for Publishers](http://stackoverflow.com/questions/23340455/difference-between-admob-and-dfp-networks)
+- [DFP vs AdMob vernacular](http://snag.gy/F3Yyw.jpg)
 
 Why
 - 
