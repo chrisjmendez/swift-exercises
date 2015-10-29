@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  BasicBanner
+//  BannerAD
 //
 //  Created by Tommy Trojan on 10/28/15.
 //  Copyright © 2015 Chris Mendez. All rights reserved.

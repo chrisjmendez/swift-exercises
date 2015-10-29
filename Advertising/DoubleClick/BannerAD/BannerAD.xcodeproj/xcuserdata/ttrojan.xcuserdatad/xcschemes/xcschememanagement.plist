@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>BasicBanner.xcscheme</key>
+		<key>BannerAD.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>E1A121281BE12BA5003A98CC</key>
+		<key>E1698DA61BE19B8B00C3AA60</key>
 		<dict>
 			<key>primary</key>
 			<true/>

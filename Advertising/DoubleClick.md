@@ -21,6 +21,9 @@ How
 1. [Create your first AD](http://www.labnol.org/internet/google-dfp-tutorial/14099/)
 2. [Create an AD Unit](https://support.google.com/dfp_sb/answer/82275?hl=en&ref_topic=16125)
 
+3. [Create an AD unit for Mobile (aka Smart Banner AD](https://support.google.com/dfp_sb/answer/82275#create)
+4. [Smart Banner AD Documentation](https://developers.google.com/mobile-ads-sdk/docs/dfp/ios/banner#smart_banners)
+
 ###Step 3a: Install DoubleClick SDK using CocoaPods
 -
 1. Make sure you have [CocoaPoads installed](https://guides.cocoapods.org/using/getting-started.html)
