@@ -74,15 +74,17 @@
 - (void)reportImpression;
 
 /**
- *  When the user clicks the ad, call this method to present an SKStoreProductViewController for that ad. This method will handle reporting the click to Heyzap.
+ *  When the user clicks the ad, call this method to present an SKStoreProductViewController for that ad. This method will handle reporting the click to Heyzap. This method must be called on the main queue.
  *
  *  @param viewController The view controller which should present the `SKStoreProductViewController`.
  *  @param storeDelegate  The delegate for the `SKStoreProductViewController`. The delegate should dismiss the `SKStoreProductViewController` when `productViewControllerDidFinish:` is called on it.
  *  @param completion     In rare cases, `SKStoreProductViewController` will fail to load the App Store, as described in `loadProductWithParameters:completionBlock:`. This method will call the completion block with the values that API returns. If the `SKStoreProductViewController` fails to load, we open the App Store App using `[UIApplication openURL:]`.
+ *
+ *  @return Returns the SKStoreProductViewController, if we create one, and otherwise returns `nil`. Note that even if we create an `SKStoreProductViewController`, it won't necessarily be presented (see the description of the `completion` parameter).
  
  It's recommended that you display a loading spinner before calling this method, in case the app store takes some time to load. You can dismiss the loading spinner in the `completion` block of this method.
  */
-- (void)presentAppStoreFromViewController:(UIViewController *)viewController
+- (SKStoreProductViewController *)presentAppStoreFromViewController:(UIViewController *)viewController
                             storeDelegate:(id<SKStoreProductViewControllerDelegate>)storeDelegate
                                completion:(void (^)(BOOL result, NSError *error))completion;
 

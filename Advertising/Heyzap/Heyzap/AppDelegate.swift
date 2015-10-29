@@ -21,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        HeyzapAds.startWithPublisherID("")
+        HeyzapAds.startWithPublisherID("5bbcfb4a4ac56d3b327a314a6af5a515")
+        //Test your 3rd-Party Integrations (Optional)
         HeyzapAds.presentMediationDebugViewController();
         
         return true

@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     }
     
     func counterUpdater(){
-        println("counterUpdater")
+        print("counterUpdater")
         countdownTxt.text = String(counter--)
         if( counter == 0 ){
             selectAD()
@@ -42,24 +42,30 @@ class ViewController: UIViewController {
     
     //I'm only picking 1 banner ad for now
     func selectAD(){
-        var randomNumber = Int.random(0...2)
-            randomNumber = 0
+        let randomNumber = Int.random(0...2)
+
         switch(randomNumber){
         case 0:
-            println("banner ad")
+            print("banner ad")
             let options = HZBannerAdOptions()
-            HZBannerAd.placeBannerInView(self.view, position: HZBannerPosition.Bottom, options:options, success: {(banner) in
-                }, failure: {(error) in
-                    println("Error is \(error)")
-            })
+            HZBannerAd.placeBannerInView(self.view, position: HZBannerPosition.Bottom, options:options, success: {
+                (banner) in
+                }, failure: {
+                    (error) in print("Error is \(error)")
+                }
+            )
             break
         case 1:
-            println("interstitial ad")
-            HZInterstitialAd.fetch()
+            print("interstitial ad")
+            
+            HZInterstitialAd.show()
             break
         case 2:
-            println("rewarded video ad")
+            print("rewarded video ad")
+            // As early as possible, and after showing a rewarded video, call fetch
             HZIncentivizedAd.fetch();
+            // Later, such as after a level is completed
+            HZIncentivizedAd.show()
             break
         default:
             break
@@ -86,34 +92,34 @@ extension ViewController: HZAdsDelegate{
     
     func didShowAdWithTag(tag: String!) {
         // Sent when an interstitial ad has been displayed.
-        println("didShowAdWithTag", tag);
+        print("didShowAdWithTag", tag);
         stopTimer()
     }
     
     func didFailToShowAdWithTag(tag: String!, andError error: NSError!) {
         // Sent when you call `showAd`, but there isn't an ad to be shown.
         // Includes an NSError object describing the reason why.
-        println("didFailToShowAdWithTag", tag);
+        print("didFailToShowAdWithTag", tag);
     }
     
     func didClickAdWithTag(tag: String!) {
         // Sent when an interstitial ad has been clicked.
-        println("didClickAdWithTag", tag);
+        print("didClickAdWithTag", tag);
     }
     
     func didHideAdWithTag(tag: String!) {
         // Sent when an interstitial ad has been removed from view.
-        println("didHideAdWithTag", tag);
+        print("didHideAdWithTag", tag);
         startTimer()
     }
     
     func didReceiveAdWithTag(tag: String!) {
         // Sent when an interstitial ad has been loaded and is ready to be displayed.
-        println("didReceiveAdWithTag", tag);
+        print("didReceiveAdWithTag", tag);
         if HZInterstitialAd.isAvailable() {
-            println("HZInterstitialAd.isAvailable")
+            print("HZInterstitialAd.isAvailable")
             HZInterstitialAd.showForTag("default", completion: { (Bool, NSError) -> Void in
-                println("HZInterstitialAd.completion")
+                print("HZInterstitialAd.completion")
                 self.resetTimer()
             })
         }
@@ -121,18 +127,18 @@ extension ViewController: HZAdsDelegate{
     
     func didFailToReceiveAdWithTag(tag: String!) {
         // Sent when an interstitial ad has failed to load.
-        println("didFailToReceiveAdWithTag", tag);
+        print("didFailToReceiveAdWithTag", tag);
     }
     
     func willStartAudio() {
         // The ad about to be shown will need audio. Mute any background music.
-        println("willStartAudio");
+        print("willStartAudio");
     }
     
     func didFinishAudio() {
         // The ad being shown no longer needs audio.
         // Any background music can be resumed.
-        println("didFinishAudio");
+        print("didFinishAudio");
     }
 }
 
