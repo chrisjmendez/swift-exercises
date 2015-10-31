@@ -18,7 +18,7 @@ class ViewController: UIViewController, GADInterstitialDelegate {
         let request = DFPRequest()
             //This shows AdMob ads
             //request.testDevices = [kGADSimulatorID]
-        let ads = ["/6499/example/interstitial"]
+        let ads = ["/181024612/2015_fall_320x480"]
         //let randomNumber = Int.random(0...1)
         let interstitial = DFPInterstitial(adUnitID: ads[0])
             //Register the Interstitial events
