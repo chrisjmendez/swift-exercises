@@ -25,3 +25,5 @@ How
 
 Resources
 - 
+- [Game Example](https://github.com/googleads/googleads-mobile-ios-examples/blob/master/Swift/admob/InterstitialExample/InterstitialExample/ViewController.swift)
+- [AdMob Docs](https://developers.google.com/admob/ios/interstitial)
