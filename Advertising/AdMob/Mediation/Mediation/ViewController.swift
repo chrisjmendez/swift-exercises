@@ -12,7 +12,7 @@ import GoogleMobileAds
 class ViewController: UIViewController {
 
     let TEST_DEVICE = "181024612"
-    let AD_UNIT_ID = "ca-pub-1141743128060240/181024612" //"ca-app-pub-1141743128060240/8575652810"
+    let AD_UNIT_ID = "ca-app-pub-1141743128060240/8575652810"
     
     enum GameState: NSInteger{
         case NotStarted
@@ -53,7 +53,6 @@ class ViewController: UIViewController {
         
         interstitial!.loadRequest(request)
     }
-    
     
     func showInterstitial(){
         let timestamp = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .LongStyle)

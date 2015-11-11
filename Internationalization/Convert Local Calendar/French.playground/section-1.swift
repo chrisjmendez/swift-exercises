@@ -5,7 +5,7 @@ class Calendar{
     //NSDate is used but you can't assign value in a single line
     //Instead, assign the property to the result of an inline function
     var frenchMonths: [String] = {
-        println("Calculating French months...")
+        print("Calculating French months...")
         
         let df = NSDateFormatter()
         //Set locale to French
@@ -15,6 +15,3 @@ class Calendar{
     //Invoke the anonymous function
     }()
 }
-
-let cal = Calendar()
-    cal.frenchMonths
