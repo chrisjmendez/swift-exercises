@@ -8,7 +8,7 @@
         <!--Sign In-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Registration" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signInViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Registration" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -103,6 +103,9 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signUp:" destination="sE7-Vp-Yxz" eventType="touchUpInside" id="bjm-qE-qA5"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Zip Code" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="DMB-ua-VkU">
                                 <rect key="frame" x="20" y="340" width="280" height="30"/>
@@ -120,6 +123,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="gbd-7y-keN" id="h8g-WL-LjE"/>
+                        <outlet property="firstNameTextField" destination="MrO-ia-N4G" id="RjM-Pt-Bpq"/>
+                        <outlet property="lastNameTextField" destination="SOs-Rb-XAQ" id="5I4-Wg-xLX"/>
+                        <outlet property="password2TextField" destination="OAD-wt-fdP" id="5KC-VO-ZVd"/>
+                        <outlet property="passwordTextField" destination="ZQ6-A6-Fc1" id="5Dg-1W-KXw"/>
+                        <outlet property="zipCodeTextField" destination="DMB-ua-VkU" id="4zH-N6-k8K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v5F-BS-jWE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
