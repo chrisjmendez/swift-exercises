@@ -20,7 +20,7 @@ class SignUpViewController: UIViewController {
     
     @IBAction func signUp(sender: AnyObject) {
         var array = [
-            "userEmail": emailTextField.text!,
+            "email": emailTextField.text!,
             "password":  passwordTextField.text!,
             "password2": password2TextField.text!,
             "firstName": firstNameTextField.text!,
@@ -53,12 +53,43 @@ class SignUpViewController: UIViewController {
 
         //Send the POST request and handle the response
         NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: { data, response, error in
+            //We're calling this from the background thread
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 if error != nil{
                     //If something goes wrong, announce it to the user
                     self.displayAlertMessage(error!.localizedDescription)
                     return
                 }
+                
+                var err:NSError?
+                
+                var json:NSDictionary?
+                do{
+                    json = try! NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as? NSDictionary
+                    
+                }catch{
+                    print("JSON err:")
+                }
+                
+                if let parseJSON = json {
+                    var userId = parseJSON["userId"] as! String
+                    //If user doesn't exist
+                    if(userId != ""){
+                        var myAlert = UIAlertController(title: "Alert", message: "Registration Successful", preferredStyle: UIAlertControllerStyle.Alert)
+                        
+                        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+                            self.dismissViewControllerAnimated(true, completion: nil)
+                        })
+                    }
+                    //If user exists
+                    else{
+                        let errorMessage = parseJSON["message"] as? String
+                        if( errorMessage ) != nil{
+                            self.displayAlertMessage(errorMessage!)
+                        }
+                    }
+                }
+                
             })
         }).resume()
         
