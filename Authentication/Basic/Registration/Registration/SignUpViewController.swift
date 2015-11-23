@@ -19,22 +19,49 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var zipCodeTextField: UITextField!
     
     @IBAction func signUp(sender: AnyObject) {
-        let userEmail = emailTextField.text
-        let password  = passwordTextField.text
-        let password2 = password2TextField.text
-        let firstName = firstNameTextField.text
-        let lastName  = lastNameTextField.text
-        let zipCode   = zipCodeTextField.text
+        var array = [
+            "userEmail": emailTextField.text!,
+            "password":  passwordTextField.text!,
+            "password2": password2TextField.text!,
+            "firstName": firstNameTextField.text!,
+            "lastName":  lastNameTextField.text!,
+            "zipCode":   zipCodeTextField.text!
+        ]
         
-        if(password != password2){
+        //Validate Password
+        if(array["password"] != array["password2"]){
             displayAlertMessage("Passwords do not match")
             return
         }
-        
-        if(userEmail != nil || password != nil || firstName != nil || lastName != nil || zipCode != nil){
-            displayAlertMessage("All fields are required.")
-            return
+        //Validate data
+        var postData = ""
+        for (key, value) in array{
+            if(value == ""){
+                displayAlertMessage("Please fill out all the required fields.")
+                print("Missing Data: key: \(key)")
+                return
+            }
+            //Be efficient and construct a POST String
+            postData += "\(key)=\(value)&"
         }
+        
+        //Create HTTP Post request
+        let myURL = NSURL(string: "http://localhost:8080/users/add/")
+        let request = NSMutableURLRequest(URL: myURL!)
+            request.HTTPMethod = "POST"
+            request.HTTPBody = postData.dataUsingEncoding(NSUTF8StringEncoding)
+
+        //Send the POST request and handle the response
+        NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: { data, response, error in
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                if error != nil{
+                    //If something goes wrong, announce it to the user
+                    self.displayAlertMessage(error!.localizedDescription)
+                    return
+                }
+            })
+        }).resume()
+        
     }
     
     @IBAction func cancel(sender: AnyObject) {
