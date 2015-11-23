@@ -104,8 +104,8 @@
 		E1C7A3AF1BE2CD2A000406BE /* Mediation */ = {
 			isa = PBXGroup;
 			children = (
-				E1C7A3E11BE2D196000406BE /* Frameworks */,
 				E1C7A3DF1BE2D152000406BE /* GoogleMobileAds.framework */,
+				E1C7A3E11BE2D196000406BE /* Frameworks */,
 				E1C7A3B01BE2CD2A000406BE /* AppDelegate.swift */,
 				E1C7A3B21BE2CD2A000406BE /* ViewController.swift */,
 				E1C7A3B41BE2CD2A000406BE /* Main.storyboard */,
