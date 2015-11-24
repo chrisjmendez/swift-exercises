@@ -1,14 +1,16 @@
 var express = require('express')
 , router    = express.Router()
 , async     = require('async')
-, Firebase = require('firebase')
+, Firebase  = require('firebase')
 
 var ref = new Firebase('https://swift-example.firebaseio.com/')
+
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
 	res.json( { success: false, message: "POST request required." } )
 });
+
 
 router.get('/create', function(req, res, next) {
 	res.json( { success: false, message: "POST request required." } )
@@ -38,7 +40,7 @@ router.post('/create', function(req, res, next) {
 					res.json({ success: "false", message: m });
 				} else {
 					var m = "Successfully created user account with uid: " + userData.uid
-					res.json({ success: "true", message: m });
+					res.json({ success: "true", message: m, data: userData.uid });
 				}
 			})
 		}]
@@ -49,20 +51,30 @@ router.post('/create', function(req, res, next) {
 	});
 });
 
+
 router.post('/login', function(req, res, next) {
 	var email    = req.body.email
 	var password = req.body.password
-
+	
 	ref.authWithPassword({
 		email    : email,
 		password : password
 	}, function(error, authData) {
 		if (error) {
-			console.log("Login Failed!", error);
+			var m = error.toString()
+			res.json({ success: "false", message: m });
+			console.log(m)
 		} else {
-			console.log("Authenticated successfully with payload:", authData);
+			var m = "Authenticated successfully with payload"
+			res.json({ success: "true", message: m, data: authData });
+			console.log(m)
 		}
 	});
+})
+
+
+router.post('/logout', function(req, res, next) {
+	
 })
 
 // We define another route that will handle bookmark deletion
@@ -75,12 +87,14 @@ router.post('/delete/:id', function(req, res, next) {
 		password : password
 	}, function(error) {
 		if (error === null) {
-			console.log("User removed successfully");
+			var m = "User removed successfully"
+			res.json({ success: "true", message: m });
 		} else {
-			console.log("Error removing user:", error);
+			var m  = "Error removing user:" + error
+			res.json({ success: "false", message: m });
 		}
 	});
-		
 });
+
 
 module.exports = router;
