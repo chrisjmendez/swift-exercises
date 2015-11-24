@@ -1,74 +1,86 @@
 var express = require('express')
 , router    = express.Router()
 , async     = require('async')
+, Firebase = require('firebase')
+
+var ref = new Firebase('https://swift-example.firebaseio.com/')
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-	
-	var query = 'SELECT * FROM users ORDER BY email'
-	db.all(query, function(err, row) {
-		if(err !== null) {
-			// Express handles errors via its next function.
-			// It will call the next operation layer (middleware),
-			// which is by default one that handles errors.
-			next(err);
-		}
-		else {
-			console.log(row);
-			res.render('index.jade', {bookmarks: row}, function(err, html) {
-				res.send(200, html);
-			});
-		}
-	});
-	
-	
+	res.json( { success: false, message: "POST request required." } )
 });
 
-// We define a new route that will handle bookmark creation
-router.post('/add', function(req, res, next) {
-	var email         = req.body.email
-	var first_name    = req.body.firstName
-	var last_name     = req.body.lastName
-	var user_password = req.body.password
-	
-	console.log( email, first_name, last_name, user_password)
-	
-	async.auto({
-		save_user: [function(callback){
-			var query = "INSERT INTO 'users' (email, first_name, last_name, user_password) VALUES('" +
-			email + "', '" + 
-			first_name + "', '" + 
-			last_name + "', '" + 
-			user_password + 
-			"')"
+router.get('/create', function(req, res, next) {
+	res.json( { success: false, message: "POST request required." } )
+});
 
-			db.run(query, function(err) {
-				if(err !== null) {
-					console.log("success")
-					next(err);
+
+// We define a new route that will handle bookmark creation
+router.post('/create', function(req, res, next) {
+	
+	var email     = req.body.email
+	var password  = req.body.password
+	var firstName = req.body.firstName
+	var lastName  = req.body.lastName
+	var zipCode   = req.body.zipCode
+
+	async.auto({
+		create_user: [function(){
+			ref.createUser({
+				email:    email,
+				password: password,
+				fname:    firstName,
+				lname:    lastName,
+				zipcode:  zipCode
+			}, function(error, userData) {
+				if (error) {
+					var m = "Error creating user: " + error
+					res.json({ success: "false", message: m });
+				} else {
+					var m = "Successfully created user account with uid: " + userData.uid
+					res.json({ success: "true", message: m });
 				}
-				else {
-					console.log("fail")
-					res.redirect('back');
-				}
-			});
+			})
 		}]
 	},
 	function(err, results, o) {
+		if(err) console.log(err)
+			console.log(results, o)
 	});
 });
 
-// We define another route that will handle bookmark deletion
-router.get('/delete/:id', function(req, res, next) {
-	db.run("DELETE FROM users WHERE id='" + req.params.email + "'",
-	function(err) {
-		if(err !== null) {
-			next(err);
-		}
-		else {
-			res.redirect('back');
+router.post('/login', function(req, res, next) {
+	var email    = req.body.email
+	var password = req.body.password
+
+	ref.authWithPassword({
+		email    : email,
+		password : password
+	}, function(error, authData) {
+		if (error) {
+			console.log("Login Failed!", error);
+		} else {
+			console.log("Authenticated successfully with payload:", authData);
 		}
 	});
+})
+
+// We define another route that will handle bookmark deletion
+router.post('/delete/:id', function(req, res, next) {
+	var email    = req.body.email
+	var password = req.body.password
+	
+	ref.removeUser({
+		email    : email,
+		password : password
+	}, function(error) {
+		if (error === null) {
+			console.log("User removed successfully");
+		} else {
+			console.log("Error removing user:", error);
+		}
+	});
+		
 });
 
 module.exports = router;
