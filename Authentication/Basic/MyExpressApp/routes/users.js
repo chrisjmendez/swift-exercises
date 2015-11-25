@@ -66,7 +66,7 @@ router.post('/login', function(req, res, next) {
 			console.log(m)
 		} else {
 			var m = "Authenticated successfully with payload"
-			res.json({ success: "true", message: m, data: authData });
+			res.json({ success: "true", message: m, data: authData.uid.toString() });
 			console.log(m)
 		}
 	});
