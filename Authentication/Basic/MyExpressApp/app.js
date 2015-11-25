@@ -11,8 +11,6 @@ var users = require('./routes/users');
 var app = express();
 
 //A. Database
-var sqlite3 = require('sqlite3').verbose()
-var db = new sqlite3.Database('swiftApp.db')
 
 //B. Special Config
 app.locals.pretty = true;
@@ -33,31 +31,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
-
-
-db.get("SELECT name FROM sqlite_master WHERE type='table' AND name='users'", function(err, rows){
-	if(err !== null){
-		console.log(err);
-	}
-	else if(rows === undefined){
-		var query = 'CREATE TABLE "users" ' + 
-					'(' +
-					'"user_id" INTEGER PRIMARY KEY AUTOINCREMENT, ' + 
-					'"email" VARCHAR(255), ' + 
-					'"first_name" VARCHAR(255), ' + 
-					'"last_name" VARCHAR(255), ' + 
-					'"user_password" VARCHAR(255), ' + 
-					'"salt" BINARY(16) ' +
-					')'
-		db.run( query, function(err){
-			if(err) throw new Error()
-			else console.log("SQL Table Initialized")
-		})
-	}
-	else{
-		console.log("SQL Table 'users' initialized")
-	}
-})
 
 
 // catch 404 and forward to error handler
