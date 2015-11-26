@@ -24,9 +24,7 @@ module.exports = {
         port:     process.env.PORT || 8080,
         ip:       process.env.HOST || "localhost",
 		clients: [
-			{ id: 0000, name: "test", api_key: "xxxxxxxxxx", source: "web", path: "https://liveinsights-test.firebaseio.com" },
-			{ id: 0001, name: "flurry", api_key: "xxxxxxxxxx", source: "web", path: "https://liveinsights-test.firebaseio.com" },
-			{ id: 5200, name: "test", api_key: "a8485a6b94", source: "web", path: "https://uscradio.firebaseio.com" }
+			{ id: 0000, name: "test", api_key: "xxxxxxxxxx", source: "web", path: "https://swift-example.firebaseio.com" },
 		]
     },
 	//PRODUCTION
@@ -35,13 +33,6 @@ module.exports = {
         port:     process.env.OPENSHIFT_NODEJS_PORT || 80,
         ip  :     process.env.OPENSHIFT_NODEJS_IP,
 		clients: [
-			//Skyground Media Clients
-			{ id: 1000, name: "guitarpick", api_key: "8592d2g759", source: "ios", path: "https://guitarpick-ios.firebaseio.com" },
-			
-			//USC Radio Clients
-			{ id: 2000, name: "geotunes", api_key: "be754g62e8", source: "ios", path: "https://uscradio.firebaseio.com" },
-			{ id: 6279, name: "kusc", api_key: "735ea289a5", source: "ios", path: "https://uscradio.firebaseio.com" },
-			{ id: 5000, name: "kdfc", api_key: "798gg321a5", source: "ios", path: "https://uscradio.firebaseio.com" },
 		]
     }
  }

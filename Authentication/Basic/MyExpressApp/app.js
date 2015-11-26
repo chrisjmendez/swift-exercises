@@ -10,7 +10,19 @@ var users = require('./routes/users');
 
 var app = express();
 
-//A. Database
+/* ** ** ** ** ** ** **
+Config
+* ** ** ** ** ** ** **/
+var env      = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+var config   = require('./config/config.js')[env]
+
+console.log("~~~~YOU ARE IN: [", env, "] ENVIRONMENT~~~~")
+
+/* ** ** ** ** ** ** **
+* Users
+* ** ** ** ** ** ** **/
+users.init(config)
+
 
 //B. Special Config
 app.locals.pretty = true;
