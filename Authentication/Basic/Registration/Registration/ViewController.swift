@@ -51,26 +51,38 @@ class ViewController: UIViewController {
                 }
 
                 //JSON Response
-                var success:String?
-                var message:String?
-                var authData:String?
                 do{
                     let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as? NSDictionary
-                    success  = json!["success"] as? String
-                    message  = json!["message"] as? String
-                    authData = json!["data"] as? String
+                    
+                    //Parse JSON
+                    if let parseJSON = json {
+                        
+                        
+                        let token = parseJSON["userToken"] as! String
+                        NSUserDefaults.standardUserDefaults().setObject(token, forKey: "userToken")
+                        let userFirstName = parseJSON["userFirstName"] as! String
+                        NSUserDefaults.standardUserDefaults().setObject(userFirstName, forKey: "userFirstName")
+                        let userLastName = parseJSON["userLastName"] as! String
+                        NSUserDefaults.standardUserDefaults().setObject(userLastName, forKey: "userLastName")
+                        NSUserDefaults.standardUserDefaults().synchronize()
+                        
+                        
+                        let message = parseJSON["message"] as! String
+                        
+                        let success = parseJSON["success"] as! String
+                        if( success == "true" ) {
+                            //Dismiss the view after a successful login
+                            print("Authentication Data \(token)")
+                            //self.displayAlertMessage("Success", userMessage: "Registration Successful")
+                            self.goToView("mainPageViewController")
+                        }
+                        else{
+                            self.displayAlertMessage("Error", userMessage: message)
+                        }
+                    }
                 } catch {
                     let err = NSError(domain: self.HOST_URL, code: 1, userInfo: nil)
-                    message = "error: \(err)"
-                }
-                
-                if( success! == "true" ) {
-                    //Dismiss the view after a successful login
-                    print("Authentication Data \(authData!)")
-                    //self.displayAlertMessage("Success", userMessage: "Registration Successful")
-                    self.goToView("mainPageViewController")
-                }else{
-                    self.displayAlertMessage("Error", userMessage: message!)
+                    print("error: \(err)")
                 }
             })
         }).resume()
