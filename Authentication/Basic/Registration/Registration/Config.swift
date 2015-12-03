@@ -19,8 +19,8 @@ struct Config {
     struct host {
         static let url = "http://localhost:8080/"
     }
-    
+
     struct db {
-        static let uri = "https://guitarbird.firebaseio.com/"
+        static let uri = "https://swift-example.firebaseio.com/"
     }
 }

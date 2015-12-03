@@ -11,7 +11,7 @@ import UIKit
 class SignUpViewController: UIViewController {
     
     let HOST_URL = Config.host.url
-    let URL      = "/users/create"
+    let URL      = "users/create"
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -83,7 +83,9 @@ class SignUpViewController: UIViewController {
                     let alert = UIAlertController(title: "Success", message: "Registration Successful", preferredStyle: UIAlertControllerStyle.Alert)
                         alert.addAction(action)
                 }else{
-                    self.displayAlertMessage(message!)
+                    if(message != nil){
+                        self.displayAlertMessage(message!)
+                    }
                 }
             })
         }).resume()

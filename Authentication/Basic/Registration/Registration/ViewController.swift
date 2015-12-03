@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     let HOST_URL = Config.host.url
-    let URL      = "/users/login"
+    let URL      = "users/login"
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -36,6 +36,7 @@ class ViewController: UIViewController {
 
         //Create HTTP Post request
         let url = NSURL(string: URL, relativeToURL: NSURL(string: HOST_URL))
+        print(url)
         let request = NSMutableURLRequest(URL: url!)
             request.HTTPMethod = "POST"
             request.HTTPBody = postData.dataUsingEncoding(NSUTF8StringEncoding)
@@ -57,7 +58,7 @@ class ViewController: UIViewController {
                     //Parse JSON
                     if let parseJSON = json {
                         
-                        
+                        //Store the Data to NSUserDefaults
                         let token = parseJSON["userToken"] as! String
                         NSUserDefaults.standardUserDefaults().setObject(token, forKey: "userToken")
                         let userFirstName = parseJSON["userFirstName"] as! String
@@ -65,7 +66,6 @@ class ViewController: UIViewController {
                         let userLastName = parseJSON["userLastName"] as! String
                         NSUserDefaults.standardUserDefaults().setObject(userLastName, forKey: "userLastName")
                         NSUserDefaults.standardUserDefaults().synchronize()
-                        
                         
                         let message = parseJSON["message"] as! String
                         
