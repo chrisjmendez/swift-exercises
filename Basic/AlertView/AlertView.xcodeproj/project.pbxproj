@@ -156,6 +156,7 @@
 		E1E17AAE1B07977000F0CE56 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Chris Mendez";
 				TargetAttributes = {
@@ -409,6 +410,7 @@
 				E1E17AD71B07977000F0CE56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E1E17AD81B07977000F0CE56 /* Build configuration list for PBXNativeTarget "AlertViewTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +419,7 @@
 				E1E17ADA1B07977000F0CE56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
