@@ -46,7 +46,7 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as! UITableViewCell
+        let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as UITableViewCell!
         
         if let rowData: NSDictionary = self.tableData[indexPath.row] as? NSDictionary,
             // Grab the artworkUrl60 key to get an image URL for the app's thumbnail
@@ -75,7 +75,7 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
             name = rowData["trackName"] as? String,
             // Get the price of the track on this row
             formattedPrice = rowData["trackPrice"] as? Double {
-                println("formattedPrice:", formattedPrice)
+                print("formattedPrice:", formattedPrice)
                 let alert = UIAlertController(title: name, message: formattedPrice.toStringWithDecimalPlaces(2), preferredStyle: .Alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
