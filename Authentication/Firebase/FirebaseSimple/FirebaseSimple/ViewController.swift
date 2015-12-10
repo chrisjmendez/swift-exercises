@@ -26,8 +26,8 @@ class ViewController: UIViewController {
         db.observeEventType(.Value, withBlock: {
             //Get the Snapshot of the code and print a value
             snapshot in
-            var value = snapshot.value.objectForKey(newClient)
-            println(value)
+            let value = snapshot.value.objectForKey(newClient)
+            print(value)
         })
         
     }
