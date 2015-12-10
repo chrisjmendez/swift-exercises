@@ -13,8 +13,7 @@
 		E1272FD11BC37F32000AE778 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1272FCF1BC37F32000AE778 /* Main.storyboard */; };
 		E1272FD31BC37F32000AE778 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1272FD21BC37F32000AE778 /* Assets.xcassets */; };
 		E1272FD61BC37F32000AE778 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1272FD41BC37F32000AE778 /* LaunchScreen.storyboard */; };
-		E1272FDE1BC38044000AE778 /* libs in Resources */ = {isa = PBXBuildFile; fileRef = E1272FDD1BC38044000AE778 /* libs */; settings = {ASSET_TAGS = (); }; };
-		E15E47DF1BC3835E000974B1 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E15E47DE1BC3835E000974B1 /* Settings.bundle */; settings = {ASSET_TAGS = (); }; };
+		E15E47DF1BC3835E000974B1 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E15E47DE1BC3835E000974B1 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +27,6 @@
 		E1272FD21BC37F32000AE778 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1272FD51BC37F32000AE778 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1272FD71BC37F32000AE778 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E1272FDD1BC38044000AE778 /* libs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = libs; sourceTree = "<group>"; };
 		E1272FDF1BC38131000AE778 /* MyMapbox-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyMapbox-Bridging-Header.h"; sourceTree = "<group>"; };
 		E15E47DE1BC3835E000974B1 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,7 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				E15E47DE1BC3835E000974B1 /* Settings.bundle */,
-				E1272FDD1BC38044000AE778 /* libs */,
 				E1272FCB1BC37F32000AE778 /* AppDelegate.swift */,
 				E1272FCD1BC37F32000AE778 /* ViewController.swift */,
 				E1272FCF1BC37F32000AE778 /* Main.storyboard */,
@@ -165,7 +162,6 @@
 				E1272FD61BC37F32000AE778 /* LaunchScreen.storyboard in Resources */,
 				E1272FD31BC37F32000AE778 /* Assets.xcassets in Resources */,
 				E15E47DF1BC3835E000974B1 /* Settings.bundle in Resources */,
-				E1272FDE1BC38044000AE778 /* libs in Resources */,
 				E1272FD11BC37F32000AE778 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
