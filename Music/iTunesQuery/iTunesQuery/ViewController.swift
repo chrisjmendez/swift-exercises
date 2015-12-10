@@ -32,16 +32,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //iTunes API prefers + instead of %20 so we need to strip out the stuff
     func iTunesSearch(term: String) {
         // replace spaces with + symbol.
-        var escapedTerm = (term as String).stringByReplacingSpaceWithPlusEncodingForQueryValue()!
+        let escapedTerm = (term as String).stringByReplacingSpaceWithPlusEncodingForQueryValue()!
         
-        var myPath = "https://itunes.apple.com/search?term=\(escapedTerm)&media=all"
+        let myPath = "https://itunes.apple.com/search?term=\(escapedTerm)&media=all"
         
-        var url:NSURL = NSURL(string: myPath)!
-        println("URL for searching iTunes API \(url)")
+        let url:NSURL = NSURL(string: myPath)!
+        print("URL for searching iTunes API \(url)")
 
-        var request: NSURLRequest = NSURLRequest(URL: url)
+        let request: NSURLRequest = NSURLRequest(URL: url)
         
-        var ctn: NSURLConnection = NSURLConnection(request: request, delegate: self, startImmediately: false)!
+        let ctn: NSURLConnection = NSURLConnection(request: request, delegate: self, startImmediately: false)!
             ctn.start()
         
     }
@@ -56,22 +56,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell for Testing")
 
-        var rData: NSDictionary = self.tData[indexPath.row] as! NSDictionary
+        let rData: NSDictionary = self.tData[indexPath.row] as! NSDictionary
             cell.textLabel!.text = rData["trackName"] as? String
 
         // Grabbing the artworkUrl60 key for getting image URL for the thumbnail of the app
-        var uString: NSString = rData["artworkUrl60"] as! NSString
-        var iURL: NSURL = NSURL(string: uString as String)!
+        let uString: NSString = rData["artworkUrl60"] as! NSString
+        let iURL: NSURL = NSURL(string: uString as String)!
         
         // Download representation of the image as NSData at the URL
-        var iData: NSData = NSData(contentsOfURL: iURL)!
+        let iData: NSData = NSData(contentsOfURL: iURL)!
             cell.imageView!.image = UIImage(data: iData)
         
         // obtain the formatted price string to be displayed on the subtitle
-        var obj:Double = rData["trackPrice"]! as! Double
+        let obj:Double = rData["trackPrice"]! as! Double
         
         if !isnan(obj) {
-            var fPrice:String = "$ \(obj.toStringWithDecimalPlaces(2))"
+            let fPrice:String = "$ \(obj.toStringWithDecimalPlaces(2))"
             cell.detailTextLabel!.text = fPrice as String
         }
         
@@ -100,7 +100,7 @@ extension ViewController: NSURLConnectionDelegate, NSURLConnectionDataDelegate{
         // received data is converted into an object through JSON deserialization
         var err: NSError
         
-        var jResult: NSDictionary = NSJSONSerialization.JSONObjectWithData(self.data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary
+        let jResult: NSDictionary = (try! NSJSONSerialization.JSONObjectWithData(self.data, options: NSJSONReadingOptions.MutableContainers)) as! NSDictionary
         
         if jResult.count > 0 && jResult["results"]!.count > 0 {
             self.tData = (jResult["results"] as! NSArray)
@@ -111,12 +111,12 @@ extension ViewController: NSURLConnectionDelegate, NSURLConnectionDataDelegate{
 
 extension String {
     /// Percent escape value to be added to a URL query value as specified in RFC 3986
-    /// :returns: Return precent escaped string.
+    /// - returns: Return precent escaped string.
     func stringByReplacingSpaceWithPlusEncodingForQueryValue() -> String? {
-        var term = self.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
+        let term = self.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
         
         // Anything which is not URL-friendly is escaped
-        var escapedTerm = term.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+        let escapedTerm = term.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
         return escapedTerm
     }
 }
