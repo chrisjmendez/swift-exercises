@@ -42,7 +42,7 @@ class AddTableViewController: UITableViewController {
     }
     
     func loadValidator(){
-        var timer:NSTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("validateForm"), userInfo: nil, repeats: true)
+        NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("validateForm"), userInfo: nil, repeats: true)
     }
     
     func validateForm(){

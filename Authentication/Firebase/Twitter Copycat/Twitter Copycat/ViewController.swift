@@ -21,13 +21,13 @@ class ViewController: UIViewController {
         if formIsValid(){
             db.authUser(emailTextField.text, password: passwordTextField.text, withCompletionBlock: { (error, authData) -> Void in
                 if error != nil{
-                    println(error)
-                    println("Please fill in all the input fields")
+                    print(error)
+                    print("Please fill in all the input fields")
                 } else {
-                    println("Login success")
+                    print("Login success")
                     
                     //Create an object for a user
-                    var userId = authData.uid
+                    let userId = authData.uid
 
                     self.goToView()
                 }
@@ -42,21 +42,21 @@ class ViewController: UIViewController {
             db.createUser(emailTextField.text, password: passwordTextField.text, withValueCompletionBlock: { (error, result) -> Void in
                 //Validate the user
                 if error != nil{
-                    var myError = error
-                    println( myError )
+                    let myError = error
+                    print( myError )
                 } else {
-                    println("Success sign up")
+                    print("Success sign up")
                     //C. Once you register a user, you must log them in
                     self.db.authUser(self.emailTextField.text, password: self.passwordTextField.text) { (error, authData) -> Void in
                         //D. Validate the user
                         if error != nil{
-                            var myError = error
-                            println(myError)
-                            println("There is an error with your given information")
+                            let myError = error
+                            print(myError)
+                            print("There is an error with your given information")
                         } else {
                             //E. Prep data for Firebase
-                            var usersNode = "users"
-                            var userId = authData.uid
+                            let usersNode = "users"
+                            let userId = authData.uid
                             let newUser = [
                                 "provider": authData.provider,
                                 //Convert AnyObject -> NSString -> String
@@ -102,16 +102,16 @@ class ViewController: UIViewController {
     
     func userIsLoggedIn(){
         if db.authData != nil{
-            println("User already logged in")
+            print("User already logged in")
             self.goToView()
         } else {
-            println("Please log in or register.")
+            print("Please log in or register.")
         }
     }
 
     func formIsValid() -> Bool{
         if emailTextField.text == "" || passwordTextField.text == "" {
-            println("Please include email and password")
+            print("Please include email and password")
             return false
         }else{
             

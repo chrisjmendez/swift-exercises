@@ -32,7 +32,7 @@ class MainViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
-        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier(REUSABLE_CELL) as! UITableViewCell
+        let cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier(REUSABLE_CELL) as UITableViewCell!
 
         //Test: Get keys from the Dictionary
         var keys = Array(self.posts.keys)
