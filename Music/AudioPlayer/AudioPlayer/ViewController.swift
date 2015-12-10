@@ -49,14 +49,19 @@ class ViewController: UIViewController {
         
         var err:NSError?
         
-        var track = NSBundle.mainBundle().pathForResource( songs[currentIndex].path, ofType: songs[currentIndex].format)!
+        let track = NSBundle.mainBundle().pathForResource( songs[currentIndex].path, ofType: songs[currentIndex].format)!
         
-        var u = NSURL.fileURLWithPath(track)
+        let u = NSURL.fileURLWithPath(track)
         
-        audioPlayer = AVAudioPlayer(contentsOfURL: u, error: &err)
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOfURL: u)
+        } catch let error as NSError {
+            err = error
+            audioPlayer = nil
+        }
         
         if let error = err {
-            println("audioPlayer Err: \(error.localizedDescription)")
+            print("audioPlayer Err: \(error.localizedDescription)")
         } else {
             audioPlayer?.delegate = self
             audioPlayer?.prepareToPlay()
@@ -70,20 +75,20 @@ class ViewController: UIViewController {
 }
 
 extension ViewController:AVAudioPlayerDelegate {
-    func audioPlayerDidFinishPlaying(player: AVAudioPlayer!, successfully flag: Bool) {
-        println("audioPlayerDidFinishPlaying")
+    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
+        print("audioPlayerDidFinishPlaying")
     }
     
-    func audioPlayerDecodeErrorDidOccur(player: AVAudioPlayer!, error: NSError!) {
-        println("audioPlayerDecodeErrorDidOccur")
+    func audioPlayerDecodeErrorDidOccur(player: AVAudioPlayer, error: NSError?) {
+        print("audioPlayerDecodeErrorDidOccur")
     }
     
-    func audioPlayerBeginInterruption(player: AVAudioPlayer!) {
-        println("audioPlayerBeginInterruption")
+    func audioPlayerBeginInterruption(player: AVAudioPlayer) {
+        print("audioPlayerBeginInterruption")
     }
     
-    func audioPlayerEndInterruption(player: AVAudioPlayer!) {
-        println("audioPlayerEndInterruption")
+    func audioPlayerEndInterruption(player: AVAudioPlayer) {
+        print("audioPlayerEndInterruption")
     }
 }
 
