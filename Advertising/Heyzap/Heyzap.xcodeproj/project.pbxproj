@@ -1,0 +1,560 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E16077491B083972004C4DEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16077481B083972004C4DEA /* AppDelegate.swift */; };
+		E160774B1B083972004C4DEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E160774A1B083972004C4DEA /* ViewController.swift */; };
+		E160774E1B083972004C4DEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E160774C1B083972004C4DEA /* Main.storyboard */; };
+		E16077501B083972004C4DEA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E160774F1B083972004C4DEA /* Images.xcassets */; };
+		E16077531B083972004C4DEA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E16077511B083972004C4DEA /* LaunchScreen.xib */; };
+		E160775F1B083972004C4DEA /* HeyzapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E160775E1B083972004C4DEA /* HeyzapTests.swift */; };
+		E1A024EF1BE04BBC00F7561D /* applovin-ios-sdk-3.1.5 in Resources */ = {isa = PBXBuildFile; fileRef = E1A024EE1BE04BBC00F7561D /* applovin-ios-sdk-3.1.5 */; };
+		E1A024F11BE04BC700F7561D /* HeyzapAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A024F01BE04BC700F7561D /* HeyzapAds.framework */; };
+		E1A024F31BE04BD000F7561D /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A024F21BE04BD000F7561D /* Chartboost.framework */; };
+		E1A024F51BE04C4300F7561D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A024F41BE04C4300F7561D /* AVFoundation.framework */; };
+		E1A024F71BE04C4700F7561D /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A024F61BE04C4700F7561D /* AdSupport.framework */; };
+		E1A024F91BE04C4F00F7561D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A024F81BE04C4F00F7561D /* CoreGraphics.framework */; };
+		E1A024FB1BE04C5500F7561D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A024FA1BE04C5500F7561D /* CoreMedia.framework */; };
+		E1A024FD1BE04C5A00F7561D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A024FC1BE04C5A00F7561D /* CoreTelephony.framework */; };
+		E1A025001BE04C6500F7561D /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A024FE1BE04C6500F7561D /* EventKit.framework */; };
+		E1A025011BE04C6500F7561D /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A024FF1BE04C6500F7561D /* EventKitUI.framework */; };
+		E1A025031BE04C7C00F7561D /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A025021BE04C7C00F7561D /* MediaPlayer.framework */; };
+		E1A025051BE04C8200F7561D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A025041BE04C8200F7561D /* MobileCoreServices.framework */; };
+		E1A025071BE04C8700F7561D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A025061BE04C8700F7561D /* QuartzCore.framework */; };
+		E1A025091BE04C8E00F7561D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A025081BE04C8E00F7561D /* Security.framework */; };
+		E1A0250B1BE04C9200F7561D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A0250A1BE04C9200F7561D /* StoreKit.framework */; };
+		E1A0250D1BE04C9A00F7561D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A0250C1BE04C9A00F7561D /* SystemConfiguration.framework */; };
+		E1A0250F1BE04C9F00F7561D /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A0250E1BE04C9F00F7561D /* iAd.framework */; };
+		E1A025131BE04CD200F7561D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A025121BE04CD200F7561D /* libsqlite3.tbd */; };
+		E1A025151BE04CD800F7561D /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A025141BE04CD800F7561D /* libxml2.tbd */; };
+		E1A025171BE04DEE00F7561D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A025161BE04DEE00F7561D /* MessageUI.framework */; };
+		E1A025191BE0512400F7561D /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A025181BE0512400F7561D /* GoogleMobileAds.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E16077591B083972004C4DEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E160773B1B083972004C4DEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E16077421B083972004C4DEA;
+			remoteInfo = Heyzap;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E16077431B083972004C4DEA /* Heyzap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Heyzap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E16077471B083972004C4DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E16077481B083972004C4DEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E160774A1B083972004C4DEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E160774D1B083972004C4DEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E160774F1B083972004C4DEA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E16077521B083972004C4DEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		E16077581B083972004C4DEA /* HeyzapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeyzapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E160775D1B083972004C4DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E160775E1B083972004C4DEA /* HeyzapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeyzapTests.swift; sourceTree = "<group>"; };
+		E16077681B083980004C4DEA /* Heyzap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Heyzap-Bridging-Header.h"; sourceTree = "<group>"; };
+		E1A024EE1BE04BBC00F7561D /* applovin-ios-sdk-3.1.5 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "applovin-ios-sdk-3.1.5"; sourceTree = "<group>"; };
+		E1A024F01BE04BC700F7561D /* HeyzapAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HeyzapAds.framework; sourceTree = "<group>"; };
+		E1A024F21BE04BD000F7561D /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Chartboost.framework; sourceTree = "<group>"; };
+		E1A024F41BE04C4300F7561D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		E1A024F61BE04C4700F7561D /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		E1A024F81BE04C4F00F7561D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E1A024FA1BE04C5500F7561D /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		E1A024FC1BE04C5A00F7561D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		E1A024FE1BE04C6500F7561D /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		E1A024FF1BE04C6500F7561D /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		E1A025021BE04C7C00F7561D /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		E1A025041BE04C8200F7561D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		E1A025061BE04C8700F7561D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E1A025081BE04C8E00F7561D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		E1A0250A1BE04C9200F7561D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		E1A0250C1BE04C9A00F7561D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E1A0250E1BE04C9F00F7561D /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		E1A025121BE04CD200F7561D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		E1A025141BE04CD800F7561D /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		E1A025161BE04DEE00F7561D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		E1A025181BE0512400F7561D /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E16077401B083972004C4DEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1A025171BE04DEE00F7561D /* MessageUI.framework in Frameworks */,
+				E1A025151BE04CD800F7561D /* libxml2.tbd in Frameworks */,
+				E1A025191BE0512400F7561D /* GoogleMobileAds.framework in Frameworks */,
+				E1A025131BE04CD200F7561D /* libsqlite3.tbd in Frameworks */,
+				E1A0250F1BE04C9F00F7561D /* iAd.framework in Frameworks */,
+				E1A0250D1BE04C9A00F7561D /* SystemConfiguration.framework in Frameworks */,
+				E1A0250B1BE04C9200F7561D /* StoreKit.framework in Frameworks */,
+				E1A025091BE04C8E00F7561D /* Security.framework in Frameworks */,
+				E1A025071BE04C8700F7561D /* QuartzCore.framework in Frameworks */,
+				E1A025051BE04C8200F7561D /* MobileCoreServices.framework in Frameworks */,
+				E1A025031BE04C7C00F7561D /* MediaPlayer.framework in Frameworks */,
+				E1A025001BE04C6500F7561D /* EventKit.framework in Frameworks */,
+				E1A025011BE04C6500F7561D /* EventKitUI.framework in Frameworks */,
+				E1A024FD1BE04C5A00F7561D /* CoreTelephony.framework in Frameworks */,
+				E1A024FB1BE04C5500F7561D /* CoreMedia.framework in Frameworks */,
+				E1A024F91BE04C4F00F7561D /* CoreGraphics.framework in Frameworks */,
+				E1A024F71BE04C4700F7561D /* AdSupport.framework in Frameworks */,
+				E1A024F51BE04C4300F7561D /* AVFoundation.framework in Frameworks */,
+				E1A024F31BE04BD000F7561D /* Chartboost.framework in Frameworks */,
+				E1A024F11BE04BC700F7561D /* HeyzapAds.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E16077551B083972004C4DEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E13D5BC81B0BD47600FE8E9A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1A025181BE0512400F7561D /* GoogleMobileAds.framework */,
+				E1A024F21BE04BD000F7561D /* Chartboost.framework */,
+				E1A024F01BE04BC700F7561D /* HeyzapAds.framework */,
+				E1A024EE1BE04BBC00F7561D /* applovin-ios-sdk-3.1.5 */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		E160773A1B083972004C4DEA = {
+			isa = PBXGroup;
+			children = (
+				E1A025161BE04DEE00F7561D /* MessageUI.framework */,
+				E1A025141BE04CD800F7561D /* libxml2.tbd */,
+				E1A025121BE04CD200F7561D /* libsqlite3.tbd */,
+				E1A0250E1BE04C9F00F7561D /* iAd.framework */,
+				E1A0250C1BE04C9A00F7561D /* SystemConfiguration.framework */,
+				E1A0250A1BE04C9200F7561D /* StoreKit.framework */,
+				E1A025081BE04C8E00F7561D /* Security.framework */,
+				E1A025061BE04C8700F7561D /* QuartzCore.framework */,
+				E1A025041BE04C8200F7561D /* MobileCoreServices.framework */,
+				E1A025021BE04C7C00F7561D /* MediaPlayer.framework */,
+				E1A024FE1BE04C6500F7561D /* EventKit.framework */,
+				E1A024FF1BE04C6500F7561D /* EventKitUI.framework */,
+				E1A024FC1BE04C5A00F7561D /* CoreTelephony.framework */,
+				E1A024FA1BE04C5500F7561D /* CoreMedia.framework */,
+				E1A024F81BE04C4F00F7561D /* CoreGraphics.framework */,
+				E1A024F61BE04C4700F7561D /* AdSupport.framework */,
+				E1A024F41BE04C4300F7561D /* AVFoundation.framework */,
+				E16077451B083972004C4DEA /* Heyzap */,
+				E160775B1B083972004C4DEA /* HeyzapTests */,
+				E16077441B083972004C4DEA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E16077441B083972004C4DEA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E16077431B083972004C4DEA /* Heyzap.app */,
+				E16077581B083972004C4DEA /* HeyzapTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E16077451B083972004C4DEA /* Heyzap */ = {
+			isa = PBXGroup;
+			children = (
+				E13D5BC81B0BD47600FE8E9A /* Frameworks */,
+				E16077481B083972004C4DEA /* AppDelegate.swift */,
+				E160774A1B083972004C4DEA /* ViewController.swift */,
+				E160774C1B083972004C4DEA /* Main.storyboard */,
+				E160774F1B083972004C4DEA /* Images.xcassets */,
+				E16077511B083972004C4DEA /* LaunchScreen.xib */,
+				E16077461B083972004C4DEA /* Supporting Files */,
+				E16077681B083980004C4DEA /* Heyzap-Bridging-Header.h */,
+			);
+			path = Heyzap;
+			sourceTree = "<group>";
+		};
+		E16077461B083972004C4DEA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E16077471B083972004C4DEA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E160775B1B083972004C4DEA /* HeyzapTests */ = {
+			isa = PBXGroup;
+			children = (
+				E160775E1B083972004C4DEA /* HeyzapTests.swift */,
+				E160775C1B083972004C4DEA /* Supporting Files */,
+			);
+			path = HeyzapTests;
+			sourceTree = "<group>";
+		};
+		E160775C1B083972004C4DEA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E160775D1B083972004C4DEA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E16077421B083972004C4DEA /* Heyzap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E16077621B083972004C4DEA /* Build configuration list for PBXNativeTarget "Heyzap" */;
+			buildPhases = (
+				E160773F1B083972004C4DEA /* Sources */,
+				E16077401B083972004C4DEA /* Frameworks */,
+				E16077411B083972004C4DEA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Heyzap;
+			productName = Heyzap;
+			productReference = E16077431B083972004C4DEA /* Heyzap.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E16077571B083972004C4DEA /* HeyzapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E16077651B083972004C4DEA /* Build configuration list for PBXNativeTarget "HeyzapTests" */;
+			buildPhases = (
+				E16077541B083972004C4DEA /* Sources */,
+				E16077551B083972004C4DEA /* Frameworks */,
+				E16077561B083972004C4DEA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E160775A1B083972004C4DEA /* PBXTargetDependency */,
+			);
+			name = HeyzapTests;
+			productName = HeyzapTests;
+			productReference = E16077581B083972004C4DEA /* HeyzapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E160773B1B083972004C4DEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftMigration = 0710;
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Chris Mendez";
+				TargetAttributes = {
+					E16077421B083972004C4DEA = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					E16077571B083972004C4DEA = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = E16077421B083972004C4DEA;
+					};
+				};
+			};
+			buildConfigurationList = E160773E1B083972004C4DEA /* Build configuration list for PBXProject "Heyzap" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E160773A1B083972004C4DEA;
+			productRefGroup = E16077441B083972004C4DEA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E16077421B083972004C4DEA /* Heyzap */,
+				E16077571B083972004C4DEA /* HeyzapTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E16077411B083972004C4DEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1A024EF1BE04BBC00F7561D /* applovin-ios-sdk-3.1.5 in Resources */,
+				E160774E1B083972004C4DEA /* Main.storyboard in Resources */,
+				E16077531B083972004C4DEA /* LaunchScreen.xib in Resources */,
+				E16077501B083972004C4DEA /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E16077561B083972004C4DEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E160773F1B083972004C4DEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E160774B1B083972004C4DEA /* ViewController.swift in Sources */,
+				E16077491B083972004C4DEA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E16077541B083972004C4DEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E160775F1B083972004C4DEA /* HeyzapTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E160775A1B083972004C4DEA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E16077421B083972004C4DEA /* Heyzap */;
+			targetProxy = E16077591B083972004C4DEA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E160774C1B083972004C4DEA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E160774D1B083972004C4DEA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E16077511B083972004C4DEA /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E16077521B083972004C4DEA /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E16077601B083972004C4DEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E16077611B083972004C4DEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E16077631B083972004C4DEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Heyzap",
+					"$(PROJECT_DIR)/Heyzap/Frameworks",
+				);
+				INFOPLIST_FILE = Heyzap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Heyzap/applovin-ios-sdk-2.5.4",
+					"$(PROJECT_DIR)/Heyzap/Frameworks/applovin-ios-sdk-2.5.4",
+					"$(PROJECT_DIR)/Heyzap/Frameworks/applovin-ios-sdk-3.1.5",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chrisjmendez.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Heyzap/Heyzap-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E16077641B083972004C4DEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Heyzap",
+					"$(PROJECT_DIR)/Heyzap/Frameworks",
+				);
+				INFOPLIST_FILE = Heyzap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Heyzap/applovin-ios-sdk-2.5.4",
+					"$(PROJECT_DIR)/Heyzap/Frameworks/applovin-ios-sdk-2.5.4",
+					"$(PROJECT_DIR)/Heyzap/Frameworks/applovin-ios-sdk-3.1.5",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chrisjmendez.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Heyzap/Heyzap-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		E16077661B083972004C4DEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(PROJECT_DIR)/Heyzap",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HeyzapTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chrisjmendez.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Heyzap.app/Heyzap";
+			};
+			name = Debug;
+		};
+		E16077671B083972004C4DEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(PROJECT_DIR)/Heyzap",
+				);
+				INFOPLIST_FILE = HeyzapTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chrisjmendez.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Heyzap.app/Heyzap";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E160773E1B083972004C4DEA /* Build configuration list for PBXProject "Heyzap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E16077601B083972004C4DEA /* Debug */,
+				E16077611B083972004C4DEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E16077621B083972004C4DEA /* Build configuration list for PBXNativeTarget "Heyzap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E16077631B083972004C4DEA /* Debug */,
+				E16077641B083972004C4DEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E16077651B083972004C4DEA /* Build configuration list for PBXNativeTarget "HeyzapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E16077661B083972004C4DEA /* Debug */,
+				E16077671B083972004C4DEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E160773B1B083972004C4DEA /* Project object */;
+}

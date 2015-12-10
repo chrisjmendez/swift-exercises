@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FBAudienceNetwork" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GDP-FJ-v5M">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Jco-cV-3vw">
+                                        <rect key="frame" x="8" y="97" width="398" height="29"/>
+                                        <segments>
+                                            <segment title="Send Event"/>
+                                            <segment title="Unlock Acheivement"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="triggerEvent:" destination="BYZ-38-t0r" eventType="valueChanged" id="SCb-RT-hPe"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Jco-cV-3vw" firstAttribute="top" secondItem="GDP-FJ-v5M" secondAttribute="top" constant="97" id="B3C-3A-gv9"/>
+                                    <constraint firstAttribute="bottom" secondItem="Jco-cV-3vw" secondAttribute="bottom" constant="611" id="U23-Ej-IsC"/>
+                                    <constraint firstItem="Jco-cV-3vw" firstAttribute="trailing" secondItem="GDP-FJ-v5M" secondAttribute="trailingMargin" id="jRw-82-Ohs"/>
+                                    <constraint firstItem="Jco-cV-3vw" firstAttribute="centerX" secondItem="GDP-FJ-v5M" secondAttribute="centerX" id="wqG-iE-txN"/>
+                                    <constraint firstItem="Jco-cV-3vw" firstAttribute="leading" secondItem="GDP-FJ-v5M" secondAttribute="leadingMargin" id="xXc-hj-wdy"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GDP-FJ-v5M" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5CF-9c-TOB"/>
+                            <constraint firstAttribute="trailing" secondItem="GDP-FJ-v5M" secondAttribute="trailing" id="Dhy-Wg-ucP"/>
+                            <constraint firstItem="GDP-FJ-v5M" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="o5w-fL-hUr"/>
+                            <constraint firstItem="GDP-FJ-v5M" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zMS-wR-2aW"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="segmentedControl" destination="Jco-cV-3vw" id="yjq-jt-R01"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="392" y="221"/>
+        </scene>
+    </scenes>
+</document>

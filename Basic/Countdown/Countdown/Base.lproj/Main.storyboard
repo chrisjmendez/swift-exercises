@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Countdown" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQ2-GB-Mie">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="play" id="m9q-sE-NhW">
+                                        <connections>
+                                            <action selector="start:" destination="vXZ-lx-hvc" id="leY-rj-XC3"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="MgF-1A-24a"/>
+                                    <barButtonItem systemItem="pause" id="8yc-dZ-R1A">
+                                        <connections>
+                                            <action selector="pause:" destination="vXZ-lx-hvc" id="Vcz-Pa-LgV"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGb-4S-ykI">
+                                <rect key="frame" x="239" y="289" width="140" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YIn-J1-gDL">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Countdown" id="fKp-qI-lOV">
+                                        <barButtonItem key="rightBarButtonItem" title="Clear" id="tNE-55-69a">
+                                            <connections>
+                                                <action selector="clear:" destination="vXZ-lx-hvc" id="ScH-Ru-8rb"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kQ2-GB-Mie" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="1kQ-eS-voA"/>
+                            <constraint firstItem="YIn-J1-gDL" firstAttribute="centerX" secondItem="NGb-4S-ykI" secondAttribute="centerX" id="9h8-SC-T0K"/>
+                            <constraint firstItem="YIn-J1-gDL" firstAttribute="trailing" secondItem="kQ2-GB-Mie" secondAttribute="trailing" id="BlB-K2-Xok"/>
+                            <constraint firstItem="YIn-J1-gDL" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="MlA-7Q-Hga"/>
+                            <constraint firstItem="NGb-4S-ykI" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="289" id="RNl-Sy-R0m"/>
+                            <constraint firstItem="YIn-J1-gDL" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="bKC-DK-ITw"/>
+                            <constraint firstItem="kQ2-GB-Mie" firstAttribute="leading" secondItem="YIn-J1-gDL" secondAttribute="leading" id="ubb-ix-LtH"/>
+                            <constraint firstAttribute="trailing" secondItem="YIn-J1-gDL" secondAttribute="trailing" id="w7K-BR-rL6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="counterLbl" destination="NGb-4S-ykI" id="Apo-kY-jH8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

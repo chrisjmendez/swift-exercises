@@ -1,0 +1,1 @@
+ const unsigned char Pods_HTTPRequestsVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:Pods_HTTPRequests  PROJECT:Pods-1" "\n"; const double Pods_HTTPRequestsVersionNumber __attribute__ ((used)) = (double)1.;
