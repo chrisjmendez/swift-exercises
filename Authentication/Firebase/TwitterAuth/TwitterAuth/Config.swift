@@ -20,6 +20,7 @@ struct Config {
         static let firebase = "https://twitterauth.firebaseio.com"
     }
     
+    //Obtain this Twitter API key from http://apps.twitter.com
     struct social {
         static let twitter = ""
     }
