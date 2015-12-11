@@ -129,13 +129,12 @@ class ViewController: UIViewController {
         activityIndicator.startAnimating()
         
         twitterAuthHelper.authenticateAccount(account, withCallback: { (error, authData) -> Void in
-            print("authenticateAccount")
             if error != nil {
                 // There was an error authenticating
                 self.showAlert("Uh Oh. Authentication error.")
             } else {
                 // We have an authenticated Twitter user
-                print("authAccount: ", authData)
+                print("authAccount: ", authData.providerData[])
                 // segue to chat
                 self.performSegueWithIdentifier(self.SEGUE_LOGIN_COMPLETE, sender: authData)
             }

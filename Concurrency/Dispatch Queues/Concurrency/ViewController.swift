@@ -92,6 +92,7 @@ class ViewController: UIViewController {
             })
             //Customer Will Now Pay
             submitPayment(customerName)
+            
         }
     }
     
