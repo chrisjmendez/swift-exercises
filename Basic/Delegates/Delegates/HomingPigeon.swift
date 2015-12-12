@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol HomingPigeonDelegate {
+    func voyageDidFinish(message:String)
+}
+
 class HomingPigeon {
     var delegate:HomingPigeonDelegate? = nil
     

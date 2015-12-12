@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol HomingPigeonDelegate {
-    func voyageDidFinish(message:String)
-}
-
 class ViewController: UIViewController {
     
     let message: String = "Marco!"
