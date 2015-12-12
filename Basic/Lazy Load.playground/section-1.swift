@@ -2,10 +2,10 @@ import UIKit
 
 class DatabaseConnection{
     init(){
-        println("New DB is up and running")
+        print("New DB is up and running")
     }
     func execute(message:String){
-        println("Execute: \(message)")
+        print("Execute: \(message)")
     }
 }
 
@@ -19,5 +19,3 @@ class DataStore{
 let ds = DataStore()
 //The DB connection won't kick in until you absolutely need it.
 ds.connection.execute("SELECT * FROM USERS")
-
-
