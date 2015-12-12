@@ -82,13 +82,13 @@
 			isa = PBXGroup;
 			children = (
 				E1797D431ACD6FE2004C3D25 /* AppDelegate.swift */,
-				E1B58F871BB9AD1800934ABE /* DetailViewController.swift */,
 				E1797D451ACD6FE2004C3D25 /* ViewController.swift */,
+				E1B58F871BB9AD1800934ABE /* DetailViewController.swift */,
+				E1797D651ACD760F004C3D25 /* RootViewController.swift */,
 				E1797D471ACD6FE2004C3D25 /* Main.storyboard */,
 				E1797D4A1ACD6FE2004C3D25 /* Images.xcassets */,
 				E1797D4C1ACD6FE2004C3D25 /* LaunchScreen.xib */,
 				E1797D411ACD6FE2004C3D25 /* Supporting Files */,
-				E1797D651ACD760F004C3D25 /* RootViewController.swift */,
 			);
 			path = UITableView;
 			sourceTree = "<group>";
@@ -162,6 +162,8 @@
 		E1797D361ACD6FE2004C3D25 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0710;
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Skyground Media";
 				TargetAttributes = {

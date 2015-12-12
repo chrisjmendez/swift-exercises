@@ -134,7 +134,7 @@ class ViewController: UIViewController {
                 self.showAlert("Uh Oh. Authentication error.")
             } else {
                 // We have an authenticated Twitter user
-                print("authAccount: ", authData.providerData[])
+                print("authAccount: ", authData.providerData)
                 // segue to chat
                 self.performSegueWithIdentifier(self.SEGUE_LOGIN_COMPLETE, sender: authData)
             }

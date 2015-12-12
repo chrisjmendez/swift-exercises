@@ -37,7 +37,7 @@ class RootViewController:UIViewController, UITableViewDataSource, UITableViewDel
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == SEGUE_ITEM_DETAIL {
-            var indexPath = self.itemDetail!
+            let indexPath = self.itemDetail!
             (segue.destinationViewController as! DetailViewController).detailItem = data[indexPath]
         }
     }
@@ -47,11 +47,11 @@ class RootViewController:UIViewController, UITableViewDataSource, UITableViewDel
         let section:Int = indexPath.section
 
         //Get the index of this cell
-        var cellData = self.data[row]
+        let cellData = self.data[row]
         
         //Create the cell itself
-        var reuseIdentifier = "cell"
-        var cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier) as! UITableViewCell!
+        let reuseIdentifier = "cell"
+        var cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier) as UITableViewCell!
         if cell == nil {
             cell = UITableViewCell(style:.Default, reuseIdentifier: reuseIdentifier)
         }
@@ -91,7 +91,7 @@ class RootViewController:UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func createThumbnail(string:String) -> UIImage{
-        var image:UIImage = UIImage(named: string)!
+        let image:UIImage = UIImage(named: string)!
         return image
     }
 }

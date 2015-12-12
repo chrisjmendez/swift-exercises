@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TwitterAuth/ViewController.swift"
-            timestampString = "471554994.524918"
+            filePath = "Delegates/ViewController.swift"
+            timestampString = "471573414.265787"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
-            landmarkName = "authAccount(_:)"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "sendMessage(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
