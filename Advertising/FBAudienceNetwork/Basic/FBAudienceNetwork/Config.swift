@@ -7,7 +7,6 @@
 //
 
 class Config {
-    
     struct permissions {
         static let name          = "name"
         static let email         = "email"

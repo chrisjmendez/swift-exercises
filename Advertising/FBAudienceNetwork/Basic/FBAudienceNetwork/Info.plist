@@ -39,14 +39,14 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb1493068687665530</string>
+				<string>fbTHERESTISASTRINGOFNUMBERS</string>
 			</array>
 		</dict>
 	</array>
 	<key>FacebookAppID</key>
-	<string>PLEASE INSERT YOUR FB APP ID</string>
+	<string>PLEASE INSERT YOUR FACEBOOK APP ID</string>
 	<key>FacebookDisplayName</key>
-	<string>PLEASE INSERT YOUR FB DISPLAY NAME</string>
+	<string>PLEASE INSERT YOUR FACEBOOK APP NAME</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>

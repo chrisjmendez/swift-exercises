@@ -77,11 +77,19 @@
 				E15D5F071C00BE6500813248 /* Main.storyboard */,
 				E15D5F0A1C00BE6500813248 /* Assets.xcassets */,
 				E15D5F0C1C00BE6500813248 /* LaunchScreen.storyboard */,
-				E15D5F0F1C00BE6500813248 /* Info.plist */,
-				E15D5F171C00BF8200813248 /* FBAudienceNetwork-Bridging-Header.h */,
-				E15D5F261C00C5BF00813248 /* Config.swift */,
+				E16E24751C1FEEF300D66B76 /* Config */,
 			);
 			path = FBAudienceNetwork;
+			sourceTree = "<group>";
+		};
+		E16E24751C1FEEF300D66B76 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				E15D5F261C00C5BF00813248 /* Config.swift */,
+				E15D5F0F1C00BE6500813248 /* Info.plist */,
+				E15D5F171C00BF8200813248 /* FBAudienceNetwork-Bridging-Header.h */,
+			);
+			name = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +327,7 @@
 				E15D5F141C00BE6500813248 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

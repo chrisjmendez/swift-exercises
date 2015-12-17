@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E19827011C22969A006CDD4C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19827001C22969A006CDD4C /* Config.swift */; };
+		E19827061C229746006CDD4C /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E19827051C229746006CDD4C /* Firebase.framework */; };
 		E1B32E011C1A3B0600676BCF /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B32E001C1A3B0600676BCF /* libc++.tbd */; };
 		E1B32E031C1A3B0B00676BCF /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B32E021C1A3B0B00676BCF /* libicucore.tbd */; };
 		E1BF3BE61BB0AB940057E91A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BF3BE51BB0AB940057E91A /* AppDelegate.swift */; };
@@ -15,11 +17,9 @@
 		E1BF3BED1BB0AB940057E91A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1BF3BEC1BB0AB940057E91A /* Images.xcassets */; };
 		E1BF3BF01BB0AB940057E91A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1BF3BEE1BB0AB940057E91A /* LaunchScreen.xib */; };
 		E1BF3BFC1BB0AB940057E91A /* FirebaseSimpleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BF3BFB1BB0AB940057E91A /* FirebaseSimpleTests.swift */; };
-		E1BF3C0A1BB0ABE40057E91A /* Libs in Resources */ = {isa = PBXBuildFile; fileRef = E1BF3C091BB0ABE40057E91A /* Libs */; };
 		E1BF3C0E1BB0ACB30057E91A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1BF3C0D1BB0ACB30057E91A /* SystemConfiguration.framework */; };
 		E1BF3C101BB0ACB90057E91A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1BF3C0F1BB0ACB90057E91A /* CFNetwork.framework */; };
 		E1BF3C121BB0ACBF0057E91A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1BF3C111BB0ACBF0057E91A /* Security.framework */; };
-		E1BF3C171BB0B09C0057E91A /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1BF3C161BB0B09C0057E91A /* Firebase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E19827001C22969A006CDD4C /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		E19827051C229746006CDD4C /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
 		E1B32E001C1A3B0600676BCF /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		E1B32E021C1A3B0B00676BCF /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		E1BF3BE01BB0AB940057E91A /* FirebaseSimple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseSimple.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,12 +47,10 @@
 		E1BF3BF51BB0AB940057E91A /* FirebaseSimpleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirebaseSimpleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1BF3BFA1BB0AB940057E91A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1BF3BFB1BB0AB940057E91A /* FirebaseSimpleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSimpleTests.swift; sourceTree = "<group>"; };
-		E1BF3C091BB0ABE40057E91A /* Libs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Libs; sourceTree = "<group>"; };
 		E1BF3C0D1BB0ACB30057E91A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E1BF3C0F1BB0ACB90057E91A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		E1BF3C111BB0ACBF0057E91A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		E1BF3C131BB0AD130057E91A /* FirebaseSimple-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FirebaseSimple-Bridging-Header.h"; sourceTree = "<group>"; };
-		E1BF3C161BB0B09C0057E91A /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = FirebaseSimple/Libs/Firebase.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +60,8 @@
 			files = (
 				E1B32E031C1A3B0B00676BCF /* libicucore.tbd in Frameworks */,
 				E1B32E011C1A3B0600676BCF /* libc++.tbd in Frameworks */,
-				E1BF3C171BB0B09C0057E91A /* Firebase.framework in Frameworks */,
 				E1BF3C101BB0ACB90057E91A /* CFNetwork.framework in Frameworks */,
+				E19827061C229746006CDD4C /* Firebase.framework in Frameworks */,
 				E1BF3C121BB0ACBF0057E91A /* Security.framework in Frameworks */,
 				E1BF3C0E1BB0ACB30057E91A /* SystemConfiguration.framework in Frameworks */,
 			);
@@ -82,7 +82,6 @@
 			children = (
 				E1B32E021C1A3B0B00676BCF /* libicucore.tbd */,
 				E1B32E001C1A3B0600676BCF /* libc++.tbd */,
-				E1BF3C161BB0B09C0057E91A /* Firebase.framework */,
 				E1BF3C111BB0ACBF0057E91A /* Security.framework */,
 				E1BF3C0F1BB0ACB90057E91A /* CFNetwork.framework */,
 				E1BF3C0D1BB0ACB30057E91A /* SystemConfiguration.framework */,
@@ -104,24 +103,25 @@
 		E1BF3BE21BB0AB940057E91A /* FirebaseSimple */ = {
 			isa = PBXGroup;
 			children = (
-				E1BF3C091BB0ABE40057E91A /* Libs */,
+				E19827051C229746006CDD4C /* Firebase.framework */,
 				E1BF3BE51BB0AB940057E91A /* AppDelegate.swift */,
 				E1BF3BE71BB0AB940057E91A /* ViewController.swift */,
 				E1BF3BE91BB0AB940057E91A /* Main.storyboard */,
-				E1BF3BEC1BB0AB940057E91A /* Images.xcassets */,
 				E1BF3BEE1BB0AB940057E91A /* LaunchScreen.xib */,
-				E1BF3BE31BB0AB940057E91A /* Supporting Files */,
+				E1BF3BEC1BB0AB940057E91A /* Images.xcassets */,
+				E1BF3BE31BB0AB940057E91A /* Config */,
 			);
 			path = FirebaseSimple;
 			sourceTree = "<group>";
 		};
-		E1BF3BE31BB0AB940057E91A /* Supporting Files */ = {
+		E1BF3BE31BB0AB940057E91A /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				E19827001C22969A006CDD4C /* Config.swift */,
 				E1BF3BE41BB0AB940057E91A /* Info.plist */,
 				E1BF3C131BB0AD130057E91A /* FirebaseSimple-Bridging-Header.h */,
 			);
-			name = "Supporting Files";
+			name = Config;
 			sourceTree = "<group>";
 		};
 		E1BF3BF81BB0AB940057E91A /* FirebaseSimpleTests */ = {
@@ -226,7 +226,6 @@
 			files = (
 				E1BF3BEB1BB0AB940057E91A /* Main.storyboard in Resources */,
 				E1BF3BF01BB0AB940057E91A /* LaunchScreen.xib in Resources */,
-				E1BF3C0A1BB0ABE40057E91A /* Libs in Resources */,
 				E1BF3BED1BB0AB940057E91A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,6 +246,7 @@
 			files = (
 				E1BF3BE81BB0AB940057E91A /* ViewController.swift in Sources */,
 				E1BF3BE61BB0AB940057E91A /* AppDelegate.swift in Sources */,
+				E19827011C22969A006CDD4C /* Config.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +378,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FirebaseSimple/Libs",
+					"$(PROJECT_DIR)/FirebaseSimple",
 				);
 				INFOPLIST_FILE = FirebaseSimple/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -397,6 +398,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FirebaseSimple/Libs",
+					"$(PROJECT_DIR)/FirebaseSimple",
 				);
 				INFOPLIST_FILE = FirebaseSimple/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

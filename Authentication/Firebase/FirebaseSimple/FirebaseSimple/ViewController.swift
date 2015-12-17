@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var db = Firebase(url: "https://swift-example.firebaseio.com/")
+    var ref = Firebase(url: Config.db.firebase)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,16 +18,16 @@ class ViewController: UIViewController {
         let newClient = "USC Radio Network"
         let subsidary = ["Classical KUSC", "Classical KDFC"]
         
-        db.childByAppendingPath(newClient).setValue(newClient)
-        db.childByAppendingPath(newClient).childByAppendingPath(subsidary[0]).setValue("Los Angeles")
-        db.childByAppendingPath(newClient).childByAppendingPath(subsidary[1]).setValue("San Francisco")
+        ref.childByAppendingPath(newClient).setValue(newClient)
+        ref.childByAppendingPath(newClient).childByAppendingPath(subsidary[0]).setValue("Los Angeles")
+        ref.childByAppendingPath(newClient).childByAppendingPath(subsidary[1]).setValue("San Francisco")
         
         //Pull the value from Firebase using the Observer Pattern
-        db.observeEventType(.Value, withBlock: {
+        ref.observeEventType(.Value, withBlock: {
             //Get the Snapshot of the code and print a value
             snapshot in
             let value = snapshot.value.objectForKey(newClient)
-            print(value)
+            print("Change:",value)
         })
         
     }

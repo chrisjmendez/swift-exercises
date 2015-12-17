@@ -49,7 +49,8 @@ class ViewController: UIViewController {
         // an ad request is made. GADInterstitial automatically returns test ads when running on a
         // simulator.
         let request = GADRequest()
-        request.testDevices = [TEST_DEVICE]
+        //request.testDevices = [TEST_DEVICE]
+        request.testDevices = [kGADSimulatorID];
         
         interstitial!.loadRequest(request)
     }
@@ -112,7 +113,6 @@ class ViewController: UIViewController {
     }
     
     func endGame(){
-        
         gameState = .Ended
 //        gameText.text = "Game over!"
 //        playAgainButton.hidden = false
@@ -128,7 +128,7 @@ class ViewController: UIViewController {
         if (interstitial!.isReady) {
             interstitial!.presentFromRootViewController(self)
         } else {
-            let alert = UIAlertController(title: "Interstitial not ready", message: "The interstitial didn't finish loading or failed to load", preferredStyle: .Alert)
+            UIAlertController(title: "Interstitial not ready", message: "The interstitial didn't finish loading or failed to load", preferredStyle: .Alert)
         }
     }
 
