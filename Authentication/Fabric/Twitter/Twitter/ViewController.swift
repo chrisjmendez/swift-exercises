@@ -9,7 +9,6 @@
 import UIKit
 import TwitterKit
 
-
 class ViewController: UIViewController {
 
     let userDefaults = NSUserDefaults.standardUserDefaults()

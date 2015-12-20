@@ -162,6 +162,8 @@
 		E1621CA41B2A64B6004C582B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Chris Mendez";
 				TargetAttributes = {
@@ -417,6 +419,7 @@
 				E1621CCF1B2A64B6004C582B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E1621CD01B2A64B6004C582B /* Build configuration list for PBXNativeTarget "FirebaseTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +428,7 @@
 				E1621CD21B2A64B6004C582B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

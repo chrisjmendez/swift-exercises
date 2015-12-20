@@ -114,7 +114,7 @@ extension MasterViewController{
             //D. Create a data object if there's responseData
             if let data = responseData{
                 //E. Convert the Raw data into a JSON string
-                let objects = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(0), error: nil) as? NSArray
+                let objects = (try? NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(rawValue: 0))) as? NSArray
                 //F. Continue doing more processing
                 self.downloadStoriesInformation(objects!)
             }
@@ -125,7 +125,7 @@ extension MasterViewController{
     private func downloadStoriesInformation(storyIDs: NSArray) -> Void {
         let count = 2 //storyIDs.count
         
-        for (index, storyID) in enumerate(storyIDs){
+        for (index, storyID) in storyIDs.enumerate(){
             //A. Item detail story
             let storyURL = BASE_URL + "/v0/item/" + storyID.stringValue + ".json"
             //B. Craft a URL string
@@ -139,10 +139,10 @@ extension MasterViewController{
                 //E. If data exists, process it
                 if let data = resData {
                     if err != nil{
-                        println("error", err)
+                        print("error", err)
                     }
                     //F. Convert data into JSON
-                    let json = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(0), error: nil) as? NSDictionary
+                    let json = (try? NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(rawValue: 0))) as? NSDictionary
                     //G. Create an Item Object
                     let item = Item(dictionary: json as! [String: AnyObject])
                     //H. Store the Item object
@@ -164,7 +164,7 @@ extension MasterViewController{
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) 
 
         let object = self.objects[indexPath.row] as! NSNumber
         //println("tableView", object, indexPath.row )
@@ -179,7 +179,7 @@ extension MasterViewController{
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
-            if let indexPath = self.tableView.indexPathForSelectedRow() {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
                 let object = objects[indexPath.row] as! NSNumber
                 let item = self.stories[object] as? Item
 
