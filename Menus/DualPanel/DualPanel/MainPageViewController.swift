@@ -25,9 +25,22 @@ class MainPageViewController: UIViewController {
 
 extension MainPageViewController {
     
+    @IBAction func rightSideButtonTapped(sender: AnyObject) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.drawerContainer?.toggleDrawerSide(MMDrawerSide.Right, animated: true, completion: nil)
+    }
+    
+    @IBAction func leftSideButtonTapped(sender: AnyObject) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.drawerContainer?.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
+    }
+    
+    
+    /*
     @IBAction func onSignOut(sender: AnyObject) {
         signOut()
     }
+    */
     
     func signOut(){
         print("signOut")
