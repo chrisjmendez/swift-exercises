@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1zA-SW-aFa">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UploadProfilePhoto" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZFN-kc-Qbg"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="7Zv-Jf-FvR" kind="presentation" identifier="onLoadSegue" id="XC1-ot-Gpn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1131.5" y="493.5"/>
+        </scene>
+        <!--Main Page View Controller-->
+        <scene sceneID="GFq-rh-UY7">
+            <objects>
+                <viewController id="7Zv-Jf-FvR" customClass="MainPageViewController" customModule="UploadProfilePhoto" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BcR-Po-e5s"/>
+                        <viewControllerLayoutGuide type="bottom" id="6qS-xf-aYk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uUJ-CP-x0a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gl-An-zxn">
+                                <rect key="frame" x="112" y="344" width="150" height="30"/>
+                                <state key="normal" title="Upload Photo"/>
+                                <connections>
+                                    <action selector="uploadPhoto:" destination="7Zv-Jf-FvR" eventType="touchUpInside" id="aLT-xz-c6w"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="nlw-zR-Thj">
+                                <rect key="frame" x="0.0" y="103" width="375" height="200"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nlw-zR-Thj" firstAttribute="top" secondItem="BcR-Po-e5s" secondAttribute="bottom" constant="41" id="8p1-Vr-obV"/>
+                            <constraint firstItem="9gl-An-zxn" firstAttribute="leading" secondItem="uUJ-CP-x0a" secondAttribute="leadingMargin" constant="96" id="Hhk-c4-1pc"/>
+                            <constraint firstItem="9gl-An-zxn" firstAttribute="top" secondItem="nlw-zR-Thj" secondAttribute="bottom" constant="41" id="O16-3j-Dah"/>
+                            <constraint firstItem="9gl-An-zxn" firstAttribute="centerX" secondItem="nlw-zR-Thj" secondAttribute="centerX" id="g2U-ln-sS3"/>
+                            <constraint firstItem="nlw-zR-Thj" firstAttribute="leading" secondItem="uUJ-CP-x0a" secondAttribute="leading" id="pqI-Cr-Hid"/>
+                            <constraint firstAttribute="trailing" secondItem="nlw-zR-Thj" secondAttribute="trailing" id="pxp-sI-e5D"/>
+                            <constraint firstItem="6qS-xf-aYk" firstAttribute="top" secondItem="9gl-An-zxn" secondAttribute="bottom" constant="293" id="vPj-5W-JSV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Rao-55-T05"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="profileImageView" destination="nlw-zR-Thj" id="gQg-gy-eJY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uBd-2m-lCK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1629.5" y="493.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZsR-hm-3HA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1zA-SW-aFa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pmK-JA-gM0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="VIy-7k-fU6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9cU-O3-jdg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="644" y="494"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ProfileImage" width="375" height="200"/>
+    </resources>
+</document>

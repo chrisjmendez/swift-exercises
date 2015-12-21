@@ -117,7 +117,7 @@
                                         <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XdG-oQ-ejm" id="Bqz-pQ-tVM">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -245,7 +245,6 @@
         <!--Navigation Controller-->
         <scene sceneID="xrU-8x-Swv">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jm2-Mt-IxY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JRT-YB-akf" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -258,6 +257,7 @@
                         <segue destination="NZO-iI-c4d" kind="relationship" relationship="rootViewController" id="LXP-Iy-RaR"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jm2-Mt-IxY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="532.5" y="-478.5"/>
         </scene>
