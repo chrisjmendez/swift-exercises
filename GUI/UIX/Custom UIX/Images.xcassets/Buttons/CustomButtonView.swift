@@ -16,7 +16,7 @@ class CustomButtonView: UIButton {
     
     override func drawRect(rect: CGRect) {
         
-        var path = UIBezierPath(ovalInRect: rect)
+        let path = UIBezierPath(ovalInRect: rect)
         fillColor.setFill()
         path.fill()
         
@@ -26,7 +26,7 @@ class CustomButtonView: UIButton {
         let plusWidth: CGFloat = min(bounds.width, bounds.height) * 0.6
         
         //create the path
-        var plusPath = UIBezierPath()
+        let plusPath = UIBezierPath()
         
         //set the path's line width to the height of the stroke
         plusPath.lineWidth = plusHeight

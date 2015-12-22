@@ -178,6 +178,8 @@
 		E1A1A9381AE3392C0078F249 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Chris Mendez";
 				TargetAttributes = {
@@ -429,6 +431,7 @@
 				E1A1A9611AE3392C0078F249 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E1A1A9621AE3392C0078F249 /* Build configuration list for PBXNativeTarget "Custom UIXTests" */ = {
 			isa = XCConfigurationList;
@@ -437,6 +440,7 @@
 				E1A1A9641AE3392C0078F249 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

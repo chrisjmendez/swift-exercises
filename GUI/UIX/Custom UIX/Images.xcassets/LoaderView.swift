@@ -40,7 +40,7 @@ let π:CGFloat = CGFloat(M_PI)
         let endAngle: CGFloat = π / 4
         
         // 5
-        var path = UIBezierPath(arcCenter: center,
+        let path = UIBezierPath(arcCenter: center,
             radius: radius/2 - arcWidth/2,
             startAngle: startAngle,
             endAngle: endAngle,
@@ -65,7 +65,7 @@ let π:CGFloat = CGFloat(M_PI)
         let outlineEndAngle = arcLengthPerGlass * CGFloat(counter) + startAngle
         
         //2 - draw the outer arc
-        var outlinePath = UIBezierPath(arcCenter: center,
+        let outlinePath = UIBezierPath(arcCenter: center,
             radius: bounds.width/2 - 2.5,
             startAngle: startAngle,
             endAngle: outlineEndAngle,
