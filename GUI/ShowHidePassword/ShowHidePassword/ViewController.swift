@@ -17,21 +17,22 @@ class ViewController: UIViewController {
     func initSecureText(tf:TextField){
         let w = 100
         let h = 60
-        
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: w, height: h))
-        button.titleLabel?.font = UIFont(name: "label", size: 14)
-        button.setTitle("HIDE", forState: UIControlState.Normal)
-        button.setTitleColor(UIColor.init(hexString: "#678AFF") , forState: UIControlState.Normal)
-        button.addTarget(self, action: Selector("hideShow:"), forControlEvents: UIControlEvents.TouchUpInside)
-        button.backgroundColor = UIColor(hexString: "#F0F0F0")
-        button.layer.borderColor = UIColor(hexString: "#979797").CGColor
-        
+            button.titleLabel?.font = UIFont(name: "label", size: 14)
+            button.setTitle("HIDE", forState: UIControlState.Normal)
+            button.setTitleColor(UIColor.init(hexString: "#678AFF") , forState: UIControlState.Normal)
+            button.addTarget(self, action: Selector("hideShow:"), forControlEvents: UIControlEvents.TouchUpInside)
+            button.backgroundColor = UIColor(hexString: "#F0F0F0")
+            button.layer.borderColor = UIColor(hexString: "#979797").CGColor
+
         tf.rightView = button
         tf.rightViewMode = UITextFieldViewMode.Always
     }
     
     func hideShow(sender:AnyObject){
+        //Access the button
         let button = sender as? UIButton
+        //Access the TextField
         let textfield = button?.superview as? TextField
         let isSecureText = textfield?.secureTextEntry as Bool!
         if isSecureText == false {
