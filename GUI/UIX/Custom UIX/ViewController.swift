@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var loaderLabel: UILabel!
     
     @IBOutlet weak var buyBtn: CustomButtonView!
+    
     @IBAction func onBuyClicked(button: CustomButtonView) {
         
         if button.isAddButton {

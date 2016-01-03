@@ -8,8 +8,9 @@
 
 import UIKit
 
-@IBDesignable class CustomButtonView: UIButton {
-
+@IBDesignable
+class CircularButton: UIButton {
+    
     @IBInspectable var fillColor: UIColor = UIColor.blueColor()
     @IBInspectable var isAddButton: Bool = true
     
