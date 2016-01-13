@@ -262,16 +262,14 @@
 			children = (
 				E1B331C21C4706D600683BE6 /* Stripe */,
 				E1B331AE1C4706A900683BE6 /* AppDelegate.swift */,
-				E1B3328D1C47074000683BE6 /* Button.swift */,
-				E1B332851C4706E500683BE6 /* Config.swift */,
-				E1B332931C47075B00683BE6 /* ProductsCell.swift */,
-				E1B332911C47075000683BE6 /* TextField.swift */,
+				E1B332951C470C9100683BE6 /* UIX */,
 				E1B3328F1C47074B00683BE6 /* PayViewController.swift */,
 				E1B331B01C4706A900683BE6 /* ViewController.swift */,
 				E1B331B21C4706A900683BE6 /* Main.storyboard */,
 				E1B331B51C4706A900683BE6 /* Assets.xcassets */,
 				E1B331B71C4706A900683BE6 /* LaunchScreen.storyboard */,
 				E1B331BA1C4706A900683BE6 /* Info.plist */,
+				E1B332851C4706E500683BE6 /* Config.swift */,
 				E1B331C01C4706BA00683BE6 /* BasicStripe-Bridging-Header.h */,
 			);
 			path = BasicStripe;
@@ -480,6 +478,16 @@
 				E1B3323B1C4706D600683BE6 /* STPPaymentCardTextFieldViewModel.m */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		E1B332951C470C9100683BE6 /* UIX */ = {
+			isa = PBXGroup;
+			children = (
+				E1B332931C47075B00683BE6 /* ProductsCell.swift */,
+				E1B3328D1C47074000683BE6 /* Button.swift */,
+				E1B332911C47075000683BE6 /* TextField.swift */,
+			);
+			name = UIX;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

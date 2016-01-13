@@ -117,8 +117,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Card Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CeC-GF-XdZ" customClass="TextField" customModule="BasicStripe" customModuleProvider="target">
-                                <rect key="frame" x="20" y="140" width="560" height="50"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="4242424242424242" placeholder="Card Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CeC-GF-XdZ" customClass="TextField" customModule="BasicStripe" customModuleProvider="target">
+                                <rect key="frame" x="20" y="141" width="560" height="50"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="K5G-0G-S28"/>
@@ -141,8 +141,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Card Holder Name" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="YyV-Sn-kYX" customClass="TextField" customModule="BasicStripe" customModuleProvider="target">
-                                <rect key="frame" x="20" y="70" width="560" height="50"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Rocky Racoon" placeholder="Card Holder Name" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="YyV-Sn-kYX" customClass="TextField" customModule="BasicStripe" customModuleProvider="target">
+                                <rect key="frame" x="20" y="72" width="560" height="50"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Diz-gc-0wW"/>
@@ -165,7 +165,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Expiration (MM/YY)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QH8-vI-3uh" customClass="TextField" customModule="BasicStripe" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12/2016" borderStyle="line" placeholder="Expiration (MM/YY)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QH8-vI-3uh" customClass="TextField" customModule="BasicStripe" customModuleProvider="target">
                                 <rect key="frame" x="20" y="210" width="183" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="UBO-kY-Mm6"/>
@@ -197,7 +197,7 @@
                                     <action selector="onPay:" destination="6Pd-2w-10u" eventType="touchUpInside" id="rmg-wQ-df1"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="CVV" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L7Y-L1-0la" customClass="TextField" customModule="BasicStripe" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="012" borderStyle="line" placeholder="CVV" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L7Y-L1-0la" customClass="TextField" customModule="BasicStripe" customModuleProvider="target">
                                 <rect key="frame" x="397" y="210" width="183" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="eMU-Va-rWU"/>
