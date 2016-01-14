@@ -66,9 +66,7 @@ class PayViewController: UIViewController {
     }
     
     func preparePurchase(tokenId:String, params:STPCardParams){
-        
         let timestamp = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .ShortStyle)
-
         var double = NSString(string: price).doubleValue
             double = double * 100
         let int = Int(double)
@@ -83,8 +81,7 @@ class PayViewController: UIViewController {
         postPayment(dict)
     }
     
-    func postPayment(dict:[String:String]){
-        
+    func postPayment(dict:[String:String]){   
         let data = dict.stringFromHttpParameters()
 
         let url = NSURL(string: URL_PATH, relativeToURL: NSURL(string: HOST_URL))
@@ -111,8 +108,8 @@ class PayViewController: UIViewController {
             //JSON Response
             do{
                 let json = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) as? NSDictionary
-                let success = json!["success"]! as? Int
-                let message = json!["message"]!
+                let success = json?.valueForKey("success") as! Int
+                let message = json?.valueForKey("message")
                 
                 if success == 0 {
                     print("Fail: ", message)
