@@ -18,46 +18,58 @@ class PayViewController: UIViewController {
     @IBOutlet weak var cvv: TextField!
     
     @IBAction func onPay(sender: AnyObject) {
-        validateAndPay()
+        let params        = STPCardParams()
+            params.number = number.text!
+            params.cvc    = cvv.text!
+        
+        if validateAndPay(params) {
+            getToken(params)
+        } else {
+            showAlert("Form Error", message: "Please enter a valid credit card.")
+        }
     }
     
-    func validateAndPay(){
-        let creditCard = STPCardParams()
-        creditCard.number = number.text
-        creditCard.cvc    = cvv.text
-        
-        if(((expiration.text?.isEmpty) == nil)){
-            let expArr = expiration.text?.componentsSeparatedByString("/")
-            if expArr?.count > 1 {
-                
-                let mm:NSNumber = Int(expArr![0])!
-                let yy:NSNumber = Int(expArr![1])!
-                
-                creditCard.expMonth = mm.unsignedLongValue
-                creditCard.expYear  = yy.unsignedLongValue
-            }
-        }
-        
-        do {
-            try creditCard.validateCardReturningError()
-            /*
-            STPAPIClient.sharedClient().createTokenWithCard(
-                creditCard,
-                completion: { (token: STPToken?, stripeError: NSError?) -> Void in
-                    self.createBackendChargeWithToken(token!, completion: completion)
-            })
-            */
-            print("validated")
+    func validateAndPay(params:STPCardParams) -> Bool{
 
-        } catch {
-            showAlert()
+        //TODO - validate Name
+        //TODO - validate credit card
+        //TODO - validate mm
+        //TODO - validate yy
+        //TODO - validate cvc
+        if expiration.text?.isEmpty != nil {
+            let expArr = expiration.text?.componentsSeparatedByString("/")
+            if expArr?.count >= 1 {
+                let mm:NSNumber = UInt(expArr![0])!
+                let yy:NSNumber = UInt(expArr![1])!
+                
+                params.expMonth = mm.unsignedLongValue
+                params.expYear  = yy.unsignedLongValue
+            }
+            return true
+        } else {
+            return false
         }
     }
     
-    func showAlert(){
+    func getToken(params:STPCardParams){
+        STPAPIClient.sharedClient().createTokenWithCard(params, completion: { (token, stripeError) -> Void in
+            if let error = stripeError {
+                self.showAlert("Error", message: "Could not authorize")
+            }
+            else if let token = token {
+                print("token:", token.tokenId)
+            }
+        })
+    }
+    
+    func sendTokenToServer(tokenId:String){
+        
+    }
+    
+    func showAlert(title:String, message:String){
         //Create the AlertController
         let actionSheetController: UIAlertController = UIAlertController(title: "Payment Error", message:
-            "Please enter a valid credit card.", preferredStyle: .Alert)
+            message, preferredStyle: .Alert)
         
         //Create and add the Cancel action
         let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in

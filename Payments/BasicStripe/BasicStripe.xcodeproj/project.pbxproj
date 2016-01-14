@@ -261,8 +261,8 @@
 			isa = PBXGroup;
 			children = (
 				E1B331C21C4706D600683BE6 /* Stripe */,
-				E1B331AE1C4706A900683BE6 /* AppDelegate.swift */,
 				E1B332951C470C9100683BE6 /* UIX */,
+				E1B331AE1C4706A900683BE6 /* AppDelegate.swift */,
 				E1B3328F1C47074B00683BE6 /* PayViewController.swift */,
 				E1B331B01C4706A900683BE6 /* ViewController.swift */,
 				E1B331B21C4706A900683BE6 /* Main.storyboard */,
@@ -793,6 +793,7 @@
 				E1B331BF1C4706A900683BE6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

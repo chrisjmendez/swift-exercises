@@ -17,5 +17,4 @@ struct Config {
         static let liveSecretKey      = ""
         static let livePublishableKey = ""
     }
-
 }

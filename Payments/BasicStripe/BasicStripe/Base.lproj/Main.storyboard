@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -33,7 +34,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vYV-Rg-N3A" id="C1U-Hx-bJR">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayJ-Su-U0D">
@@ -42,7 +43,7 @@
                                                         <constraint firstAttribute="width" constant="170" id="3SY-2o-f4J"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tL7-1w-2C9">
@@ -61,7 +62,7 @@
                                                         <constraint firstAttribute="width" constant="74" id="Whf-6m-bDA"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -117,7 +118,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="4242424242424242" placeholder="Card Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CeC-GF-XdZ" customClass="TextField" customModule="BasicStripe" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="4242424242424242" placeholder="Card Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CeC-GF-XdZ" customClass="TextField" customModule="BasicStripe" customModuleProvider="target">
                                 <rect key="frame" x="20" y="141" width="560" height="50"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -125,7 +126,7 @@
                                 </constraints>
                                 <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="insetX">
                                         <real key="value" value="10"/>
@@ -141,13 +142,13 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Rocky Racoon" placeholder="Card Holder Name" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="YyV-Sn-kYX" customClass="TextField" customModule="BasicStripe" customModuleProvider="target">
-                                <rect key="frame" x="20" y="72" width="560" height="50"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Rocky Racoon" placeholder="Card Holder Name" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="YyV-Sn-kYX" customClass="TextField" customModule="BasicStripe" customModuleProvider="target">
+                                <rect key="frame" x="21" y="72" width="560" height="50"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Diz-gc-0wW"/>
                                 </constraints>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -165,21 +166,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12/2016" borderStyle="line" placeholder="Expiration (MM/YY)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QH8-vI-3uh" customClass="TextField" customModule="BasicStripe" customModuleProvider="target">
-                                <rect key="frame" x="20" y="210" width="183" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="UBO-kY-Mm6"/>
-                                    <constraint firstAttribute="width" constant="150" id="fK8-kj-yAY"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="insetX">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UrG-Ix-HL9" customClass="Button" customModule="BasicStripe" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UrG-Ix-HL9" customClass="Button" customModule="BasicStripe" customModuleProvider="target">
                                 <rect key="frame" x="20" y="320" width="560" height="50"/>
                                 <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -197,14 +184,15 @@
                                     <action selector="onPay:" destination="6Pd-2w-10u" eventType="touchUpInside" id="rmg-wQ-df1"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="012" borderStyle="line" placeholder="CVV" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L7Y-L1-0la" customClass="TextField" customModule="BasicStripe" customModuleProvider="target">
-                                <rect key="frame" x="397" y="210" width="183" height="50"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="012" borderStyle="line" placeholder="CVV" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L7Y-L1-0la" customClass="TextField" customModule="BasicStripe" customModuleProvider="target">
+                                <rect key="frame" x="505" y="210" width="75" height="50"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="bGf-pQ-VyW"/>
                                     <constraint firstAttribute="height" constant="50" id="eMU-Va-rWU"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="ga4-ja-efj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="insetX">
                                         <real key="value" value="10"/>
@@ -216,30 +204,53 @@
                                     </mask>
                                 </variation>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12/2016" borderStyle="line" placeholder="Expiration (MM/YY)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QH8-vI-3uh" customClass="TextField" customModule="BasicStripe" customModuleProvider="target">
+                                <rect key="frame" x="20" y="210" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="150" id="8xh-wc-fel"/>
+                                    <constraint firstAttribute="height" constant="50" id="UBO-kY-Mm6"/>
+                                    <constraint firstAttribute="width" constant="183" id="fK8-kj-yAY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="insetX">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="8xh-wc-fel"/>
+                                        <exclude reference="fK8-kj-yAY"/>
+                                    </mask>
+                                </variation>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="YyV-Sn-kYX" firstAttribute="leading" secondItem="2wi-1y-Tsl" secondAttribute="leadingMargin" id="0bD-Qg-3wb"/>
-                            <constraint firstItem="L7Y-L1-0la" firstAttribute="top" secondItem="CeC-GF-XdZ" secondAttribute="bottom" constant="20" id="AkM-ZN-3AB"/>
+                            <constraint firstItem="YyV-Sn-kYX" firstAttribute="leading" secondItem="2wi-1y-Tsl" secondAttribute="leadingMargin" constant="1" id="0bD-Qg-3wb"/>
+                            <constraint firstItem="L7Y-L1-0la" firstAttribute="top" secondItem="CeC-GF-XdZ" secondAttribute="bottom" constant="19" id="AkM-ZN-3AB"/>
                             <constraint firstItem="L7Y-L1-0la" firstAttribute="width" secondItem="2wi-1y-Tsl" secondAttribute="width" id="Bid-7e-R7y"/>
                             <constraint firstItem="UrG-Ix-HL9" firstAttribute="height" secondItem="CeC-GF-XdZ" secondAttribute="height" id="Hrp-AC-4HK"/>
                             <constraint firstItem="CeC-GF-XdZ" firstAttribute="leading" secondItem="2wi-1y-Tsl" secondAttribute="leadingMargin" id="IKo-rU-z06"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="YyV-Sn-kYX" secondAttribute="trailing" id="Ijo-8x-XOZ"/>
-                            <constraint firstItem="YyV-Sn-kYX" firstAttribute="top" secondItem="5Xs-QF-53Z" secondAttribute="bottom" constant="50" id="IrZ-Tb-pFU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YyV-Sn-kYX" secondAttribute="trailing" constant="-1" id="Ijo-8x-XOZ"/>
+                            <constraint firstItem="YyV-Sn-kYX" firstAttribute="top" secondItem="5Xs-QF-53Z" secondAttribute="bottom" constant="8" id="IrZ-Tb-pFU"/>
+                            <constraint firstItem="QH8-vI-3uh" firstAttribute="width" secondItem="L7Y-L1-0la" secondAttribute="height" multiplier="200:50" id="IuR-Cl-mwe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="L7Y-L1-0la" secondAttribute="trailing" id="JOp-f7-Nzb"/>
                             <constraint firstItem="QH8-vI-3uh" firstAttribute="leading" secondItem="2wi-1y-Tsl" secondAttribute="leadingMargin" id="KHF-Kd-MDv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CeC-GF-XdZ" secondAttribute="trailing" id="Kj0-w5-QWJ"/>
                             <constraint firstItem="UrG-Ix-HL9" firstAttribute="leading" secondItem="2wi-1y-Tsl" secondAttribute="leadingMargin" id="OOZ-sC-3tr"/>
-                            <constraint firstItem="QH8-vI-3uh" firstAttribute="top" secondItem="CeC-GF-XdZ" secondAttribute="bottom" constant="20" id="Sdb-fx-fEI"/>
-                            <constraint firstItem="CeC-GF-XdZ" firstAttribute="top" secondItem="YyV-Sn-kYX" secondAttribute="bottom" constant="20" id="WC1-tp-YMd"/>
+                            <constraint firstItem="QH8-vI-3uh" firstAttribute="top" secondItem="CeC-GF-XdZ" secondAttribute="bottom" constant="19" id="Sdb-fx-fEI"/>
+                            <constraint firstItem="CeC-GF-XdZ" firstAttribute="top" secondItem="YyV-Sn-kYX" secondAttribute="bottom" constant="19" id="WC1-tp-YMd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="UrG-Ix-HL9" secondAttribute="trailing" id="cGR-wi-CK6"/>
                             <constraint firstItem="UrG-Ix-HL9" firstAttribute="top" secondItem="QH8-vI-3uh" secondAttribute="bottom" constant="60" id="pY3-cr-vPW"/>
-                            <constraint firstItem="YyV-Sn-kYX" firstAttribute="centerX" secondItem="2wi-1y-Tsl" secondAttribute="centerX" id="wBt-lU-HM9"/>
+                            <constraint firstItem="YyV-Sn-kYX" firstAttribute="centerX" secondItem="2wi-1y-Tsl" secondAttribute="centerX" constant="1" id="wBt-lU-HM9"/>
                             <constraint firstItem="L7Y-L1-0la" firstAttribute="width" secondItem="QH8-vI-3uh" secondAttribute="width" id="yYb-8L-OdX"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="Bid-7e-R7y"/>
+                                <exclude reference="yYb-8L-OdX"/>
                             </mask>
                         </variation>
                     </view>
