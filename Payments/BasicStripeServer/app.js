@@ -9,6 +9,9 @@ var express    = require('express')
 , app          = express()
 
 
+app.locals.pretty = true;
+app.set('port', process.env.PORT || 8080);
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -57,3 +60,10 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
+
+/* ** ** ** ** ** ** **
+* App Server Listening
+* ** ** ** ** ** ** **/
+app.listen(app.get('port'), app.get('ipaddress'), function() {
+    console.log("Node app is running at localhost:" + app.get('port'))
+});

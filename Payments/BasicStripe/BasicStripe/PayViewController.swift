@@ -10,6 +10,9 @@ import UIKit
 
 class PayViewController: UIViewController {
 
+    let HOST_URL = Config.host.url
+    let URL_PATH = "/pay"
+
     var product:String = ""
     var price:String   = ""
     
@@ -52,61 +55,81 @@ class PayViewController: UIViewController {
     }
     
     func getToken(params:STPCardParams){
-        STPAPIClient.sharedClient().createTokenWithCard(params, completion: { (token, stripeError) -> Void in
-            if let error = stripeError {
-                self.showAlert("Error", message: "Could not authorize")
+        STPAPIClient.sharedClient().createTokenWithCard(params, completion: { (token, error) -> Void in
+            if let error = error {
+                self.showAlert("Error", message: "Could not authorize. \(error)")
             }
             else if let token = token {
-                self.sendTokenToServer(token.tokenId, params: params)
+                self.preparePurchase(token.tokenId, params: params)
             }
         })
     }
     
-    func sendTokenToServer(tokenId:String, params:STPCardParams){
-        print("C", product, price, tokenId, params )
+    func preparePurchase(tokenId:String, params:STPCardParams){
         
         let timestamp = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .ShortStyle)
 
         var double = NSString(string: price).doubleValue
-            //double = double * 100
+            double = double * 100
         let int = Int(double)
         
         let dict = [
-            "price": "\(int)",
-            "type": "\(product)",
-            "customer": "\(name.text!)"
+            "stripeToken": "\(tokenId)",
+            "amount":      "\(int)",
+            "product":     "\(product)",
+            "customer":    "\(name.text!)",
+            "timestamp":   "\(timestamp)"
         ]
+        postPayment(dict)
+    }
+    
+    func postPayment(dict:[String:String]){
         
-        print(dict)
-        
-        let data = "?" + dict.stringFromHttpParameters()
-        
-        let url = NSURL(string: "/pay")
-        let req = NSMutableURLRequest(URL: url!)
-            req.HTTPMethod = "POST"
-            req.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            req.addValue("application/json", forHTTPHeaderField: "Accept")
-            req.timeoutInterval = 60
-            req.HTTPBody = data.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
-            req.HTTPShouldHandleCookies = false
+        let data = dict.stringFromHttpParameters()
 
+        let url = NSURL(string: URL_PATH, relativeToURL: NSURL(string: HOST_URL))
+        let req = NSMutableURLRequest(URL: url!)
+        req.HTTPMethod      = "POST"
+        req.timeoutInterval = 60
+        req.HTTPBody        = data.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
+        req.HTTPShouldHandleCookies = false
+        
         let session  = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
         let dataTask = session.dataTaskWithRequest(req) { (data, response, error) -> Void in
-            if error != nil {
-                self.showAlert("Session Error", message: "There was an error processing your credit card \(error)")
-            }
-            
-            if data != nil {
-                let jsonResult: NSDictionary = (try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)) as! NSDictionary
-                print("AsSynchronous\(jsonResult)")
-            }
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                if error != nil {
+                    self.showAlert("Session Error", message: "There was an error processing your credit card \(error)")
+                    return
+                }
+                self.processResponse(data!)
+            })
         }
         dataTask.resume()
     }
     
+    func processResponse(data:NSData){
+            //JSON Response
+            do{
+                let json = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) as? NSDictionary
+                let success = json!["success"]! as? Int
+                let message = json!["message"]!
+                
+                if success == 0 {
+                    print("Fail: ", message)
+                    self.showAlert("Payment Fail", message: "Your payment was not successful")
+                } else {
+                    print("Success: ", message)
+                    self.showAlert("Payment Success", message: "Your payment was successful.")
+                }
+            } catch {
+                let err = NSError(domain: self.HOST_URL, code: 1, userInfo: nil)
+                print("Strange Error:", err)
+            }
+    }
+    
     func showAlert(title:String, message:String){
         //Create the AlertController
-        let actionSheetController: UIAlertController = UIAlertController(title: "Payment Error", message:
+        let actionSheetController: UIAlertController = UIAlertController(title: title, message:
             message, preferredStyle: .Alert)
         
         //Create and add the Cancel action

@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     
     func goToViewHandler(notification:NSNotification){
         if let userInfo = notification.userInfo{
-            print("goToViewHandler", userInfo)
+            //print("goToViewHandler", userInfo)
             self.performSegueWithIdentifier(SEGUE_TO_PAY, sender: userInfo)
         }
     }

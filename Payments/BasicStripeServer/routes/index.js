@@ -11,11 +11,11 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.post('/pay', function(req, res, next) {
+router.post('/pay', function(req, res, next) {	
 	var stripeToken = req.body.stripeToken
 	var amount      = req.body.amount
-	var type        = req.body.type
-	var name        = req.body.name
+	var product     = req.body.product
+	var customer    = req.body.customer
 	
 	async.auto({
 		//Make sure the request has all the required params
@@ -26,34 +26,37 @@ router.post('/pay', function(req, res, next) {
 			if( _.isEmpty(amount) ){
 				callback(true, "No amount set." )
 			}
-			if( _.isEmpty(type) ){
-				callback(true, "No type." )
+			if( _.isEmpty(product) ){
+				callback(true, "No product type." )
 			}
-			if( _.isEmpty(name) ){
+			if( _.isEmpty(customer) ){
 				callback(true, "No name set." )
 			}
 			callback(null)
 		},
+		//Use Stripe
 		charge_customer: ["check_params", function(callback){
 			stripe.charges.create({
-				amount: 400,
+				amount: amount,
 				currency: "usd",
 				source: stripeToken,
-				metadata: {'order_id': '6735'},
-				description: "Charge for test@example.com"
-			},
-			{
-				idempotency_key: "CREATE_A_RANDOM_UUID"
+				metadata: {'order_id': product },
+				description: "Charge for " + customer
 			}, 
 			function(err, charge) {
-				if(err) throw err
+				if(err){
+					console.log(err)
+					throw err
+				}
 				callback(null, charge)
 			});		
 			
 		}],
+		//Use this to send users an e-mail
 		send_email: ["charge_customer", function(callback){
+			/*
 			var charge = callback.charge
-			console.log(callback)
+			console.log("send_email:", callback)
 			var payload = {
 				  to:       'test@maildrop.cc',
 				  from:     'stripe@maildrop.cc',
@@ -68,13 +71,16 @@ router.post('/pay', function(req, res, next) {
 			  console.log(json);
 			  callback(null, json)
 			});
+			*/
+			callback(null)
 		}]
 	},
 	function(err, results, o) {
 		if(err){
+			//console.log(err, results)
 			res.json({ success: false, message: results })
 		}
-		res.json({success: true, message: "Great Success"})
+		res.json({success: true, message: results })
 	});
 
 })
