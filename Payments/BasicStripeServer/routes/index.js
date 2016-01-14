@@ -43,7 +43,7 @@ router.post('/pay', function(req, res, next) {
 				description: "Charge for test@example.com"
 			},
 			{
-				idempotency_key: "gFdEfikuMgp8NUvq"
+				idempotency_key: "CREATE_A_RANDOM_UUID"
 			}, 
 			function(err, charge) {
 				if(err) throw err
@@ -61,9 +61,12 @@ router.post('/pay', function(req, res, next) {
 				  text:     'My first email through SendGrid.' + charge
 			}
 			sendgrid.send(payload, function(err, json) {
-			  if (err) { return console.error(err); }
+			  if (err) { 
+				  callback(true, err)
+				  return console.error(err); 
+			  }
 			  console.log(json);
-			  callback(null)
+			  callback(null, json)
 			});
 		}]
 	},

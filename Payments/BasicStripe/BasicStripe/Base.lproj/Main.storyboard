@@ -77,8 +77,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="foodType" destination="ayJ-Su-U0D" id="gco-CY-4js"/>
                                             <outlet property="price" destination="cBb-sb-v6z" id="LTR-YI-Upg"/>
+                                            <outlet property="product" destination="ayJ-Su-U0D" id="gX7-V6-bP8"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

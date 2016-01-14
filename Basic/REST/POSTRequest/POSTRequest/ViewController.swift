@@ -20,14 +20,14 @@ class ViewController: UIViewController {
 
     func sendRequest(){
         let urlPath: String = "http://i.ng.ht/visitors/trace"
-        var url: NSURL! = NSURL(string: urlPath)
+        let url: NSURL! = NSURL(string: urlPath)
         
         
         let timestamp = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .ShortStyle)
-        var stringPost = "?email=" + inputTxt.text! + "&" + "timestamp=" + timestamp
+        let stringPost = "?email=" + inputTxt.text! + "&" + "timestamp=" + timestamp
         let data = stringPost.dataUsingEncoding(NSUTF8StringEncoding)
         
-        var request1: NSMutableURLRequest = NSMutableURLRequest(URL: url)
+        let request1: NSMutableURLRequest = NSMutableURLRequest(URL: url)
             request1.HTTPMethod = "POST"
             request1.addValue("application/json", forHTTPHeaderField: "Content-Type")
             request1.addValue("application/json", forHTTPHeaderField: "Accept")
@@ -37,11 +37,11 @@ class ViewController: UIViewController {
         
         let queue:NSOperationQueue = NSOperationQueue()
         
-        NSURLConnection.sendAsynchronousRequest(request1, queue: queue, completionHandler:{ (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+        NSURLConnection.sendAsynchronousRequest(request1, queue: queue, completionHandler:{ (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
             var err: NSError
 
-            var jsonResult: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary
-            println("AsSynchronous\(jsonResult)")
+            let jsonResult: NSDictionary = (try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers)) as! NSDictionary
+            print("AsSynchronous\(jsonResult)")
         })
     }
     
@@ -66,7 +66,7 @@ extension String {
     ///
     /// http://www.ietf.org/rfc/rfc3986.txt
     ///
-    /// :returns: Return precent escaped string.
+    /// - returns: Return precent escaped string.
     
     func stringByAddingPercentEncodingForURLQueryValue() -> String? {
         let characterSet = NSMutableCharacterSet.alphanumericCharacterSet()
@@ -84,16 +84,16 @@ extension Dictionary {
     ///
     /// http://www.ietf.org/rfc/rfc3986.txt
     ///
-    /// :returns: String representation in the form of key1=value1&key2=value2 where the keys and values are percent escaped
+    /// - returns: String representation in the form of key1=value1&key2=value2 where the keys and values are percent escaped
     
     func stringFromHttpParameters() -> String {
-        let parameterArray = map(self) { (key, value) -> String in
+        let parameterArray = self.map { (key, value) -> String in
             let percentEscapedKey = (key as! String).stringByAddingPercentEncodingForURLQueryValue()!
             let percentEscapedValue = (value as! String).stringByAddingPercentEncodingForURLQueryValue()!
             return "\(percentEscapedKey)=\(percentEscapedValue)"
         }
         
-        return join("&", parameterArray)
+        return parameterArray.joinWithSeparator("&")
     }
     
 }

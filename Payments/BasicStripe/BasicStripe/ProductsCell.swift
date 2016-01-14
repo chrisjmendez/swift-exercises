@@ -10,13 +10,13 @@ import UIKit
 
 class ProductsCell: UITableViewCell {
 
-    @IBOutlet weak var foodType: UILabel!
+    @IBOutlet weak var product: UILabel!
     @IBOutlet weak var price: UILabel!
     
     @IBAction func onBuy(sender: AnyObject) {
-        let item = foodType.text!
+        let item = ["item": product.text!, "price": price.text!]
         
-        NSNotificationCenter.defaultCenter().postNotificationName("goToView", object: nil, userInfo: ["item": item])
+        NSNotificationCenter.defaultCenter().postNotificationName("goToView", object: nil, userInfo: item)
     }
     
     override func awakeFromNib() {
@@ -26,7 +26,6 @@ class ProductsCell: UITableViewCell {
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
 

@@ -35,7 +35,8 @@ class ViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let viewController = segue.destinationViewController as! PayViewController
         if let userInfo = sender! as? AnyObject{
-            viewController.mainTitle = userInfo["item"]! as! String
+            viewController.product = userInfo["item"]! as! String
+            viewController.price   = userInfo["price"]! as! String
         }
     }
     
@@ -66,7 +67,7 @@ extension ViewController:UITableViewDelegate{
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //Review the storyboard to see where we subclassed and named this view
         let cell: ProductsCell = tableView.dequeueReusableCellWithIdentifier("productsCell") as! ProductsCell
-        cell.foodType.text = products[indexPath.row].name
+        cell.product.text = products[indexPath.row].name
         cell.price.text    = products[indexPath.row].price
         
         return cell
