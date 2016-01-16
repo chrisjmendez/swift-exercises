@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BeautifulAlert" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86E-C7-GHx">
+                                <rect key="frame" x="40" y="127" width="520" height="60"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="350-6X-yRR"/>
+                                    <constraint firstAttribute="width" constant="200" id="4zc-89-thQ"/>
+                                    <constraint firstAttribute="height" constant="60" id="Zx4-H4-fOy"/>
+                                    <constraint firstAttribute="width" secondItem="86E-C7-GHx" secondAttribute="height" multiplier="26:3" id="bkI-7A-SXE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Simple Error"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="350-6X-yRR"/>
+                                        <exclude reference="4zc-89-thQ"/>
+                                        <exclude reference="bkI-7A-SXE"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="onError:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5SD-df-tZN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="stD-t3-ZMq">
+                                <rect key="frame" x="40" y="214" width="520" height="60"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="stD-t3-ZMq" secondAttribute="height" multiplier="26:3" id="2Xm-jP-HnE"/>
+                                    <constraint firstAttribute="height" constant="60" id="6fq-5c-qQf"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="XGw-dJ-Rvv"/>
+                                    <constraint firstAttribute="width" constant="200" id="vSr-EL-JiE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Simple Warning"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="2Xm-jP-HnE"/>
+                                        <exclude reference="XGw-dJ-Rvv"/>
+                                        <exclude reference="vSr-EL-JiE"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="onWarning:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TtM-kw-bJE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RRU-uk-atj">
+                                <rect key="frame" x="45" y="304" width="520" height="60"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RRU-uk-atj" secondAttribute="height" multiplier="26:3" id="G9D-pW-xqA"/>
+                                    <constraint firstAttribute="width" constant="200" id="aHP-Xd-GVb"/>
+                                    <constraint firstAttribute="height" constant="60" id="eIa-nN-NyT"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="jhW-Xa-cAr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Simple Notice"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="G9D-pW-xqA"/>
+                                        <exclude reference="aHP-Xd-GVb"/>
+                                        <exclude reference="jhW-Xa-cAr"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="onNotice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OW1-k9-eXc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAY-FA-bGl">
+                                <rect key="frame" x="45" y="400" width="520" height="60"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="28W-eM-gTT"/>
+                                    <constraint firstAttribute="height" constant="60" id="Pge-YW-X4O"/>
+                                    <constraint firstAttribute="width" constant="200" id="Tf6-lv-1tA"/>
+                                    <constraint firstAttribute="width" secondItem="yAY-FA-bGl" secondAttribute="height" multiplier="26:3" id="qEe-7P-Ch5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Simple Info"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="28W-eM-gTT"/>
+                                        <exclude reference="Tf6-lv-1tA"/>
+                                        <exclude reference="qEe-7P-Ch5"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="onInfo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0yi-Ed-84b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxn-4q-6gG">
+                                <rect key="frame" x="45" y="479" width="520" height="60"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="8Rb-Oc-AhV"/>
+                                    <constraint firstAttribute="width" secondItem="zxn-4q-6gG" secondAttribute="height" multiplier="26:3" id="N4u-eh-8R3"/>
+                                    <constraint firstAttribute="width" constant="200" id="z5b-rR-aow"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Simple Edit"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="N4u-eh-8R3"/>
+                                        <exclude reference="z5b-rR-aow"/>
+                                        <exclude reference="8Rb-Oc-AhV"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="onEdit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6kQ-pE-QsB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dr4-fW-43o">
+                                <rect key="frame" x="40" y="49" width="520" height="60"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Dr4-fW-43o" secondAttribute="height" multiplier="26:3" id="3Dn-sc-4S3"/>
+                                    <constraint firstAttribute="width" constant="200" id="6Sk-AA-aNK"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="nK1-zb-EvJ"/>
+                                    <constraint firstAttribute="height" constant="60" id="nZ3-JI-UVZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Simple Alert"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="3Dn-sc-4S3"/>
+                                        <exclude reference="6Sk-AA-aNK"/>
+                                        <exclude reference="nK1-zb-EvJ"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="onSimpleAlert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GVK-Sp-pCk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dr4-fW-43o" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="29" id="1X1-Bg-1ZR"/>
+                            <constraint firstItem="RRU-uk-atj" firstAttribute="top" secondItem="stD-t3-ZMq" secondAttribute="bottom" constant="30" id="1pk-Xq-geg"/>
+                            <constraint firstItem="RRU-uk-atj" firstAttribute="trailing" secondItem="yAY-FA-bGl" secondAttribute="trailing" id="2qC-Eb-1YO"/>
+                            <constraint firstItem="stD-t3-ZMq" firstAttribute="top" secondItem="86E-C7-GHx" secondAttribute="bottom" constant="27" id="5A4-4j-8l1"/>
+                            <constraint firstItem="yAY-FA-bGl" firstAttribute="top" secondItem="RRU-uk-atj" secondAttribute="bottom" constant="36" id="A2R-Y1-ZWB"/>
+                            <constraint firstItem="Dr4-fW-43o" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="A77-Dy-pBM"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Dr4-fW-43o" secondAttribute="bottom" constant="499" id="Gq9-Pi-uTE"/>
+                            <constraint firstItem="stD-t3-ZMq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GuI-aC-jEf"/>
+                            <constraint firstItem="86E-C7-GHx" firstAttribute="top" secondItem="Dr4-fW-43o" secondAttribute="bottom" constant="18" id="NEG-4E-FRb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RRU-uk-atj" secondAttribute="trailing" constant="15" id="Ryq-rm-kgv"/>
+                            <constraint firstItem="zxn-4q-6gG" firstAttribute="trailing" secondItem="yAY-FA-bGl" secondAttribute="trailing" id="YL9-VX-P23"/>
+                            <constraint firstItem="Dr4-fW-43o" firstAttribute="trailing" secondItem="86E-C7-GHx" secondAttribute="trailing" id="Znb-nN-R4P"/>
+                            <constraint firstItem="Dr4-fW-43o" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="21" id="Zx8-yu-LcB"/>
+                            <constraint firstItem="86E-C7-GHx" firstAttribute="leading" secondItem="Dr4-fW-43o" secondAttribute="leading" id="b15-BR-4Ee"/>
+                            <constraint firstItem="86E-C7-GHx" firstAttribute="trailing" secondItem="stD-t3-ZMq" secondAttribute="trailing" id="fLX-pC-mb8"/>
+                            <constraint firstItem="zxn-4q-6gG" firstAttribute="top" secondItem="yAY-FA-bGl" secondAttribute="bottom" constant="19" id="hnr-Xv-2dJ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zxn-4q-6gG" secondAttribute="bottom" constant="61" id="n1e-1i-2e0"/>
+                            <constraint firstItem="86E-C7-GHx" firstAttribute="leading" secondItem="stD-t3-ZMq" secondAttribute="leading" id="oK6-x9-kWb"/>
+                            <constraint firstItem="RRU-uk-atj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="25" id="pGb-bw-l6T"/>
+                            <constraint firstItem="yAY-FA-bGl" firstAttribute="leading" secondItem="RRU-uk-atj" secondAttribute="leading" id="r3n-8w-PyN"/>
+                            <constraint firstItem="zxn-4q-6gG" firstAttribute="leading" secondItem="yAY-FA-bGl" secondAttribute="leading" id="uhh-Q9-7CE"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Zx8-yu-LcB"/>
+                                <exclude reference="Gq9-Pi-uTE"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="464" y="361"/>
+        </scene>
+    </scenes>
+</document>
