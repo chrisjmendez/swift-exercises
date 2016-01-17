@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SCLAlertView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftyDropbox.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,7 +27,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>03111BDFC9B6B6CDDC0AE8CBCCAA168D</key>
+		<key>2F34A949142145DD85FA5477EC6DB000</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -32,7 +37,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>93FEC8EBE6D4F1E80A223B65B652BF5D</key>
+		<key>727F040684AED864DB8962804D02EFA1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A3223D2E65ACA635EFA6C8F26B260797</key>
 		<dict>
 			<key>primary</key>
 			<true/>

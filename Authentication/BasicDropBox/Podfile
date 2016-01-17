@@ -2,3 +2,4 @@ platform :ios, '8.0'
 use_frameworks!
 
 pod 'SwiftyDropbox', '2.0.2'
+pod 'SCLAlertView'

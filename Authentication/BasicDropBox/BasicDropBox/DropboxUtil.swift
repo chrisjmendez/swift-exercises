@@ -10,16 +10,25 @@
 import UIKit
 import SwiftyDropbox
 
+protocol DropboxUtilDelegate {
+    func didAuthenticate(success:Bool)
+}
+
 class DropboxUtil {
-    
     let DROPBOX_FOLDER_PATH = "SwiftHero"
 
     var client:DropboxClient?
+    var delegate:DropboxUtilDelegate? = nil
     
-    init(){
+    internal init(){
         //super.init()
         if let cli = Dropbox.authorizedClient {
             client = cli
+            print("A")
+            delegate?.didAuthenticate(true)
+            print("B")
+        } else {
+            delegate?.didAuthenticate(false)
         }
     }
     

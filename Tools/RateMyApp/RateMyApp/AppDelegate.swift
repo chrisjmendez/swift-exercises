@@ -1,13 +1,12 @@
 //
 //  AppDelegate.swift
-//  BasicDropBox
+//  RateMyApp
 //
-//  Created by Chris on 1/15/16.
+//  Created by Chris on 1/17/16.
 //  Copyright © 2016 Chris Mendez. All rights reserved.
 //
 
 import UIKit
-import SwiftyDropbox
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,8 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        // Override point for customization after application launch.
         
-        Dropbox.setupWithAppKey( Config.dropbox.key )
         return true
     }
 
@@ -46,18 +45,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
-extension AppDelegate {
-    
-    //Dropbox: Code to handle the URL scheme (LSApplicationQueriesSchemes), in your app delegate.
-    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
-        if let authResult = Dropbox.handleRedirectURL(url) {
-            switch authResult {
-            case .Success(let token):
-                print("Success! User is logged into Dropbox with token: \(token)")
-            case .Error(let error, let description):
-                print("Error \(error): \(description)")
-            }
-        }        
-        return false
-    }
-}

@@ -8,6 +8,10 @@
     <customFonts key="customFonts">
         <mutableArray key="Roboto-Bold.ttf">
             <string>Roboto-Bold</string>
+            <string>Roboto-Bold</string>
+            <string>Roboto-Bold</string>
+            <string>Roboto-Bold</string>
+            <string>Roboto-Bold</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -24,26 +28,134 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2JF-UE-5No">
-                                <rect key="frame" x="20" y="120" width="560" height="50"/>
+                                <rect key="frame" x="20" y="40" width="560" height="50"/>
                                 <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ehB-0Y-smT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
                                 <color key="tintColor" red="0.74901960779999999" green="0.60784313729999995" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Authenticate"/>
+                                <state key="normal" title="Authorize Dropbox"/>
                                 <connections>
                                     <action selector="onAuthenticate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s4x-E1-XvO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnU-aL-gOy">
+                                <rect key="frame" x="20" y="110" width="560" height="50"/>
+                                <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="E3v-Qf-Fl4"/>
+                                    <constraint firstAttribute="width" constant="275" id="b18-DY-CVD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
+                                <color key="tintColor" red="0.74901960779999999" green="0.60784313729999995" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="List Current Folder"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="b18-DY-CVD"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="listFolder:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bT9-Ig-eM8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5b-0B-5Lb">
+                                <rect key="frame" x="20" y="320" width="560" height="50"/>
+                                <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="KUJ-X8-tUL"/>
+                                    <constraint firstAttribute="width" constant="275" id="wpX-oJ-Afd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
+                                <color key="tintColor" red="0.74901960779999999" green="0.60784313729999995" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Download a File"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="wpX-oJ-Afd"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="downloadFile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0W8-uj-o8N"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkD-dL-UCn">
+                                <rect key="frame" x="20" y="180" width="560" height="50"/>
+                                <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="275" id="LHc-B5-8sH"/>
+                                    <constraint firstAttribute="height" constant="50" id="spr-wW-Y8Z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
+                                <color key="tintColor" red="0.74901960779999999" green="0.60784313729999995" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Get Account Info"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="LHc-B5-8sH"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="getAccountInfo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Lu-Ez-Wb7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFA-ea-6sf">
+                                <rect key="frame" x="20" y="250" width="560" height="50"/>
+                                <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="275" id="A7O-c9-tq3"/>
+                                    <constraint firstAttribute="height" constant="50" id="fGg-cg-gNF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
+                                <color key="tintColor" red="0.74901960779999999" green="0.60784313729999995" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Upload a File"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="A7O-c9-tq3"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="uploadFile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LSW-7U-hDf"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="dFA-ea-6sf" firstAttribute="top" secondItem="vkD-dL-UCn" secondAttribute="bottom" constant="20" id="6KR-AY-9GZ"/>
+                            <constraint firstItem="mnU-aL-gOy" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="6N3-RP-vI0"/>
+                            <constraint firstItem="mnU-aL-gOy" firstAttribute="top" secondItem="2JF-UE-5No" secondAttribute="bottom" constant="50" id="ETe-x7-XlR"/>
+                            <constraint firstItem="dFA-ea-6sf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Fra-XK-ajs"/>
+                            <constraint firstItem="vkD-dL-UCn" firstAttribute="baseline" secondItem="mnU-aL-gOy" secondAttribute="baseline" id="LG8-g7-BB8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2JF-UE-5No" secondAttribute="trailing" id="Lzw-qe-83L"/>
+                            <constraint firstItem="i5b-0B-5Lb" firstAttribute="top" secondItem="dFA-ea-6sf" secondAttribute="bottom" constant="20" id="MDL-KD-aLh"/>
+                            <constraint firstItem="vkD-dL-UCn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="MS5-ad-ap9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dFA-ea-6sf" secondAttribute="trailing" id="SFx-s7-pPI"/>
+                            <constraint firstItem="dFA-ea-6sf" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="SuU-sc-L1M"/>
+                            <constraint firstItem="mnU-aL-gOy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="V4N-jl-QOd"/>
                             <constraint firstItem="2JF-UE-5No" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Z2z-DE-hbg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mnU-aL-gOy" secondAttribute="trailing" id="bs7-Yw-VPh"/>
+                            <constraint firstItem="mnU-aL-gOy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="d2R-lZ-Ezc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="i5b-0B-5Lb" secondAttribute="trailing" id="dhc-vn-hpr"/>
                             <constraint firstItem="2JF-UE-5No" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gJM-2u-7gE"/>
-                            <constraint firstItem="2JF-UE-5No" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="tJg-9T-LlY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="i5b-0B-5Lb" secondAttribute="trailing" id="iAv-ab-zif"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vkD-dL-UCn" secondAttribute="trailing" id="o7l-wB-QR4"/>
+                            <constraint firstItem="vkD-dL-UCn" firstAttribute="top" secondItem="mnU-aL-gOy" secondAttribute="bottom" constant="20" id="qxb-J5-47i"/>
+                            <constraint firstItem="i5b-0B-5Lb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="rGh-uy-HW8"/>
+                            <constraint firstItem="vkD-dL-UCn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="rpc-K9-a5Z"/>
+                            <constraint firstItem="2JF-UE-5No" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="tJg-9T-LlY"/>
+                            <constraint firstItem="i5b-0B-5Lb" firstAttribute="top" secondItem="dFA-ea-6sf" secondAttribute="bottom" constant="50" id="vRw-0g-viU"/>
+                            <constraint firstItem="mnU-aL-gOy" firstAttribute="top" secondItem="2JF-UE-5No" secondAttribute="bottom" constant="20" id="vea-zf-ZPd"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="6N3-RP-vI0"/>
+                                <exclude reference="ETe-x7-XlR"/>
+                                <exclude reference="d2R-lZ-Ezc"/>
+                                <exclude reference="LG8-g7-BB8"/>
+                                <exclude reference="rpc-K9-a5Z"/>
+                                <exclude reference="SuU-sc-L1M"/>
+                                <exclude reference="iAv-ab-zif"/>
+                                <exclude reference="vRw-0g-viU"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="authenticateBtn" destination="2JF-UE-5No" id="QfT-bT-diX"/>
@@ -51,6 +163,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="361" y="230"/>
         </scene>
     </scenes>
 </document>
