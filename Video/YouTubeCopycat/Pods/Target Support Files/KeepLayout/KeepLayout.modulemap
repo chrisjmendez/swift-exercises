@@ -1,0 +1,6 @@
+framework module KeepLayout {
+  umbrella header "KeepLayout-umbrella.h"
+
+  export *
+  module * { export * }
+}

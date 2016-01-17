@@ -11,6 +11,7 @@ import YouTubePlayer
 
 class ViewController: UIViewController, YouTubePlayerDelegate {
     
+    var videoID = "WivhDJRXCU4"
     var videoPlayer:YouTubePlayerView?
     
     func initVideo(){
@@ -97,7 +98,7 @@ class ViewController: UIViewController, YouTubePlayerDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         initVideo()
-        loadVideo("WivhDJRXCU4")
+        loadVideo(videoID)
         
         self.navigationController!.navigationBar.translucent = false;
     }

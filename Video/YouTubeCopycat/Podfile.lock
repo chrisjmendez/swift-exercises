@@ -1,0 +1,19 @@
+PODS:
+  - KeepLayout (1.6.0)
+
+DEPENDENCIES:
+  - KeepLayout (from `https://github.com/iMartinKiss/KeepLayout`)
+
+EXTERNAL SOURCES:
+  KeepLayout:
+    :git: https://github.com/iMartinKiss/KeepLayout
+
+CHECKOUT OPTIONS:
+  KeepLayout:
+    :commit: 6c464c4c23f31e7aa2a4c9088c0bb029e17ce2eb
+    :git: https://github.com/iMartinKiss/KeepLayout
+
+SPEC CHECKSUMS:
+  KeepLayout: d85a52300a23ba1504ba330c5200bb01ba3baeb0
+
+COCOAPODS: 0.39.0
