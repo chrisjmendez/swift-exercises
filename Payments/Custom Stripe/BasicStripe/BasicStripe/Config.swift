@@ -11,14 +11,8 @@ import UIKit
 
 struct Config {
     
-    struct host {
-        static let url = "http://localhost:8080/"
-    }    
-
-    struct stripe {
-        static let testSecretKey      = "sk_test_nN2ONy3NBWu1TLSWubvrJY1F"
-        static let testPublishableKey = "pk_test_1nmIjTACR4wQdDUMGB1gX7YF"
-        static let liveSecretKey      = ""
-        static let livePublishableKey = ""
+    struct dropbox {
+        static let key    = "API_KEY"
+        static let secret = "SECRET"
     }
 }

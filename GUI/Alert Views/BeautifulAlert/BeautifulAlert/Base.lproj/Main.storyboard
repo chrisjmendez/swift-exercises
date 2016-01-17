@@ -124,9 +124,9 @@
                                 <state key="normal" title="Simple Edit"/>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="8Rb-Oc-AhV"/>
                                         <exclude reference="N4u-eh-8R3"/>
                                         <exclude reference="z5b-rR-aow"/>
-                                        <exclude reference="8Rb-Oc-AhV"/>
                                     </mask>
                                 </variation>
                                 <connections>
