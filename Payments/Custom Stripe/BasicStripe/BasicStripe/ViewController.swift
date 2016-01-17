@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let viewController = segue.destinationViewController as! PayViewController
-        if let userInfo = sender! as? AnyObject{
+        if let userInfo = sender! as AnyObject?{
             viewController.product = userInfo["item"]! as! String
             viewController.price   = userInfo["price"]! as! String
         }
