@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Iau-Rc-IyY">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="viewController" id="BYZ-38-t0r" customClass="ViewController" customModule="DynamicViewControllers" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Yc-gT-zJR">
+                                <rect key="frame" x="20" y="114" width="560" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="g78-qW-R9O"/>
+                                </constraints>
+                                <state key="normal" title="Show More Views"/>
+                                <connections>
+                                    <action selector="onButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xXq-tk-HWb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="3Yc-gT-zJR" secondAttribute="trailing" id="YcL-WJ-Eh5"/>
+                            <constraint firstItem="3Yc-gT-zJR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="hBJ-3t-1bS"/>
+                            <constraint firstItem="3Yc-gT-zJR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="qN7-bA-nZk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qIL-wl-CnF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1410" y="385"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sZG-TA-6cg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Iau-Rc-IyY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="f8K-FV-xyd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <outlet property="delegate" destination="6fx-JA-Yff" id="aID-2E-i9Z"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8xN-pQ-alc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yyD-Ca-oS8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="6fx-JA-Yff" customClass="NavigationControllerDelegate" customModule="DynamicViewControllers" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="745" y="380"/>
+        </scene>
+    </scenes>
+</document>
