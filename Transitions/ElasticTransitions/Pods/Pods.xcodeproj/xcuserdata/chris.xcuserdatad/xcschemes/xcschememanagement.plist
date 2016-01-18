@@ -4,15 +4,25 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Elastic.xcscheme</key>
+		<key>ElasticTransition.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>0</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>83FC1A8B1C4D56C20076AF01</key>
+		<key>506B1FAEA1D4E17CE36F1016939FDBDE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C4B18F95EE302A57DC2E6F30E32D5313</key>
 		<dict>
 			<key>primary</key>
 			<true/>

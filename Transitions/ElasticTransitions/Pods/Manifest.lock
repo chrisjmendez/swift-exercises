@@ -1,0 +1,10 @@
+PODS:
+  - ElasticTransition (2.0.1)
+
+DEPENDENCIES:
+  - ElasticTransition
+
+SPEC CHECKSUMS:
+  ElasticTransition: ec15f7f9283eb812852eabb60f4b9bd4e003c4eb
+
+COCOAPODS: 0.39.0
