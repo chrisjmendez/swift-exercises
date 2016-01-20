@@ -1,0 +1,4 @@
+use_frameworks! 
+
+# Swift 2.0, 2.1
+pod 'Persei', '~> 2.0.1'
