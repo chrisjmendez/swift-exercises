@@ -1,0 +1,10 @@
+PODS:
+  - PXGoogleDirections (1.2.2)
+
+DEPENDENCIES:
+  - PXGoogleDirections
+
+SPEC CHECKSUMS:
+  PXGoogleDirections: cc9179c6c31202d5f15df36eb7a4ba914f7cf14f
+
+COCOAPODS: 0.39.0
