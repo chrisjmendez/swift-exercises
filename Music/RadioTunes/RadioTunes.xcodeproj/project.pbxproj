@@ -1,0 +1,408 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		83CAE6301C4EDDB200BE217E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CAE62F1C4EDDB200BE217E /* AppDelegate.swift */; };
+		83CAE6321C4EDDB200BE217E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CAE6311C4EDDB200BE217E /* ViewController.swift */; };
+		83CAE6351C4EDDB200BE217E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83CAE6331C4EDDB200BE217E /* Main.storyboard */; };
+		83CAE6371C4EDDB200BE217E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83CAE6361C4EDDB200BE217E /* Assets.xcassets */; };
+		83CAE63A1C4EDDB200BE217E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83CAE6381C4EDDB200BE217E /* LaunchScreen.storyboard */; };
+		83CAE6421C4EDE4B00BE217E /* RadioTunes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83CAE6411C4EDE4B00BE217E /* RadioTunes.framework */; };
+		83CAE6441C4EDEBA00BE217E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83CAE6431C4EDEBA00BE217E /* Security.framework */; };
+		83CAE6461C4EDEC500BE217E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83CAE6451C4EDEC500BE217E /* AVFoundation.framework */; };
+		83CAE6481C4EDECC00BE217E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83CAE6471C4EDECC00BE217E /* AudioToolbox.framework */; };
+		83CAE64A1C4EDED400BE217E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83CAE6491C4EDED400BE217E /* SystemConfiguration.framework */; };
+		83CAE64C1C4EDEDB00BE217E /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83CAE64B1C4EDEDA00BE217E /* MediaPlayer.framework */; };
+		83CAE64E1C4EDEEB00BE217E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83CAE64D1C4EDEEB00BE217E /* Foundation.framework */; };
+		83CAE6551C4EDF0900BE217E /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83CAE6511C4EDF0900BE217E /* libavcodec.a */; };
+		83CAE6561C4EDF0900BE217E /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83CAE6521C4EDF0900BE217E /* libavformat.a */; };
+		83CAE6571C4EDF0900BE217E /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83CAE6531C4EDF0900BE217E /* libavutil.a */; };
+		83CAE6581C4EDF0900BE217E /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83CAE6541C4EDF0900BE217E /* libswresample.a */; };
+		83CAE65D1C4EDF5900BE217E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 83CAE65C1C4EDF5900BE217E /* libz.tbd */; };
+		83CAE65F1C4EDF6200BE217E /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 83CAE65E1C4EDF6200BE217E /* libxml2.2.tbd */; };
+		83CAE6611C4EDF6700BE217E /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 83CAE6601C4EDF6700BE217E /* libiconv.tbd */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		83CAE62C1C4EDDB200BE217E /* RadioTunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RadioTunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		83CAE62F1C4EDDB200BE217E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		83CAE6311C4EDDB200BE217E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		83CAE6341C4EDDB200BE217E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		83CAE6361C4EDDB200BE217E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		83CAE6391C4EDDB200BE217E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		83CAE63B1C4EDDB200BE217E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83CAE6411C4EDE4B00BE217E /* RadioTunes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RadioTunes.framework; sourceTree = "<group>"; };
+		83CAE6431C4EDEBA00BE217E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		83CAE6451C4EDEC500BE217E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		83CAE6471C4EDECC00BE217E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		83CAE6491C4EDED400BE217E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		83CAE64B1C4EDEDA00BE217E /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		83CAE64D1C4EDEEB00BE217E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		83CAE6511C4EDF0900BE217E /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavcodec.a; sourceTree = "<group>"; };
+		83CAE6521C4EDF0900BE217E /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavformat.a; sourceTree = "<group>"; };
+		83CAE6531C4EDF0900BE217E /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavutil.a; sourceTree = "<group>"; };
+		83CAE6541C4EDF0900BE217E /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswresample.a; sourceTree = "<group>"; };
+		83CAE6591C4EDF1C00BE217E /* RadioTunes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RadioTunes-Bridging-Header.h"; sourceTree = "<group>"; };
+		83CAE65C1C4EDF5900BE217E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		83CAE65E1C4EDF6200BE217E /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		83CAE6601C4EDF6700BE217E /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		83CAE6291C4EDDB100BE217E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83CAE6611C4EDF6700BE217E /* libiconv.tbd in Frameworks */,
+				83CAE65F1C4EDF6200BE217E /* libxml2.2.tbd in Frameworks */,
+				83CAE65D1C4EDF5900BE217E /* libz.tbd in Frameworks */,
+				83CAE6571C4EDF0900BE217E /* libavutil.a in Frameworks */,
+				83CAE6561C4EDF0900BE217E /* libavformat.a in Frameworks */,
+				83CAE6551C4EDF0900BE217E /* libavcodec.a in Frameworks */,
+				83CAE6581C4EDF0900BE217E /* libswresample.a in Frameworks */,
+				83CAE6441C4EDEBA00BE217E /* Security.framework in Frameworks */,
+				83CAE6421C4EDE4B00BE217E /* RadioTunes.framework in Frameworks */,
+				83CAE64E1C4EDEEB00BE217E /* Foundation.framework in Frameworks */,
+				83CAE64C1C4EDEDB00BE217E /* MediaPlayer.framework in Frameworks */,
+				83CAE64A1C4EDED400BE217E /* SystemConfiguration.framework in Frameworks */,
+				83CAE6481C4EDECC00BE217E /* AudioToolbox.framework in Frameworks */,
+				83CAE6461C4EDEC500BE217E /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		83CAE6231C4EDDB100BE217E = {
+			isa = PBXGroup;
+			children = (
+				83CAE6601C4EDF6700BE217E /* libiconv.tbd */,
+				83CAE65E1C4EDF6200BE217E /* libxml2.2.tbd */,
+				83CAE65C1C4EDF5900BE217E /* libz.tbd */,
+				83CAE64D1C4EDEEB00BE217E /* Foundation.framework */,
+				83CAE64B1C4EDEDA00BE217E /* MediaPlayer.framework */,
+				83CAE6491C4EDED400BE217E /* SystemConfiguration.framework */,
+				83CAE6471C4EDECC00BE217E /* AudioToolbox.framework */,
+				83CAE6451C4EDEC500BE217E /* AVFoundation.framework */,
+				83CAE6431C4EDEBA00BE217E /* Security.framework */,
+				83CAE62E1C4EDDB200BE217E /* RadioTunes */,
+				83CAE62D1C4EDDB200BE217E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		83CAE62D1C4EDDB200BE217E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				83CAE62C1C4EDDB200BE217E /* RadioTunes.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		83CAE62E1C4EDDB200BE217E /* RadioTunes */ = {
+			isa = PBXGroup;
+			children = (
+				83CAE64F1C4EDF0900BE217E /* ffmpeg */,
+				83CAE6411C4EDE4B00BE217E /* RadioTunes.framework */,
+				83CAE62F1C4EDDB200BE217E /* AppDelegate.swift */,
+				83CAE6311C4EDDB200BE217E /* ViewController.swift */,
+				83CAE6331C4EDDB200BE217E /* Main.storyboard */,
+				83CAE6361C4EDDB200BE217E /* Assets.xcassets */,
+				83CAE6381C4EDDB200BE217E /* LaunchScreen.storyboard */,
+				83CAE63B1C4EDDB200BE217E /* Info.plist */,
+				83CAE6591C4EDF1C00BE217E /* RadioTunes-Bridging-Header.h */,
+			);
+			path = RadioTunes;
+			sourceTree = "<group>";
+		};
+		83CAE64F1C4EDF0900BE217E /* ffmpeg */ = {
+			isa = PBXGroup;
+			children = (
+				83CAE6501C4EDF0900BE217E /* lib */,
+			);
+			path = ffmpeg;
+			sourceTree = "<group>";
+		};
+		83CAE6501C4EDF0900BE217E /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				83CAE6511C4EDF0900BE217E /* libavcodec.a */,
+				83CAE6521C4EDF0900BE217E /* libavformat.a */,
+				83CAE6531C4EDF0900BE217E /* libavutil.a */,
+				83CAE6541C4EDF0900BE217E /* libswresample.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		83CAE62B1C4EDDB100BE217E /* RadioTunes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83CAE63E1C4EDDB200BE217E /* Build configuration list for PBXNativeTarget "RadioTunes" */;
+			buildPhases = (
+				83CAE6281C4EDDB100BE217E /* Sources */,
+				83CAE6291C4EDDB100BE217E /* Frameworks */,
+				83CAE62A1C4EDDB100BE217E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RadioTunes;
+			productName = RadioTunes;
+			productReference = 83CAE62C1C4EDDB200BE217E /* RadioTunes.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		83CAE6241C4EDDB100BE217E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Chris Mendez";
+				TargetAttributes = {
+					83CAE62B1C4EDDB100BE217E = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 83CAE6271C4EDDB100BE217E /* Build configuration list for PBXProject "RadioTunes" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 83CAE6231C4EDDB100BE217E;
+			productRefGroup = 83CAE62D1C4EDDB200BE217E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				83CAE62B1C4EDDB100BE217E /* RadioTunes */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		83CAE62A1C4EDDB100BE217E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83CAE63A1C4EDDB200BE217E /* LaunchScreen.storyboard in Resources */,
+				83CAE6371C4EDDB200BE217E /* Assets.xcassets in Resources */,
+				83CAE6351C4EDDB200BE217E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		83CAE6281C4EDDB100BE217E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83CAE6321C4EDDB200BE217E /* ViewController.swift in Sources */,
+				83CAE6301C4EDDB200BE217E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		83CAE6331C4EDDB200BE217E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83CAE6341C4EDDB200BE217E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		83CAE6381C4EDDB200BE217E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83CAE6391C4EDDB200BE217E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		83CAE63C1C4EDDB200BE217E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		83CAE63D1C4EDDB200BE217E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		83CAE63F1C4EDDB200BE217E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RadioTunes",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/RadioTunes/RadioTunes",
+					"$(SRCROOT)/RadioTunes/External/ffmpeg/include",
+				);
+				INFOPLIST_FILE = RadioTunes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RadioTunes/ffmpeg/lib",
+					"$(SRCROOT)/RadioTunes/External/ffmpeg/lib",
+				);
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+					"-lxml2",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chrisjmendez.RadioTunes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RadioTunes/RadioTunes-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		83CAE6401C4EDDB200BE217E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RadioTunes",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/RadioTunes/RadioTunes",
+					"$(SRCROOT)/RadioTunes/External/ffmpeg/include",
+				);
+				INFOPLIST_FILE = RadioTunes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RadioTunes/ffmpeg/lib",
+					"$(SRCROOT)/RadioTunes/External/ffmpeg/lib",
+				);
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+					"-lxml2",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chrisjmendez.RadioTunes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RadioTunes/RadioTunes-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		83CAE6271C4EDDB100BE217E /* Build configuration list for PBXProject "RadioTunes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83CAE63C1C4EDDB200BE217E /* Debug */,
+				83CAE63D1C4EDDB200BE217E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83CAE63E1C4EDDB200BE217E /* Build configuration list for PBXNativeTarget "RadioTunes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83CAE63F1C4EDDB200BE217E /* Debug */,
+				83CAE6401C4EDDB200BE217E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 83CAE6241C4EDDB100BE217E /* Project object */;
+}
