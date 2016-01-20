@@ -1,0 +1,6 @@
+platform :ios, '8.0'
+use_frameworks!
+
+pod 'Presentation'
+pod 'Pages', git: 'https://github.com/hyperoslo/Pages'
+pod 'Hex', '~> 2.0'
