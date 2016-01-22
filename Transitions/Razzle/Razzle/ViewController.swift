@@ -24,10 +24,6 @@ class ViewController:AnimatedPagingScrollViewController {
     var objectPlaneLayer = CAShapeLayer()
     var objectFlyingAnimation:PathPositionAnimation?
     
-    override func viewWillAppear(animated: Bool) {
-
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -46,18 +42,49 @@ extension ViewController {
     func onLoad(){
         //Hide the status bar
         UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: .Fade)
+        
+        self.view.backgroundColor = UIColor.redColor()
     }
     
     func configureViews(){
-        //contentView.addSubview(shapeBlue)
+
+        
+        
+        contentView.addSubview(shapeBlue)
+        configureShape("blue")
+        
         //contentView.addSubview(shapeOrange)
         //contentView.addSubview(shapeYellow)
         
-        contentView.addSubview(shapeStar)
-        configureStar()
+//        contentView.addSubview(shapeStar)
+//        configureStar()
         
         //contentView.addSubview(shapeSun)
     }
+    
+    func configureShape(type:String){
+        switch(type){
+            case "blue":
+                let shape = shapeBlue
+                let size  = (width: 528, height: 282)
+                
+                let margins = scrollView.layoutMarginsGuide
+                shapeBlue.trailingAnchor.constraintEqualToAnchor(margins.trailingAnchor)
+                
+//                scrollView.addConstraint(w)
+//                scrollView.addConstraint(h)
+//                scrollView.addConstraint(t)
+//                scrollView.addConstraint(l)
+            break
+            case "orange":
+            break
+            case "yellow":
+            break
+        default:
+            break
+        }
+    }
+    
     
     func configureStar(){
         let thisObject = shapeStar
@@ -76,7 +103,7 @@ extension ViewController {
         //Star
         let s = NSLayoutConstraint(item: thisObject, attribute: .Height, relatedBy: NSLayoutRelation.Equal, toItem: thisObject, attribute: .Width, multiplier: 1, constant: 0)
         
-        scrollView.addConstraint(s)
+//        scrollView.addConstraint(s)
         
         keepView(shapeStar, onPages: [0,1])
         
