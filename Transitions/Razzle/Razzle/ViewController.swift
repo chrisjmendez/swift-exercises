@@ -12,7 +12,7 @@ import RazzleDazzle
 class ViewController:AnimatedPagingScrollViewController {
 
     let NUMBER_OF_PAGES = 4
-    
+
     let shapeBlue   = UIImageView(image: UIImage(named: "Intro-shape-blue"))
     let shapeOrange = UIImageView(image: UIImage(named: "Intro-shape-orange"))
     let shapeYellow = UIImageView(image: UIImage(named: "Intro-shape-yellow"))
@@ -23,11 +23,14 @@ class ViewController:AnimatedPagingScrollViewController {
     
     var objectPlaneLayer = CAShapeLayer()
     var objectFlyingAnimation:PathPositionAnimation?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        onLoad()
+
+        //Hide the status bar
+        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: .Fade)
+        self.view.backgroundColor = UIColor.redColor()
+        
         configureViews()
     }
 
@@ -39,52 +42,41 @@ class ViewController:AnimatedPagingScrollViewController {
 }
 
 extension ViewController {
-    func onLoad(){
-        //Hide the status bar
-        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: .Fade)
-        
-        self.view.backgroundColor = UIColor.redColor()
-    }
-    
     func configureViews(){
+        configureShapeBlue()
+        configureShapeYellow()
+    }
+    
+    func configureShapeBlue(){
+        let item = shapeBlue
+            item.translatesAutoresizingMaskIntoConstraints = false
+        let toItem = scrollView//.layoutMarginsGuide
+        
+        contentView.addSubview(item)
 
+        let leading = NSLayoutConstraint(item: item, attribute: .Leading, relatedBy: .Equal, toItem: toItem, attribute: .Leading, multiplier: 1, constant: (item.frame.width * -0.5))
+        let width   = item.widthAnchor.constraintEqualToAnchor(nil, constant: item.frame.width)
+        let height  = item.heightAnchor.constraintLessThanOrEqualToAnchor(nil, constant: item.frame.height)
+        let centerY = item.centerYAnchor.constraintEqualToAnchor(toItem.centerYAnchor)
         
-        
-        contentView.addSubview(shapeBlue)
-        configureShape("blue")
-        
-        //contentView.addSubview(shapeOrange)
-        //contentView.addSubview(shapeYellow)
-        
-//        contentView.addSubview(shapeStar)
-//        configureStar()
-        
-        //contentView.addSubview(shapeSun)
+        NSLayoutConstraint.activateConstraints([leading, width, height, centerY])
     }
     
-    func configureShape(type:String){
-        switch(type){
-            case "blue":
-                let shape = shapeBlue
-                let size  = (width: 528, height: 282)
-                
-                let margins = scrollView.layoutMarginsGuide
-                shapeBlue.trailingAnchor.constraintEqualToAnchor(margins.trailingAnchor)
-                
-//                scrollView.addConstraint(w)
-//                scrollView.addConstraint(h)
-//                scrollView.addConstraint(t)
-//                scrollView.addConstraint(l)
-            break
-            case "orange":
-            break
-            case "yellow":
-            break
-        default:
-            break
-        }
+    func configureShapeYellow(){
+        let item   = shapeYellow
+            item.translatesAutoresizingMaskIntoConstraints = false
+        let toItem = scrollView
+
+        contentView.addSubview(item)
+        
+        let leading = item.leadingAnchor.constraintEqualToAnchor(toItem.leadingAnchor, constant: (view.frame.width + (item.frame.width * -0.5)))
+        let trail   = item.trailingAnchor.constraintEqualToAnchor(toItem.trailingAnchor, constant: 0)
+        let width   = item.widthAnchor.constraintEqualToAnchor(nil, constant: item.frame.width)
+        let height  = item.heightAnchor.constraintLessThanOrEqualToAnchor(nil, constant: item.frame.height)
+        let centerY = item.centerYAnchor.constraintEqualToAnchor(item.centerYAnchor)
+        
+        NSLayoutConstraint.activateConstraints([leading, width, height, centerY])
     }
-    
     
     func configureStar(){
         let thisObject = shapeStar
