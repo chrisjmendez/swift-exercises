@@ -50,7 +50,7 @@ class DetailViewController: UIViewController {
         }
         //Create a new Parse object
         else{
-            var updateObject = PFObject(className: "Countries")
+            let updateObject = PFObject(className: "Countries")
 
             updateObject["nameEnglish"]  = name.text
             updateObject["nameLocal"]    = nameLocal.text

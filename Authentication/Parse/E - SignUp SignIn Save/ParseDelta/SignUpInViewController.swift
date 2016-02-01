@@ -29,22 +29,22 @@ class SignUpInViewController: UIViewController {
     @IBAction func logIn(sender: AnyObject) {
         showActivityMonitor()
         
-        var userEmail = self.userEmail.text
+        let userEmail = self.userEmail.text
         var userPass  = self.userPassword.text
-            userPass = userPass.lowercaseString
+            userPass = userPass!.lowercaseString
         
-        loginUser(userEmail, userPass: userPass)
+        loginUser(userEmail!, userPass: userPass!)
     }
     
     func processSignUp(){
         showActivityMonitor()
         
-        var userEmail = self.userEmail.text
+        let userEmail = self.userEmail.text
         var userPass  = self.userPassword.text
-            userPass = userPass.lowercaseString
+            userPass = userPass!.lowercaseString
         
 
-        createUser(userEmail, userPass: userPass)
+        createUser(userEmail!, userPass: userPass!)
     }
     
     func hideActivityMonitor(){
@@ -67,7 +67,7 @@ class SignUpInViewController: UIViewController {
             }else{
                 self.hideActivityMonitor()
                 
-                if let message:AnyObject = error!.userInfo!["error"]{
+                if let message:AnyObject = error!.userInfo["error"]{
                     self.message.text = "\(message)"
                 }
             }
@@ -88,7 +88,7 @@ class SignUpInViewController: UIViewController {
             }else{
                 self.hideActivityMonitor()
                 
-                if let message:AnyObject = error!.userInfo!["error"]{
+                if let message:AnyObject = error!.userInfo["error"]{
                     self.message.text = "\(message)"
                 }
             }

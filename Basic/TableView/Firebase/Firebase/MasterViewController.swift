@@ -28,10 +28,6 @@ class MasterViewController: UITableViewController {
     ** ** ** ** ** ** ** ** ** ** ** **/
     var objects = [AnyObject]()
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -41,11 +37,6 @@ class MasterViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem = addButton
         
         getTopStories()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     func insertNewObject(sender: AnyObject) {
@@ -107,7 +98,7 @@ extension MasterViewController{
         //A. Construct a URL
         let url = NSURL(string: BASE_URL + "/v0/topstories.json")
         //B. Construct a URL Request
-        var urlRequest = NSMutableURLRequest(URL: url!)
+        let urlRequest = NSMutableURLRequest(URL: url!)
             urlRequest.HTTPMethod = "GET"
         //C. Open a URLConnection and download the data
         NSURLConnection.sendAsynchronousRequest(urlRequest, queue: self.operationQueue, completionHandler: {[unowned self](response, responseData, error) -> Void in
@@ -164,10 +155,11 @@ extension MasterViewController{
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) 
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
 
         let object = self.objects[indexPath.row] as! NSNumber
-        //println("tableView", object, indexPath.row )
+        print("tableView", object, indexPath.row )
 
         let item = self.stories[object] as? Item
         if item != nil{
