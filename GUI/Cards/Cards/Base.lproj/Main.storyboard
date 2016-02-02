@@ -20,23 +20,23 @@
                     </view>
                     <navigationItem key="navigationItem" id="Uli-co-zh5"/>
                     <connections>
-                        <segue destination="gej-rm-mR9" kind="show" id="YT0-Gd-XYs"/>
+                        <segue destination="gej-rm-mR9" kind="show" identifier="onLoadSegue" id="YT0-Gd-XYs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1148" y="-547"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Cards Table View Controller-->
         <scene sceneID="QXK-9t-iyZ">
             <objects>
-                <tableViewController id="gej-rm-mR9" sceneMemberID="viewController">
+                <tableViewController id="gej-rm-mR9" customClass="CardsTableViewController" customModule="Cards" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="qKQ-6n-Z0o">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="S3d-Fb-Mpm">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="S3d-Fb-Mpm">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="S3d-Fb-Mpm" id="vfm-ez-ZLX">

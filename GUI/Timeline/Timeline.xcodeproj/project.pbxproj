@@ -1,0 +1,384 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		83F2D9241C6090FC000157B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F2D9231C6090FC000157B1 /* AppDelegate.swift */; };
+		83F2D9261C6090FC000157B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F2D9251C6090FC000157B1 /* ViewController.swift */; };
+		83F2D9291C6090FC000157B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83F2D9271C6090FC000157B1 /* Main.storyboard */; };
+		83F2D92B1C6090FC000157B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83F2D92A1C6090FC000157B1 /* Assets.xcassets */; };
+		83F2D92E1C6090FC000157B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83F2D92C1C6090FC000157B1 /* LaunchScreen.storyboard */; };
+		83F2D9451C609123000157B1 /* JTSAnimatedGIFUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F2D93A1C609123000157B1 /* JTSAnimatedGIFUtility.m */; };
+		83F2D9461C609123000157B1 /* JTSImageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F2D93C1C609123000157B1 /* JTSImageInfo.m */; };
+		83F2D9471C609123000157B1 /* JTSImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F2D93E1C609123000157B1 /* JTSImageViewController.m */; };
+		83F2D9481C609123000157B1 /* JTSSimpleImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F2D9401C609123000157B1 /* JTSSimpleImageDownloader.m */; };
+		83F2D9491C609123000157B1 /* UIApplication+JTSImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F2D9421C609123000157B1 /* UIApplication+JTSImageViewController.m */; };
+		83F2D94A1C609123000157B1 /* UIImage+JTSImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F2D9441C609123000157B1 /* UIImage+JTSImageEffects.m */; };
+		83F2D94C1C60924E000157B1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F2D94B1C60924E000157B1 /* Alamofire.framework */; };
+		83F2D94E1C609251000157B1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F2D94D1C609251000157B1 /* SwiftyJSON.framework */; };
+		83F2D9511C60935E000157B1 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F2D9501C60935E000157B1 /* TimelineView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		83F2D9201C6090FC000157B1 /* Timeline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timeline.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		83F2D9231C6090FC000157B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		83F2D9251C6090FC000157B1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		83F2D9281C6090FC000157B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		83F2D92A1C6090FC000157B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		83F2D92D1C6090FC000157B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		83F2D92F1C6090FC000157B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83F2D9351C609112000157B1 /* Timeline-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Timeline-Bridging-Header.h"; sourceTree = "<group>"; };
+		83F2D9391C609123000157B1 /* JTSAnimatedGIFUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSAnimatedGIFUtility.h; sourceTree = "<group>"; };
+		83F2D93A1C609123000157B1 /* JTSAnimatedGIFUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSAnimatedGIFUtility.m; sourceTree = "<group>"; };
+		83F2D93B1C609123000157B1 /* JTSImageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSImageInfo.h; sourceTree = "<group>"; };
+		83F2D93C1C609123000157B1 /* JTSImageInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSImageInfo.m; sourceTree = "<group>"; };
+		83F2D93D1C609123000157B1 /* JTSImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSImageViewController.h; sourceTree = "<group>"; };
+		83F2D93E1C609123000157B1 /* JTSImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSImageViewController.m; sourceTree = "<group>"; };
+		83F2D93F1C609123000157B1 /* JTSSimpleImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSSimpleImageDownloader.h; sourceTree = "<group>"; };
+		83F2D9401C609123000157B1 /* JTSSimpleImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSSimpleImageDownloader.m; sourceTree = "<group>"; };
+		83F2D9411C609123000157B1 /* UIApplication+JTSImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+JTSImageViewController.h"; sourceTree = "<group>"; };
+		83F2D9421C609123000157B1 /* UIApplication+JTSImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+JTSImageViewController.m"; sourceTree = "<group>"; };
+		83F2D9431C609123000157B1 /* UIImage+JTSImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JTSImageEffects.h"; sourceTree = "<group>"; };
+		83F2D9441C609123000157B1 /* UIImage+JTSImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JTSImageEffects.m"; sourceTree = "<group>"; };
+		83F2D94B1C60924E000157B1 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		83F2D94D1C609251000157B1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		83F2D9501C60935E000157B1 /* TimelineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		83F2D91D1C6090FC000157B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83F2D94C1C60924E000157B1 /* Alamofire.framework in Frameworks */,
+				83F2D94E1C609251000157B1 /* SwiftyJSON.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		83F2D9171C6090FC000157B1 = {
+			isa = PBXGroup;
+			children = (
+				83F2D94D1C609251000157B1 /* SwiftyJSON.framework */,
+				83F2D94B1C60924E000157B1 /* Alamofire.framework */,
+				83F2D9221C6090FC000157B1 /* Timeline */,
+				83F2D9211C6090FC000157B1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		83F2D9211C6090FC000157B1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				83F2D9201C6090FC000157B1 /* Timeline.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		83F2D9221C6090FC000157B1 /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				83F2D9381C609123000157B1 /* JTSImageViewController */,
+				83F2D9231C6090FC000157B1 /* AppDelegate.swift */,
+				83F2D9501C60935E000157B1 /* TimelineView.swift */,
+				83F2D9251C6090FC000157B1 /* ViewController.swift */,
+				83F2D9271C6090FC000157B1 /* Main.storyboard */,
+				83F2D92A1C6090FC000157B1 /* Assets.xcassets */,
+				83F2D92C1C6090FC000157B1 /* LaunchScreen.storyboard */,
+				83F2D92F1C6090FC000157B1 /* Info.plist */,
+				83F2D9351C609112000157B1 /* Timeline-Bridging-Header.h */,
+			);
+			path = Timeline;
+			sourceTree = "<group>";
+		};
+		83F2D9381C609123000157B1 /* JTSImageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				83F2D9391C609123000157B1 /* JTSAnimatedGIFUtility.h */,
+				83F2D93A1C609123000157B1 /* JTSAnimatedGIFUtility.m */,
+				83F2D93B1C609123000157B1 /* JTSImageInfo.h */,
+				83F2D93C1C609123000157B1 /* JTSImageInfo.m */,
+				83F2D93D1C609123000157B1 /* JTSImageViewController.h */,
+				83F2D93E1C609123000157B1 /* JTSImageViewController.m */,
+				83F2D93F1C609123000157B1 /* JTSSimpleImageDownloader.h */,
+				83F2D9401C609123000157B1 /* JTSSimpleImageDownloader.m */,
+				83F2D9411C609123000157B1 /* UIApplication+JTSImageViewController.h */,
+				83F2D9421C609123000157B1 /* UIApplication+JTSImageViewController.m */,
+				83F2D9431C609123000157B1 /* UIImage+JTSImageEffects.h */,
+				83F2D9441C609123000157B1 /* UIImage+JTSImageEffects.m */,
+			);
+			path = JTSImageViewController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		83F2D91F1C6090FC000157B1 /* Timeline */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83F2D9321C6090FC000157B1 /* Build configuration list for PBXNativeTarget "Timeline" */;
+			buildPhases = (
+				83F2D91C1C6090FC000157B1 /* Sources */,
+				83F2D91D1C6090FC000157B1 /* Frameworks */,
+				83F2D91E1C6090FC000157B1 /* Resources */,
+				83F2D94F1C609263000157B1 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Timeline;
+			productName = Timeline;
+			productReference = 83F2D9201C6090FC000157B1 /* Timeline.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		83F2D9181C6090FC000157B1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Chris Mendez";
+				TargetAttributes = {
+					83F2D91F1C6090FC000157B1 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 83F2D91B1C6090FC000157B1 /* Build configuration list for PBXProject "Timeline" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 83F2D9171C6090FC000157B1;
+			productRefGroup = 83F2D9211C6090FC000157B1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				83F2D91F1C6090FC000157B1 /* Timeline */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		83F2D91E1C6090FC000157B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83F2D92E1C6090FC000157B1 /* LaunchScreen.storyboard in Resources */,
+				83F2D92B1C6090FC000157B1 /* Assets.xcassets in Resources */,
+				83F2D9291C6090FC000157B1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		83F2D94F1C609263000157B1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		83F2D91C1C6090FC000157B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83F2D9261C6090FC000157B1 /* ViewController.swift in Sources */,
+				83F2D9461C609123000157B1 /* JTSImageInfo.m in Sources */,
+				83F2D9481C609123000157B1 /* JTSSimpleImageDownloader.m in Sources */,
+				83F2D9241C6090FC000157B1 /* AppDelegate.swift in Sources */,
+				83F2D94A1C609123000157B1 /* UIImage+JTSImageEffects.m in Sources */,
+				83F2D9471C609123000157B1 /* JTSImageViewController.m in Sources */,
+				83F2D9451C609123000157B1 /* JTSAnimatedGIFUtility.m in Sources */,
+				83F2D9511C60935E000157B1 /* TimelineView.swift in Sources */,
+				83F2D9491C609123000157B1 /* UIApplication+JTSImageViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		83F2D9271C6090FC000157B1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83F2D9281C6090FC000157B1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		83F2D92C1C6090FC000157B1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83F2D92D1C6090FC000157B1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		83F2D9301C6090FC000157B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		83F2D9311C6090FC000157B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		83F2D9331C6090FC000157B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Timeline/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chrisjmendez.Timeline;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Timeline/Timeline-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		83F2D9341C6090FC000157B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Timeline/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chrisjmendez.Timeline;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Timeline/Timeline-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		83F2D91B1C6090FC000157B1 /* Build configuration list for PBXProject "Timeline" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83F2D9301C6090FC000157B1 /* Debug */,
+				83F2D9311C6090FC000157B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83F2D9321C6090FC000157B1 /* Build configuration list for PBXNativeTarget "Timeline" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83F2D9331C6090FC000157B1 /* Debug */,
+				83F2D9341C6090FC000157B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 83F2D9181C6090FC000157B1 /* Project object */;
+}

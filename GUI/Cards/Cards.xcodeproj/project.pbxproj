@@ -93,10 +93,7 @@
 		8394387A1C5E9EC9000B9BF7 = {
 			isa = PBXGroup;
 			children = (
-				839438B81C5ECB21000B9BF7 /* SwiftyJSON.framework */,
-				839438B21C5EAF35000B9BF7 /* Alamofire.framework */,
-				839438B01C5EAF32000B9BF7 /* Async.framework */,
-				839438AE1C5EAF31000B9BF7 /* MBProgressHUD.framework */,
+				839438EC1C5EE824000B9BF7 /* Frameworks */,
 				839438851C5E9EC9000B9BF7 /* Cards */,
 				8394389A1C5E9EC9000B9BF7 /* CardsTests */,
 				839438841C5E9EC9000B9BF7 /* Products */,
@@ -135,6 +132,17 @@
 				8394389D1C5E9EC9000B9BF7 /* Info.plist */,
 			);
 			path = CardsTests;
+			sourceTree = "<group>";
+		};
+		839438EC1C5EE824000B9BF7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				839438B81C5ECB21000B9BF7 /* SwiftyJSON.framework */,
+				839438B21C5EAF35000B9BF7 /* Alamofire.framework */,
+				839438B01C5EAF32000B9BF7 /* Async.framework */,
+				839438AE1C5EAF31000B9BF7 /* MBProgressHUD.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
