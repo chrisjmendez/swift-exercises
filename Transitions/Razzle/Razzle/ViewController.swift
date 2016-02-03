@@ -97,6 +97,17 @@ extension ViewController {
         
 //        scrollView.addConstraint(s)
         
+        /*
+        v.addConstraints([
+        NSLayoutConstraint(item: backgroundViewForImage, attribute: .Width, relatedBy: .Equal, toItem: v, attribute: .Width, multiplier: 1.0, constant: -60),
+        NSLayoutConstraint(item: backgroundViewForImage, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: 130),
+        NSLayoutConstraint(item: backgroundViewForImage, attribute: .Left, relatedBy: .Equal, toItem: v, attribute: .Left, multiplier: 1.0, constant: 40),
+        NSLayoutConstraint(item: backgroundViewForImage, attribute: .Top, relatedBy: .Equal, toItem: v, attribute: .Top, multiplier: 1.0, constant: 0)
+        ])
+
+        */
+        
+        
         keepView(shapeStar, onPages: [0,1])
         
         // Scale up the star to 7 times its original size between pages 0 and 1, with a quadratic Ease In easing function

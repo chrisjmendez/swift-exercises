@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rzF-89-8jA">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SendBirdChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YwF-Nw-zWj">
+                                <rect key="frame" x="16" y="144" width="343" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="zGs-Hn-fZl"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Start Open Chat"/>
+                                <connections>
+                                    <action selector="onStartOpenChat:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CZG-Iv-flp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="See-xe-qSD">
+                                <rect key="frame" x="16" y="344" width="343" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="SRc-OG-gMk"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="View Message Channel List"/>
+                                <connections>
+                                    <action selector="onViewMessageList:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4tk-K1-ohe"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="_sendbird_img_bg_default" translatesAutoresizingMaskIntoConstraints="NO" id="xkA-vD-jhE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Xl-ke-g8O">
+                                <rect key="frame" x="16" y="244" width="343" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3ko-oy-niv"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Start Messaging"/>
+                                <connections>
+                                    <action selector="onStartMessage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cGZ-xn-S08"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="See-xe-qSD" firstAttribute="top" secondItem="8Xl-ke-g8O" secondAttribute="bottom" constant="50" id="0bw-UI-xkj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8Xl-ke-g8O" secondAttribute="trailing" id="BEe-3b-0Tl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="See-xe-qSD" secondAttribute="trailing" id="Cnx-eS-Mcy"/>
+                            <constraint firstItem="YwF-Nw-zWj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="F43-x8-4Mz"/>
+                            <constraint firstItem="YwF-Nw-zWj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="ZtZ-Un-dq5"/>
+                            <constraint firstAttribute="trailing" secondItem="xkA-vD-jhE" secondAttribute="trailing" id="cxo-oq-qbx"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xkA-vD-jhE" secondAttribute="bottom" id="fo5-lu-gn8"/>
+                            <constraint firstItem="8Xl-ke-g8O" firstAttribute="top" secondItem="YwF-Nw-zWj" secondAttribute="bottom" constant="50" id="gAB-uT-z01"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YwF-Nw-zWj" secondAttribute="trailing" id="h0c-UN-CcI"/>
+                            <constraint firstItem="See-xe-qSD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="i7w-O7-xiG"/>
+                            <constraint firstItem="xkA-vD-jhE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qtt-xZ-NDo"/>
+                            <constraint firstItem="xkA-vD-jhE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="tU8-bK-q5D"/>
+                            <constraint firstItem="8Xl-ke-g8O" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="z10-TO-yXd"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="xkA-vD-jhE"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="dBJ-kb-UJ1"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="943.5" y="578.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Rfv-8X-q0m">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rzF-89-8jA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hwr-em-E3E">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8es-nQ-rtT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uGi-X6-pzv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="110" y="573"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="_sendbird_img_bg_default" width="960" height="380"/>
+    </resources>
+</document>

@@ -1,0 +1,590 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		839D6ABB1C61523B00AD0728 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839D6ABA1C61523B00AD0728 /* AppDelegate.swift */; };
+		839D6ABD1C61523B00AD0728 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839D6ABC1C61523B00AD0728 /* ViewController.swift */; };
+		839D6AC01C61523B00AD0728 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839D6ABE1C61523B00AD0728 /* Main.storyboard */; };
+		839D6AC21C61523B00AD0728 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 839D6AC11C61523B00AD0728 /* Assets.xcassets */; };
+		839D6AC51C61523B00AD0728 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839D6AC31C61523B00AD0728 /* LaunchScreen.storyboard */; };
+		839D6ACD1C61560C00AD0728 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839D6ACC1C61560C00AD0728 /* AFNetworking.framework */; };
+		839D6AD01C61576C00AD0728 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 839D6ACF1C61576C00AD0728 /* libicucore.tbd */; };
+		839D6AD21C61577700AD0728 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839D6AD11C61577700AD0728 /* MobileCoreServices.framework */; };
+		839D6AD41C61577D00AD0728 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839D6AD31C61577D00AD0728 /* Foundation.framework */; };
+		839D6AD61C61578300AD0728 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839D6AD51C61578300AD0728 /* Security.framework */; };
+		839D6AD81C61578A00AD0728 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839D6AD71C61578A00AD0728 /* CFNetwork.framework */; };
+		839D6ADA1C61579A00AD0728 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839D6AD91C61579A00AD0728 /* QuartzCore.framework */; };
+		839D6ADC1C6157A000AD0728 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839D6ADB1C6157A000AD0728 /* AdSupport.framework */; };
+		839D6AE01C6157BC00AD0728 /* SendBirdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839D6ADF1C6157BC00AD0728 /* SendBirdSDK.framework */; };
+		839D6B221C6158FB00AD0728 /* BroadcastMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 839D6AE91C6158FB00AD0728 /* BroadcastMessageTableViewCell.m */; };
+		839D6B231C6158FB00AD0728 /* ChannelListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 839D6AEB1C6158FB00AD0728 /* ChannelListTableView.m */; };
+		839D6B241C6158FB00AD0728 /* ChannelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 839D6AED1C6158FB00AD0728 /* ChannelTableViewCell.m */; };
+		839D6B251C6158FB00AD0728 /* ChatMessageInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 839D6AEF1C6158FB00AD0728 /* ChatMessageInputView.m */; };
+		839D6B261C6158FB00AD0728 /* FileLinkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 839D6AF11C6158FB00AD0728 /* FileLinkTableViewCell.m */; };
+		839D6B271C6158FB00AD0728 /* FileMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 839D6AF31C6158FB00AD0728 /* FileMessageTableViewCell.m */; };
+		839D6B281C6158FB00AD0728 /* IndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 839D6AF51C6158FB00AD0728 /* IndicatorView.m */; };
+		839D6B291C6158FB00AD0728 /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 839D6AF71C6158FB00AD0728 /* MessageTableViewCell.m */; };
+		839D6B2A1C6158FB00AD0728 /* StructuredMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 839D6AF91C6158FB00AD0728 /* StructuredMessageTableViewCell.m */; };
+		839D6B2B1C6158FB00AD0728 /* SystemMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 839D6AFB1C6158FB00AD0728 /* SystemMessageTableViewCell.m */; };
+		839D6B2C1C6158FB00AD0728 /* ChattingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 839D6AFE1C6158FB00AD0728 /* ChattingTableViewController.m */; };
+		839D6B2D1C6158FB00AD0728 /* SendBirdCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 839D6B001C6158FB00AD0728 /* SendBirdCommon.m */; };
+		839D6B2E1C6158FB00AD0728 /* MemberTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 839D6B041C6158FB00AD0728 /* MemberTableViewCell.m */; };
+		839D6B2F1C6158FB00AD0728 /* MessageInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 839D6B061C6158FB00AD0728 /* MessageInputView.m */; };
+		839D6B301C6158FB00AD0728 /* MessagingBroadcastMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 839D6B081C6158FB00AD0728 /* MessagingBroadcastMessageTableViewCell.m */; };
+		839D6B311C6158FB00AD0728 /* MessagingChannelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 839D6B0A1C6158FB00AD0728 /* MessagingChannelTableViewCell.m */; };
+		839D6B321C6158FB00AD0728 /* MessagingFileLinkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 839D6B0C1C6158FB00AD0728 /* MessagingFileLinkTableViewCell.m */; };
+		839D6B331C6158FB00AD0728 /* MessagingFileMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 839D6B0E1C6158FB00AD0728 /* MessagingFileMessageTableViewCell.m */; };
+		839D6B341C6158FB00AD0728 /* MessagingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 839D6B101C6158FB00AD0728 /* MessagingIndicatorView.m */; };
+		839D6B351C6158FB00AD0728 /* MessagingMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 839D6B121C6158FB00AD0728 /* MessagingMessageTableViewCell.m */; };
+		839D6B361C6158FB00AD0728 /* MessagingMyFileLinkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 839D6B141C6158FB00AD0728 /* MessagingMyFileLinkTableViewCell.m */; };
+		839D6B371C6158FB00AD0728 /* MessagingMyMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 839D6B161C6158FB00AD0728 /* MessagingMyMessageTableViewCell.m */; };
+		839D6B381C6158FB00AD0728 /* MessagingMyStructuredMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 839D6B181C6158FB00AD0728 /* MessagingMyStructuredMessageTableViewCell.m */; };
+		839D6B391C6158FB00AD0728 /* MessagingStructuredMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 839D6B1A1C6158FB00AD0728 /* MessagingStructuredMessageTableViewCell.m */; };
+		839D6B3A1C6158FB00AD0728 /* MessagingSystemMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 839D6B1C1C6158FB00AD0728 /* MessagingSystemMessageTableViewCell.m */; };
+		839D6B3B1C6158FB00AD0728 /* TypingNowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 839D6B1E1C6158FB00AD0728 /* TypingNowView.m */; };
+		839D6B3C1C6158FB00AD0728 /* MessagingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 839D6B211C6158FB00AD0728 /* MessagingTableViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		839D6AB71C61523B00AD0728 /* SendBirdChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SendBirdChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		839D6ABA1C61523B00AD0728 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		839D6ABC1C61523B00AD0728 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		839D6ABF1C61523B00AD0728 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		839D6AC11C61523B00AD0728 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		839D6AC41C61523B00AD0728 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		839D6AC61C61523B00AD0728 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		839D6ACC1C61560C00AD0728 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
+		839D6ACF1C61576C00AD0728 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		839D6AD11C61577700AD0728 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		839D6AD31C61577D00AD0728 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		839D6AD51C61578300AD0728 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		839D6AD71C61578A00AD0728 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		839D6AD91C61579A00AD0728 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		839D6ADB1C6157A000AD0728 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		839D6ADD1C6157B200AD0728 /* SendBirdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SendBirdSDK.framework; path = "../../../../../Downloads/sendbird-ios-framework-master/SendBirdSDK.framework"; sourceTree = "<group>"; };
+		839D6ADF1C6157BC00AD0728 /* SendBirdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SendBirdSDK.framework; path = SendBirdChat/SendBirdSDK.framework; sourceTree = "<group>"; };
+		839D6AE11C6157DF00AD0728 /* SendBirdChat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SendBirdChat-Bridging-Header.h"; sourceTree = "<group>"; };
+		839D6AE81C6158FB00AD0728 /* BroadcastMessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BroadcastMessageTableViewCell.h; sourceTree = "<group>"; };
+		839D6AE91C6158FB00AD0728 /* BroadcastMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BroadcastMessageTableViewCell.m; sourceTree = "<group>"; };
+		839D6AEA1C6158FB00AD0728 /* ChannelListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelListTableView.h; sourceTree = "<group>"; };
+		839D6AEB1C6158FB00AD0728 /* ChannelListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelListTableView.m; sourceTree = "<group>"; };
+		839D6AEC1C6158FB00AD0728 /* ChannelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelTableViewCell.h; sourceTree = "<group>"; };
+		839D6AED1C6158FB00AD0728 /* ChannelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelTableViewCell.m; sourceTree = "<group>"; };
+		839D6AEE1C6158FB00AD0728 /* ChatMessageInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessageInputView.h; sourceTree = "<group>"; };
+		839D6AEF1C6158FB00AD0728 /* ChatMessageInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessageInputView.m; sourceTree = "<group>"; };
+		839D6AF01C6158FB00AD0728 /* FileLinkTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileLinkTableViewCell.h; sourceTree = "<group>"; };
+		839D6AF11C6158FB00AD0728 /* FileLinkTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileLinkTableViewCell.m; sourceTree = "<group>"; };
+		839D6AF21C6158FB00AD0728 /* FileMessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileMessageTableViewCell.h; sourceTree = "<group>"; };
+		839D6AF31C6158FB00AD0728 /* FileMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileMessageTableViewCell.m; sourceTree = "<group>"; };
+		839D6AF41C6158FB00AD0728 /* IndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndicatorView.h; sourceTree = "<group>"; };
+		839D6AF51C6158FB00AD0728 /* IndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndicatorView.m; sourceTree = "<group>"; };
+		839D6AF61C6158FB00AD0728 /* MessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableViewCell.h; sourceTree = "<group>"; };
+		839D6AF71C6158FB00AD0728 /* MessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTableViewCell.m; sourceTree = "<group>"; };
+		839D6AF81C6158FB00AD0728 /* StructuredMessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StructuredMessageTableViewCell.h; sourceTree = "<group>"; };
+		839D6AF91C6158FB00AD0728 /* StructuredMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StructuredMessageTableViewCell.m; sourceTree = "<group>"; };
+		839D6AFA1C6158FB00AD0728 /* SystemMessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemMessageTableViewCell.h; sourceTree = "<group>"; };
+		839D6AFB1C6158FB00AD0728 /* SystemMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemMessageTableViewCell.m; sourceTree = "<group>"; };
+		839D6AFD1C6158FB00AD0728 /* ChattingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChattingTableViewController.h; sourceTree = "<group>"; };
+		839D6AFE1C6158FB00AD0728 /* ChattingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChattingTableViewController.m; sourceTree = "<group>"; };
+		839D6AFF1C6158FB00AD0728 /* SendBirdCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendBirdCommon.h; sourceTree = "<group>"; };
+		839D6B001C6158FB00AD0728 /* SendBirdCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendBirdCommon.m; sourceTree = "<group>"; };
+		839D6B031C6158FB00AD0728 /* MemberTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberTableViewCell.h; sourceTree = "<group>"; };
+		839D6B041C6158FB00AD0728 /* MemberTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberTableViewCell.m; sourceTree = "<group>"; };
+		839D6B051C6158FB00AD0728 /* MessageInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageInputView.h; sourceTree = "<group>"; };
+		839D6B061C6158FB00AD0728 /* MessageInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageInputView.m; sourceTree = "<group>"; };
+		839D6B071C6158FB00AD0728 /* MessagingBroadcastMessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagingBroadcastMessageTableViewCell.h; sourceTree = "<group>"; };
+		839D6B081C6158FB00AD0728 /* MessagingBroadcastMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagingBroadcastMessageTableViewCell.m; sourceTree = "<group>"; };
+		839D6B091C6158FB00AD0728 /* MessagingChannelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagingChannelTableViewCell.h; sourceTree = "<group>"; };
+		839D6B0A1C6158FB00AD0728 /* MessagingChannelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagingChannelTableViewCell.m; sourceTree = "<group>"; };
+		839D6B0B1C6158FB00AD0728 /* MessagingFileLinkTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagingFileLinkTableViewCell.h; sourceTree = "<group>"; };
+		839D6B0C1C6158FB00AD0728 /* MessagingFileLinkTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagingFileLinkTableViewCell.m; sourceTree = "<group>"; };
+		839D6B0D1C6158FB00AD0728 /* MessagingFileMessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagingFileMessageTableViewCell.h; sourceTree = "<group>"; };
+		839D6B0E1C6158FB00AD0728 /* MessagingFileMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagingFileMessageTableViewCell.m; sourceTree = "<group>"; };
+		839D6B0F1C6158FB00AD0728 /* MessagingIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagingIndicatorView.h; sourceTree = "<group>"; };
+		839D6B101C6158FB00AD0728 /* MessagingIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagingIndicatorView.m; sourceTree = "<group>"; };
+		839D6B111C6158FB00AD0728 /* MessagingMessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagingMessageTableViewCell.h; sourceTree = "<group>"; };
+		839D6B121C6158FB00AD0728 /* MessagingMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagingMessageTableViewCell.m; sourceTree = "<group>"; };
+		839D6B131C6158FB00AD0728 /* MessagingMyFileLinkTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagingMyFileLinkTableViewCell.h; sourceTree = "<group>"; };
+		839D6B141C6158FB00AD0728 /* MessagingMyFileLinkTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagingMyFileLinkTableViewCell.m; sourceTree = "<group>"; };
+		839D6B151C6158FB00AD0728 /* MessagingMyMessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagingMyMessageTableViewCell.h; sourceTree = "<group>"; };
+		839D6B161C6158FB00AD0728 /* MessagingMyMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagingMyMessageTableViewCell.m; sourceTree = "<group>"; };
+		839D6B171C6158FB00AD0728 /* MessagingMyStructuredMessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagingMyStructuredMessageTableViewCell.h; sourceTree = "<group>"; };
+		839D6B181C6158FB00AD0728 /* MessagingMyStructuredMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagingMyStructuredMessageTableViewCell.m; sourceTree = "<group>"; };
+		839D6B191C6158FB00AD0728 /* MessagingStructuredMessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagingStructuredMessageTableViewCell.h; sourceTree = "<group>"; };
+		839D6B1A1C6158FB00AD0728 /* MessagingStructuredMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagingStructuredMessageTableViewCell.m; sourceTree = "<group>"; };
+		839D6B1B1C6158FB00AD0728 /* MessagingSystemMessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagingSystemMessageTableViewCell.h; sourceTree = "<group>"; };
+		839D6B1C1C6158FB00AD0728 /* MessagingSystemMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagingSystemMessageTableViewCell.m; sourceTree = "<group>"; };
+		839D6B1D1C6158FB00AD0728 /* TypingNowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypingNowView.h; sourceTree = "<group>"; };
+		839D6B1E1C6158FB00AD0728 /* TypingNowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypingNowView.m; sourceTree = "<group>"; };
+		839D6B201C6158FB00AD0728 /* MessagingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagingTableViewController.h; sourceTree = "<group>"; };
+		839D6B211C6158FB00AD0728 /* MessagingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagingTableViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		839D6AB41C61523B00AD0728 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				839D6ADC1C6157A000AD0728 /* AdSupport.framework in Frameworks */,
+				839D6ACD1C61560C00AD0728 /* AFNetworking.framework in Frameworks */,
+				839D6AD81C61578A00AD0728 /* CFNetwork.framework in Frameworks */,
+				839D6AD41C61577D00AD0728 /* Foundation.framework in Frameworks */,
+				839D6AD01C61576C00AD0728 /* libicucore.tbd in Frameworks */,
+				839D6AD21C61577700AD0728 /* MobileCoreServices.framework in Frameworks */,
+				839D6ADA1C61579A00AD0728 /* QuartzCore.framework in Frameworks */,
+				839D6AD61C61578300AD0728 /* Security.framework in Frameworks */,
+				839D6AE01C6157BC00AD0728 /* SendBirdSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		839D6AAE1C61523B00AD0728 = {
+			isa = PBXGroup;
+			children = (
+				839D6AE41C6157F300AD0728 /* Frameworks */,
+				839D6AB91C61523B00AD0728 /* SendBirdChat */,
+				839D6AB81C61523B00AD0728 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		839D6AB81C61523B00AD0728 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				839D6AB71C61523B00AD0728 /* SendBirdChat.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		839D6AB91C61523B00AD0728 /* SendBirdChat */ = {
+			isa = PBXGroup;
+			children = (
+				839D6AE51C6158FB00AD0728 /* SendBird */,
+				839D6ABA1C61523B00AD0728 /* AppDelegate.swift */,
+				839D6ABC1C61523B00AD0728 /* ViewController.swift */,
+				839D6ABE1C61523B00AD0728 /* Main.storyboard */,
+				839D6AC11C61523B00AD0728 /* Assets.xcassets */,
+				839D6AC31C61523B00AD0728 /* LaunchScreen.storyboard */,
+				839D6AC61C61523B00AD0728 /* Info.plist */,
+				839D6AE11C6157DF00AD0728 /* SendBirdChat-Bridging-Header.h */,
+			);
+			path = SendBirdChat;
+			sourceTree = "<group>";
+		};
+		839D6AE41C6157F300AD0728 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				839D6ADF1C6157BC00AD0728 /* SendBirdSDK.framework */,
+				839D6ADD1C6157B200AD0728 /* SendBirdSDK.framework */,
+				839D6ADB1C6157A000AD0728 /* AdSupport.framework */,
+				839D6AD91C61579A00AD0728 /* QuartzCore.framework */,
+				839D6AD71C61578A00AD0728 /* CFNetwork.framework */,
+				839D6AD51C61578300AD0728 /* Security.framework */,
+				839D6AD31C61577D00AD0728 /* Foundation.framework */,
+				839D6AD11C61577700AD0728 /* MobileCoreServices.framework */,
+				839D6ACF1C61576C00AD0728 /* libicucore.tbd */,
+				839D6ACC1C61560C00AD0728 /* AFNetworking.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		839D6AE51C6158FB00AD0728 /* SendBird */ = {
+			isa = PBXGroup;
+			children = (
+				839D6AE61C6158FB00AD0728 /* SendBirdChat */,
+				839D6AFF1C6158FB00AD0728 /* SendBirdCommon.h */,
+				839D6B001C6158FB00AD0728 /* SendBirdCommon.m */,
+				839D6B011C6158FB00AD0728 /* SendBirdMessaging */,
+			);
+			path = SendBird;
+			sourceTree = "<group>";
+		};
+		839D6AE61C6158FB00AD0728 /* SendBirdChat */ = {
+			isa = PBXGroup;
+			children = (
+				839D6AE71C6158FB00AD0728 /* View */,
+				839D6AFC1C6158FB00AD0728 /* ViewController */,
+			);
+			path = SendBirdChat;
+			sourceTree = "<group>";
+		};
+		839D6AE71C6158FB00AD0728 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				839D6AE81C6158FB00AD0728 /* BroadcastMessageTableViewCell.h */,
+				839D6AE91C6158FB00AD0728 /* BroadcastMessageTableViewCell.m */,
+				839D6AEA1C6158FB00AD0728 /* ChannelListTableView.h */,
+				839D6AEB1C6158FB00AD0728 /* ChannelListTableView.m */,
+				839D6AEC1C6158FB00AD0728 /* ChannelTableViewCell.h */,
+				839D6AED1C6158FB00AD0728 /* ChannelTableViewCell.m */,
+				839D6AEE1C6158FB00AD0728 /* ChatMessageInputView.h */,
+				839D6AEF1C6158FB00AD0728 /* ChatMessageInputView.m */,
+				839D6AF01C6158FB00AD0728 /* FileLinkTableViewCell.h */,
+				839D6AF11C6158FB00AD0728 /* FileLinkTableViewCell.m */,
+				839D6AF21C6158FB00AD0728 /* FileMessageTableViewCell.h */,
+				839D6AF31C6158FB00AD0728 /* FileMessageTableViewCell.m */,
+				839D6AF41C6158FB00AD0728 /* IndicatorView.h */,
+				839D6AF51C6158FB00AD0728 /* IndicatorView.m */,
+				839D6AF61C6158FB00AD0728 /* MessageTableViewCell.h */,
+				839D6AF71C6158FB00AD0728 /* MessageTableViewCell.m */,
+				839D6AF81C6158FB00AD0728 /* StructuredMessageTableViewCell.h */,
+				839D6AF91C6158FB00AD0728 /* StructuredMessageTableViewCell.m */,
+				839D6AFA1C6158FB00AD0728 /* SystemMessageTableViewCell.h */,
+				839D6AFB1C6158FB00AD0728 /* SystemMessageTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		839D6AFC1C6158FB00AD0728 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				839D6AFD1C6158FB00AD0728 /* ChattingTableViewController.h */,
+				839D6AFE1C6158FB00AD0728 /* ChattingTableViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		839D6B011C6158FB00AD0728 /* SendBirdMessaging */ = {
+			isa = PBXGroup;
+			children = (
+				839D6B021C6158FB00AD0728 /* View */,
+				839D6B1F1C6158FB00AD0728 /* ViewController */,
+			);
+			path = SendBirdMessaging;
+			sourceTree = "<group>";
+		};
+		839D6B021C6158FB00AD0728 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				839D6B031C6158FB00AD0728 /* MemberTableViewCell.h */,
+				839D6B041C6158FB00AD0728 /* MemberTableViewCell.m */,
+				839D6B051C6158FB00AD0728 /* MessageInputView.h */,
+				839D6B061C6158FB00AD0728 /* MessageInputView.m */,
+				839D6B071C6158FB00AD0728 /* MessagingBroadcastMessageTableViewCell.h */,
+				839D6B081C6158FB00AD0728 /* MessagingBroadcastMessageTableViewCell.m */,
+				839D6B091C6158FB00AD0728 /* MessagingChannelTableViewCell.h */,
+				839D6B0A1C6158FB00AD0728 /* MessagingChannelTableViewCell.m */,
+				839D6B0B1C6158FB00AD0728 /* MessagingFileLinkTableViewCell.h */,
+				839D6B0C1C6158FB00AD0728 /* MessagingFileLinkTableViewCell.m */,
+				839D6B0D1C6158FB00AD0728 /* MessagingFileMessageTableViewCell.h */,
+				839D6B0E1C6158FB00AD0728 /* MessagingFileMessageTableViewCell.m */,
+				839D6B0F1C6158FB00AD0728 /* MessagingIndicatorView.h */,
+				839D6B101C6158FB00AD0728 /* MessagingIndicatorView.m */,
+				839D6B111C6158FB00AD0728 /* MessagingMessageTableViewCell.h */,
+				839D6B121C6158FB00AD0728 /* MessagingMessageTableViewCell.m */,
+				839D6B131C6158FB00AD0728 /* MessagingMyFileLinkTableViewCell.h */,
+				839D6B141C6158FB00AD0728 /* MessagingMyFileLinkTableViewCell.m */,
+				839D6B151C6158FB00AD0728 /* MessagingMyMessageTableViewCell.h */,
+				839D6B161C6158FB00AD0728 /* MessagingMyMessageTableViewCell.m */,
+				839D6B171C6158FB00AD0728 /* MessagingMyStructuredMessageTableViewCell.h */,
+				839D6B181C6158FB00AD0728 /* MessagingMyStructuredMessageTableViewCell.m */,
+				839D6B191C6158FB00AD0728 /* MessagingStructuredMessageTableViewCell.h */,
+				839D6B1A1C6158FB00AD0728 /* MessagingStructuredMessageTableViewCell.m */,
+				839D6B1B1C6158FB00AD0728 /* MessagingSystemMessageTableViewCell.h */,
+				839D6B1C1C6158FB00AD0728 /* MessagingSystemMessageTableViewCell.m */,
+				839D6B1D1C6158FB00AD0728 /* TypingNowView.h */,
+				839D6B1E1C6158FB00AD0728 /* TypingNowView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		839D6B1F1C6158FB00AD0728 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				839D6B201C6158FB00AD0728 /* MessagingTableViewController.h */,
+				839D6B211C6158FB00AD0728 /* MessagingTableViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		839D6AB61C61523B00AD0728 /* SendBirdChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 839D6AC91C61523B00AD0728 /* Build configuration list for PBXNativeTarget "SendBirdChat" */;
+			buildPhases = (
+				839D6AB31C61523B00AD0728 /* Sources */,
+				839D6AB41C61523B00AD0728 /* Frameworks */,
+				839D6AB51C61523B00AD0728 /* Resources */,
+				839D6ACE1C61561000AD0728 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SendBirdChat;
+			productName = SendBirdChat;
+			productReference = 839D6AB71C61523B00AD0728 /* SendBirdChat.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		839D6AAF1C61523B00AD0728 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Chris Mendez";
+				TargetAttributes = {
+					839D6AB61C61523B00AD0728 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 839D6AB21C61523B00AD0728 /* Build configuration list for PBXProject "SendBirdChat" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 839D6AAE1C61523B00AD0728;
+			productRefGroup = 839D6AB81C61523B00AD0728 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				839D6AB61C61523B00AD0728 /* SendBirdChat */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		839D6AB51C61523B00AD0728 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				839D6AC51C61523B00AD0728 /* LaunchScreen.storyboard in Resources */,
+				839D6AC21C61523B00AD0728 /* Assets.xcassets in Resources */,
+				839D6AC01C61523B00AD0728 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		839D6ACE1C61561000AD0728 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/AFNetworking.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		839D6AB31C61523B00AD0728 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				839D6B371C6158FB00AD0728 /* MessagingMyMessageTableViewCell.m in Sources */,
+				839D6B331C6158FB00AD0728 /* MessagingFileMessageTableViewCell.m in Sources */,
+				839D6ABD1C61523B00AD0728 /* ViewController.swift in Sources */,
+				839D6B2E1C6158FB00AD0728 /* MemberTableViewCell.m in Sources */,
+				839D6B361C6158FB00AD0728 /* MessagingMyFileLinkTableViewCell.m in Sources */,
+				839D6B301C6158FB00AD0728 /* MessagingBroadcastMessageTableViewCell.m in Sources */,
+				839D6B2D1C6158FB00AD0728 /* SendBirdCommon.m in Sources */,
+				839D6B251C6158FB00AD0728 /* ChatMessageInputView.m in Sources */,
+				839D6B3A1C6158FB00AD0728 /* MessagingSystemMessageTableViewCell.m in Sources */,
+				839D6B231C6158FB00AD0728 /* ChannelListTableView.m in Sources */,
+				839D6B221C6158FB00AD0728 /* BroadcastMessageTableViewCell.m in Sources */,
+				839D6B2B1C6158FB00AD0728 /* SystemMessageTableViewCell.m in Sources */,
+				839D6B391C6158FB00AD0728 /* MessagingStructuredMessageTableViewCell.m in Sources */,
+				839D6B311C6158FB00AD0728 /* MessagingChannelTableViewCell.m in Sources */,
+				839D6ABB1C61523B00AD0728 /* AppDelegate.swift in Sources */,
+				839D6B271C6158FB00AD0728 /* FileMessageTableViewCell.m in Sources */,
+				839D6B261C6158FB00AD0728 /* FileLinkTableViewCell.m in Sources */,
+				839D6B381C6158FB00AD0728 /* MessagingMyStructuredMessageTableViewCell.m in Sources */,
+				839D6B291C6158FB00AD0728 /* MessageTableViewCell.m in Sources */,
+				839D6B321C6158FB00AD0728 /* MessagingFileLinkTableViewCell.m in Sources */,
+				839D6B3B1C6158FB00AD0728 /* TypingNowView.m in Sources */,
+				839D6B2C1C6158FB00AD0728 /* ChattingTableViewController.m in Sources */,
+				839D6B281C6158FB00AD0728 /* IndicatorView.m in Sources */,
+				839D6B341C6158FB00AD0728 /* MessagingIndicatorView.m in Sources */,
+				839D6B351C6158FB00AD0728 /* MessagingMessageTableViewCell.m in Sources */,
+				839D6B2F1C6158FB00AD0728 /* MessageInputView.m in Sources */,
+				839D6B3C1C6158FB00AD0728 /* MessagingTableViewController.m in Sources */,
+				839D6B2A1C6158FB00AD0728 /* StructuredMessageTableViewCell.m in Sources */,
+				839D6B241C6158FB00AD0728 /* ChannelTableViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		839D6ABE1C61523B00AD0728 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				839D6ABF1C61523B00AD0728 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		839D6AC31C61523B00AD0728 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				839D6AC41C61523B00AD0728 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		839D6AC71C61523B00AD0728 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		839D6AC81C61523B00AD0728 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		839D6ACA1C61523B00AD0728 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/SendBirdChat",
+				);
+				INFOPLIST_FILE = SendBirdChat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chrisjmendez.SendBirdChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SendBirdChat/SendBirdChat-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		839D6ACB1C61523B00AD0728 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/SendBirdChat",
+				);
+				INFOPLIST_FILE = SendBirdChat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chrisjmendez.SendBirdChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SendBirdChat/SendBirdChat-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		839D6AB21C61523B00AD0728 /* Build configuration list for PBXProject "SendBirdChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				839D6AC71C61523B00AD0728 /* Debug */,
+				839D6AC81C61523B00AD0728 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		839D6AC91C61523B00AD0728 /* Build configuration list for PBXNativeTarget "SendBirdChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				839D6ACA1C61523B00AD0728 /* Debug */,
+				839D6ACB1C61523B00AD0728 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 839D6AAF1C61523B00AD0728 /* Project object */;
+}
