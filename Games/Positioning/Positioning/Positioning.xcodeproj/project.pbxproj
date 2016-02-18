@@ -14,10 +14,10 @@
 		E19E85CD1BC70C360093D22A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E19E85CB1BC70C360093D22A /* Main.storyboard */; };
 		E19E85CF1BC70C360093D22A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E19E85CE1BC70C360093D22A /* Assets.xcassets */; };
 		E19E85D21BC70C360093D22A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E19E85D01BC70C360093D22A /* LaunchScreen.storyboard */; };
-		E19E85DA1BC70C500093D22A /* firewall in Resources */ = {isa = PBXBuildFile; fileRef = E19E85D91BC70C500093D22A /* firewall */; settings = {ASSET_TAGS = (); }; };
-		E19E85DE1BC71EE30093D22A /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E19E85DD1BC71EE30093D22A /* logo.png */; settings = {ASSET_TAGS = (); }; };
-		E19E85E01BC728710093D22A /* artwork in Resources */ = {isa = PBXBuildFile; fileRef = E19E85DF1BC728710093D22A /* artwork */; settings = {ASSET_TAGS = (); }; };
-		E19E85E21BC729560093D22A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19E85E11BC729560093D22A /* Theme.swift */; settings = {ASSET_TAGS = (); }; };
+		E19E85DA1BC70C500093D22A /* firewall in Resources */ = {isa = PBXBuildFile; fileRef = E19E85D91BC70C500093D22A /* firewall */; };
+		E19E85DE1BC71EE30093D22A /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E19E85DD1BC71EE30093D22A /* logo.png */; };
+		E19E85E01BC728710093D22A /* artwork in Resources */ = {isa = PBXBuildFile; fileRef = E19E85DF1BC728710093D22A /* artwork */; };
+		E19E85E21BC729560093D22A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19E85E11BC729560093D22A /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,17 +67,17 @@
 			isa = PBXGroup;
 			children = (
 				E19E85C31BC70C360093D22A /* AppDelegate.swift */,
+				E19E85C91BC70C360093D22A /* GameViewController.swift */,
+				E19E85C71BC70C360093D22A /* GameScene.swift */,
+				E19E85E11BC729560093D22A /* Theme.swift */,
 				E19E85C51BC70C360093D22A /* GameScene.sks */,
 				E19E85D91BC70C500093D22A /* firewall */,
-				E19E85C71BC70C360093D22A /* GameScene.swift */,
 				E19E85DF1BC728710093D22A /* artwork */,
 				E19E85DD1BC71EE30093D22A /* logo.png */,
-				E19E85C91BC70C360093D22A /* GameViewController.swift */,
-				E19E85CB1BC70C360093D22A /* Main.storyboard */,
 				E19E85CE1BC70C360093D22A /* Assets.xcassets */,
+				E19E85CB1BC70C360093D22A /* Main.storyboard */,
 				E19E85D01BC70C360093D22A /* LaunchScreen.storyboard */,
 				E19E85D31BC70C360093D22A /* Info.plist */,
-				E19E85E11BC729560093D22A /* Theme.swift */,
 			);
 			path = Positioning;
 			sourceTree = "<group>";
@@ -307,6 +307,7 @@
 				E19E85D81BC70C360093D22A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
