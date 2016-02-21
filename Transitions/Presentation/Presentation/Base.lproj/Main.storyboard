@@ -17,12 +17,26 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNR-8f-wVx">
+                                <rect key="frame" x="16" y="617" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ZJh-HI-lGQ"/>
+                                </constraints>
+                                <state key="normal" title="START OVER"/>
+                                <connections>
+                                    <action selector="onStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XvJ-JH-s5k"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NNR-8f-wVx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="X3J-VN-Rxv"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NNR-8f-wVx" secondAttribute="bottom" constant="20" id="ueB-J5-t50"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NNR-8f-wVx" secondAttribute="trailing" id="x2D-Vy-v33"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <segue destination="FiP-az-xS3" kind="show" identifier="onLoadSegue" id="OIo-Ap-VSc"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -30,15 +44,17 @@
         <!--Page View Controller-->
         <scene sceneID="u82-8k-6cO">
             <objects>
-                <pageViewController storyboardIdentifier="pageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="FiP-az-xS3" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="pageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="FiP-az-xS3" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cYy-tU-Yr3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="783.5" y="330.5"/>
+            <point key="canvasLocation" x="1020.5" y="-82.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Client Content View Controller-->
         <scene sceneID="D1c-pp-Fnf">
             <objects>
-                <viewController storyboardIdentifier="contentViewController" id="o3D-KB-dgA" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="contentViewController" id="o3D-KB-dgA" customClass="ClientContentViewController" customModule="Presentation" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dI5-bJ-ik9"/>
                         <viewControllerLayoutGuide type="bottom" id="W3A-wa-Dj5"/>
@@ -47,31 +63,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w9d-rK-Qhn">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w9d-rK-Qhn">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bmk-w4-ap2">
-                                <rect key="frame" x="16" y="40" width="343" height="40"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mk-Vd-Hvi">
+                                <rect key="frame" x="16" y="40" width="343" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="z8C-4X-F7e"/>
+                                    <constraint firstAttribute="height" constant="30" id="Uim-vY-lhe"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="20"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Bmk-w4-ap2" firstAttribute="top" secondItem="dI5-bJ-ik9" secondAttribute="bottom" constant="20" id="DNF-q8-1Gs"/>
-                            <constraint firstItem="Bmk-w4-ap2" firstAttribute="leading" secondItem="bHE-aS-j1b" secondAttribute="leadingMargin" id="DYK-1X-BhD"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Bmk-w4-ap2" secondAttribute="trailing" id="vft-RC-weF"/>
+                            <constraint firstItem="W3A-wa-Dj5" firstAttribute="top" secondItem="w9d-rK-Qhn" secondAttribute="bottom" id="2xG-KD-S3a"/>
+                            <constraint firstItem="0mk-Vd-Hvi" firstAttribute="leading" secondItem="bHE-aS-j1b" secondAttribute="leadingMargin" id="ISz-a0-XAn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="w9d-rK-Qhn" secondAttribute="trailing" id="JWy-HC-hLl"/>
+                            <constraint firstItem="w9d-rK-Qhn" firstAttribute="leading" secondItem="bHE-aS-j1b" secondAttribute="leadingMargin" id="La5-5l-yIf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="w9d-rK-Qhn" secondAttribute="trailing" id="QPu-Sf-7pd"/>
+                            <constraint firstItem="w9d-rK-Qhn" firstAttribute="leading" secondItem="bHE-aS-j1b" secondAttribute="leadingMargin" id="Rkp-7u-Xsu"/>
+                            <constraint firstItem="W3A-wa-Dj5" firstAttribute="top" secondItem="w9d-rK-Qhn" secondAttribute="bottom" id="TNE-VX-4yy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0mk-Vd-Hvi" secondAttribute="trailing" id="TWy-dD-ZBF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="w9d-rK-Qhn" secondAttribute="trailing" id="Udb-go-VIn"/>
+                            <constraint firstItem="0mk-Vd-Hvi" firstAttribute="top" secondItem="dI5-bJ-ik9" secondAttribute="bottom" constant="20" id="bHV-QD-zyL"/>
+                            <constraint firstItem="w9d-rK-Qhn" firstAttribute="leading" secondItem="bHE-aS-j1b" secondAttribute="leadingMargin" id="bYo-Ux-M4Y"/>
+                            <constraint firstItem="w9d-rK-Qhn" firstAttribute="top" secondItem="bHE-aS-j1b" secondAttribute="topMargin" id="g0O-SL-anB"/>
+                            <constraint firstItem="w9d-rK-Qhn" firstAttribute="top" secondItem="bHE-aS-j1b" secondAttribute="topMargin" id="nut-5n-Q5F"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="JWy-HC-hLl"/>
+                                <exclude reference="La5-5l-yIf"/>
+                                <exclude reference="QPu-Sf-7pd"/>
+                                <exclude reference="bYo-Ux-M4Y"/>
+                                <exclude reference="g0O-SL-anB"/>
+                                <exclude reference="2xG-KD-S3a"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="w9d-rK-Qhn" id="6MI-LV-teO"/>
+                        <outlet property="titleLabel" destination="0mk-Vd-Hvi" id="Aew-xO-Q7r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ruz-e7-vhD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="800.5" y="1044.5"/>
+            <point key="canvasLocation" x="1020.5" y="714.5"/>
         </scene>
     </scenes>
 </document>

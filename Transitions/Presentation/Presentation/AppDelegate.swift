@@ -14,13 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-
         
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: .Default)
-        UINavigationBar.appearance().barStyle = .Default
-        UINavigationBar.appearance().shadowImage = UIImage()
-        UINavigationBar.appearance().translucent = true
-        
+        UIPageControl.appearance().pageIndicatorTintColor = UIColor.lightGrayColor()
+        UIPageControl.appearance().currentPageIndicatorTintColor  = UIColor.blackColor()
+        UIPageControl.appearance().backgroundColor  = UIColor.whiteColor()
         
         return true
     }

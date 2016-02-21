@@ -15,8 +15,8 @@
 		833F7CD11C77D573003AE4E6 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833F7CD01C77D573003AE4E6 /* Presentation.framework */; };
 		833F7CD31C77D576003AE4E6 /* Pages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833F7CD21C77D576003AE4E6 /* Pages.framework */; };
 		833F7CD51C77D577003AE4E6 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833F7CD41C77D577003AE4E6 /* Cartography.framework */; };
-		833F7CD71C784616003AE4E6 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F7CD61C784616003AE4E6 /* UIColor+Hex.swift */; };
-		833F7CD91C784C87003AE4E6 /* ClientTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F7CD81C784C87003AE4E6 /* ClientTutorialViewController.swift */; };
+		833F7CDB1C785024003AE4E6 /* ClientContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F7CDA1C785024003AE4E6 /* ClientContentViewController.swift */; };
+		833F7CDD1C78CAAC003AE4E6 /* page1.png in Resources */ = {isa = PBXBuildFile; fileRef = 833F7CDC1C78CAAC003AE4E6 /* page1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +30,8 @@
 		833F7CD01C77D573003AE4E6 /* Presentation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Presentation.framework; path = Carthage/Build/iOS/Presentation.framework; sourceTree = "<group>"; };
 		833F7CD21C77D576003AE4E6 /* Pages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pages.framework; path = Carthage/Build/iOS/Pages.framework; sourceTree = "<group>"; };
 		833F7CD41C77D577003AE4E6 /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
-		833F7CD61C784616003AE4E6 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
-		833F7CD81C784C87003AE4E6 /* ClientTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientTutorialViewController.swift; sourceTree = "<group>"; };
+		833F7CDA1C785024003AE4E6 /* ClientContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientContentViewController.swift; sourceTree = "<group>"; };
+		833F7CDC1C78CAAC003AE4E6 /* page1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,10 +70,10 @@
 		833F7CBC1C77D388003AE4E6 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				833F7CD61C784616003AE4E6 /* UIColor+Hex.swift */,
+				833F7CDC1C78CAAC003AE4E6 /* page1.png */,
 				833F7CBD1C77D388003AE4E6 /* AppDelegate.swift */,
 				833F7CBF1C77D388003AE4E6 /* ViewController.swift */,
-				833F7CD81C784C87003AE4E6 /* ClientTutorialViewController.swift */,
+				833F7CDA1C785024003AE4E6 /* ClientContentViewController.swift */,
 				833F7CC11C77D388003AE4E6 /* Main.storyboard */,
 				833F7CC41C77D388003AE4E6 /* Assets.xcassets */,
 				833F7CC61C77D388003AE4E6 /* LaunchScreen.storyboard */,
@@ -143,6 +143,7 @@
 			files = (
 				833F7CC81C77D388003AE4E6 /* LaunchScreen.storyboard in Resources */,
 				833F7CC51C77D388003AE4E6 /* Assets.xcassets in Resources */,
+				833F7CDD1C78CAAC003AE4E6 /* page1.png in Resources */,
 				833F7CC31C77D388003AE4E6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,10 +174,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				833F7CD71C784616003AE4E6 /* UIColor+Hex.swift in Sources */,
+				833F7CDB1C785024003AE4E6 /* ClientContentViewController.swift in Sources */,
 				833F7CC01C77D388003AE4E6 /* ViewController.swift in Sources */,
 				833F7CBE1C77D388003AE4E6 /* AppDelegate.swift in Sources */,
-				833F7CD91C784C87003AE4E6 /* ClientTutorialViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
