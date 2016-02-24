@@ -45,17 +45,6 @@ class MasterViewController: UITableViewController {
         self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
     }
 
-    // MARK: - Segues
-/*
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showDetail" {
-            if let indexPath = self.tableView.indexPathForSelectedRow() {
-                let object = objects[indexPath.row] as! NSDate
-            (segue.destinationViewController as! DetailViewController).detailItem = object
-            }
-        }
-    }
-*/
     // MARK: - Table View
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -65,15 +54,7 @@ class MasterViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return objects.count
     }
-/*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
 
-        let object = objects[indexPath.row] as! NSDate
-        cell.textLabel!.text = object.description
-        return cell
-    }
-*/
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
@@ -158,21 +139,20 @@ extension MasterViewController{
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
 
-        let object = self.objects[indexPath.row] as! NSNumber
+        let object = self.objects[indexPath.row] as! NSDate
         print("tableView", object, indexPath.row )
 
         let item = self.stories[object] as? Item
         if item != nil{
             cell.textLabel!.text = item!.title
         }
-        
         return cell
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                let object = objects[indexPath.row] as! NSNumber
+                let object = objects[indexPath.row] as! NSDate
                 let item = self.stories[object] as? Item
 
                 (segue.destinationViewController as! DetailViewController).detailItem = item
