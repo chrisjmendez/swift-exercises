@@ -1,0 +1,31 @@
+PODS:
+  - Cartography (0.6.0)
+  - Hex (2.0)
+  - Pages (0.6.2)
+  - Presentation (2.0.0):
+    - Cartography
+    - Pages (~> 0.6.2)
+
+DEPENDENCIES:
+  - Hex (~> 2.0)
+  - Pages (from `https://github.com/hyperoslo/Pages`)
+  - Presentation (from `../../`)
+
+EXTERNAL SOURCES:
+  Pages:
+    :git: https://github.com/hyperoslo/Pages
+  Presentation:
+    :path: ../../
+
+CHECKOUT OPTIONS:
+  Pages:
+    :commit: f411722d6281fee2d458cc520e3fb9c4de62f04c
+    :git: https://github.com/hyperoslo/Pages
+
+SPEC CHECKSUMS:
+  Cartography: 70af183a248547694a8cfaa6b989cb7e04589985
+  Hex: 1800bd20206b93b10422d2289baa3787698825ad
+  Pages: 6c042132f8c63c34d242789b7763d4c64e9681a0
+  Presentation: ffc0ebd6775cf66071dc1b151848a67637cc8c05
+
+COCOAPODS: 0.39.0.beta.5

@@ -39,6 +39,17 @@ class ViewController: UIViewController {
 }
 
 extension ViewController:BWWalkthroughViewControllerDelegate {
-    
+    func walkthroughCloseButtonPressed() {
+       self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    func walkthroughNextButtonPressed() {
+        
+    }
+    func walkthroughPageDidChange(pageNumber: Int) {
+        
+    }
+    func walkthroughPrevButtonPressed() {
+        
+    }
 }
 
