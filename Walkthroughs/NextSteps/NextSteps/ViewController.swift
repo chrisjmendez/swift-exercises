@@ -15,15 +15,12 @@ class ViewController: UIViewController {
     @IBAction func onTutorial(sender: AnyObject) {
 //        self.performSegueWithIdentifier(SEGUE_TUTORIAL, sender: self)
         
-        /*
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        
         let viewController = mainStoryboard.instantiateViewControllerWithIdentifier("tutorialViewController") as! UIViewController
         UIApplication.sharedApplication().keyWindow?.rootViewController = viewController;
-        */
+
         
-        
-        self.storyboard?.instantiateViewControllerWithIdentifier("tutorialViewController") as! UIViewController
+//        self.storyboard?.instantiateViewControllerWithIdentifier("tutorialViewController") as UIViewController!
         
         
     }

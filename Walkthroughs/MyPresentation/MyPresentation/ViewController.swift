@@ -11,9 +11,7 @@ import Presentation
 
 
 class ViewController: PresentationController {
-
-    
-    
+        
     struct BackgroundImage {
         let name: String
         let left: CGFloat
