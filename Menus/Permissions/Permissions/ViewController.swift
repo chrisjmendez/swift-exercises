@@ -15,10 +15,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var onSubmit: UIButton!
     @IBAction func onSubmit(sender: AnyObject) {
-        
         showPermissions()
     }
-    
     
     func showPermissions(){
         // Set up permissions
