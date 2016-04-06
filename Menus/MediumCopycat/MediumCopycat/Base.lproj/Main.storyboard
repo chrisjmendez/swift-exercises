@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vi5-LG-WFs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vi5-LG-WFs">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--Base View Controller-->
@@ -22,7 +22,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="957" y="-365"/>
+            <point key="canvasLocation" x="954" y="-312"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="B0W-iP-wNT">
@@ -88,7 +88,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgg-zt-Pw1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1594" y="-365.25"/>
+            <point key="canvasLocation" x="1570" y="-364"/>
         </scene>
         <!--Top Stories View Controller-->
         <scene sceneID="zmA-N2-OGA">
@@ -154,7 +154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ier-Ba-Bjf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1594" y="295"/>
+            <point key="canvasLocation" x="1570" y="301"/>
         </scene>
         <!--Bookmarks View Controller-->
         <scene sceneID="E08-R3-Jgw">
@@ -220,7 +220,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TNp-xv-GNq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1594" y="968"/>
+            <point key="canvasLocation" x="1570" y="974"/>
         </scene>
         <!--Help View Controller-->
         <scene sceneID="4ch-p2-KFX">
@@ -286,7 +286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lbc-ME-bey" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1594" y="1648"/>
+            <point key="canvasLocation" x="1580" y="1646"/>
         </scene>
         <!--Signout View Controller-->
         <scene sceneID="c9f-PL-Tse">
@@ -352,7 +352,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xWJ-Bf-7MA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1594" y="2321"/>
+            <point key="canvasLocation" x="1586" y="2321"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hX7-eH-B38">
@@ -370,7 +370,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sj5-KP-JX5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="249" y="-366"/>
+            <point key="canvasLocation" x="228" y="-286"/>
         </scene>
     </scenes>
 </document>
