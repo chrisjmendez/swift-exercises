@@ -25,7 +25,7 @@ class Simulator {
         
         let timer:Void = NSThread.sleepForTimeInterval(waitTime)
         
-        println( "Simulator.runSimulatorWithMinTime:", waitTime )
+        print( "Simulator.runSimulatorWithMinTime:", waitTime )
         return waitTime
     }
 

@@ -11,10 +11,6 @@ typealias KVOContext = UInt8
 
 class ViewController: UIViewController {
     
-    /** ** ** ** ** ** ** ** ** ** ** ** ** **
-    UI Elements
-    ** ** ** ** ** ** ** ** ** ** ** ** ** **/
-    
     @IBOutlet weak var currentBuyerLabel: UILabel!
     
     @IBOutlet weak var nextBuyerLabel: UILabel!
@@ -31,27 +27,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var cancelBtn: UIButton!
 
     @IBOutlet weak var resetBtn: UIButton!
-    
-    /** ** ** ** ** ** ** ** ** ** ** ** ** **
-    Variables
-    ** ** ** ** ** ** ** ** ** ** ** ** ** **/
-    let customers:Array<String> = ["A", "B", "C", "D", "E", "F", "G"]
 
-    var currentIdx:Int = 0
-    
-    var operationQueue:NSOperationQueue = NSOperationQueue()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        clearLabels()
-        buyNow()
-    }
-    
-    /** ** ** ** ** ** ** ** ** ** ** ** ** **
-    UI Methods
-    ** ** ** ** ** ** ** ** ** ** ** ** ** **/
     @IBAction func onAlphaChanged(sender: AnyObject) {
         
     }
@@ -63,10 +39,26 @@ class ViewController: UIViewController {
     @IBAction func onCancelClicked(sender: AnyObject) {
         operationQueue.cancelAllOperations()
     }
-
+    
     @IBAction func onResetClicked(sender: AnyObject) {
         currentIdx = 0
     }
+
+    
+    let customers:Array<String> = ["A", "B", "C", "D", "E", "F", "G"]
+    var currentIdx:Int = 0
+    var operationQueue:NSOperationQueue = NSOperationQueue()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        clearLabels()
+        buyNow()
+    }
+    
+    /** ** ** ** ** ** ** ** ** ** ** ** ** **
+    UI Methods
+    ** ** ** ** ** ** ** ** ** ** ** ** ** **/
     
     func buyNow(){
         updateLabels( "currentBuyerLabel", message: "\(customers[currentIdx])")
@@ -104,7 +96,7 @@ class ViewController: UIViewController {
         
         //2. Trigger a completion event
         buyTicket.completionBlock = {
-            println("nsBlockOperation.completionBlock completed for \(customerName)")
+            print("nsBlockOperation.completionBlock completed for \(customerName)")
         }
         
         var payTicket:NSBlockOperation = NSBlockOperation.init(block: {
@@ -112,7 +104,7 @@ class ViewController: UIViewController {
             let num:Double = Simulator.sharedInstance.runSimulatorWithMinTime(2, maxTime: 5)
             //You cannot update the UIX from a background thread so you call this data back up the main UIX.
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                println("payTicket in \(num) time")
+                print("payTicket in \(num) time")
                 self.updateLabels( "userPaidTapeRoll", message: "\(customerName) paid in \(num) time")
 
             })
@@ -122,7 +114,7 @@ class ViewController: UIViewController {
         
         var MyObservationContext = KVOContext()
         
-        let options = NSKeyValueObservingOptions.New | NSKeyValueObservingOptions.Old
+        let options = NSKeyValueObservingOptions.New //NSKeyValueObservingOptions.Old
         payTicket.addObserver(self,
             forKeyPath: "isCancelled",
             options: options,
@@ -133,18 +125,6 @@ class ViewController: UIViewController {
         operationQueue.addOperation( payTicket )
 
     }
-    
-
-    /** ** ** ** ** ** ** ** ** ** ** ** ** **
-    Public Methods
-    ** ** ** ** ** ** ** ** ** ** ** ** ** **/
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-    }
-    
     
     func clearLabels(){
         updateLabels( "currentBuyerLabel", message: "")
