@@ -1,0 +1,375 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E120AD821D7E5E2D00864B7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E120AD811D7E5E2D00864B7E /* AppDelegate.swift */; };
+		E120AD841D7E5E2D00864B7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E120AD831D7E5E2D00864B7E /* ViewController.swift */; };
+		E120AD871D7E5E2D00864B7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E120AD851D7E5E2D00864B7E /* Main.storyboard */; };
+		E120AD891D7E5E2D00864B7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E120AD881D7E5E2D00864B7E /* Assets.xcassets */; };
+		E120AD8C1D7E5E2D00864B7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E120AD8A1D7E5E2D00864B7E /* LaunchScreen.storyboard */; };
+		E120AD9C1D7E612200864B7E /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E120AD9B1D7E612200864B7E /* libxml2.2.tbd */; };
+		E120AD9E1D7E612900864B7E /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E120AD9D1D7E612900864B7E /* CoreMIDI.framework */; };
+		E120ADA31D7E627B00864B7E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E120ADA21D7E627B00864B7E /* SystemConfiguration.framework */; };
+		E120ADA61D7E629700864B7E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E120ADA51D7E629700864B7E /* AVFoundation.framework */; };
+		E120ADA81D7E629D00864B7E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E120ADA71D7E629D00864B7E /* AudioToolbox.framework */; };
+		E120ADB91D7E683500864B7E /* MIKMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E120AD961D7E60EE00864B7E /* MIKMIDI.framework */; };
+		E120ADBA1D7E683500864B7E /* MIKMIDI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E120AD961D7E60EE00864B7E /* MIKMIDI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E120ADBB1D7E683500864B7E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E120ADBA1D7E683500864B7E /* MIKMIDI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		E120AD7E1D7E5E2D00864B7E /* SaveMyMIDI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaveMyMIDI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E120AD811D7E5E2D00864B7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E120AD831D7E5E2D00864B7E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E120AD861D7E5E2D00864B7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E120AD881D7E5E2D00864B7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E120AD8B1D7E5E2D00864B7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E120AD8D1D7E5E2D00864B7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E120AD931D7E60C100864B7E /* SaveMyMIDI-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SaveMyMIDI-Bridging-Header.h"; sourceTree = "<group>"; };
+		E120AD961D7E60EE00864B7E /* MIKMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MIKMIDI.framework; path = Carthage/Build/iOS/MIKMIDI.framework; sourceTree = "<group>"; };
+		E120AD9B1D7E612200864B7E /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		E120AD9D1D7E612900864B7E /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
+		E120ADA21D7E627B00864B7E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E120ADA51D7E629700864B7E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		E120ADA71D7E629D00864B7E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E120AD7B1D7E5E2D00864B7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E120AD9C1D7E612200864B7E /* libxml2.2.tbd in Frameworks */,
+				E120ADB91D7E683500864B7E /* MIKMIDI.framework in Frameworks */,
+				E120ADA81D7E629D00864B7E /* AudioToolbox.framework in Frameworks */,
+				E120ADA61D7E629700864B7E /* AVFoundation.framework in Frameworks */,
+				E120AD9E1D7E612900864B7E /* CoreMIDI.framework in Frameworks */,
+				E120ADA31D7E627B00864B7E /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E120AD751D7E5E2D00864B7E = {
+			isa = PBXGroup;
+			children = (
+				E120ADA71D7E629D00864B7E /* AudioToolbox.framework */,
+				E120ADA51D7E629700864B7E /* AVFoundation.framework */,
+				E120ADA21D7E627B00864B7E /* SystemConfiguration.framework */,
+				E120AD9D1D7E612900864B7E /* CoreMIDI.framework */,
+				E120AD9B1D7E612200864B7E /* libxml2.2.tbd */,
+				E120AD961D7E60EE00864B7E /* MIKMIDI.framework */,
+				E120AD801D7E5E2D00864B7E /* SaveMyMIDI */,
+				E120AD7F1D7E5E2D00864B7E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E120AD7F1D7E5E2D00864B7E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E120AD7E1D7E5E2D00864B7E /* SaveMyMIDI.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E120AD801D7E5E2D00864B7E /* SaveMyMIDI */ = {
+			isa = PBXGroup;
+			children = (
+				E120AD811D7E5E2D00864B7E /* AppDelegate.swift */,
+				E120AD831D7E5E2D00864B7E /* ViewController.swift */,
+				E120AD851D7E5E2D00864B7E /* Main.storyboard */,
+				E120AD881D7E5E2D00864B7E /* Assets.xcassets */,
+				E120AD8A1D7E5E2D00864B7E /* LaunchScreen.storyboard */,
+				E120AD8D1D7E5E2D00864B7E /* Info.plist */,
+				E120AD931D7E60C100864B7E /* SaveMyMIDI-Bridging-Header.h */,
+			);
+			path = SaveMyMIDI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E120AD7D1D7E5E2D00864B7E /* SaveMyMIDI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E120AD901D7E5E2D00864B7E /* Build configuration list for PBXNativeTarget "SaveMyMIDI" */;
+			buildPhases = (
+				E120AD7A1D7E5E2D00864B7E /* Sources */,
+				E120AD7B1D7E5E2D00864B7E /* Frameworks */,
+				E120AD7C1D7E5E2D00864B7E /* Resources */,
+				E120AD9F1D7E615B00864B7E /* ShellScript */,
+				E120ADBB1D7E683500864B7E /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SaveMyMIDI;
+			productName = SaveMyMIDI;
+			productReference = E120AD7E1D7E5E2D00864B7E /* SaveMyMIDI.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E120AD761D7E5E2D00864B7E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Chris Mendez";
+				TargetAttributes = {
+					E120AD7D1D7E5E2D00864B7E = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = E120AD791D7E5E2D00864B7E /* Build configuration list for PBXProject "SaveMyMIDI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E120AD751D7E5E2D00864B7E;
+			productRefGroup = E120AD7F1D7E5E2D00864B7E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E120AD7D1D7E5E2D00864B7E /* SaveMyMIDI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E120AD7C1D7E5E2D00864B7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E120AD8C1D7E5E2D00864B7E /* LaunchScreen.storyboard in Resources */,
+				E120AD891D7E5E2D00864B7E /* Assets.xcassets in Resources */,
+				E120AD871D7E5E2D00864B7E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E120AD9F1D7E615B00864B7E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/MIKMIDI.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E120AD7A1D7E5E2D00864B7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E120AD841D7E5E2D00864B7E /* ViewController.swift in Sources */,
+				E120AD821D7E5E2D00864B7E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E120AD851D7E5E2D00864B7E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E120AD861D7E5E2D00864B7E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E120AD8A1D7E5E2D00864B7E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E120AD8B1D7E5E2D00864B7E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E120AD8E1D7E5E2D00864B7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E120AD8F1D7E5E2D00864B7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E120AD911D7E5E2D00864B7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = SaveMyMIDI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chrisjmendez.SaveMyMIDI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SaveMyMIDI/SaveMyMIDI-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E120AD921D7E5E2D00864B7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = SaveMyMIDI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chrisjmendez.SaveMyMIDI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SaveMyMIDI/SaveMyMIDI-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E120AD791D7E5E2D00864B7E /* Build configuration list for PBXProject "SaveMyMIDI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E120AD8E1D7E5E2D00864B7E /* Debug */,
+				E120AD8F1D7E5E2D00864B7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E120AD901D7E5E2D00864B7E /* Build configuration list for PBXNativeTarget "SaveMyMIDI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E120AD911D7E5E2D00864B7E /* Debug */,
+				E120AD921D7E5E2D00864B7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E120AD761D7E5E2D00864B7E /* Project object */;
+}

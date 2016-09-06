@@ -1,0 +1,1 @@
+These playgrounds are from http://mattg411.com/coremidi-swift-programming/
