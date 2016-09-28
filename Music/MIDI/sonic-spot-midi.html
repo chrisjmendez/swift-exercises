@@ -1,0 +1,862 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><title>MIDI File Format - The Sonic Spot</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8"/><link rel="canonical" href="http://archive.is/FGUub"/></head><body style="margin:0;background-color:white;width:1024px"><div class="html1" style="width: 1024px;text-align: left;overflow-x: auto;overflow-y: auto; background-color: rgb(0, 0, 0);position: relative;min-height: 7150px;; z-index: 0"><div class="html" style="text-align:left;overflow-x:visible;overflow-y:visible;">
+<meta name="description" content="Standard MIDI file format specification."/>
+<meta name="keywords" content="MIDI, file format, specification, standard, spec, programming, file, format, technical, sysex, events, tracks"/>
+
+<style type="text/css" media="screen">
+*{
+  font-size: 16px;
+}
+</style>
+
+<div class="body" style="vertical-align:bottom;min-height:7134px;text-align:left;font-family:arial, helvetica, verdana, sans-serif;font-size:12px;color:rgb(0, 0, 0);overflow-x:visible;overflow-y:visible;margin: 8px; padding: 0px; ">
+<table style="border-collapse:separate;border-spacing:0px;text-align:left;width:100%;border-width: 0px; border-style: outset; border-color: #999; ">
+<tbody style="text-align:left;"><tr style="text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;padding: 0px; ">
+<div style="text-align:left;background-image:url(data:image/gif;base64,R0lGODlhBgAGAIAAAAAAAAAzZiH5BAAAAAAALAAAAAAGAAYAAAIJhB0Xi5vOoFwFADs=);background-color: rgb(0, 51, 102); background-position: 0% 0%; background-repeat: no-repeat; "><div style="text-align:left;"><div style="text-align:left;"><div style="text-align:left;padding: 4px; ">
+<table style="border-collapse:separate;border-spacing:0px;width:100%;text-align:center;border-width: 0px; border-style: outset; border-color: #999; ">
+<tbody><tr>
+<td style="vertical-align:top;color:rgb(230, 230, 230);font-weight:bold;white-space:nowrap;font-size:11px;padding: 0px; "><a href="https://archive.is/o/FGUub/www.sonicspot.com/software.html" style="color:rgb(230, 230, 230);text-decoration:none;">Software</a></td>
+<td style="vertical-align:top;color:rgb(230, 230, 230);font-weight:bold;white-space:nowrap;font-size:11px;padding: 0px; "><a href="https://archive.is/o/FGUub/www.sonicspot.com/hardware/index.html" style="color:rgb(230, 230, 230);text-decoration:none;">Hardware</a></td>
+<td style="vertical-align:top;color:rgb(230, 230, 230);font-weight:bold;white-space:nowrap;font-size:11px;padding: 0px; "><a href="https://archive.is/o/FGUub/www.sonicspot.com/guide/index.html" style="color:rgb(230, 230, 230);text-decoration:none;">Guides</a></td>
+<td style="vertical-align:top;color:rgb(230, 230, 230);font-weight:bold;white-space:nowrap;font-size:11px;padding: 0px; "><a href="https://archive.is/o/FGUub/www.sonicspot.com/resources/index.html" style="color:rgb(230, 230, 230);text-decoration:none;">Resources</a></td>
+<td style="vertical-align:top;color:rgb(230, 230, 230);font-weight:bold;white-space:nowrap;font-size:11px;padding: 0px; "><a href="https://archive.is/o/FGUub/www.sonicspot.com/forums/" style="color:rgb(230, 230, 230);text-decoration:none;">Forums</a></td>
+<td style="vertical-align:top;color:rgb(230, 230, 230);font-weight:bold;white-space:nowrap;font-size:11px;padding: 0px; "><a href="https://archive.is/o/FGUub/www.sonicspot.com/search.html" style="color:rgb(230, 230, 230);text-decoration:none;">Search</a></td>
+<td style="vertical-align:top;color:rgb(230, 230, 230);font-weight:bold;white-space:nowrap;font-size:11px;padding: 0px; "><a href="https://archive.is/o/FGUub/www.sonicspot.com/news/index.html" style="color:rgb(230, 230, 230);text-decoration:none;">News</a></td>
+</tr>
+</tbody></table>
+</div></div></div></div>
+</td>
+<td rowspan="2" style="vertical-align:top;color:rgb(0, 0, 0);width:1px;text-align:center;white-space:nowrap;margin: 0px; padding: 0px; ">
+<div style="background-color: rgb(0, 51, 102); "><div style="background-image:url(data:image/gif;base64,R0lGODlhBgAGAIAAAAAAAAAzZiH5BAAAAAAALAAAAAAGAAYAAAIKDH6hqAu9oJGhAAA7);background-color: transparent; background-position: 100% 0%; background-repeat: no-repeat; "><div style="background-image:url(data:image/gif;base64,R0lGODlhBgAGAIAAAAAAAAAzZiH5BAAAAAAALAAAAAAGAAYAAAIJjA9nqcDrkIsFADs=);background-color: transparent; background-position: 0% 100%; background-repeat: no-repeat; "><div style="background-image:url(data:image/gif;base64,R0lGODlhBgAGAIAAAAAAAAAzZiH5BAAAAAAALAAAAAAGAAYAAAIKjI8BuQetXnygAAA7);background-color: transparent; background-position: 100% 100%; background-repeat: no-repeat; padding: 8px; ">
+
+
+</div></div></div></div>
+</td>
+</tr>
+<tr style="text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;padding: 0px; ">
+<div style="text-align:left;background-image:url(data:image/gif;base64,R0lGODlhHgAwAPcAAJgAAGMAABAAAL0AAEIAACEAALUAABgAAKUAAHkAADEAADkAAFIAACkAAAAzZs4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAHgAwAAAIkgAdCBxIsKDBgw5+IFzI8IdDhhALOnwYMeJEihUbXsyocSNHhBcxfpQYcuTBkApNkvSociDKlgRfwhQoc2ZNmDdb5lS502TPkT8/BuU4NGPRikctlpyZcKlNpzih6pTKk6pPq0CxCtVKlKtRr0jBKmUZlexUs1XRXlWble1Wt13hfpUblu7YiUwdQNjLNy9fvgEBADs=);background-color: transparent; background-position: 0% 0%; background-repeat: no-repeat; "><div style="text-align:left;background-image:url(data:image/gif;base64,R0lGODlhBgAGAIAAAAAAAAAzZiwAAAAABgAGAAACCUR+oKgbvaCRoAA7);background-color: transparent; background-position: 100% 0%; background-repeat: no-repeat; "><div style="text-align:left;background-image:url(data:image/gif;base64,R0lGODlhHgAwAPcAAJgAAGMAABAAAL0AAEIAACEAALUAABgAAKUAAHkAADEAADkAAFIAACkAAAAzZs4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAHgAwAAAIkgAdCBxIsKDBgRASKjzIsKHChQ0jEvxBsaLEiw4qWsQYUSNFjh09gmzo8cdIhiVPHkypsiDLlgNfwswocqZAmTBxttSpkudJnyOBghTKkShGoxeRSlQaUqPNmzVtMiUZdeZUlFVzZt25tWfXn1+Dhh06tmjZo2eTpl26tulGqW2pOn16FetbuHfxmnwa8yPfiQEBADs=);background-color: transparent; background-position: 0% 100%; background-repeat: no-repeat; "><div style="text-align:left;margin-left:24px;padding: 8px; ">
+<a href="https://archive.is/o/FGUub/www.sonicspot.com/index.html" style="text-align:left;"><img alt="The Sonic Spot" src="data:image/gif;base64,R0lGODlhIwEzALMAAJgAAGMAABAAAL0AAEIAACEAABgAALUAAKUAAHkAADEAADkAAFIAACkAAM4AAAAAACwAAAAAIwEzAAAE//DJSau9OOvNu/9gKI5kaZ5oqq5s675wrDZAbd/SHcAGkQADh9BRIwhkLoFiyVwWkJzeLzgsHqEwZSCBIDxugO8kbEkMz8LEw3D2tmjouHCHTTHkDnq9Asef9XsmBAFAaFdiOWE1F1RyCw93QwWDDAYWWgEBC4cYBQB+cmSBJAh4T6MPnqBxoqghC3itooqIFLB4AxKlQgeNA5YSAgGNQgOPGATEq5KuIWxyB67Jy3GnzR9mcm45Y90VCplnB5lez3gKE7txCMjUcoDXGwRgNgyoBO5x8PEaykOcs7xZKPCHQqRzErLhuYAvHxo1GwqAyxSAgQJOI3pkYmCNhZJBFP8XdAzR0OEQiB8MLKCILqUCBhQDKACm4RYrEwHOdFR3QNgZS+Yc2FPXSgJBk2eK2iqEB8GxCz/oqVmgbgiCkUbp1UBpwUCAqmgGJMDI4ShSIUWjglHTRxzWCgUSHPAzDkONudAAbAuB10G0CUG9KPw7WELffWBN7nvQoO8qpQ8E4CFE90JOOfYuKVw14G2GxA4BSX73Cc/fCwZKL0OA0SwozxELTjjo4EgjOrdTnXkqoWSoTP6G7JVwOd/wB74d8jaMh+aEAqAre0iOBgBwP3upu1suYUFwP1wfFJcuYvzOKg9sOniiPgHlYhYcnxnQYEIDPyM3u1OqWjHcpl1995r/B/INQZ99+FHQX2gWqOdOLhQIOMRiHfR12hptPFCYhqCE5xoa8OBSgXbLFDXaWfCMd0ZmEwgQ3SotxTZZBSK2eNYccEnohy3UwKaBa4DQZtuEEki4nIpnxKibHFwZoGMsI97owHAFCuEch2cpmQGSQyj54UkUkEjNcC+uQoF+0JBgHgVEpaeTm35AqKAfQeLB24JDjDMMlHPi4R6eXVLwpRDsCOqHdYAKoaVddBpkZ59xiBVAlYpSwKUDklLqQITLUMiBhRQEhqVfCeVZYZyHgCYnY7hccSlXJ8ZRX2Q7WooHiznMSGtzp7aajhyrxorGrA6eQYEA3xFrWosKkDjA/xJkdQCko/88kJu1RLrGnYRkBHUGV4nqkSiuJIqiAJ8TUOrcfcBecS6wHnArgbdgTlDuBJe2ki++6PbmJ05v/ooWnEKw92Zxq46xynEY0FutBAkq7Ai/mBkqR6EToIkjcf1qkKhwHyT61LgUUDryrRWIbAKogGW44YZ9hVfqKrNusG93y9oIr8DV2FqxznJYEx3DUC1TswbCGgh0zzjvvKscziUNXwnTznbGkBvnxm7BFxQbqY/MaZPxv/aSjWGaJfNaNtpnQ+2B12GBjZzZJF6osQMo1R0lkwAzw3MY6j0RKwBUoYfBk51psHVYVyCLx9GJ1nwpIIsnlbKu4nW8Af/iYEcusT4tJvs5iJfLcbQILM/rsqkPvAvslT5zBtvdeeesOtsPqHsmHns5bGW6vINwadwZ+H6a7w7QpPftbreMuwhVSyAkthtTHxZ3xz6JabTWo3HyO9SCbhSAnMrBCW1nYDyoENxj4PgyA3CPPpHSk58r+PVfXMH81Y+w5t8EW88EFuAYscCuQfvpWo2exjRdmIJiccAV3IoSHRZNJCbkEAHcbnKB6AgNZcGI2AMqWAEP8mNeTgDBx4ZVBrrZrm1ouJDuxiY25zXPBSs8w+lgKA4bxkF5tkOec4x3QhO4iBoy+873xJc/Jq4PY0XCw/nsl4Qy1St8pGsiGqAYLqv/6Q+LsikiCZwEvwrATU5S4xrP0GCNS0mwYySMARk5YwETOvBnDGTjGldUwgeKkWrUqADt1haHCxEReDccFRp654cDsmB9aKjAIXn4E0LG0IdoGOIL/9iJJngSEsuogBJHF0ZQ4m9J6xClFMFoFRVIxJNMMCUo9oc5/jmAi7WkoiyzyEn3Hep+tWpapJamxz36LXN4DKDl2ATCE6SRCMBcCDODZkwhsOiZH0zmCP3YS4ZgRwKV2+Lu+OYv3E0yd2qbWRwYmU5YMqF9llwkOEEBxUkKMZ6so+QQNPm8bkIqDofQFFdGGc1S2lIPT1Sl+VhJqOf4AZ4FvRoiyanFMNoS/5envCgtT+nPY/2SlBkSZliIGbA7NtCNPApFH/F4M6R9NKIgq6YATYqGa4owjjKVmxjFtJcXHeJuerClIan4HU7cjZ0LDds6OcDTaSZVn7d06CrLmcrxpROqF+ooSB+Wx2V29Zg4RWYEB9ivNCaspWfswMcO8Ux9NbOl22Rpx1CqVY/2q6ki7SHzfpi2Gx41TGZTqjzV+RAOtBWwwZtoJhUb0q/+TrCNhew+65pSjkZnVUD1IgetWtUoPvULj8KkRD0rKw5sEBCXtVhn1xc/fDaUs4xTrTgpC8HNfgwQJmNsTDmGxwnadZiI7ezybPbS28aOl4OkIROTW9tSUnaF7v95UU9I+rDhSvaxiowsicKT2etOSa0d+gpdOJFbqCbPqd7b62L7GodFaTWHq+CN6+KQgJd8Zy8JnUBR/7mb0hVyAQtIVFYzAF9Q8AaSAGhWdIpyKAUHFpXr8FQvC9yx+TqkKHRVpuFC6LStUmOHjLoRhqV0uhu19ribfe6NWPONs/yiAjPM7m7nRlEPr0JmBF4xRjT1GAvciDsrJFo3bbkKFrcYKcvJL2kNwd8hABkpUOQAkenZGhPD7iw4XgVE//i+fACAe9qLLG/HmtcNOzZhFV3NlrNnki9bYHgLuwCFzUwBUEBGqxv8rwbEtI63xPivrsXbBY7oDglnIM8xxB6WOoEFCqIVIMzGyECjaQuXHHahA415jKOJOlWYOkDRAribgRLgSGlZWshPLJePUrOKAzAAnmuldFcGAQZNlLoTMLmBezahAQO4cybMcudIfu3eY62k1hxRgUZqvYBby1gI5SDEVirhgWXrgADODoZ4eQEAasv62+CWwX7DTe5ym7sDvj23utetbkCz+93wpq1WarBmdkcAADs=" style="height:51px;width:291px;text-align:left;border-width: 0px; "/></a>
+</div></div></div></div>
+</td>
+</tr>
+</tbody></table>
+
+
+<div style="text-align:left;background-color: rgb(0, 51, 102); color:rgb(230, 230, 230);font-size:12px;">
+<div style="text-align:left;"><div style="text-align:left;background-image:url(data:image/gif;base64,R0lGODlhBgAGAIAAAAAAAAAzZiH5BAAAAAAALAAAAAAGAAYAAAIKDH6hqAu9oJGhAAA7);background-color: transparent; background-position: 100% 0%; background-repeat: no-repeat; "><div style="text-align:left;background-image:url(data:image/gif;base64,R0lGODlhBgAGAIAAAAAAAAAzZiH5BAAAAAAALAAAAAAGAAYAAAIJjA9nqcDrkIsFADs=);background-color: transparent; background-position: 0% 100%; background-repeat: no-repeat; "><div style="text-align:left;background-image:url(data:image/gif;base64,R0lGODlhBgAGAIAAAAAAAAAzZiH5BAAAAAAALAAAAAAGAAYAAAIKjI8BuQetXnygAAA7);background-color: transparent; background-position: 100% 100%; background-repeat: no-repeat; padding: 8px 16px 8px 24px; ">
+<div style="padding-bottom:8px;text-align:center;">
+
+
+<ins style="display:inline-table;height:90px;position:relative;visibility:visible;width:728px;border-width: medium; border-style: none; margin: 0px; padding: 0px; border-color: white; "><ins style="display:block;height:90px;position:relative;visibility:visible;width:728px;border-width: medium; border-style: none; margin: 0px; padding: 0px; border-color: white; "><div class="html1" style="width: 728px;text-align: left;overflow-x: auto;overflow-y: auto; background-color: rgba(0, 0, 0, 0);position: relative;display:inline-block;vertical-align:bottom;width:728px;height:90px;overflow-x:hidden;overflow-y:hidden;left:0px;position:absolute;top:0px;border-width: 0px;; border-style: inset; margin: 0px; ; z-index: 0"><div class="html" style="text-align:left;overflow-x:visible;overflow-y:visible;"><div class="body" style="vertical-align:bottom;min-height:0px;color:rgb(0, 0, 0);text-align:left;overflow-x:visible;overflow-y:visible;margin: 0px; "><div class="html1" style="width: 0px;text-align: left;overflow-x: auto;overflow-y: auto; background-color: rgba(0, 0, 0, 0);position: relative;vertical-align:bottom;width:728px;height:90px;overflow-x:hidden;overflow-y:hidden;text-align:left;display:none;border-width: 0px;; border-style: inset; margin: 0px; ; z-index: 0"><div class="html" style="text-align:left;overflow-x:visible;overflow-y:visible;"><div class="body" style="vertical-align:bottom;min-height:0px;color:rgb(0, 0, 0);text-align:left;overflow-x:visible;overflow-y:visible;margin: 0px; ">
+
+</div></div></div>
+
+<div class="html1" style="width: 728px;text-align: left;overflow-x: auto;overflow-y: auto; background-color: rgba(0, 0, 0, 0);position: relative;display:inline-block;vertical-align:bottom;width:728px;height:90px;overflow-x:hidden;overflow-y:hidden;text-align:left;left:0px;position:absolute;top:0px;border-width: 0px;; border-style: inset; margin: 0px; ; z-index: 0"><div class="html" style="text-align:left;overflow-x:visible;overflow-y:visible;"><div class="body" style="vertical-align:bottom;min-height:90px;color:rgb(0, 0, 0);text-align:left;overflow-x:visible;overflow-y:visible;margin: 0px; "><div style="text-align:left;overflow-x:hidden;overflow-y:hidden;position:absolute;margin: 0px; padding: 0px; "><div style="text-align:left;height:15px;position:absolute;right:0px;text-rendering:geometricprecision;top:0px;width:19px;z-index:9010;margin: 0px; padding: 0px; "><div style="text-align:left;margin: 0px; padding: 0px; "><img alt="AdChoices" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAPCAYAAAAGRPQsAAABNElEQVQ4jWP4////ZmphBmyCbBvO/WVYd/Z/xZWnVyg2DGQQMp5899VZigxrvP7sEojtd/zOI5ihW55/OEKWYTPvvz6NLKa+6+p7kDjnxvO/L338tpdsw8S3Xvq6/cXHw6fefd3PATQMJK+088qnR99+7iTZsOn3Xp9Blq+++vQyzOtJZx/cJtqwe19/7gK5ZvGjtyeQ1QSfuPsAZiBBw5pvPL8IYoO8BuKnnHsId0HHzRcXYAblXnx0g6BhNUCvgNhH3345AOK3Ag2fce/1aZghJvuvv/r5998W9DBbgc+wx99+7QTFIMt6SEKW2X7pM3rAIxvWic2w1HMPb934/H0PjM+8/ty/s++/7iOUznSAeCO6YRLbLn0F0bjSFC7DQDgE3TBSshG6YTAX1gDxIlIMQMYAC+7NyvoASYYAAAAASUVORK5CYII=" style="height:15px;width:19px;text-align:left;display:block;border-width: 0px; "/></div><div style="text-align:left;display:none;margin: 0px; padding: 0px; "><a href="https://archive.is/o/FGUub/www.google.com/url?ct=abg&amp;q=https://www.google.com/adsense/support/bin/request.py%3Fcontact%3Dabg_afc%26url%3Dhttp://www.sonicspot.com/guide/midifiles.html%26gl%3DDE%26hl%3Den%26client%3Dca-pub-1502904173403482%26ai0%3DCevPa4O3PUd3NJILz-QaMi4HoCqGf9J0DgdDj21LAjbcBEAEg-J_0AVC1gpnCBmCVAqABr9DQ1wPIAQKoAwHIA9EEqgR3T9Det254VRQicIfwbUHhq466RriFkwGHXHCuUB5fj01NxOV-23j8S4iD3qtUuA8o0tsYSCIw8jShJnzfHL9vwF7ncayZajknGGKoLxSVXCSrY1OWhrY1otPqayTXMtUM5JIdtMWKpuf2J60zJ3IznS7a6M537RqgBgKAB7mvryg&amp;usg=AFQjCNGsvPx7pgmKJ5rYuOG2sFM3rfSMdQ" style="text-align:left;color:rgb(0, 0, 0);text-decoration:none;"><img alt="AdChoices" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE0AAAAPCAYAAAChmULXAAACz0lEQVRYw+2Yz2sTQRTHFxWpEPCoAU8e4j+QmyfJ3UP8CyJ69JCbqAgSBK8iQb1qDzlZxdqaklrxBy3WRHdNbdQ2NpF2S0Nta91IKu26X/VbnsPudKO2l+TwmJ1fb9585r03kxiu697vSntidPLm994trRt3iu7Z8my5Cy3s5j1gUq5NLxS70EJAuzQ5Z+H7+OhUnfD67eVn/wwtl8uNRiKRNdu2HwaNicfjDYzDdzabfRmLxZYNw3AxL51Ov91c0MCS4TYFfdC7ndBufmyMy7YjQxNLaN9379V3a6U5/NfQkslkDZLJZMytoBEYAZqmOYw657YDbSc8TUI78MByBudXnr747Iz0eNDQfzhf/lJvtvJtQYN3YdMsZTtAAgKAERRKgJM6CoXCE7ZhfCqVmkJJvWiHN8IrpWdiHsbKfs5nfzQaddAGW6iL+tGn2qKDdr3a+GPs+YnZNwzZk8WZD6GhwVhuIpFIzMFQtqMOQwELRrLUnq7XL/Xhm5uHV0LwDV0MT79+lrQH0KCLB4c2eLdMDTpoVac1BO+6XV8ck2NOjE3PEJyE1qvbJAzDyRESjFNzmKyHgaYeiDwY2U5oar/Ms+inp6PEIaIddczR5WGAyFTsn2kDIYn6qVJt06OuvJt/TWBnzHpFQruoS8RcnAKIMCQIGko1JOAVAP6/oEEfbaNHQuh1sA9ehrmwVwftgheC+H6++PUx6pc9iDeqjXHCio9MLrTWN/rVnHYsSCk2qgKg1wWFZ9BFwE37QWsnPJlbAQUexXUYnlifdmEexoSB9qm5lseNuafv14P30KC1ql4AEtouT66qHTDQb0FuQCZceRHwycEErXtySA/yuwjkk8PvIpDrMDQZBVxbd+MDzulS7X1l9VuB9d19pY3ikvNoq3caJOrJrU583B4csByUQW8yHTTIfk/OdeLPqLA/n/ygUY7+vhx6u/9o+MsPf1++/f0oVhYAAAAASUVORK5CYII=" style="height:15px;width:77px;text-align:left;display:block;border-width: 0px; "/></a></div></div><div class="html1" style="width: 0px;text-align: left;overflow-x: auto;overflow-y: auto; background-color: rgba(0, 0, 0, 0);position: relative;display:inline-block;vertical-align:bottom;width:0px;height:0px;overflow-x:auto;overflow-y:auto;text-align:left;position:absolute;border-width: 0px;; border-style: inset; margin: 0px; ; z-index: 0"><div class="html" style="text-align:left;overflow-x:visible;overflow-y:visible;"><div class="body" style="vertical-align:bottom;min-height:0px;color:rgb(0, 0, 0);text-align:left;overflow-x:visible;overflow-y:visible;margin: 8px; "></div></div></div></div><div class="html1" style="width: 0px;text-align: left;overflow-x: auto;overflow-y: auto; background-color: rgba(0, 0, 0, 0);position: relative;display:inline-block;vertical-align:bottom;overflow-x:auto;overflow-y:auto;text-align:left;height:0px;width:0px;position:absolute;border-width: 0px;; border-style: inset; margin: 0px; ; z-index: 0"><div class="html" style="text-align:left;overflow-x:visible;overflow-y:visible;"><div class="body" style="vertical-align:bottom;min-height:0px;color:rgb(0, 0, 0);text-align:left;overflow-x:visible;overflow-y:visible;margin: 8px; "></div></div></div></div></div></div></div></div></div></ins></ins>
+<div style="position:absolute;left:0px;top:0px;visibility:hidden;"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAQCBAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" style="width:0px;height:0px;"/></div>
+</div>
+
+<table style="border-collapse:separate;border-spacing:0px;text-align:left;border-width: 0px; border-style: outset; border-color: #999; "><tbody style="text-align:left;"><tr style="text-align:left;"><td style="color:rgb(230, 230, 230);text-align:left;padding: 0px; ">
+<div style="text-align:left;margin-left:4px;color:rgb(230, 230, 230);font-size:12px;">
+<div style="text-align:left;"><div style="text-align:left;"><div style="text-align:left;"><div style="text-align:left;">
+<a href="https://archive.is/o/FGUub/www.sonicspot.com/index.html" style="text-align:left;color:rgb(230, 230, 230);">Home</a>
+: <a href="https://archive.is/o/FGUub/www.sonicspot.com/guide/index.html" style="text-align:left;color:rgb(230, 230, 230);">Guides</a>
+: <a href="https://archive.is/o/FGUub/www.sonicspot.com/guide/fileformats.html" style="text-align:left;color:rgb(230, 230, 230);">File Formats</a>
+: <a href="https://archive.is/o/FGUub/www.sonicspot.com/guide/fileformatspecs.html" style="text-align:left;color:rgb(230, 230, 230);">Specifications</a>
+: MIDI File Format </div></div></div></div>
+</div>
+</td></tr></tbody></table>
+
+
+<div style="text-align:left;clear:both;color:rgb(0, 0, 0);margin-top:8px;margin-right:8px;">
+<div style="text-align:left;background-image:url(data:image/gif;base64,R0lGODlhBQAFAIAAAAAAAAAzZiH5BAEAAAAALAAAAAAFAAUAAAIIjG8AqaH9QAEAOw==);background-color: rgb(153, 153, 153); background-position: 0% 0%; background-repeat: no-repeat; "><div style="text-align:left;background-image:url(data:image/gif;base64,R0lGODlhBQAFAIAAAAAAAAAzZiH5BAEAAAAALAAAAAAFAAUAAAIIjA1wqcH6QgEAOw==);background-color: transparent; background-position: 100% 0%; background-repeat: no-repeat; "><h1 style="text-align:left;color:rgb(51, 51, 51);font-size:150%;font-weight:bold;margin: 0px; padding: 4px; ">"MIDI File Format"</h1><div style="text-align:left;background-image:url(data:image/gif;base64,R0lGODlhBQAFAIAAAAAAAAAzZiH5BAEAAAAALAAAAAAFAAUAAAIIDA6GocnHYgEAOw==);background-color: rgb(230, 230, 230); background-position: 0% 100%; background-repeat: no-repeat; "><div style="text-align:left;background-image:url(data:image/gif;base64,R0lGODlhBQAFAIAAAAAAAAAzZiH5BAEAAAAALAAAAAAFAAUAAAIIhBGHF4kNWwEAOw==);background-color: transparent; background-position: 100% 100%; background-repeat: no-repeat; ">
+<div style="text-align:left;padding: 4px 8px 0px; ">
+<table style="border-collapse:separate;border-spacing:0px;text-align:left;width:100%;border-width: 0px; border-style: outset; border-color: #999; ">
+<tbody style="text-align:left;"><tr style="text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 0px; ">
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">Standard MIDI files provide a common file format used by most musical software and hardware devices to store song information including the title, track names, and most importantly what instruments to use and the sequence of musical events, such as notes and instrument control information needed to play back the song. This standardization allows one software package to create and save files that can later be loaded and edited by another completely different program, even on a different type of computer. Almost every software music sequencer is capable of loading and saving standard MIDI files.</div>
+<h1 style="text-align:left;color:rgb(51, 51, 51);font-size:150%;font-weight:bold;margin: 0px; padding: 4px 0px 0px; ">File Format Specification</h1>
+<h1 style="text-align:left;color:rgb(51, 51, 51);font-size:150%;font-weight:bold;margin: 0px; padding: 4px 0px 0px; ">Data Formats</h1>All data values are stored in
+<a href="https://archive.is/o/FGUub/www.sonicspot.com/guide/pglossary.html%23bigendian" style="text-align:left;color:rgb(204, 0, 0);"><font color="#000000" style="text-align:left;">Big-Endian</font></a>
+(most significant byte first) format. Also, many values are stored in a variable-length format which may use one or more bytes per value. Variable-length values use the lower 7 bits of a byte for data and the top bit to signal a following data byte. If the top bit is set to 1, then another value byte follows. Below is a table of examples to help demonstrate how variable length values are used. <div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><center>
+<table style="border-collapse:separate;border-spacing:1px;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td colspan="2" style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">
+<center><b>Value</b></center></td>
+<td colspan="2" style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">
+<center><b>Variable-Length</b></center></td></tr>
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Hex</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Bin</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Hex</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Bin</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">00</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">00000000</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">00</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><font color="#f00000" style="text-align:left;">0</font>0000000</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">C8</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">11001000</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">8148</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><font color="#008000" style="text-align:left;">1</font>0000001
+<font color="#f00000" style="text-align:left;">0</font>1001000</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">100000</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">00010000 00000000 00000000</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">C08000</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><font color="#00a000" style="text-align:left;">1</font>1000000
+<font color="#008000" style="text-align:left;">1</font>0000000
+<font color="#f00000" style="text-align:left;">0</font>0000000</td></tr></tbody></table><small>Example values and their variable-length equivalents.<br/></small></center>
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">A variable-length value may use a maximum of 4 bytes. This means the maximum value that can be represented is 0x0FFFFFFF (represented as 0xFF, 0xFF, 0xFF, 0x7F).
+</div><h1 style="text-align:left;color:rgb(51, 51, 51);font-size:150%;font-weight:bold;margin: 0px; padding: 4px 0px 0px; ">File Structure</h1>MIDI files are organized into data chunks (similar to
+<a href="https://archive.is/o/FGUub/www.sonicspot.com/guide/pglossary.html%23riff" style="text-align:left;color:rgb(204, 0, 0);"><font color="#000000" style="text-align:left;">RIFF</font></a>
+files). Each chunk is prefixed with an 8 byte header: 4 byte ID string used to identify the type of chunk followed by a 4 byte size which defines the chunk's length as number of bytes following this chunk's header. <h1 style="text-align:left;color:rgb(51, 51, 51);font-size:150%;font-weight:bold;margin: 0px; padding: 4px 0px 0px; ">Header Chunk</h1>The header chunk contains information about the entire song including MIDI format type, number of tracks and timing division. There is only one header chunk per standard MIDI file and it always comes first. Before describing each element of the header chunk, here is a chart to help give an overview of the chunk's organization.
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><center>
+<table style="border-collapse:separate;border-spacing:1px;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Offset</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Length</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Type</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Description</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Value</b></td></tr>
+<tr style="background-color: rgb(176, 176, 176); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0x00</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">4</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">char[4]</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">chunk ID</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">"MThd" (0x4D546864)</td></tr>
+<tr style="background-color: rgb(176, 176, 176); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0x04</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">4</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">dword</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">chunk size</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">6 (0x00000006)</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0x08</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">2</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">word</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">format type</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0 - 2</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0x10</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">2</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">word</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">number of tracks</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">1 - 65,535</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0x12</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">2</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">word</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">time division</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">see following text</td></tr></tbody></table><small>MIDI Header Chunk Format</small>
+</center>
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">Chunk ID and Size</i><br style="text-align:left;"/>The chunk ID is always "MThd" (0x4D546864) and the size is always 6 because the header chunk always contains the same 3 word values.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">Format Type</i><br style="text-align:left;"/>The first word describes the MIDI format type. It can be a value of 0, 1 or 2 and describes what how the following track information is to be interpreted. A type 0 MIDI file has one track that contains all of the MIDI events for the entire song, including the song title, time signature, tempo and music events. A type 1 MIDI file should have two or more tracks. The first, by convention, contains song information such as the title, time signature, tempo, etc. (more detail in Track Chunk section). The second and following tracks contain a title, musical event data, etc. specific to that track. This closely matches the organization of modern multi-track MIDI sequencers. A type 2 MIDI file is sort of a combination of the other two types. It contains multiple tracks, but each track represents a different sequence which may not necessarily be played simultaneously. This is meant to be used to save drum patterns, or other multi-pattern music sequences.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">Number of Tracks</i><br style="text-align:left;"/>The second word simply defines the number of track chunks that follow this header chunk. A type 0 MIDI file may only contain a value of 1, because they can only contain one track. Type 1 and 2 MIDI files may contain up to 65,536 (0xFFFF) tracks.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">Time Division</i><br style="text-align:left;"/>The third and final word in the MIDI header chunk is a bit more complicated than the first two. It contains the time division used to decode the track event delta times into "real" time. This value is represents either ticks per beat or frames per second. If the top bit of the word (bit mask 0x8000) is 0, the following 15 bits describe the time division in ticks per beat. Otherwise the following 15 bits (bit mask 0x7FFF) describe the time division in frames per second. Ticks per beat translate to the number of clock ticks or track delta positions (described in the Track Chunk section) in every quarter note of music. Common values range from 48 to 960, although newer sequencers go far beyond this range to ease working with MIDI and digital audio together. Frames per second is defined by breaking the remaining 15 bytes into two values. The top 7 bits (bit mask 0x7F00) define a value for the number of SMPTE frames and can be 24, 25, 29 (for 29.97 fps) or 30. The remaining byte (bit mask 0x00FF) defines how many clock ticks or track delta positions there are per frame. So a time division example of 0x9978 could be broken down into it's three parts: the top bit is one, so it is in SMPTE frames per second format, the following 7 bits have a value of 25 (0x19) and the bottom byte has a value of 120 (0x78). This means the example plays at 24 frames per second SMPTE time and has 120 ticks per frame.
+</div><h1 style="text-align:left;color:rgb(51, 51, 51);font-size:150%;font-weight:bold;margin: 0px; padding: 4px 0px 0px; ">Track Chunk</h1>Track chunks contain all of the information for an individual track including, track name and music events. Here is an overview of a track chunk's organization.
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><center>
+<table style="border-collapse:separate;border-spacing:1px;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Offset</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Length</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Type</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Description</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Value</b></td></tr>
+<tr style="background-color: rgb(176, 176, 176); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0x00</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">4</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">char[4]</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">chunk ID</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">"MTrk" (0x4D54726B)</td></tr>
+<tr style="background-color: rgb(176, 176, 176); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0x04</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">4</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">dword</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">chunk size</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">see following text</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0x08</td>
+<td colspan="4" style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">
+<center>track event data (see following text)</center></td></tr></tbody></table><small>MIDI Track Chunk Format</small>
+</center>
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">Chunk ID and Size</i><br style="text-align:left;"/>The chunk ID is always "MTrk" (0x4D54726B) and the size varies depending on the number of bytes used for all of the events contained in the track.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">Track Event Data</i><br style="text-align:left;"/>The track event data contains a stream of MIDI events that define information about the sequence and how it is played. The next section describes the different types of events.
+</div><h1 style="text-align:left;color:rgb(51, 51, 51);font-size:150%;font-weight:bold;margin: 0px; padding: 4px 0px 0px; ">MIDI Events</h1>Track events are used to describe all of the musical content of a MIDI file, from tempo changes to sequence and track titles to individual music events. Each event includes a delta time, event type and usually some event type specific data.
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">Delta-Times</i><br style="text-align:left;"/>The event delta time is defined by a variable-length value. It determines when an event should be played relative to the track's last event. A delta time of 0 means that it should play simultaneously with the last event. A track's first event delta time defines the amount of time to wait before playing this first event. Events unaffected by time are still preceded by a delta time, but should always use a value of 0 and come first in the stream of track events. Examples of this type of event include track titles and copyright information. The most important thing to remember about delta times is that they are relative values, not absolute times. The actual time they represent is determined by a couple factors. The time division (defined in the MIDI header chunk) and the tempo (defined with a track event). If no tempo is define, 120 beats per minute is assumed.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">Types of Events</i><br style="text-align:left;"/>There are three types of events: MIDI Control Events, System Exclusive Events and Meta Events.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">MIDI Channel Events</i><br style="text-align:left;"/>Musical control information such as playing a note or adjusting a MIDI channel's modulation value are defined by MIDI Channel Events. Each MIDI Channel Event consists of a variable-length delta time (like all track events) and a two or three byte description which determines the MIDI channel it corresponds to, the type of event it is and one or two event type specific values. Below is a table illustrating how MIDI Channel Events are formatted.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><center>
+<table style="border-collapse:separate;border-spacing:1px;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Delta Time</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Event Type Value</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">MIDI Channel</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Parameter 1</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Parameter 2</b></td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">variable-length</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">4 bits</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">4 bits</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">1 byte</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">1 byte</td></tr></tbody></table><small>MIDI Channel Event Format</small>
+</center>
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">MIDI Channel Events are the most common type of track event and usually make up the bulk of a MIDI file. The following table gives an overview of the seven MIDI Channel Events, listing their numeric value and parameters.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><center>
+<table style="border-collapse:separate;border-spacing:1px;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Event Type</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Value</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Parameter 1</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Parameter 2</b></td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Note Off</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0x8</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">note number</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">velocity</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Note On</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0x9</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">note number</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">velocity</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Note Aftertouch</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0xA</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">note number</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">aftertouch value</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Controller</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0xB</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">controller number</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">controller value</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Program Change</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0xC</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">program number</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">not used</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Channel Aftertouch</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0xD</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">aftertouch value</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">not used</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Pitch Bend</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0xE</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">pitch value (LSB)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">pitch value (MSB)</td></tr></tbody></table><small>MIDI Channel Events</small>
+</center>
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">Although all of the MIDI Channel Events follow the same basic format, each one requires a bit of explanation. Below is a detailed description of each and how it is used.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><table style="width:100%;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="text-align:left;">
+<td style="width:20px;color:rgb(0, 0, 0);text-align:left;vertical-align:top;"> </td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;">
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">Note Off Event</i><br style="text-align:left;"/>The Note Off Event is used to signal when a MIDI key is released. These events have two parameters identical to a Note On event. The note number specifies which of the 128 MIDI keys is being played and the velocity determines how fast/hard the key was released. The note number is normally used to specify which previously pressed key is being released and the velocity is usually ignored, but is sometimes used to adjust the slope of an instrument's
+<a href="https://archive.is/o/FGUub/www.sonicspot.com/guide/glossary.html%23release" style="text-align:left;color:rgb(204, 0, 0);"><font color="#000000" style="text-align:left;">release phase</font></a>.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><center>
+<table style="border-collapse:separate;border-spacing:1px;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Note Off</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">MIDI Channel</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Note Number</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Velocity</b></td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">8 (0x8)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-15</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-127</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-127</td></tr></tbody></table><small>Note Off Event Value Ranges</small></center>
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">Note On Event</i><br style="text-align:left;"/>The Note On Event is used to signal when a MIDI key is pressed. This type of event has two parameters. The note number that specifies which of the 128 MIDI keys is being played and the velocity determines how fast/hard the key is pressed. The note number is normally used to specify the instruments musical pitch and the velocity is usually used to specify the instruments playback volume and intensity.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><center>
+<table style="border-collapse:separate;border-spacing:1px;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Note On</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">MIDI Channel</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Note Number</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Velocity</b></td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">9 (0x9)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-15</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-127</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-127</td></tr></tbody></table><small>Note On Event Value Ranges</small></center>
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">Note Aftertouch Event
+</i><br style="text-align:left;"/>The Note Aftertouch Event is used to indicate a pressure change on one of the currently pressed MIDI keys. It has two parameters. The note number of which key's pressure is changing and the aftertouch value which specifies amount of pressure being applied (0 = no pressure, 127 = full pressure). Note Aftertouch is used for extra expression of particular notes, often introducing or increasing some type of modulation during the instrument's
+<a href="https://archive.is/o/FGUub/www.sonicspot.com/guide/glossary.html%23sustain" style="text-align:left;color:rgb(204, 0, 0);"><font color="#000000" style="text-align:left;">sustain phase</font></a>.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><center>
+<table style="border-collapse:separate;border-spacing:1px;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Note Aftertouch</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">MIDI Channel</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Note Number</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Amount</b></td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">10 (0xA)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-15</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-127</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-127</td></tr></tbody></table><small>Note Aftertouch Event Value Ranges</small></center>
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">Controller Event</i><br style="text-align:left;"/>The Controller Event signals the change in a MIDI channels state. There are 128 controllers which define different attributes of the channel including volume, pan, modulation, effects, and more. This event type has two parameters. The controller number specifies which control is changing and the controller value defines it's new setting.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><center>
+<table style="border-collapse:separate;border-spacing:1px;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Controller</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">MIDI Channel</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Controller Type</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Value</b></td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">11 (0xB)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-15</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-127</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-127</td></tr></tbody></table><small>Controller Event Value Ranges</small></center>
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">Below is a list of the defined MIDI controller types.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><center>
+<table style="border-collapse:separate;border-spacing:1px;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Value</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Controller Type</b></td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0 (0x00)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Bank Select</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">1 (0x01)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Modulation</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">2 (0x02)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Breath Controller</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">4 (0x04)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Foot Controller</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">5 (0x05)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Portamento Time</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">6 (0x06)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Data Entry (MSB)</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">7 (0x07)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Main Volume</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">8 (0x08)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Balance</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">10 (0x0A)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Pan</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">11 (0x0B)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Expression Controller</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">12 (0x0C)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Effect Control 1</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">13 (0x0D)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Effect Control 2</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">16-19 (0x10-0x13)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">General-Purpose Controllers 1-4</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">32-63 (0x20-0x3F)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">LSB for controllers 0-31</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">64 (0x40)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Damper pedal (sustain)</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">65 (0x41)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Portamento</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">66 (0x42)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Sostenuto</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">67 (0x43)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Soft Pedal</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">68 (0x44)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Legato Footswitch</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">69 (0x45)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Hold 2</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">70 (0x46)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Sound Controller 1 (default: Timber Variation)</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">71 (0x47)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Sound Controller 2 (default: Timber/Harmonic Content)</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">72 (0x48)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Sound Controller 3 (default: Release Time)</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">73 (0x49)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Sound Controller 4 (default: Attack Time)</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">74-79 (0x4A-0x4F)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Sound Controller 6-10</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">80-83 (0x50-0x53)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">General-Purpose Controllers 5-8</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">84 (0x54)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Portamento Control</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">91 (0x5B)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Effects 1 Depth (formerly External Effects Depth)</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">92 (0x5C)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Effects 2 Depth (formerly Tremolo Depth)</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">93 (0x5D)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Effects 3 Depth (formerly Chorus Depth)</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">94 (0x5E)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Effects 4 Depth (formerly Celeste Detune)</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">95 (0x5F)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Effects 5 Depth (formerly Phaser Depth)</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">96 (0x60)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Data Increment</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">97 (0x61)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Data Decrement</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">98 (0x62)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Non-Registered Parameter Number (LSB)</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">99 (0x63)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Non-Registered Parameter Number (MSB)</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">100 (0x64)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Registered Parameter Number (LSB)</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">101 (0x65)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Registered Parameter Number (MSB)</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">121-127 (0x79-0x7F)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">Mode Messages</td></tr></tbody></table><small>Defined MIDI Controllers</small>
+</center>
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">Program Change Event</i><br style="text-align:left;"/>The Program Change Event is used to change which program (instrument/patch) should be played on the MIDI channel. This type of event takes only one parameter, the program number of the new instrument/patch.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><center>
+<table style="border-collapse:separate;border-spacing:1px;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Program Change</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">MIDI Channel</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Program Number</b></td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">12 (0xC)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-15</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-127</td></tr></tbody></table><small>Program Change Event Value Ranges</small></center>
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">Channel Aftertouch Event</i><br style="text-align:left;"/>The Channel Aftertouch Event is similar to the Note Aftertouch message, except it effects all keys currently pressed on the specific MIDI channel. This type of event takes only one parameter, the aftertouch amount (0 = no pressure, 127 = full pressure).
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><center>
+<table style="border-collapse:separate;border-spacing:1px;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Channel Aftertouch</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">MIDI Channel</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Amount</b></td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">13 (0xD)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-15</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-127</td></tr></tbody></table><small>Channel Aftertouch Event Value Ranges</small></center>
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">Pitch Bend Event</i><br style="text-align:left;"/>The Pitch Bend Event is similar to a controller event, except that it is a unique MIDI Channel Event that has two bytes to describe it's value. The pitch value is defined by both parameters of the MIDI Channel Event by joining them in the format of yyyyyyyxxxxxxx where the y characters represent the last 7 bits of the second parameter and the x characters represent the last 7 bits of the first parameter. The combining of both parameters enables high accuracy values (0 - 16383). The pitch value affects all playing notes on the current channel. Values below 8192 decrease the pitch, while values above 8192 increase the pitch. The pitch range may vary from instrument to instrument, but is usually +/-2 semi-tones.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><center>
+<table style="border-collapse:separate;border-spacing:1px;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Pitch Bend</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">MIDI Channel</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Value (LSB)</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Value (MSB)</b></td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">14 (0xE)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-15</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-127</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-127</td></tr></tbody></table><small>Pitch Bend Event Value Ranges</small></center></td></tr></tbody></table>
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">Meta Events</i><br style="text-align:left;"/>Events that are not to be sent or received over a MIDI port are called Meta Events. These events are defined by an event type value of 0xFF and have a variable size of parameter data which is defined after the event type.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><center>
+<table style="border-collapse:separate;border-spacing:1px;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Meta Event</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Type</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Length</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Data</b></td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">255 (0xFF)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-255</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">variable-length</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">type specific</td></tr></tbody></table><small>Meta Event Values</small></center>
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">There are currently fifteen defined Meta Events. Each one is described in detail below.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><table style="width:100%;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="text-align:left;">
+<td style="width:20px;color:rgb(0, 0, 0);text-align:left;vertical-align:top;"> </td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;">
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">Sequence Number</i><br style="text-align:left;"/>This meta event defines the pattern number of a Type 2 MIDI file or the number of a sequence in a Type 0 or Type 1 MIDI file. This meta event should always have a delta time of 0 and come before all MIDI Channel Events and non-zero delta time events.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><center>
+<table style="border-collapse:separate;border-spacing:1px;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Meta Event</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Type</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Length</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Number (MSB)</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Number (LSB)</b></td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">255 (0xFF)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0 (0x00)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">2</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-255</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-255</td></tr></tbody></table><small>Sequence Number Meta Event Values</small></center>
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">Text Event</i><br style="text-align:left;"/>This meta event defines some text which can be used for any reason including track notes, comments, etc. The text string is usually ASCII text, but may be any character (0x00-0xFF).
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><center>
+<table style="border-collapse:separate;border-spacing:1px;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Meta Event</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Type</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Length</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Text</b></td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">255 (0xFF)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">1 (0x01)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">string length</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">ASCII text</td></tr></tbody></table><small>Text Meta Event Values</small></center>
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">Copyright Notice</i><br style="text-align:left;"/>This meta event defines copyright information including the copyright symbol © (0xA9), the year and the author. This meta event should always be in the first track chunk, have a delta time of 0 and come before all MIDI Channel Events and non-zero delta time events.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><center>
+<table style="border-collapse:separate;border-spacing:1px;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Meta Event</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Type</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Length</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Text</b></td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">255 (0xFF)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">2 (0x02)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">string length</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">ASCII text</td></tr></tbody></table><small>Copyright Notice Meta Event Values</small></center>
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">Sequence/Track Name</i><br style="text-align:left;"/>This meta event defines the name of a sequence when in a Type 0 or Type 2 MIDI file or in the first track of a Type 1 MIDI file. It defines a track name when it appears in any track after the first in a Type 1 MIDI file. This meta event should always have a delta time of 0 and come before all MIDI Channel Events and non-zero delta time events.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><center>
+<table style="border-collapse:separate;border-spacing:1px;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Meta Event</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Type</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Length</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Text</b></td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">255 (0xFF)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">3 (0x03)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">string length</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">ASCII text</td></tr></tbody></table><small>Sequence/Track Name Meta Event Values</small></center>
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">Instrument Name</i><br style="text-align:left;"/>This meta event defines the name of an instrument being used in the current track chunk. This event can be used with the MIDI Channel Prefix meta event to define which instrument is being used on a specific channel.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><center>
+<table style="border-collapse:separate;border-spacing:1px;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Meta Event</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Type</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Length</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Text</b></td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">255 (0xFF)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">4 (0x04)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">string length</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">ASCII text</td></tr></tbody></table><small>Instrument Name Meta Event Values</small></center>
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">Lyrics</i><br style="text-align:left;"/>This meta event defines the lyrics in a song and are usually used to define a syllable or group of works per quarter note. This event can be used as an equivalent of sheet music lyrics or for implementing a karaoke-style system.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><center>
+<table style="border-collapse:separate;border-spacing:1px;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Meta Event</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Type</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Length</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Text</b></td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">255 (0xFF)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">5 (0x05)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">string length</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">ASCII text</td></tr></tbody></table><small>Lyrics Meta Event Values</small></center>
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">Marker</i><br style="text-align:left;"/>This meta event marks a significant point in time for the sequence. It is usually found in the first track chunk, but may appear in any one. This event can be useful for marking the beginning/end of a new verse or chorus.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><center>
+<table style="border-collapse:separate;border-spacing:1px;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Meta Event</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Type</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Length</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Text</b></td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">255 (0xFF)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">6 (0x06)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">string length</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">ASCII text</td></tr></tbody></table><small>Marker Meta Event Values</small></center>
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">Cue Point</i><br style="text-align:left;"/>This meta event marks the start of some type of new sound or action. It is usually found in the first track chunk, but may appear in any one. This event is sometimes used by sequencers to mark when playback of a sample or video should begin.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><center>
+<table style="border-collapse:separate;border-spacing:1px;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Meta Event</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Type</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Length</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Text</b></td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">255 (0xFF)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">7 (0x07)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">string length</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">ASCII text</td></tr></tbody></table><small>Cue Point Meta Event Values</small></center>
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">MIDI Channel Prefix</i><br style="text-align:left;"/>This meta event associates a MIDI channel with following meta events. It's effect is terminated by another MIDI Channel Prefix event or any non- Meta event. It is often used before an Instrument Name Event to specify which channel an instrument name represents.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><center>
+<table style="border-collapse:separate;border-spacing:1px;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Meta Event</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Type</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Length</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Channel</b></td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">255 (0xFF)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">32 (0x20)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">1</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-15</td></tr></tbody></table><small>MIDI Channel Prefix Meta Event Values</small></center>
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">End Of Track</i><br style="text-align:left;"/>This meta event is used to signal the end of a track chunk and must always appear as the last event in every track chunk.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><center>
+<table style="border-collapse:separate;border-spacing:1px;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Meta Event</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Type</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Length</b></td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">255 (0xFF)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">47 (0x2F)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0</td></tr></tbody></table><small>End Of Track Meta Event Values</small></center>
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">Set Tempo</i><br style="text-align:left;"/>This meta event sets the sequence tempo in terms of microseconds per quarter-note which is encoded in three bytes. It usually is found in the first track chunk, time-aligned to occur at the same time as a MIDI clock message to promote more accurate synchronization. If no set tempo event is present, 120 beats per minute is assumed. The following formula's can be used to translate the tempo from microseconds per quarter-note to beats per minute and back.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><code style="text-align:left;">MICROSECONDS_PER_MINUTE = 60000000<br style="text-align:left;"/><br style="text-align:left;"/>BPM = MICROSECONDS_PER_MINUTE / MPQN<br style="text-align:left;"/>MPQN = MICROSECONDS_PER_MINUTE / BPM<br style="text-align:left;"/></code>
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><center>
+<table style="border-collapse:separate;border-spacing:1px;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Meta Event</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Type</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Length</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Microseconds/Quarter-Note</b></td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">255 (0xFF)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">81 (0x51)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">3</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-8355711</td></tr></tbody></table><small>Set Tempo Meta Event Values</small></center>
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">SMPTE Offset</i><br style="text-align:left;"/>This meta event is used to specify the SMPTE starting point offset from the beginning of the track. It is defined in terms of hours, minutes, seconds, frames and sub-frames (always 100 sub-frames per frame, no matter what sub-division is specified in the MIDI header chunk). The byte used to specify the hour offset also specifies the frame rate in the following format: 0rrhhhhhh where rr is two bits for the frame rate where 00=24 fps, 01=25 fps, 10=30 fps (drop frame), 11=30 fps and hhhhhh is six bits for the hour (0-23). The hour byte's top bit is always 0. The frame byte's possible range depends on the encoded frame rate in the hour byte. A 25 fps frame rate means that a maximum value of 24 may be set for the frame byte.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><center>
+<table style="border-collapse:separate;border-spacing:1px;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Meta Event</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Type</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Length</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Hour</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Min</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Sec</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Fr</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">SubFr</b></td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">255 (0xFF)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">84 (0x54)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">5</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-23 *</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-59</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-59</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-30 *</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-99</td></tr></tbody></table><small>SMPTE Offset Meta Event Values, * read preceding text for details</small></center>
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">Time Signature</i><br style="text-align:left;"/>This meta event is used to set a sequences time signature. The time signature defined with 4 bytes, a numerator, a denominator, a metronome pulse and number of 32nd notes per MIDI quarter-note. The numerator is specified as a literal value, but the denominator is specified as (get ready) the value to which the power of 2 must be raised to equal the number of subdivisions per whole note. For example, a value of 0 means a whole note because 2 to the power of 0 is 1 (whole note), a value of 1 means a half-note because 2 to the power of 1 is 2 (half-note), and so on. The metronome pulse specifies how often the metronome should click in terms of the number of clock signals per click, which come at a rate of 24 per quarter-note. For example, a value of 24 would mean to click once every quarter-note (beat) and a value of 48 would mean to click once every half-note (2 beats). And finally, the fourth byte specifies the number of 32nd notes per 24 MIDI clock signals. This value is usually 8 because there are usually 8 32nd notes in a quarter-note. At least one Time Signature Event should appear in the first track chunk (or all track chunks in a Type 2 file) before any non-zero delta time events. If one is not specified 4/4, 24, 8 should be assumed.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><center>
+<table style="border-collapse:separate;border-spacing:1px;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Meta Event</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Type</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Length</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Numer</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Denom</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Metro</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">32nds</b></td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">255 (0xFF)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">88 (0x58)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">4</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-255</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-255</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-255</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">1-255</td></tr></tbody></table><small>Time Signature Meta Event Values</small></center>
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">Key Signature</i><br style="text-align:left;"/>This meta event is used to specify the key (number of sharps or flats) and scale (major or minor) of a sequence. A positive value for the key specifies the number of sharps and a negative value specifies the number of flats. A value of 0 for the scale specifies a major key and a value of 1 specifies a minor key.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><center>
+<table style="border-collapse:separate;border-spacing:1px;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Meta Event</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Type</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Length</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Key</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Scale</b></td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">255 (0xFF)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">89 (0x59)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">2</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">-7-7</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">0-1</td></tr></tbody></table><small>Key Signature Meta Event Values</small></center>
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">Sequencer Specific</i><br style="text-align:left;"/>This meta event is used to specify information specific to a hardware or software sequencer. The first Data byte (or three bytes if the first byte is 0) specifies the manufacturer's ID and the following bytes contain information specified by the manufacturer. The individual manufacturers may document this information in their respective manuals.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><center>
+<table style="border-collapse:separate;border-spacing:1px;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Meta Event</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Type</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Length</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Data</b></td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">255 (0xFF)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">127 (0x7F)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">variable-length</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">any type and amount *</td></tr></tbody></table><small>Sequencer Specific Meta Event Values, * read preceding text for details</small></center></td></tr></tbody></table>
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">System Exclusive Events</i><br style="text-align:left;"/>Also known as SysEx Events, these MIDI events are used to control MIDI hardware or software that require special data bytes that will follow their manufacturer's specifications. Every SysEx event includes an ID that specifies which manufacturer's product is to be the intended receiver (see the
+<a href="https://archive.is/o/FGUub/www.sonicspot.com/guide/midimanufacturers.html" style="text-align:left;color:rgb(204, 0, 0);">MIDI Manufacturers List</a>). All other products will ignore the event. There are three types of SysEx messages which are used to send data in a single event, across multiple events or authorize the transmission of specific MIDI messages.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><table style="width:100%;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="text-align:left;">
+<td style="width:20px;color:rgb(0, 0, 0);text-align:left;vertical-align:top;"> </td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;">
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">Normal SysEx Events</i><br style="text-align:left;"/>These are the most common type of SysEx event and are used to hold a single block of manufacturer specific data. The first byte is always 0xF0 and the second is a variable-length value that specifies the length of the following SysEx data in bytes. The SysEx data bytes must always end with a 0xF7 byte to signal the end of the message.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><center>
+<table style="border-collapse:separate;border-spacing:1px;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">SysEx Event</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Length</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Data</b></td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">240 (0xF0)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">variable-length</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">data bytes, 0xF7</td></tr></tbody></table><small>Normal SysEx Event Values</small></center>
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">Divided SysEx Events</i><br style="text-align:left;"/>A large amount of SysEx data in a Normal SysEx Event could cause following MIDI Channel Events to be transmitted after the time they should be played. This will cause an unwanted delay in play back of the following events. The second type of SysEx Events solve this problem by allowing a large amount of SysEx data to be divided into smaller blocks, transmitted with a delay between each division to allow the transmission of other MIDI events in order to prevent congesting of the limited MIDI bandwidth. The initial Divided SysEx Event follows the same format as a Normal SysEx Event with the exception that the last data byte is not 0xF7. This indicates the the SysEx data is not finished and will be continued in an upcoming Divided SysEx Event. Any following Divided SysEx Events before the final one use the a similar format as the first, only the start byte is 0xF0 instead of 0xF7 to signal continuation of SysEx data. The final block follows the same format as the continuation blocks, except the last data byte is 0xF7 to signal the completion of the divided SysEx data.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><center>
+<table style="border-collapse:separate;border-spacing:1px;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">SysEx Event</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Length</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Data</b></td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">240 (0xF0)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">variable-length</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">data bytes</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">247 (0xF7)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">variable-length</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">data bytes</td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">247 (0xF7)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">variable-length</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">data bytes, 0xF7</td></tr></tbody></table><small>Divided SysEx Event Values</small></center>
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><i style="text-align:left;">Authorization SysEx Events</i><br style="text-align:left;"/>The last type of SysEx Event authorizes and enables the transmission of special messages such as Song Position Pointer, MIDI Time Code and Song Select messages. These SysEx Events use the event type value 0xF7.
+</div><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; ">
+</div><center>
+<table style="border-collapse:separate;border-spacing:1px;text-align:left;">
+<tbody style="text-align:left;">
+<tr style="background-color: rgb(153, 153, 153); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">SysEx Event</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Length</b></td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; "><b style="text-align:left;">Data</b></td></tr>
+<tr style="background-color: rgb(192, 192, 192); text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">247 (0xF7)</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">variable-length</td>
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 4px; ">data bytes</td></tr></tbody></table><small>Authorization SysEx Event Values</small></center></td></tr></tbody></table><div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "></div>
+</td>
+</tr>
+</tbody></table>
+</div><div style="text-align:left;font-size:0px;"> </div>
+</div></div></div></div>
+</div>
+
+
+<div style="text-align:left;clear:both;color:rgb(0, 0, 0);margin-top:8px;margin-right:8px;">
+<div style="text-align:left;background-image:url(data:image/gif;base64,R0lGODlhBQAFAIAAAAAAAAAzZiH5BAEAAAAALAAAAAAFAAUAAAIIjG8AqaH9QAEAOw==);background-color: rgb(153, 153, 153); background-position: 0% 0%; background-repeat: no-repeat; "><div style="text-align:left;background-image:url(data:image/gif;base64,R0lGODlhBQAFAIAAAAAAAAAzZiH5BAEAAAAALAAAAAAFAAUAAAIIjA1wqcH6QgEAOw==);background-color: transparent; background-position: 100% 0%; background-repeat: no-repeat; "><h1 style="text-align:left;color:rgb(51, 51, 51);font-size:150%;font-weight:bold;margin: 0px; padding: 4px; ">Related</h1><div style="text-align:left;background-image:url(data:image/gif;base64,R0lGODlhBQAFAIAAAAAAAAAzZiH5BAEAAAAALAAAAAAFAAUAAAIIDA6GocnHYgEAOw==);background-color: rgb(230, 230, 230); background-position: 0% 100%; background-repeat: no-repeat; "><div style="text-align:left;background-image:url(data:image/gif;base64,R0lGODlhBQAFAIAAAAAAAAAzZiH5BAEAAAAALAAAAAAFAAUAAAIIhBGHF4kNWwEAOw==);background-color: transparent; background-position: 100% 100%; background-repeat: no-repeat; ">
+<div style="text-align:left;padding: 4px 8px 0px; ">
+<table style="border-collapse:separate;border-spacing:0px;text-align:left;width:100%;border-width: 0px; border-style: outset; border-color: #999; ">
+<tbody style="text-align:left;"><tr style="text-align:left;">
+<td style="color:rgb(0, 0, 0);text-align:left;vertical-align:top;padding: 0px; ">
+<div style="text-align:left;margin: 0px; padding: 2px 0px 6px; "><b style="text-align:left;">Links:</b>
+<a href="https://archive.is/o/FGUub/www.midi.org/" style="text-align:left;color:rgb(204, 0, 0);">MIDI Manufacturers Association</a><br style="text-align:left;"/>
+<b style="text-align:left;">Books:</b>
+<a href="https://archive.is/o/FGUub/www.amazon.com/exec/obidos/ASIN/1884777449/thesonicspot" style="text-align:left;color:rgb(204, 0, 0);">Maximum MIDI - Music Applications in C++</a><br style="text-align:left;"/>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div><div style="text-align:left;font-size:0px;"> </div>
+</div></div></div></div>
+</div>
+
+<div style="padding-top:8px;text-align:center;">
+
+
+<ins style="display:inline-table;height:90px;position:relative;visibility:visible;width:728px;border-width: medium; border-style: none; margin: 0px; padding: 0px; border-color: white; "><ins style="display:block;height:90px;position:relative;visibility:visible;width:728px;border-width: medium; border-style: none; margin: 0px; padding: 0px; border-color: white; "><div class="html1" style="width: 728px;text-align: left;overflow-x: auto;overflow-y: auto; background-color: rgba(0, 0, 0, 0);position: relative;display:inline-block;vertical-align:bottom;width:728px;height:90px;overflow-x:hidden;overflow-y:hidden;left:0px;position:absolute;top:0px;border-width: 0px;; border-style: inset; margin: 0px; ; z-index: 0"><div class="html" style="text-align:left;overflow-x:visible;overflow-y:visible;"><div class="body" style="vertical-align:bottom;min-height:0px;color:rgb(0, 0, 0);text-align:left;overflow-x:visible;overflow-y:visible;margin: 0px; "><div class="html1" style="width: 728px;text-align: left;overflow-x: auto;overflow-y: auto; background-color: rgba(0, 0, 0, 0);position: relative;display:inline-block;vertical-align:bottom;width:728px;height:90px;overflow-x:hidden;overflow-y:hidden;text-align:left;left:0px;position:absolute;top:0px;border-width: 0px;; border-style: inset; margin: 0px; ; z-index: 0"><div class="html" style="text-align:left;overflow-x:visible;overflow-y:visible;"><div class="body" style="vertical-align:bottom;min-height:90px;color:rgb(0, 0, 0);text-align:left;overflow-x:visible;overflow-y:visible;margin: 0px; "><div style="text-align:left;overflow-x:hidden;overflow-y:hidden;position:absolute;margin: 0px; padding: 0px; "><a href="https://archive.is/o/FGUub/googleads.g.doubleclick.net/aclk?sa=l&amp;ai=CI6VQ4e3PUfGQCoeo-waTyoGwCovdmqUC05m59TfAjbcBEAEg-J_0AVCN0tes_P____8BYJUCoAGVmJ7hA8gBAqgDAcgD0QSqBHpP0MoF4lN2HYTk8RJA2oTh2mc-QZraVwXhydBeEhWjDNn3v7WkL8_FOest6lZyh5LzCxdy0LEwrZqi8KIck0AlM7ZqSx49L1aoScxJaUu1AfGo_fpp1PUbx3UVQtJwnZC7lmMjqswNnmSezdINnwZ1sKPsPjXy6O-SeaAGAoAH0-fhHg&amp;num=1&amp;sig=AOD64_2Wl1_iAkRrvCq0BjxTGeRQX8SC_Q&amp;client=ca-pub-1502904173403482&amp;adurl=http://www.anymusicconverter.com/gb/si/%3Fadnm%3D14927307755%26i%3Ds%26grid%3DA%26lg%3DEN%26cc%3DDE%26clg%3Den%26c%3D1%26d%3D0%26cid%3D_57044558%26kw%3Dwav%2520file%2520to%2520mp3%2520converter%2520free%26mn%3Dwww.sonicspot.com%26Network%3DD%26expr%3D%26agid%3D_5349914954" style="text-align:left;color:rgb(0, 0, 0);"><img src="2d9b7c17b8a5bfa3e884acf6a81b0b5a06444e7a.png" style="width:728px;text-align:left;border-width: 0px; "/></a><div style="text-align:left;height:15px;position:absolute;right:0px;text-rendering:geometricprecision;top:0px;width:19px;z-index:9010;margin: 0px; padding: 0px; "><div style="text-align:left;margin: 0px; padding: 0px; "><img alt="AdChoices" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAPCAYAAAAGRPQsAAABNElEQVQ4jWP4////ZmphBmyCbBvO/WVYd/Z/xZWnVyg2DGQQMp5899VZigxrvP7sEojtd/zOI5ihW55/OEKWYTPvvz6NLKa+6+p7kDjnxvO/L338tpdsw8S3Xvq6/cXHw6fefd3PATQMJK+088qnR99+7iTZsOn3Xp9Blq+++vQyzOtJZx/cJtqwe19/7gK5ZvGjtyeQ1QSfuPsAZiBBw5pvPL8IYoO8BuKnnHsId0HHzRcXYAblXnx0g6BhNUCvgNhH3345AOK3Ag2fce/1aZghJvuvv/r5998W9DBbgc+wx99+7QTFIMt6SEKW2X7pM3rAIxvWic2w1HMPb934/H0PjM+8/ty/s++/7iOUznSAeCO6YRLbLn0F0bjSFC7DQDgE3TBSshG6YTAX1gDxIlIMQMYAC+7NyvoASYYAAAAASUVORK5CYII=" style="height:15px;width:19px;text-align:left;display:block;border-width: 0px; "/></div><div style="text-align:left;display:none;margin: 0px; padding: 0px; "><a href="https://archive.is/o/FGUub/www.google.com/url?ct=abg&amp;q=https://www.google.com/adsense/support/bin/request.py%3Fcontact%3Dabg_afc%26url%3Dhttp://www.sonicspot.com/guide/midifiles.html%26gl%3DDE%26hl%3Den%26client%3Dca-pub-1502904173403482%26ai0%3DCI6VQ4e3PUfGQCoeo-waTyoGwCovdmqUC05m59TfAjbcBEAEg-J_0AVCN0tes_P____8BYJUCoAGVmJ7hA8gBAqgDAcgD0QSqBHpP0MoF4lN2HYTk8RJA2oTh2mc-QZraVwXhydBeEhWjDNn3v7WkL8_FOest6lZyh5LzCxdy0LEwrZqi8KIck0AlM7ZqSx49L1aoScxJaUu1AfGo_fpp1PUbx3UVQtJwnZC7lmMjqswNnmSezdINnwZ1sKPsPjXy6O-SeaAGAoAH0-fhHg&amp;usg=AFQjCNFG3ZumGIHMQSAv-sdNuNc2GLtevQ" style="text-align:left;color:rgb(0, 0, 0);text-decoration:none;"><img alt="AdChoices" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE0AAAAPCAYAAAChmULXAAACz0lEQVRYw+2Yz2sTQRTHFxWpEPCoAU8e4j+QmyfJ3UP8CyJ69JCbqAgSBK8iQb1qDzlZxdqaklrxBy3WRHdNbdQ2NpF2S0Nta91IKu26X/VbnsPudKO2l+TwmJ1fb9585r03kxiu697vSntidPLm994trRt3iu7Z8my5Cy3s5j1gUq5NLxS70EJAuzQ5Z+H7+OhUnfD67eVn/wwtl8uNRiKRNdu2HwaNicfjDYzDdzabfRmLxZYNw3AxL51Ov91c0MCS4TYFfdC7ndBufmyMy7YjQxNLaN9379V3a6U5/NfQkslkDZLJZMytoBEYAZqmOYw657YDbSc8TUI78MByBudXnr747Iz0eNDQfzhf/lJvtvJtQYN3YdMsZTtAAgKAERRKgJM6CoXCE7ZhfCqVmkJJvWiHN8IrpWdiHsbKfs5nfzQaddAGW6iL+tGn2qKDdr3a+GPs+YnZNwzZk8WZD6GhwVhuIpFIzMFQtqMOQwELRrLUnq7XL/Xhm5uHV0LwDV0MT79+lrQH0KCLB4c2eLdMDTpoVac1BO+6XV8ck2NOjE3PEJyE1qvbJAzDyRESjFNzmKyHgaYeiDwY2U5oar/Ms+inp6PEIaIddczR5WGAyFTsn2kDIYn6qVJt06OuvJt/TWBnzHpFQruoS8RcnAKIMCQIGko1JOAVAP6/oEEfbaNHQuh1sA9ehrmwVwftgheC+H6++PUx6pc9iDeqjXHCio9MLrTWN/rVnHYsSCk2qgKg1wWFZ9BFwE37QWsnPJlbAQUexXUYnlifdmEexoSB9qm5lseNuafv14P30KC1ql4AEtouT66qHTDQb0FuQCZceRHwycEErXtySA/yuwjkk8PvIpDrMDQZBVxbd+MDzulS7X1l9VuB9d19pY3ikvNoq3caJOrJrU583B4csByUQW8yHTTIfk/OdeLPqLA/n/ygUY7+vhx6u/9o+MsPf1++/f0oVhYAAAAASUVORK5CYII=" style="height:15px;width:77px;text-align:left;display:block;border-width: 0px; "/></a></div></div><div class="html1" style="width: 0px;text-align: left;overflow-x: auto;overflow-y: auto; background-color: rgba(0, 0, 0, 0);position: relative;display:inline-block;vertical-align:bottom;width:0px;height:0px;overflow-x:auto;overflow-y:auto;text-align:left;position:absolute;border-width: 0px;; border-style: inset; margin: 0px; ; z-index: 0"><div class="html" style="text-align:left;overflow-x:visible;overflow-y:visible;"><div class="body" style="vertical-align:bottom;min-height:0px;color:rgb(0, 0, 0);text-align:left;overflow-x:visible;overflow-y:visible;margin: 8px; "></div></div></div></div><div class="html1" style="width: 0px;text-align: left;overflow-x: auto;overflow-y: auto; background-color: rgba(0, 0, 0, 0);position: relative;display:inline-block;vertical-align:bottom;overflow-x:auto;overflow-y:auto;text-align:left;height:0px;width:0px;position:absolute;border-width: 0px;; border-style: inset; margin: 0px; ; z-index: 0"><div class="html" style="text-align:left;overflow-x:visible;overflow-y:visible;"><div class="body" style="vertical-align:bottom;min-height:0px;color:rgb(0, 0, 0);text-align:left;overflow-x:visible;overflow-y:visible;margin: 8px; "></div></div></div></div></div></div></div></div></div></ins></ins><div style="position:absolute;left:0px;top:0px;visibility:hidden;"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAQCBAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" style="width:0px;height:0px;"/></div>
+</div>
+
+<div style="margin-top:8px;text-align:center;font-size:11px;">
+<div style="text-align:center;font-size:11px;margin: 0px; "><a href="https://archive.is/o/FGUub/www.sonicspot.com/copyright.html" style="color:rgb(230, 230, 230);">Copyright</a>
+© 1999-2007 Sonic Spot</div>
+<div style="text-align:center;font-size:11px;margin: 0px; "><a href="https://archive.is/o/FGUub/www.sonicspot.com/info.html" style="color:rgb(230, 230, 230);">About Us</a>
+| <a href="https://archive.is/o/FGUub/www.sonicspot.com/privacy.html" style="color:rgb(230, 230, 230);">Privacy Statement</a></div>
+</div>
+
+</div></div></div></div>
+</div>
+
+
+
+
+
+</div></div></div></body></html>
