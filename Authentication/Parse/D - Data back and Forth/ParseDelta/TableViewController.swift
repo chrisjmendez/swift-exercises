@@ -23,7 +23,7 @@ class TableViewController: PFQueryTableViewController {
         super.init(style: style, className: className)
     }
     
-    required init!(coder aDecoder: NSCoder!) {
+    required init!(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         // Configure the PFQueryTableView
         self.parseClassName       = className
@@ -35,7 +35,7 @@ class TableViewController: PFQueryTableViewController {
    
     //Query Parse
     override func queryForTable() -> PFQuery {
-        var query = PFQuery(className: className)
+        let query = PFQuery(className: className)
             query.orderByAscending(colName.0)
             query.whereKey(condition.key, containsString: condition.value)
         
@@ -61,9 +61,9 @@ class TableViewController: PFQueryTableViewController {
     //Find the next view, pass new data to that view
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         //Identify the next view controller
-        var nextScene = segue.destinationViewController as! DetailViewController
+        let nextScene = segue.destinationViewController as! DetailViewController
         //Pass the object to the next view controller
-        if let indexPath = self.tableView.indexPathForSelectedRow(){
+        if let indexPath = self.tableView.indexPathForSelectedRow{
             let row = Int(indexPath.row)
             
             nextScene.currentObj = (objects?[row] as! PFObject)
