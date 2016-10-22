@@ -1,6 +1,7 @@
 Advertising/Heyzap/Heyzap/AppDelegate.swift
 Social/Facebook/Facebook/Info.plist
 Advertising/Heyzap/Heyzap/AppDelegate.swift
+.DS_Store
 
 # Created by https://www.gitignore.io/api/carthage,xcode,objective-c,swift,node
 
