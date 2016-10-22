@@ -10,11 +10,11 @@ import AudioKit
 class Conductor {
  
     var sampler = AKSampler()
-    var soundFont = "SF2/fluid_gm"
+    var soundFontSample = "SF2/AcousticGuitar"
     
     init() {
         //print("Conductor.init")
-        sampler.loadMelodicSoundFont(soundFont, preset: 0)
+        sampler.loadMelodicSoundFont(soundFontSample, preset: 0)
 
         AudioKit.output = sampler
         AudioKit.start()

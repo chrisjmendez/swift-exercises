@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E14B8F9B1DBB0F91009258E5 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E14B8F9A1DBB0F91009258E5 /* AudioKit.framework */; };
+		E14B8F9C1DBB0F91009258E5 /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E14B8F9A1DBB0F91009258E5 /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E1BB17451DB87C8D00FEBE4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB17441DB87C8D00FEBE4E /* AppDelegate.swift */; };
 		E1BB17471DB87C8D00FEBE4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB17461DB87C8D00FEBE4E /* ViewController.swift */; };
 		E1BB174A1DB87C8D00FEBE4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1BB17481DB87C8D00FEBE4E /* Main.storyboard */; };
@@ -14,18 +16,16 @@
 		E1BB174F1DB87C8D00FEBE4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1BB174D1DB87C8D00FEBE4E /* LaunchScreen.storyboard */; };
 		E1BB175E1DB87F9800FEBE4E /* Conductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB175D1DB87F9800FEBE4E /* Conductor.swift */; };
 		E1BB177F1DB9B0FB00FEBE4E /* SF2 in Resources */ = {isa = PBXBuildFile; fileRef = E1BB177E1DB9B0FB00FEBE4E /* SF2 */; };
-		E1BB17811DB9E0E900FEBE4E /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1BB17801DB9E0E900FEBE4E /* AudioKit.framework */; };
-		E1BB17821DB9E0E900FEBE4E /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E1BB17801DB9E0E900FEBE4E /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		E1BB175A1DB87D8500FEBE4E /* Embed Frameworks */ = {
+		E14B8F9D1DBB0F91009258E5 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E1BB17821DB9E0E900FEBE4E /* AudioKit.framework in Embed Frameworks */,
+				E14B8F9C1DBB0F91009258E5 /* AudioKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -33,6 +33,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E14B8F9A1DBB0F91009258E5 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = Carthage/Build/iOS/AudioKit.framework; sourceTree = "<group>"; };
 		E1BB17411DB87C8D00FEBE4E /* SoundFont.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundFont.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1BB17441DB87C8D00FEBE4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1BB17461DB87C8D00FEBE4E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -42,7 +43,6 @@
 		E1BB17501DB87C8D00FEBE4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1BB175D1DB87F9800FEBE4E /* Conductor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conductor.swift; sourceTree = "<group>"; };
 		E1BB177E1DB9B0FB00FEBE4E /* SF2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SF2; sourceTree = "<group>"; };
-		E1BB17801DB9E0E900FEBE4E /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = Carthage/Build/iOS/AudioKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1BB17811DB9E0E900FEBE4E /* AudioKit.framework in Frameworks */,
+				E14B8F9B1DBB0F91009258E5 /* AudioKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,7 +60,7 @@
 		E1BB17381DB87C8D00FEBE4E = {
 			isa = PBXGroup;
 			children = (
-				E1BB17801DB9E0E900FEBE4E /* AudioKit.framework */,
+				E14B8F9A1DBB0F91009258E5 /* AudioKit.framework */,
 				E1BB17431DB87C8D00FEBE4E /* SoundFont */,
 				E1BB17421DB87C8D00FEBE4E /* Products */,
 			);
@@ -99,8 +99,7 @@
 				E1BB173D1DB87C8D00FEBE4E /* Sources */,
 				E1BB173E1DB87C8D00FEBE4E /* Frameworks */,
 				E1BB173F1DB87C8D00FEBE4E /* Resources */,
-				E1BB175A1DB87D8500FEBE4E /* Embed Frameworks */,
-				E1BB175B1DB87D9500FEBE4E /* ShellScript */,
+				E14B8F9D1DBB0F91009258E5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -159,23 +158,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		E1BB175B1DB87D9500FEBE4E /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E1BB173D1DB87C8D00FEBE4E /* Sources */ = {
