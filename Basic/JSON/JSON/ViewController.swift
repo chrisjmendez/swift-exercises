@@ -15,21 +15,21 @@ class ViewController: UIViewController {
     let REDDIT = "https://www.reddit.com/new.json?limit=100"
     let HACKER_NEWS = "https://hacker-news.firebaseio.com/v0/topstories.json"
     
-    func getJSON(url:String){
-        Alamofire.request(.GET, REDDIT, parameters: nil).validate().responseJSON { response in
+    func getJSON(_ url:String){
+        Alamofire.request(REDDIT, method: .get).validate().responseJSON { response in
             switch response.result {
-            case .Success:
+            case .success:
                 let data = response.result.value as? NSDictionary
                 let json = JSON(data!)
                 self.parseJSON(json)
-            case .Failure(let error):
-                print(error)
+            case .failure(let error):
+                print("ERROR:", error)
             }
         }
     }
     
-    func parseJSON(json:JSON){
-        print("JSON: \(json["data"]["children"][0]["data"]["title"])")
+    func parseJSON(_ json:JSON){
+        print("\n\nJSON: \(json["data"]["children"][0]["data"]["title"])\n\n")
     }
     
     func onLoad(){
