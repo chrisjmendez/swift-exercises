@@ -74,17 +74,7 @@
 		E168ADF51BE1C84C00835D93 = {
 			isa = PBXGroup;
 			children = (
-				E168AE131BE1C8E500835D93 /* AdSupport.framework */,
-				E168AE141BE1C8E500835D93 /* AudioToolbox.framework */,
-				E168AE151BE1C8E500835D93 /* AVFoundation.framework */,
-				E168AE161BE1C8E500835D93 /* CoreGraphics.framework */,
-				E168AE171BE1C8E500835D93 /* CoreMedia.framework */,
-				E168AE181BE1C8E500835D93 /* CoreTelephony.framework */,
-				E168AE191BE1C8E500835D93 /* EventKit.framework */,
-				E168AE1A1BE1C8E500835D93 /* EventKitUI.framework */,
-				E168AE1B1BE1C8E500835D93 /* MessageUI.framework */,
-				E168AE1C1BE1C8E500835D93 /* StoreKit.framework */,
-				E168AE1D1BE1C8E500835D93 /* SystemConfiguration.framework */,
+				E1CD4E021E3E624100C1F06B /* Frameworks */,
 				E168AE001BE1C84D00835D93 /* Interstitial */,
 				E168ADFF1BE1C84D00835D93 /* Products */,
 			);
@@ -110,6 +100,24 @@
 				E168AE0D1BE1C84D00835D93 /* Info.plist */,
 			);
 			path = Interstitial;
+			sourceTree = "<group>";
+		};
+		E1CD4E021E3E624100C1F06B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E168AE131BE1C8E500835D93 /* AdSupport.framework */,
+				E168AE141BE1C8E500835D93 /* AudioToolbox.framework */,
+				E168AE151BE1C8E500835D93 /* AVFoundation.framework */,
+				E168AE161BE1C8E500835D93 /* CoreGraphics.framework */,
+				E168AE171BE1C8E500835D93 /* CoreMedia.framework */,
+				E168AE181BE1C8E500835D93 /* CoreTelephony.framework */,
+				E168AE191BE1C8E500835D93 /* EventKit.framework */,
+				E168AE1A1BE1C8E500835D93 /* EventKitUI.framework */,
+				E168AE1B1BE1C8E500835D93 /* MessageUI.framework */,
+				E168AE1C1BE1C8E500835D93 /* StoreKit.framework */,
+				E168AE1D1BE1C8E500835D93 /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +152,7 @@
 				TargetAttributes = {
 					E168ADFD1BE1C84D00835D93 = {
 						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -303,6 +312,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chrisjmendez.Interstitial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -318,6 +328,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chrisjmendez.Interstitial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

@@ -12,27 +12,27 @@ import GoogleMobileAds
 class ViewController: UIViewController, GADInterstitialDelegate {
 
     var interstitial: GADInterstitial?
-    var timer:NSTimer?
+    var timer:Timer?
     
     func createAndLoadInterstitial() -> DFPInterstitial {
         let request = DFPRequest()
             //This shows AdMob ads
-            //request.testDevices = [kGADSimulatorID]
+            request.testDevices = [kGADSimulatorID]
         let ads = ["/181024612/2015_fall_320x480"]
         //let randomNumber = Int.random(0...1)
         let interstitial = DFPInterstitial(adUnitID: ads[0])
             //Register the Interstitial events
             interstitial.delegate = self
-            interstitial.loadRequest(request)
+            interstitial.load(request)
         
         return interstitial
     }
     
     func showInterstitial(){
-        let timestamp = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .LongStyle)
+        let timestamp = DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .long)
         print("showInterstitial \(timestamp)")
         if (interstitial!.isReady) {
-            interstitial!.presentFromRootViewController(self)
+            interstitial!.present(fromRootViewController: self)
         }
     }
     
@@ -40,23 +40,23 @@ class ViewController: UIViewController, GADInterstitialDelegate {
     // Events
     // /////////////////////////////////////////////
     //Tells the delegate that the full screen view has been dismissed.
-    func interstitialDidDismissScreen(ad: GADInterstitial!) {
+    func interstitialDidDismissScreen(_ ad: GADInterstitial!) {
         print("User closed AD")
         //Create a new Interstitial
         interstitial = createAndLoadInterstitial()
     }
     //Tells the delegate an ad request loaded an ad.
-    func interstitialDidReceiveAd(ad: GADInterstitial!) {
+    func interstitialDidReceiveAd(_ ad: GADInterstitial!) {
         print("Ad was received")
         //Delay the presentation by a few seconds
         startTimer(0.5)
     }
     //Tells the delegate that a user click will open another app
-    func interstitialWillLeaveApplication(ad: GADInterstitial!) {
+    func interstitialWillLeaveApplication(_ ad: GADInterstitial!) {
         print("User will leave app")
     }
     //The screen will present the ad
-    func interstitialWillPresentScreen(ad: GADInterstitial!) {
+    func interstitialWillPresentScreen(_ ad: GADInterstitial!) {
         print("Ad is being presented")
     }
 
@@ -64,9 +64,9 @@ class ViewController: UIViewController, GADInterstitialDelegate {
     // /////////////////////////////////////////////
     // Simple Timer
     // /////////////////////////////////////////////
-    func startTimer(delay:Double){
+    func startTimer(_ delay:Double){
         let delayTime = delay
-        timer = NSTimer.scheduledTimerWithTimeInterval(delayTime, target: self, selector: "showInterstitial", userInfo: nil, repeats: false)
+        timer = Timer.scheduledTimer(timeInterval: delayTime, target: self, selector: #selector(ViewController.showInterstitial), userInfo: nil, repeats: false)
     }
     
     func stopTimer(){
@@ -91,16 +91,16 @@ class ViewController: UIViewController, GADInterstitialDelegate {
 
 extension Int
 {
-    static func random(range: Range<Int> ) -> Int
+    static func random(_ range: Range<Int> ) -> Int
     {
         var offset = 0
         
-        if range.startIndex < 0   // allow negative ranges
+        if range.lowerBound < 0   // allow negative ranges
         {
-            offset = abs(range.startIndex)
+            offset = abs(range.lowerBound)
         }
-        let mini = UInt32(range.startIndex + offset)
-        let maxi = UInt32(range.endIndex   + offset)
+        let mini = UInt32(range.lowerBound + offset)
+        let maxi = UInt32(range.upperBound   + offset)
         
         return Int(mini + arc4random_uniform(maxi - mini)) - offset
     }

@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         
         bannerView.adUnitID = "/6499/example/banner"
         bannerView.rootViewController = self
-        bannerView.loadRequest(DFPRequest())
+        bannerView.load(DFPRequest())
     }
 
     override func didReceiveMemoryWarning() {

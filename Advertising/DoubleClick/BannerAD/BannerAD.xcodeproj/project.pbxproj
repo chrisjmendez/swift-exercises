@@ -75,17 +75,7 @@
 		E1698D9E1BE19B8B00C3AA60 = {
 			isa = PBXGroup;
 			children = (
-				E1698DC11BE19C0800C3AA60 /* AdSupport.framework */,
-				E1698DC21BE19C0800C3AA60 /* AudioToolbox.framework */,
-				E1698DC31BE19C0800C3AA60 /* AVFoundation.framework */,
-				E1698DC41BE19C0800C3AA60 /* CoreGraphics.framework */,
-				E1698DC51BE19C0800C3AA60 /* CoreMedia.framework */,
-				E1698DC61BE19C0800C3AA60 /* CoreTelephony.framework */,
-				E1698DC71BE19C0800C3AA60 /* EventKit.framework */,
-				E1698DC81BE19C0800C3AA60 /* EventKitUI.framework */,
-				E1698DC91BE19C0800C3AA60 /* MessageUI.framework */,
-				E1698DCA1BE19C0800C3AA60 /* StoreKit.framework */,
-				E1698DCB1BE19C0800C3AA60 /* SystemConfiguration.framework */,
+				E1CD4E011E3E620C00C1F06B /* Frameworks */,
 				E1698DA91BE19B8C00C3AA60 /* BannerAD */,
 				E1698DA81BE19B8C00C3AA60 /* Products */,
 			);
@@ -112,6 +102,24 @@
 				E1698DBE1BE19BB300C3AA60 /* BannerAD-Bridging-Header.h */,
 			);
 			path = BannerAD;
+			sourceTree = "<group>";
+		};
+		E1CD4E011E3E620C00C1F06B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1698DC11BE19C0800C3AA60 /* AdSupport.framework */,
+				E1698DC21BE19C0800C3AA60 /* AudioToolbox.framework */,
+				E1698DC31BE19C0800C3AA60 /* AVFoundation.framework */,
+				E1698DC41BE19C0800C3AA60 /* CoreGraphics.framework */,
+				E1698DC51BE19C0800C3AA60 /* CoreMedia.framework */,
+				E1698DC61BE19C0800C3AA60 /* CoreTelephony.framework */,
+				E1698DC71BE19C0800C3AA60 /* EventKit.framework */,
+				E1698DC81BE19C0800C3AA60 /* EventKitUI.framework */,
+				E1698DC91BE19C0800C3AA60 /* MessageUI.framework */,
+				E1698DCA1BE19C0800C3AA60 /* StoreKit.framework */,
+				E1698DCB1BE19C0800C3AA60 /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +154,7 @@
 				TargetAttributes = {
 					E1698DA61BE19B8B00C3AA60 = {
 						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -308,6 +317,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "BannerAD/BannerAD-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -325,6 +335,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.chrisjmendez.BannerAD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "BannerAD/BannerAD-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -347,6 +358,7 @@
 				E1698DBB1BE19B8C00C3AA60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
