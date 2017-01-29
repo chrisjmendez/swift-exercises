@@ -75,17 +75,7 @@
 		E1C7A3A41BE2CD2A000406BE = {
 			isa = PBXGroup;
 			children = (
-				E1C7A3C91BE2D0FC000406BE /* AdSupport.framework */,
-				E1C7A3CA1BE2D0FC000406BE /* AudioToolbox.framework */,
-				E1C7A3CB1BE2D0FC000406BE /* AVFoundation.framework */,
-				E1C7A3CC1BE2D0FC000406BE /* CoreGraphics.framework */,
-				E1C7A3CD1BE2D0FC000406BE /* CoreMedia.framework */,
-				E1C7A3CE1BE2D0FC000406BE /* CoreTelephony.framework */,
-				E1C7A3CF1BE2D0FC000406BE /* EventKit.framework */,
-				E1C7A3D01BE2D0FC000406BE /* EventKitUI.framework */,
-				E1C7A3D11BE2D0FC000406BE /* MessageUI.framework */,
-				E1C7A3D21BE2D0FC000406BE /* StoreKit.framework */,
-				E1C7A3D31BE2D0FC000406BE /* SystemConfiguration.framework */,
+				E1CD4E001E3E60CC00C1F06B /* Frameworks */,
 				E1C7A3AF1BE2CD2A000406BE /* Mediation */,
 				E1C7A3AE1BE2CD2A000406BE /* Products */,
 			);
@@ -112,6 +102,24 @@
 				E1C7A3C41BE2CF47000406BE /* Mediation-Bridging-Header.h */,
 			);
 			path = Mediation;
+			sourceTree = "<group>";
+		};
+		E1CD4E001E3E60CC00C1F06B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1C7A3C91BE2D0FC000406BE /* AdSupport.framework */,
+				E1C7A3CA1BE2D0FC000406BE /* AudioToolbox.framework */,
+				E1C7A3CB1BE2D0FC000406BE /* AVFoundation.framework */,
+				E1C7A3CC1BE2D0FC000406BE /* CoreGraphics.framework */,
+				E1C7A3CD1BE2D0FC000406BE /* CoreMedia.framework */,
+				E1C7A3CE1BE2D0FC000406BE /* CoreTelephony.framework */,
+				E1C7A3CF1BE2D0FC000406BE /* EventKit.framework */,
+				E1C7A3D01BE2D0FC000406BE /* EventKitUI.framework */,
+				E1C7A3D11BE2D0FC000406BE /* MessageUI.framework */,
+				E1C7A3D21BE2D0FC000406BE /* StoreKit.framework */,
+				E1C7A3D31BE2D0FC000406BE /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +154,7 @@
 				TargetAttributes = {
 					E1C7A3AC1BE2CD2A000406BE = {
 						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -310,6 +319,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Mediation/Mediation-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -329,6 +339,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.chrisjmendez.Mediation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Mediation/Mediation-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
