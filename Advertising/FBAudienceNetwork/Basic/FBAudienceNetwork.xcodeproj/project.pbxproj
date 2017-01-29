@@ -52,9 +52,7 @@
 		E15D5EF71C00BE6500813248 = {
 			isa = PBXGroup;
 			children = (
-				E15D5F241C00C03100813248 /* FBSDKShareKit.framework */,
-				E15D5F221C00C02F00813248 /* FBSDKLoginKit.framework */,
-				E15D5F201C00C02C00813248 /* FBSDKCoreKit.framework */,
+				E1CD4E031E3E631000C1F06B /* Frameworks */,
 				E15D5F021C00BE6500813248 /* FBAudienceNetwork */,
 				E15D5F011C00BE6500813248 /* Products */,
 			);
@@ -92,6 +90,16 @@
 			name = Config;
 			sourceTree = "<group>";
 		};
+		E1CD4E031E3E631000C1F06B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E15D5F241C00C03100813248 /* FBSDKShareKit.framework */,
+				E15D5F221C00C02F00813248 /* FBSDKLoginKit.framework */,
+				E15D5F201C00C02C00813248 /* FBSDKCoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -124,6 +132,7 @@
 				TargetAttributes = {
 					E15D5EFF1C00BE6500813248 = {
 						CreatedOnToolsVersion = 7.1.1;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -288,6 +297,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FBAudienceNetwork/FBAudienceNetwork-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -305,6 +315,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.chrisjmendez.FBAudienceNetwork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FBAudienceNetwork/FBAudienceNetwork-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

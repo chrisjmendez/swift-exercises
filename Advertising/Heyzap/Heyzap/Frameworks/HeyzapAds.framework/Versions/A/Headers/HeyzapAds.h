@@ -35,23 +35,21 @@
 #import <UIKit/UIKit.h>
 #import "HZLog.h"
 #import "HZInterstitialAd.h"
-#import "HZVideoAd.h"
 #import "HZIncentivizedAd.h"
-
-#import "HZNativeAdController.h"
-#import "HZNativeAdCollection.h"
-#import "HZNativeAd.h"
-#import "HZNativeAdImage.h"
-
-#import "HZShowOptions.h"
-#import "HZBannerAd.h"
+#import "HZBannerAdController.h"
 #import "HZBannerAdOptions.h"
+#import "HZShowOptions.h"
+#import "HZDemographics.h"
+#import "HZVideoAd.h"
+#import "FYBOfferWallViewController.h"
+#import "FYBRequestParameters.h"
+#import "FYBVirtualCurrencyClient.h"
 
 #ifndef NS_ENUM
 #define NS_ENUM(_type, _name) enum _name : _type _name; enum _name : _type
 #endif
 
-#define SDK_VERSION @"9.2.4"
+#define SDK_VERSION @"10.3.0"
 
 #if __has_feature(objc_modules)
 @import AdSupport;
@@ -66,6 +64,8 @@
 @import SystemConfiguration;
 @import EventKit;
 @import EventKitUI;
+@import MessageUI;
+@import CoreLocation;
 #endif
 
 typedef NS_ENUM(NSUInteger, HZAdOptions) {
@@ -90,62 +90,37 @@ typedef NS_ENUM(NSUInteger, HZAdOptions) {
      */
     HZAdOptionsDisableMedation = 1 << 3, // 8
     /**
-     * Pass this to disable recording of In-App Purchase data
+     *  Pass this to disable recording of In-App Purchase data
      */
     HZAdOptionsDisableAutomaticIAPRecording = 1 << 4, // 16
+    
+    //placeholder for android flag value NATIVE_ADS_ONLY = 1 << 5 // 32
+    // (iOS does not (yet) use this option, but iOS and Android need to keep the same flag values for the sake of Unity, AIR, etc.)
+    
+    /**
+     *  Pass this flag to mark mediated ads as "child-directed". This value will be passed on to networks that support sending such an option (for purposes of the Children's Online Privacy Protection Act (COPPA)).
+     *  Currently, only AdMob is passed this information (see https://developers.google.com/admob/ios/targeting#child-directed_setting ). The AdMob setting will be left alone if this flag is not passed when the Heyzap SDK is started.
+     */
+    HZAdOptionsChildDirectedAds = 1 << 6, // 64
 };
 
-
-// Network Names
-extern NSString * const HZNetworkHeyzap;
-extern NSString * const HZNetworkCrossPromo;
-extern NSString * const HZNetworkFacebook;
-extern NSString * const HZNetworkUnityAds;
-extern NSString * const HZNetworkAppLovin;
-extern NSString * const HZNetworkVungle;
-extern NSString * const HZNetworkChartboost;
-extern NSString * const HZNetworkAdColony;
-extern NSString * const HZNetworkAdMob;
-extern NSString * const HZNetworkIAd;
-extern NSString * const HZNetworkHyprMX;
-extern NSString * const HZNetworkHeyzapExchange;
-extern NSString * const HZNetworkLeadbolt;
-
-// General Network Callbacks
-extern NSString * const HZNetworkCallbackInitialized;
-extern NSString * const HZNetworkCallbackShow;
-extern NSString * const HZNetworkCallbackAvailable;
-extern NSString * const HZNetworkCallbackHide;
-extern NSString * const HZNetworkCallbackFetchFailed;
-extern NSString * const HZNetworkCallbackClick;
-extern NSString * const HZNetworkCallbackDismiss;
-extern NSString * const HZNetworkCallbackIncentivizedResultIncomplete;
-extern NSString * const HZNetworkCallbackIncentivizedResultComplete;
-extern NSString * const HZNetworkCallbackAudioStarting;
-extern NSString * const HZNetworkCallbackAudioFinished;
-extern NSString * const HZNetworkCallbackLeaveApplication;
-
-extern NSString * const HZNetworkCallbackBannerLoaded DEPRECATED_ATTRIBUTE;
-extern NSString * const HZNetworkCallbackBannerClick DEPRECATED_ATTRIBUTE;
-extern NSString * const HZNetworkCallbackBannerHide DEPRECATED_ATTRIBUTE;
-extern NSString * const HZNetworkCallbackBannerDismiss DEPRECATED_ATTRIBUTE;
-extern NSString * const HZNetworkCallbackBannerFetchFailed DEPRECATED_ATTRIBUTE;
-
-// Chartboost Specific Callbacks
-extern NSString * const HZNetworkCallbackChartboostMoreAppsFetchFailed;
-extern NSString * const HZNetworkCallbackChartboostMoreAppsDismiss;
-extern NSString * const HZNetworkCallbackChartboostMoreAppsHide;
-extern NSString * const HZNetworkCallbackChartboostMoreAppsClick;
-extern NSString * const HZNetworkCallbackChartboostMoreAppsShow;
-extern NSString * const HZNetworkCallbackChartboostMoreAppsAvailable;
-extern NSString * const HZNetworkCallbackChartboostMoreAppsClickFailed;
-
-
-// Facebook Specific Callbacks
-extern NSString * const HZNetworkCallbackFacebookLoggingImpression;
+// HZAdsDelegate Callback NSNotifications
+extern NSString * const HZMediationDidShowAdNotification;
+extern NSString * const HZMediationDidFailToShowAdNotification;
+extern NSString * const HZMediationDidReceiveAdNotification;
+extern NSString * const HZMediationDidFailToReceiveAdNotification;
+extern NSString * const HZMediationDidClickAdNotification;
+extern NSString * const HZMediationDidHideAdNotification;
+extern NSString * const HZMediationWillStartAdAudioNotification;
+extern NSString * const HZMediationDidFinishAdAudioNotification;
+// HZIncentivizedAdDelegate Callback NSNotifications
+extern NSString * const HZMediationDidCompleteIncentivizedAdNotification;
+extern NSString * const HZMediationDidFailToCompleteIncentivizedAdNotification;
 
 // NSNotifications
-extern NSString * const HZRemoteDataRefreshedNotification;
+extern NSString * const HZRemoteDataRefreshedNotification __attribute__((unavailable("This feature is not available in SDK 10; use SDK 9 if you need it.")));
+extern NSString * const HZMediationNetworkCallbackNotification __attribute__((unavailable("This feature is not available in SDK 10; use SDK 9 if you need it.")));
+
 
 /** The `HZAdsDelegate` protocol provides global information about our ads. If you want to know if we had an ad to show after calling `showAd` (for example, to fallback to another ads provider). It is recommend using the `showAd:completion:` method instead. */
 @protocol HZAdsDelegate<NSObject>
@@ -194,8 +169,7 @@ extern NSString * const HZRemoteDataRefreshedNotification;
  *
  *  @param tag An identifier for the ad.
  */
-- (void)didClickAdWithTag: (NSString *) tag;
-
+- (void)didClickAdWithTag: (NSString *) tag DEPRECATED_MSG_ATTRIBUTE("Click callbacks are no longer supported. Many networks do not report clicks, making this callback inherently inaccurate.");
 /**
  *  Called when the ad is dismissed.
  *
@@ -233,34 +207,6 @@ extern NSString * const HZRemoteDataRefreshedNotification;
  */
 @interface HeyzapAds : NSObject
 
-/**
- *  Sets an object to be forwarded all callbacks sent by the specified network.
- *
- *  @param delegate An object that can respond to the callbacks that the network sends.
- *  @param network  A member of the HZNetwork constants, which identifies the network to listen to.
- */
-+ (void) setDelegate:(id)delegate forNetwork:(NSString *)network;
-
-/**
- * Sets block which receives callbacks for all networks
- *
- */
-
-+ (void) networkCallbackWithBlock: (void (^)(NSString *network, NSString *callback))block;
-
-/**
- *  Returns YES if the network's SDK is initialized and can be called directly
- *
- *  @param network  A member of the HZNetwork constants, which identifies the network to check initialization on.
- */
-+ (BOOL) isNetworkInitialized:(NSString *)network;
-
-
-/**
- *
- *
- */
-
 + (void) startWithPublisherID: (NSString *) publisherID andOptions: (HZAdOptions) options;
 + (void) startWithPublisherID:(NSString *)publisherID andOptions:(HZAdOptions)options andFramework: (NSString *) framework;
 + (void) startWithPublisherID: (NSString *) publisherID;
@@ -289,15 +235,52 @@ extern NSString * const HZRemoteDataRefreshedNotification;
 
 /**
  * Returns a dictionary of developer-settable data or an empty dictionary if no data is available.
- 
+ *
  * @note This data is cached, so it will usually be available at app launch. It is updated via a network call that is made when `[HeyzapAds startWithPublisherId:]` (or one of its related methods) is called. If you want to guarantee that the data has been refreshed, only use it after receiving an NSNotification with name=`HZRemoteDataRefreshedNotification`. The userInfo passed with the notification will be the same NSDictionary you can receive with this method call.
  */
-+ (NSDictionary *) remoteData;
++ (NSDictionary *) remoteData __attribute__((unavailable("This feature is not available in SDK 10; use SDK 9 if you need it.")));
+
+/**
+ * Returns a string representation of the remote data dictionary. @see remoteData
+ */
++ (NSString *) getRemoteDataJsonString __attribute__((unavailable("This feature is not available in SDK 10; use SDK 9 if you need it.")));
+
+
+/**
+ * Sets block which receives callbacks for all networks
+ *
+ */
++ (void) networkCallbackWithBlock: (void (^)(NSString *network, NSString *callback))block __attribute__((unavailable("This feature is not available in SDK 10; use SDK 9 if you need it.")));
+
+
+/**
+ *  Returns an `HZDemographics` object that you can use to pass demographic information to third party SDKs.
+ *
+ *  @return An `HZDemographics` object. Guaranteed to be non-nil after starting the SDK.
+ */
++ (HZDemographics *)demographicInformation;
 
 /**
  * Presents a view controller that displays integration information and allows fetch/show testing
  */
 + (void)presentMediationDebugViewController;
+
+
+/**
+ *  Retrieves the client for Fyber Virtual Currencies
+ *
+ *  @return The FYBVirtualCurrencyClient singleton
+ *
+ */
++ (FYBVirtualCurrencyClient *)virtualCurrencyClient;
+
+/**
+ *  Convenient way of creating a new instance of FYBOfferWallViewController
+ *
+ *  @return An instance of FYBOfferWallViewController
+ */
++ (FYBOfferWallViewController *)offerWallViewController;
+
 
 #pragma mark - Performance Optimization
 
@@ -310,7 +293,7 @@ extern NSString * const HZRemoteDataRefreshedNotification;
  *
  *  If you are experiencing frame drops after adding mediation, you can use this method to prevent Heyzap from starting these expensive operations. Note that this could cause the time to finish a fetch take significantly longer. If you use this method, please take every opportunity to call `resumeExpensiveWork`; even spending a tenth of a second on a post-level screen is ample time for the most expensive operations to complete.
  *
- *  @warning Using this method is likely to extend the amount of time until you receive an ad from Heyzap Mediation. Please only use this method if you are experiencing performance issues and after reading this documentation. 
+ *  @warning Using this method is likely to extend the amount of time until you receive an ad from Heyzap Mediation. Please only use this method if you are experiencing performance issues and after reading this documentation.
  *  @note You *must* call `resumeExpensiveWork` to show ads after calling this.
  */
 + (void)pauseExpensiveWork;
@@ -322,17 +305,11 @@ extern NSString * const HZRemoteDataRefreshedNotification;
  */
 + (void)resumeExpensiveWork;
 
-/**
- * Returns a raw json string of developer-settable data or an empty json string if no data is available.
- * 
- */
-+ (NSString *) getRemoteDataJsonString;
-
 
 #pragma mark - Record IAP Transaction
 
 /**
- * Call this method to record an In-App Purchase made from the user. This will disable Ads for the time interval set in your game settings. 
+ * Call this method to record an In-App Purchase made from the user. This will disable Ads for the time interval set in your game settings.
  *
  * Only call this method if automatic IAP recording is disabled* (i.e. `HZAdOptionsDisableAutomaticIAPRecording` is enabled).
  */

@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Heyzap
 //
-//  Created by tommy trojan on 5/16/15.
+//  Created by Chris Mendez on 5/16/15.
 //  Copyright (c) 2015 Chris Mendez. All rights reserved.
 //
 
@@ -11,14 +11,14 @@ import SystemConfiguration
 
 class ViewController: UIViewController {
 
-    var timer:NSTimer = NSTimer()
+    var timer:Timer = Timer()
     var counter = 30
     let durationBetweenAds = 30
     
     @IBOutlet weak var countdownTxt: UILabel!
     
     func startTimer(){
-        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("counterUpdater"), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.counterUpdater), userInfo: nil, repeats: true)
     }
     func stopTimer(){
         timer.invalidate()
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     
     func counterUpdater(){
         print("counterUpdater")
-        countdownTxt.text = String(counter--)
+        countdownTxt.text = String(describing: counter -= counter)
         if( counter == 0 ){
             selectAD()
             resetTimer()
@@ -42,18 +42,23 @@ class ViewController: UIViewController {
     
     //I'm only picking 1 banner ad for now
     func selectAD(){
-        let randomNumber = Int.random(0...2)
-
+        let randomNumber = Int.random(Range(uncheckedBounds: (0,2) ))
+        
         switch(randomNumber){
         case 0:
             print("banner ad")
             let options = HZBannerAdOptions()
-            HZBannerAd.placeBannerInView(self.view, position: HZBannerPosition.Bottom, options:options, success: {
-                (banner) in
-                }, failure: {
-                    (error) in print("Error is \(error)")
-                }
-            )
+                // Only necessary if you're using multiple view
+                options.presentingViewController = self
+            
+            //TODO:
+            HZBannerAdController.sharedInstance().placeBanner(
+                at: HZBannerPosition.top,
+                options: options,
+                success: { (banner) in
+                    }, failure: { (error) in
+                        print("Error is \(error)")
+                })
             break
         case 1:
             print("interstitial ad")
@@ -86,48 +91,48 @@ class ViewController: UIViewController {
 
 extension ViewController: HZAdsDelegate{
     
-    func productViewControllerDidFinish(viewController: SKStoreProductViewController!) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    func productViewControllerDidFinish(_ viewController: SKStoreProductViewController!) {
+        self.dismiss(animated: true, completion: nil)
     }
     
-    func didShowAdWithTag(tag: String!) {
+    func didShowAd(withTag tag: String!) {
         // Sent when an interstitial ad has been displayed.
         print("didShowAdWithTag", tag);
         stopTimer()
     }
     
-    func didFailToShowAdWithTag(tag: String!, andError error: NSError!) {
+    func didFailToShowAd(withTag tag: String!, andError error: Error!) {
         // Sent when you call `showAd`, but there isn't an ad to be shown.
         // Includes an NSError object describing the reason why.
         print("didFailToShowAdWithTag", tag);
     }
     
-    func didClickAdWithTag(tag: String!) {
+    func didClickAd(withTag tag: String!) {
         // Sent when an interstitial ad has been clicked.
         print("didClickAdWithTag", tag);
     }
     
-    func didHideAdWithTag(tag: String!) {
+    func didHideAd(withTag tag: String!) {
         // Sent when an interstitial ad has been removed from view.
         print("didHideAdWithTag", tag);
         startTimer()
     }
     
-    func didReceiveAdWithTag(tag: String!) {
+    func didReceiveAd(withTag tag: String!) {
         // Sent when an interstitial ad has been loaded and is ready to be displayed.
         print("didReceiveAdWithTag", tag);
         if HZInterstitialAd.isAvailable() {
             print("HZInterstitialAd.isAvailable")
-            HZInterstitialAd.showForTag("default", completion: { (Bool, NSError) -> Void in
+            HZInterstitialAd.show(forTag: "default", completion: { (Bool, NSError) -> Void in
                 print("HZInterstitialAd.completion")
                 self.resetTimer()
             })
         }
     }
     
-    func didFailToReceiveAdWithTag(tag: String!) {
+    func didFailToReceiveAd(withTag tag: String!) {
         // Sent when an interstitial ad has failed to load.
-        print("didFailToReceiveAdWithTag", tag);
+        print("didFailToReceiveAdWithTag");
     }
     
     func willStartAudio() {
@@ -144,16 +149,16 @@ extension ViewController: HZAdsDelegate{
 
 extension Int
 {
-    static func random(range: Range<Int> ) -> Int
+    static func random(_ range: Range<Int> ) -> Int
     {
         var offset = 0
         
-        if range.startIndex < 0   // allow negative ranges
+        if range.lowerBound < 0   // allow negative ranges
         {
-            offset = abs(range.startIndex)
+            offset = abs(range.lowerBound)
         }
-        let mini = UInt32(range.startIndex + offset)
-        let maxi = UInt32(range.endIndex   + offset)
+        let mini = UInt32(range.lowerBound + offset)
+        let maxi = UInt32(range.upperBound   + offset)
         
         return Int(mini + arc4random_uniform(maxi - mini)) - offset
     }

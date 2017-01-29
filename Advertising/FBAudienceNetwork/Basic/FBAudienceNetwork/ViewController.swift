@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  FBAudienceNetwork
 //
-//  Created by Tommy Trojan on 11/21/15.
+//  Created by Chris Mendez on 11/21/15.
 //  Copyright © 2015 Chris Mendez. All rights reserved.
 //
 
@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
-    @IBAction func triggerEvent(sender: AnyObject) {
+    @IBAction func triggerEvent(_ sender: AnyObject) {
         switch( segmentedControl.selectedSegmentIndex ){
         //Send Event
         case 0:
@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     }
     
     func isLoggedIn() -> Bool {
-        if FBSDKAccessToken.currentAccessToken() != nil {
+        if FBSDKAccessToken.current() != nil {
             return true
         } else {
             return false

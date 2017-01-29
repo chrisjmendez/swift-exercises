@@ -62,25 +62,44 @@ typedef NS_ENUM(NSUInteger, HZAdMobBannerSize){
     HZAdMobBannerSizeFullBanner,
 };
 
+
+/**
+ * The size to use for Inmobi banners
+ */
+typedef NS_ENUM(NSUInteger, HZInmobiBannerSize) {
+    HZInmobiBannerSize320x50,
+    HZInmobiBannerSize320x48,
+    HZInmobiBannerSize300x250,
+    HZInmobiBannerSize120x600,
+    HZInmobiBannerSize468x60,
+    HZInmobiBannerSize728x90,
+    HZInmobiBannerSize1024x768
+};
+
+
 @interface HZBannerAdOptions : NSObject <NSCopying>
 
 /**
  *  The size to use for Facebook Audience Network banners. Defaults to HZFacebookBannerSizeFlexibleWidthHeight50.
  */
 @property (nonatomic) HZFacebookBannerSize facebookBannerSize;
+
 /**
  *  The size to use for Admob banners.
  */
 @property (nonatomic) HZAdMobBannerSize admobBannerSize;
 
-// iAds does not offer sizing options. Please refer to the `ADBannerView` documentation for information on ad sizes.
+/**
+ *  The size to use for Inmobi banners.
+ */
+@property (nonatomic) HZInmobiBannerSize inmobiBannerSize;
 
 /**
- *  The view controller to present the ad from. 
+ *  The view controller to present the ad from.
  *
  *  This property is optional. If not set, it defaults to the root view controller of the application.
  *
- *  @note Setting this property doesn't change where the actual banner (a `UIView`) is placed.
+ *  @note Setting this property doesn't change where the actual banner (a `UIView`) is placed. For Heyzap Exchange banners, the width of this property will determine the width of a flexible-width banner.
  */
 @property (nonatomic, weak) UIViewController *presentingViewController;
 
