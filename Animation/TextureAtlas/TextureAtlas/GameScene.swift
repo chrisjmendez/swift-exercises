@@ -17,40 +17,40 @@ class GameScene: SKScene {
     func initAnimation(){
         let flappingSpeed = 0.06
         
-        let flap = SKAction.animateWithTextures(sheet.Wings(), timePerFrame: flappingSpeed)
-        let flapping = SKAction.repeatAction(flap, count: 5)
+        let flap = SKAction.animate(with: sheet.Wings(), timePerFrame: flappingSpeed)
+        let flapping = SKAction.repeat(flap, count: 5)
 
         
         //Actions
-        let moveRight = SKAction.moveToX(500, duration: flap.duration)
-        let moveLeft  = SKAction.moveToX(100, duration: flap.duration)
+        let moveRight = SKAction.moveTo(x: 500, duration: flap.duration)
+        let moveLeft  = SKAction.moveTo(x: 100, duration: flap.duration)
         
-        let mirrorDirection = SKAction.scaleXTo(-1, duration: 0.0)
-        let resetDirection  = SKAction.scaleXTo(1, duration: 0.0)
+        let mirrorDirection = SKAction.scaleX(to: -1, duration: 0.0)
+        let resetDirection  = SKAction.scaleX(to: 1, duration: 0.0)
 
         
         //Group of animations
         let walkAndMoveRight = SKAction.group([resetDirection, flapping, moveRight])
         let walkAndMoveLeft  = SKAction.group([mirrorDirection, flapping, moveLeft])
         
-        let sequence = SKAction.repeatActionForever(SKAction.sequence([walkAndMoveRight, walkAndMoveLeft]))
+        let sequence = SKAction.repeatForever(SKAction.sequence([walkAndMoveRight, walkAndMoveLeft]))
         
         let sprite = SKSpriteNode(texture: sheet.Wings01())
-            sprite.position = CGPointMake(100.0, CGFloat(rand() % 100) + 200.0)
-            sprite.runAction(sequence)
+            sprite.position = CGPoint(x: 100.0, y: CGFloat(arc4random() % 100) + 200.0)
+            sprite.run(sequence)
         
         self.addChild(sprite)
     }
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         initAnimation()
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 
     }
    
-    override func update(currentTime: CFTimeInterval) {
+    override func update(_ currentTime: TimeInterval) {
         /* Called before each frame is rendered */
     }
 }
