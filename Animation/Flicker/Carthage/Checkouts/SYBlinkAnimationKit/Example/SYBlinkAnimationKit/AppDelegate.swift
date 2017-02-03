@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  AlamoFire and Hanke
+//  SYBlinkAnimationKit
 //
-//  Created by Chris on 2/14/16.
-//  Copyright © 2016 Chris Mendez. All rights reserved.
+//  Created by Shohei Yokoyama on 12/13/2015.
+//  Copyright (c) 2015 Shohei Yokoyama. All rights reserved.
 //
 
 import UIKit
@@ -13,9 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+//        let exampleViewController = ButtonViewController()
+//        let navigationController = UINavigationController(rootViewController: exampleViewController)
+//        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+//        self.window?.rootViewController = navigationController
+//        self.window?.makeKeyAndVisible()
         return true
     }
 

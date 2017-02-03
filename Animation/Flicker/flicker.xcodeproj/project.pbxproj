@@ -1,0 +1,358 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E136B1FF1E42C04B00061743 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E136B1FE1E42C04B00061743 /* AppDelegate.swift */; };
+		E136B2011E42C04B00061743 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E136B2001E42C04B00061743 /* ViewController.swift */; };
+		E136B2041E42C04B00061743 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E136B2021E42C04B00061743 /* Main.storyboard */; };
+		E136B2061E42C04B00061743 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E136B2051E42C04B00061743 /* Assets.xcassets */; };
+		E136B2091E42C04B00061743 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E136B2071E42C04B00061743 /* LaunchScreen.storyboard */; };
+		E1521AFF1E43C013008B99B1 /* SYBlinkAnimationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1521AFE1E43C013008B99B1 /* SYBlinkAnimationKit.framework */; };
+		E1521B001E43C013008B99B1 /* SYBlinkAnimationKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E1521AFE1E43C013008B99B1 /* SYBlinkAnimationKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E1521B011E43C013008B99B1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E1521B001E43C013008B99B1 /* SYBlinkAnimationKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		E136B1FB1E42C04B00061743 /* flicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E136B1FE1E42C04B00061743 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E136B2001E42C04B00061743 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E136B2031E42C04B00061743 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E136B2051E42C04B00061743 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E136B2081E42C04B00061743 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E136B20A1E42C04B00061743 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1521AFE1E43C013008B99B1 /* SYBlinkAnimationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SYBlinkAnimationKit.framework; path = Carthage/Build/iOS/SYBlinkAnimationKit.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E136B1F81E42C04A00061743 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1521AFF1E43C013008B99B1 /* SYBlinkAnimationKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E136B1F21E42C04A00061743 = {
+			isa = PBXGroup;
+			children = (
+				E1521AFE1E43C013008B99B1 /* SYBlinkAnimationKit.framework */,
+				E136B1FD1E42C04B00061743 /* flicker */,
+				E136B1FC1E42C04B00061743 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E136B1FC1E42C04B00061743 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E136B1FB1E42C04B00061743 /* flicker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E136B1FD1E42C04B00061743 /* flicker */ = {
+			isa = PBXGroup;
+			children = (
+				E136B1FE1E42C04B00061743 /* AppDelegate.swift */,
+				E136B2001E42C04B00061743 /* ViewController.swift */,
+				E136B2021E42C04B00061743 /* Main.storyboard */,
+				E136B2051E42C04B00061743 /* Assets.xcassets */,
+				E136B2071E42C04B00061743 /* LaunchScreen.storyboard */,
+				E136B20A1E42C04B00061743 /* Info.plist */,
+			);
+			path = flicker;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E136B1FA1E42C04A00061743 /* flicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E136B20D1E42C04B00061743 /* Build configuration list for PBXNativeTarget "flicker" */;
+			buildPhases = (
+				E136B1F71E42C04A00061743 /* Sources */,
+				E136B1F81E42C04A00061743 /* Frameworks */,
+				E136B1F91E42C04A00061743 /* Resources */,
+				E1521AFD1E43BE4F008B99B1 /* ShellScript */,
+				E1521B011E43C013008B99B1 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = flicker;
+			productName = flicker;
+			productReference = E136B1FB1E42C04B00061743 /* flicker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E136B1F31E42C04A00061743 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Chris Mendez";
+				TargetAttributes = {
+					E136B1FA1E42C04A00061743 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 569JB6ZBFA;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = E136B1F61E42C04A00061743 /* Build configuration list for PBXProject "flicker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E136B1F21E42C04A00061743;
+			productRefGroup = E136B1FC1E42C04B00061743 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E136B1FA1E42C04A00061743 /* flicker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E136B1F91E42C04A00061743 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E136B2091E42C04B00061743 /* LaunchScreen.storyboard in Resources */,
+				E136B2061E42C04B00061743 /* Assets.xcassets in Resources */,
+				E136B2041E42C04B00061743 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E1521AFD1E43BE4F008B99B1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SYBlinkAnimationKit.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E136B1F71E42C04A00061743 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E136B2011E42C04B00061743 /* ViewController.swift in Sources */,
+				E136B1FF1E42C04B00061743 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E136B2021E42C04B00061743 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E136B2031E42C04B00061743 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E136B2071E42C04B00061743 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E136B2081E42C04B00061743 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E136B20B1E42C04B00061743 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E136B20C1E42C04B00061743 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E136B20E1E42C04B00061743 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 569JB6ZBFA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = flicker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chrisjmendez.flicker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		E136B20F1E42C04B00061743 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 569JB6ZBFA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = flicker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chrisjmendez.flicker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E136B1F61E42C04A00061743 /* Build configuration list for PBXProject "flicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E136B20B1E42C04B00061743 /* Debug */,
+				E136B20C1E42C04B00061743 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E136B20D1E42C04B00061743 /* Build configuration list for PBXNativeTarget "flicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E136B20E1E42C04B00061743 /* Debug */,
+				E136B20F1E42C04B00061743 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E136B1F31E42C04A00061743 /* Project object */;
+}
