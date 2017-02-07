@@ -7,14 +7,14 @@
 //
 
 class QuizManager{
-    private var quizzess:[Quiz] = []
-    private var currentQuestion = 0
+    fileprivate var quizzess:[Quiz] = []
+    fileprivate var currentQuestion = 0
     //Total Right
-    private var 👍 = 0
+    fileprivate var 👍 = 0
     //Total Wrong
-    private var 👎 = 0
+    fileprivate var 👎 = 0
     
-    func addQuiz(quiz:Quiz){
+    func addQuiz(_ quiz:Quiz){
         self.quizzess.append(quiz)
     }
     
@@ -28,16 +28,16 @@ class QuizManager{
     
     //Answer to the current question
     //Returns true if correct
-    func answer(questionNumber:Int) -> Bool {
+    func answer(_ questionNumber:Int) -> Bool {
         var rightAnswer:Bool
         if getCurrentQuestion()!.👌 == questionNumber {
             rightAnswer = true
-            👍++
+            👍 += 1
         } else {
             rightAnswer = false
-            👎++
+            👎 += 1
         }
-        currentQuestion++
+        currentQuestion += 1
         return rightAnswer
     }
     

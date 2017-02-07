@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var answer②Button: UIButton!
     @IBOutlet weak var answer③Button: UIButton!
     
-    @IBAction func answer(sender: UIButton) {
+    @IBAction func answer(_ sender: UIButton) {
         var userAnswer:Int
         switch(sender){
         case answer①Button:
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
     }
 
     //The timer will keep track of the quiz questions
-    var quizTimer:NSTimer?
+    var quizTimer:Timer?
     var elapsedTime:Int
     //The entire quiz
     var quizManager:QuizManager
@@ -46,31 +46,31 @@ class ViewController: UIViewController {
         self.elapsedTime = 0
         quizManager = QuizManager()
         //We set the Super class
-        super.init(coder: coder)
+        super.init(coder: coder)!
         //
         setupQuizManager()
     }
     
-    private func setupQuizManager(){
+    fileprivate func setupQuizManager(){
         quizManager.addQuiz(Quiz(question: "What is the entertainment capital of the world?", ①: "Los Angeles", ②: "New York City", ③: "Tokyo", 👌: 1))
         quizManager.addQuiz(Quiz(question: "Which film mogol did not own a building in Downtown Los Angeles?", ①: "William H Fox", ②: "Warner Brothers", ③: "Jack Valenti", 👌: 3))
         quizManager.addQuiz(Quiz(question: "Which artist is not a United Artist?", ①: "Charlie Chaplin", ②: "Douglas Fairbanks", ③: "George Lucas", 👌: 3))
     }
     
-    private func prepareNextQuestion(){
+    fileprivate func prepareNextQuestion(){
         if(quizTimer != nil){
             quizTimer!.invalidate()
         }
         //If a question exists, assign it to quiz
         if let quiz = quizManager.getCurrentQuestion(){
-            println(quiz)
+            print(quiz)
             elapsedTime = 0
             questionLabel.text = quiz.question
-            answer①Button.setTitle(quiz.①, forState: .Normal)
-            answer②Button.setTitle(quiz.②, forState: .Normal)
-            answer③Button.setTitle(quiz.③, forState: .Normal)
+            answer①Button.setTitle(quiz.①, for: UIControlState())
+            answer②Button.setTitle(quiz.②, for: UIControlState())
+            answer③Button.setTitle(quiz.③, for: UIControlState())
             //Set the clock
-            quizTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("tick"), userInfo: nil, repeats: true)
+            quizTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.tick), userInfo: nil, repeats: true)
             //Set off the clock
             quizTimer!.fire()
         }else{
@@ -83,11 +83,11 @@ class ViewController: UIViewController {
     }
     
     func tick(){
-        println(elapsedTime)
+        print(elapsedTime)
         if elapsedTime < 12 {
             let baseCharCode = 0x1F550
-            timerLabel.text = String(Character(UnicodeScalar(baseCharCode + elapsedTime)))
-            elapsedTime++
+            timerLabel.text = String(Character(UnicodeScalar(baseCharCode + elapsedTime)!))
+            elapsedTime += 1
         } else {
             quizManager.answer(0)
             prepareNextQuestion()
