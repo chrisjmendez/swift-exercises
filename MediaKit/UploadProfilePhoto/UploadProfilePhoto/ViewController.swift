@@ -13,14 +13,14 @@ class ViewController: UIViewController {
     let SEGUE_ON_LOAD = "onLoadSegue"
     
     func goToView(){
-        self.performSegueWithIdentifier(SEGUE_ON_LOAD, sender: self)
+        self.performSegue(withIdentifier: SEGUE_ON_LOAD, sender: self)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Programatically trigger a function call after x seconds
-        self.performSelector("goToView", withObject: nil, afterDelay: 1.0)
+        self.perform(#selector(ViewController.goToView), with: nil, afterDelay: 1.0)
     }
 
     override func didReceiveMemoryWarning() {

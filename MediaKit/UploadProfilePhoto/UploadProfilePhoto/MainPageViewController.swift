@@ -12,13 +12,13 @@ class MainPageViewController: UIViewController {
 
     @IBOutlet weak var profileImageView: UIImageView!
     
-    @IBAction func uploadPhoto(sender: AnyObject) {
+    @IBAction func uploadPhoto(_ sender: AnyObject) {
         let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
         
         //Present a User with an image picker
-        self.presentViewController(imagePicker, animated: true, completion: nil)
+        self.present(imagePicker, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -36,11 +36,11 @@ class MainPageViewController: UIViewController {
 extension MainPageViewController: UIImagePickerControllerDelegate{
 
     //A user has picked an image from their PhotoLibrary
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         //This will take a selected image from info object as set it to our UIImageView
         profileImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
         //Dismiss the image picker
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
